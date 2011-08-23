@@ -32,7 +32,7 @@ NSArray *contacts;
                        @"1/2 Seasame Street", @"Address",
                        nil];
     
-    contacts = [NSArray arrayWithObjects:a, b, nil];
+    contacts = [[NSArray arrayWithObjects:a, b, nil] retain];
     
 //    self.clearsSelectionOnViewWillAppear = NO;
     
@@ -127,14 +127,13 @@ NSArray *contacts;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here -- for example, create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+//    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+    NSDictionary *selected = [contacts objectAtIndex:indexPath.row];
+    detailViewController.detailItem = selected;
+    // ...
+    // Pass the selected object to the new view controller.
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+//    [detailViewController release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,6 +153,7 @@ NSArray *contacts;
 - (void)dealloc
 {
     [detailViewController release];
+    [contacts release];
     [super dealloc];
 }
 
