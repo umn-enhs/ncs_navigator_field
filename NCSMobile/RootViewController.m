@@ -14,11 +14,30 @@
 		
 @synthesize detailViewController;
 
+NSArray *contacts;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+
+    NSDictionary *a = [NSDictionary dictionaryWithObjectsAndKeys: 
+                       @"Jane", @"Name", 
+                       @"123 Easy Street", @"Address",
+                       nil];
+    
+    NSDictionary *b = [NSDictionary dictionaryWithObjectsAndKeys: 
+                       @"Kelly", @"Name", 
+                       @"1/2 Seasame Street", @"Address",
+                       nil];
+    
+    contacts = [NSArray arrayWithObjects:a, b, nil];
+    
+//    self.clearsSelectionOnViewWillAppear = NO;
+    
+    NSIndexPath *p = [NSIndexPath indexPathForRow:0 inSection:0];
+    [[self tableView] selectRowAtIndexPath:p animated:YES scrollPosition:0];
 }
 
 		
@@ -55,7 +74,7 @@
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [contacts count];
     		
 }
 
@@ -69,8 +88,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    // Configure the cell.
-    		
+    cell.textLabel.text = [[contacts objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    	
     return cell;
 }
 

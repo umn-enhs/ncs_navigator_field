@@ -11,7 +11,6 @@
 @class DetailViewController;
 
 @interface RootViewController : UITableViewController {
-
 }
 
 		
