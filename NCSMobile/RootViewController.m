@@ -10,17 +10,23 @@
 
 #import "DetailViewController.h"
 
+@interface RootViewController () 
+    @property (nonatomic,retain) NSArray *contacts;
+@end
+
 @implementation RootViewController
 		
-@synthesize detailViewController;
+@synthesize detailViewController=_detailViewController;
+@synthesize contacts=_contacts;
 
-NSArray *contacts;
+//NSArray *contacts;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    self.title = @"Contacts";
 
     NSDictionary *a = [NSDictionary dictionaryWithObjectsAndKeys: 
                        @"Jane", @"Name", 
@@ -32,13 +38,14 @@ NSArray *contacts;
                        @"1/2 Seasame Street", @"Address",
                        nil];
     
-    contacts = [[NSArray arrayWithObjects:a, b, nil] retain];
+//    contacts = [NSArray arrayWithObjects:a, b, nil] ;
+    self.contacts = [NSArray arrayWithObjects:a, b, nil] ;
     
 //    self.clearsSelectionOnViewWillAppear = NO;
     
     NSIndexPath *p = [NSIndexPath indexPathForRow:0 inSection:0];
     [[self tableView] selectRowAtIndexPath:p animated:YES scrollPosition:0];
-    detailViewController.detailItem = a;
+    self.detailViewController.detailItem = a;
 }
 
 		
@@ -75,7 +82,7 @@ NSArray *contacts;
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [contacts count];
+    return [self.contacts count];
     		
 }
 
@@ -89,7 +96,7 @@ NSArray *contacts;
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    cell.textLabel.text = [[contacts objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    cell.textLabel.text = [[self.contacts objectAtIndex:indexPath.row] objectForKey:@"Name"];
     	
     return cell;
 }
@@ -129,8 +136,8 @@ NSArray *contacts;
 {
     // Navigation logic may go here -- for example, create and push another view controller.
 //    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
-    NSDictionary *selected = [contacts objectAtIndex:indexPath.row];
-    detailViewController.detailItem = selected;
+    NSDictionary *selected = [self.contacts objectAtIndex:indexPath.row];
+    self.detailViewController.detailItem = selected;
     // ...
     // Pass the selected object to the new view controller.
 //    [self.navigationController pushViewController:detailViewController animated:YES];
@@ -153,8 +160,8 @@ NSArray *contacts;
 
 - (void)dealloc
 {
-    [detailViewController release];
-    [contacts release];
+    [_detailViewController release];
+    [_contacts release];
     [super dealloc];
 }
 
