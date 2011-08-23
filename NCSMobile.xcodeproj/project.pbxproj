@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0026E669140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
+		0026E66B140347E700355BCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66A140347E700355BCB /* Foundation.framework */; };
+		0026E66D140347E700355BCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66C140347E700355BCB /* CoreGraphics.framework */; };
+		0026E673140347E700355BCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0026E671140347E700355BCB /* InfoPlist.strings */; };
+		0026E676140347E700355BCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E675140347E700355BCB /* main.m */; };
+		0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E678140347E700355BCB /* NCSMobileAppDelegate.m */; };
+		0026E67C140347E700355BCB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0026E67A140347E700355BCB /* MainWindow.xib */; };
+		0026E67F140347E700355BCB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E67E140347E700355BCB /* DetailViewController.m */; };
+		0026E682140347E700355BCB /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0026E680140347E700355BCB /* DetailView.xib */; };
+		0026E685140347E700355BCB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E684140347E700355BCB /* RootViewController.m */; };
+		0026E68C140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
+		0026E68D140347E700355BCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66A140347E700355BCB /* Foundation.framework */; };
+		0026E68E140347E700355BCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66C140347E700355BCB /* CoreGraphics.framework */; };
+		0026E696140347E700355BCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0026E694140347E700355BCB /* InfoPlist.strings */; };
+		0026E699140347E700355BCB /* NCSMobileTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0026E698140347E700355BCB /* NCSMobileTests.h */; };
+		0026E69B140347E700355BCB /* NCSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E69A140347E700355BCB /* NCSMobileTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0026E68F140347E700355BCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0026E65B140347E700355BCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0026E663140347E700355BCB;
+			remoteInfo = NCSMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0026E664140347E700355BCB /* NCSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0026E668140347E700355BCB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0026E66A140347E700355BCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0026E66C140347E700355BCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0026E670140347E700355BCB /* NCSMobile-Info.plist */ = {isa = PBXFileReference; path = "NCSMobile-Info.plist"; sourceTree = "<group>"; };
+		0026E672140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0026E674140347E700355BCB /* NCSMobile-Prefix.pch */ = {isa = PBXFileReference; path = "NCSMobile-Prefix.pch"; sourceTree = "<group>"; };
+		0026E675140347E700355BCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0026E677140347E700355BCB /* NCSMobileAppDelegate.h */ = {isa = PBXFileReference; path = NCSMobileAppDelegate.h; sourceTree = "<group>"; };
+		0026E678140347E700355BCB /* NCSMobileAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCSMobileAppDelegate.m; sourceTree = "<group>"; };
+		0026E67B140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		0026E67D140347E700355BCB /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		0026E67E140347E700355BCB /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0026E681140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
+		0026E683140347E700355BCB /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		0026E684140347E700355BCB /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0026E68B140347E700355BCB /* NCSMobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NCSMobileTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0026E693140347E700355BCB /* NCSMobileTests-Info.plist */ = {isa = PBXFileReference; path = "NCSMobileTests-Info.plist"; sourceTree = "<group>"; };
+		0026E695140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */ = {isa = PBXFileReference; path = "NCSMobileTests-Prefix.pch"; sourceTree = "<group>"; };
+		0026E698140347E700355BCB /* NCSMobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCSMobileTests.h; sourceTree = "<group>"; };
+		0026E69A140347E700355BCB /* NCSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCSMobileTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0026E661140347E700355BCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0026E669140347E700355BCB /* UIKit.framework in Frameworks */,
+				0026E66B140347E700355BCB /* Foundation.framework in Frameworks */,
+				0026E66D140347E700355BCB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0026E687140347E700355BCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0026E68C140347E700355BCB /* UIKit.framework in Frameworks */,
+				0026E68D140347E700355BCB /* Foundation.framework in Frameworks */,
+				0026E68E140347E700355BCB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0026E659140347E700355BCB = {
+			isa = PBXGroup;
+			children = (
+				0026E66E140347E700355BCB /* NCSMobile */,
+				0026E691140347E700355BCB /* NCSMobileTests */,
+				0026E667140347E700355BCB /* Frameworks */,
+				0026E665140347E700355BCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0026E665140347E700355BCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0026E664140347E700355BCB /* NCSMobile.app */,
+				0026E68B140347E700355BCB /* NCSMobileTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0026E667140347E700355BCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0026E668140347E700355BCB /* UIKit.framework */,
+				0026E66A140347E700355BCB /* Foundation.framework */,
+				0026E66C140347E700355BCB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0026E66E140347E700355BCB /* NCSMobile */ = {
+			isa = PBXGroup;
+			children = (
+				0026E677140347E700355BCB /* NCSMobileAppDelegate.h */,
+				0026E678140347E700355BCB /* NCSMobileAppDelegate.m */,
+				0026E67A140347E700355BCB /* MainWindow.xib */,
+				0026E67D140347E700355BCB /* DetailViewController.h */,
+				0026E67E140347E700355BCB /* DetailViewController.m */,
+				0026E680140347E700355BCB /* DetailView.xib */,
+				0026E683140347E700355BCB /* RootViewController.h */,
+				0026E684140347E700355BCB /* RootViewController.m */,
+				0026E66F140347E700355BCB /* Supporting Files */,
+			);
+			path = NCSMobile;
+			sourceTree = "<group>";
+		};
+		0026E66F140347E700355BCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0026E670140347E700355BCB /* NCSMobile-Info.plist */,
+				0026E671140347E700355BCB /* InfoPlist.strings */,
+				0026E674140347E700355BCB /* NCSMobile-Prefix.pch */,
+				0026E675140347E700355BCB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0026E691140347E700355BCB /* NCSMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				0026E698140347E700355BCB /* NCSMobileTests.h */,
+				0026E69A140347E700355BCB /* NCSMobileTests.m */,
+				0026E692140347E700355BCB /* Supporting Files */,
+			);
+			path = NCSMobileTests;
+			sourceTree = "<group>";
+		};
+		0026E692140347E700355BCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0026E693140347E700355BCB /* NCSMobileTests-Info.plist */,
+				0026E694140347E700355BCB /* InfoPlist.strings */,
+				0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0026E663140347E700355BCB /* NCSMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0026E69E140347E700355BCB /* Build configuration list for PBXNativeTarget "NCSMobile" */;
+			buildPhases = (
+				0026E660140347E700355BCB /* Sources */,
+				0026E661140347E700355BCB /* Frameworks */,
+				0026E662140347E700355BCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NCSMobile;
+			productName = NCSMobile;
+			productReference = 0026E664140347E700355BCB /* NCSMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0026E68A140347E700355BCB /* NCSMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0026E6A1140347E700355BCB /* Build configuration list for PBXNativeTarget "NCSMobileTests" */;
+			buildPhases = (
+				0026E686140347E700355BCB /* Sources */,
+				0026E687140347E700355BCB /* Frameworks */,
+				0026E688140347E700355BCB /* Resources */,
+				0026E689140347E700355BCB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0026E690140347E700355BCB /* PBXTargetDependency */,
+			);
+			name = NCSMobileTests;
+			productName = NCSMobileTests;
+			productReference = 0026E68B140347E700355BCB /* NCSMobileTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0026E65B140347E700355BCB /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 0026E65E140347E700355BCB /* Build configuration list for PBXProject "NCSMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0026E659140347E700355BCB;
+			productRefGroup = 0026E665140347E700355BCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0026E663140347E700355BCB /* NCSMobile */,
+				0026E68A140347E700355BCB /* NCSMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0026E662140347E700355BCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0026E673140347E700355BCB /* InfoPlist.strings in Resources */,
+				0026E67C140347E700355BCB /* MainWindow.xib in Resources */,
+				0026E682140347E700355BCB /* DetailView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0026E688140347E700355BCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0026E696140347E700355BCB /* InfoPlist.strings in Resources */,
+				0026E699140347E700355BCB /* NCSMobileTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0026E689140347E700355BCB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0026E660140347E700355BCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0026E676140347E700355BCB /* main.m in Sources */,
+				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
+				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
+				0026E685140347E700355BCB /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0026E686140347E700355BCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0026E69B140347E700355BCB /* NCSMobileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0026E690140347E700355BCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0026E663140347E700355BCB /* NCSMobile */;
+			targetProxy = 0026E68F140347E700355BCB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0026E671140347E700355BCB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0026E672140347E700355BCB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0026E67A140347E700355BCB /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0026E67B140347E700355BCB /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		0026E680140347E700355BCB /* DetailView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0026E681140347E700355BCB /* en */,
+			);
+			name = DetailView.xib;
+			sourceTree = "<group>";
+		};
+		0026E694140347E700355BCB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0026E695140347E700355BCB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0026E69C140347E700355BCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0026E69D140347E700355BCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		0026E69F140347E700355BCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NCSMobile/NCSMobile-Prefix.pch";
+				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0026E6A0140347E700355BCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NCSMobile/NCSMobile-Prefix.pch";
+				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0026E6A2140347E700355BCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NCSMobile.app/NCSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NCSMobileTests/NCSMobileTests-Prefix.pch";
+				INFOPLIST_FILE = "NCSMobileTests/NCSMobileTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0026E6A3140347E700355BCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NCSMobile.app/NCSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NCSMobileTests/NCSMobileTests-Prefix.pch";
+				INFOPLIST_FILE = "NCSMobileTests/NCSMobileTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0026E65E140347E700355BCB /* Build configuration list for PBXProject "NCSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0026E69C140347E700355BCB /* Debug */,
+				0026E69D140347E700355BCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0026E69E140347E700355BCB /* Build configuration list for PBXNativeTarget "NCSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0026E69F140347E700355BCB /* Debug */,
+				0026E6A0140347E700355BCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0026E6A1140347E700355BCB /* Build configuration list for PBXNativeTarget "NCSMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0026E6A2140347E700355BCB /* Debug */,
+				0026E6A3140347E700355BCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0026E65B140347E700355BCB /* Project object */;
+}
