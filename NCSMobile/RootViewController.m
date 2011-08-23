@@ -38,6 +38,7 @@ NSArray *contacts;
     
     NSIndexPath *p = [NSIndexPath indexPathForRow:0 inSection:0];
     [[self tableView] selectRowAtIndexPath:p animated:YES scrollPosition:0];
+    detailViewController.detailItem = a;
 }
 
 		
