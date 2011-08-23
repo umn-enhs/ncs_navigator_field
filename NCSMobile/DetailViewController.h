@@ -12,6 +12,8 @@
 
 }
 
+- (IBAction) startSurvey;
+
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 

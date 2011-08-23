@@ -25,6 +25,12 @@
 
 @synthesize popoverController=_myPopoverController;
 
+- (IBAction) startSurvey {
+    NSLog(@"HELLO SURVEY!!!!");
+    
+//    [NSException raise:NSInvalidArgumentException format:@"Foo must not be nil"];
+}
+
 #pragma mark - Managing the detail item
 
 /*
