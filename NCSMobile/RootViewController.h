@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
 @class DetailViewController;
 
-@interface RootViewController : UITableViewController {
+@interface RootViewController : UITableViewController<RKObjectLoaderDelegate> {
 }
 
 		

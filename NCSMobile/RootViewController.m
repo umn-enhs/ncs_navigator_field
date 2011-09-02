@@ -9,17 +9,31 @@
 #import "RootViewController.h"
 
 #import "DetailViewController.h"
+#import "Event.h"
 
 @interface RootViewController () 
-    @property (nonatomic,retain) NSArray *contacts;
+    @property(nonatomic,retain) NSArray* events;
+
 @end
 
 @implementation RootViewController
 		
 @synthesize detailViewController=_detailViewController;
-@synthesize contacts=_contacts;
+@synthesize events=_events;
 
-//NSArray *contacts;
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+	NSLog(@"Loaded events: %@", objects);    
+	[_events release];
+	_events = [objects retain];
+	[self.tableView reloadData];
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
+	UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+	[alert show];
+	NSLog(@"Hit error: %@", error);
+}
+
 
 - (void)viewDidLoad
 {
@@ -28,7 +42,7 @@
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     self.title = @"Contacts";
 
-    NSDictionary *a = [NSDictionary dictionaryWithObjectsAndKeys: 
+   /* NSDictionary *a = [NSDictionary dictionaryWithObjectsAndKeys: 
                        @"Jane", @"Name", 
                        @"123 Easy Street", @"Address",
                        nil];
@@ -38,14 +52,16 @@
                        @"1/2 Seasame Street", @"Address",
                        nil];
     
-//    contacts = [NSArray arrayWithObjects:a, b, nil] ;
     self.contacts = [NSArray arrayWithObjects:a, b, nil] ;
-    
-//    self.clearsSelectionOnViewWillAppear = NO;
-    
+      
     NSIndexPath *p = [NSIndexPath indexPathForRow:0 inSection:0];
     [[self tableView] selectRowAtIndexPath:p animated:YES scrollPosition:0];
     self.detailViewController.detailItem = a;
+    */
+    
+    
+    RKObjectManager* objectManager = [RKObjectManager sharedManager];
+    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];    
 }
 
 		
@@ -82,8 +98,7 @@
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.contacts count];
-    		
+    return [self.events count];
 }
 
 		
@@ -96,7 +111,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    cell.textLabel.text = [[self.contacts objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    Event* e = [self.events objectAtIndex:indexPath.row];
+    cell.textLabel.text = e.name;
     	
     return cell;
 }
@@ -136,8 +152,8 @@
 {
     // Navigation logic may go here -- for example, create and push another view controller.
 //    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
-    NSDictionary *selected = [self.contacts objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = selected;
+    Event* e = [self.events objectAtIndex:indexPath.row];
+    self.detailViewController.detailItem = e;
     // ...
     // Pass the selected object to the new view controller.
 //    [self.navigationController pushViewController:detailViewController animated:YES];
@@ -161,7 +177,7 @@
 - (void)dealloc
 {
     [_detailViewController release];
-    [_contacts release];
+    [_events release];
     [super dealloc];
 }
 

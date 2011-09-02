@@ -12,9 +12,6 @@
 
 }
 
-- (IBAction) startSurvey;
-
-
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 
 @property (nonatomic, retain) id detailItem;

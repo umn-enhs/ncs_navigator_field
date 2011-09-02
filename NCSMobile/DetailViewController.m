@@ -25,11 +25,6 @@
 
 @synthesize popoverController=_myPopoverController;
 
-- (IBAction) startSurvey {
-    NSLog(@"HELLO SURVEY!!!!");
-    
-//    [NSException raise:NSInvalidArgumentException format:@"Foo must not be nil"];
-}
 
 #pragma mark - Managing the detail item
 
@@ -55,7 +50,7 @@
 {
     // Update the user interface for the detail item.
 
-    self.detailDescriptionLabel.text = [self.detailItem description];
+    self.detailDescriptionLabel.text = [self.detailItem name];
 }
 
 - (void)viewWillAppear:(BOOL)animated

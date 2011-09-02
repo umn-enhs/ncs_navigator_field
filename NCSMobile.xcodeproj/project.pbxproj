@@ -32,6 +32,7 @@
 		00439FFA14112E5E0097A878 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFB14112E670097A878 /* MobileCoreServices.framework */; };
 		00439FFE14112E6F0097A878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFD14112E6F0097A878 /* SystemConfiguration.framework */; };
+		006EBEE3141139B2003D69CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEE2141139B2003D69CF /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,10 +134,10 @@
 		0026E668140347E700355BCB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0026E66A140347E700355BCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0026E66C140347E700355BCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0026E670140347E700355BCB /* NCSMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NCSMobile-Info.plist"; sourceTree = "<group>"; };
+		0026E670140347E700355BCB /* NCSMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NCSMobile-Info.plist"; path = "NCSMobile/NCSMobile-Info.plist"; sourceTree = "<group>"; };
 		0026E672140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0026E674140347E700355BCB /* NCSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NCSMobile-Prefix.pch"; sourceTree = "<group>"; };
-		0026E675140347E700355BCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0026E674140347E700355BCB /* NCSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NCSMobile-Prefix.pch"; path = "NCSMobile/NCSMobile-Prefix.pch"; sourceTree = "<group>"; };
+		0026E675140347E700355BCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NCSMobile/main.m; sourceTree = "<group>"; };
 		0026E677140347E700355BCB /* NCSMobileAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCSMobileAppDelegate.h; sourceTree = "<group>"; };
 		0026E678140347E700355BCB /* NCSMobileAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCSMobileAppDelegate.m; sourceTree = "<group>"; };
 		0026E67B140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -156,6 +157,8 @@
 		00439FF914112E5E0097A878 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00439FFB14112E670097A878 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		00439FFD14112E6F0097A878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		006EBEE2141139B2003D69CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				0043A016141133410097A878 /* Other Sources */,
+				00439FFF141132B70097A878 /* Resources */,
 				00439FC514112DE20097A878 /* RestKit.xcodeproj */,
 				0026E66E140347E700355BCB /* Classes */,
 				0026E691140347E700355BCB /* Tests */,
@@ -230,27 +235,15 @@
 			children = (
 				0026E677140347E700355BCB /* NCSMobileAppDelegate.h */,
 				0026E678140347E700355BCB /* NCSMobileAppDelegate.m */,
-				0026E67A140347E700355BCB /* MainWindow.xib */,
 				0026E67D140347E700355BCB /* DetailViewController.h */,
 				0026E67E140347E700355BCB /* DetailViewController.m */,
-				0026E680140347E700355BCB /* DetailView.xib */,
 				0026E683140347E700355BCB /* RootViewController.h */,
 				0026E684140347E700355BCB /* RootViewController.m */,
-				0026E66F140347E700355BCB /* Supporting Files */,
+				006EBEE1141139B2003D69CF /* Event.h */,
+				006EBEE2141139B2003D69CF /* Event.m */,
 			);
 			name = Classes;
 			path = NCSMobile;
-			sourceTree = "<group>";
-		};
-		0026E66F140347E700355BCB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0026E670140347E700355BCB /* NCSMobile-Info.plist */,
-				0026E671140347E700355BCB /* InfoPlist.strings */,
-				0026E674140347E700355BCB /* NCSMobile-Prefix.pch */,
-				0026E675140347E700355BCB /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0026E691140347E700355BCB /* Tests */ = {
@@ -280,16 +273,36 @@
 				00439FDA14112DE30097A878 /* libRestKitNetwork.a */,
 				00439FDC14112DE30097A878 /* libRestKitObjectMapping.a */,
 				00439FDE14112DE30097A878 /* libRestKitSupport.a */,
-				00439FE014112DE30097A878 /* libRestKitJSONParserNXJSON.a */,
+				00439FE014112DE30097A878 /* libRestKitJSONParser+NXJSON.a */,
 				00439FE214112DE30097A878 /* libRestKitJSONParserYAJL.a */,
 				00439FE414112DE30097A878 /* libRestKitJSONParserSBJSON.a */,
 				00439FE614112DE30097A878 /* libRestKitJSONParserJSONKit.a */,
 				00439FE814112DE30097A878 /* libRestKitXMLParserLibxml.a */,
 				00439FEA14112DE30097A878 /* libRestKitCoreData.a */,
 				00439FEC14112DE30097A878 /* libRestKitThree20.a */,
-				00439FEE14112DE30097A878 /* RestKitSpecs.app */,
+				00439FEE14112DE30097A878 /* UISpec.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		00439FFF141132B70097A878 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0026E670140347E700355BCB /* NCSMobile-Info.plist */,
+				0026E671140347E700355BCB /* InfoPlist.strings */,
+				0026E67A140347E700355BCB /* MainWindow.xib */,
+				0026E680140347E700355BCB /* DetailView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0043A016141133410097A878 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0026E674140347E700355BCB /* NCSMobile-Prefix.pch */,
+				0026E675140347E700355BCB /* main.m */,
+			);
+			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,9 +396,10 @@
 			remoteRef = 00439FDD14112DE30097A878 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		00439FE014112DE30097A878 /* libRestKitJSONParserNXJSON.a */ = {
+		00439FE014112DE30097A878 /* libRestKitJSONParser+NXJSON.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
+			name = "libRestKitJSONParser+NXJSON.a";
 			path = libRestKitJSONParserNXJSON.a;
 			remoteRef = 00439FDF14112DE30097A878 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -432,10 +446,10 @@
 			remoteRef = 00439FEB14112DE30097A878 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		00439FEE14112DE30097A878 /* RestKitSpecs.app */ = {
+		00439FEE14112DE30097A878 /* UISpec.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = RestKitSpecs.app;
+			path = UISpec.app;
 			remoteRef = 00439FED14112DE30097A878 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -488,6 +502,7 @@
 				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
 				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
 				0026E685140347E700355BCB /* RootViewController.m in Sources */,
+				006EBEE3141139B2003D69CF /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +536,7 @@
 				0026E672140347E700355BCB /* en */,
 			);
 			name = InfoPlist.strings;
+			path = NCSMobile;
 			sourceTree = "<group>";
 		};
 		0026E67A140347E700355BCB /* MainWindow.xib */ = {
@@ -529,6 +545,7 @@
 				0026E67B140347E700355BCB /* en */,
 			);
 			name = MainWindow.xib;
+			path = NCSMobile;
 			sourceTree = "<group>";
 		};
 		0026E680140347E700355BCB /* DetailView.xib */ = {
@@ -537,6 +554,7 @@
 				0026E681140347E700355BCB /* en */,
 			);
 			name = DetailView.xib;
+			path = NCSMobile;
 			sourceTree = "<group>";
 		};
 		0026E694140347E700355BCB /* InfoPlist.strings */ = {
@@ -598,11 +616,15 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NCSMobile/NCSMobile-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
-					"\"$(SRCROOT)/RestKit/Examples/RKDiscussionBoardExample/DiscussionBoard/Libraries/three20\"",
-					"\"$(SRCROOT)/RestKit/Specs/Runner/OCMock\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -620,11 +642,15 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NCSMobile/NCSMobile-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
-					"\"$(SRCROOT)/RestKit/Examples/RKDiscussionBoardExample/DiscussionBoard/Libraries/three20\"",
-					"\"$(SRCROOT)/RestKit/Specs/Runner/OCMock\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;

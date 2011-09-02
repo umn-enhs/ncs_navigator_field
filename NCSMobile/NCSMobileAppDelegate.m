@@ -9,6 +9,8 @@
 #import "NCSMobileAppDelegate.h"
 
 #import "RootViewController.h"
+#import <RestKit/RestKit.h>
+#import "Event.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -23,6 +25,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize RestKit
+	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
+    
+    // Enable automatic network activity indicator management
+    [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
+    
+    RKObjectMapping* eventMapping = [RKObjectMapping mappingForClass:[Event class]];
+    [eventMapping mapKeyPathsToAttributes: @"name", @"name", nil];
+    
+    // Register our mappings with the provider
+    [objectManager.mappingProvider setMapping:eventMapping forKeyPath:@"events"];
+
     // Override point for customization after application launch.
     // Add the split view controller's view to the window and display.
     self.window.rootViewController = self.splitViewController;
