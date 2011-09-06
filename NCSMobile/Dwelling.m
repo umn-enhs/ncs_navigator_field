@@ -1,16 +1,14 @@
 //
-//  Event.m
+//  Dwelling.m
 //  NCSMobile
 //
-//  Created by John Dzak on 9/2/11.
+//  Created by John Dzak on 9/6/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Event.h"
+#import "Dwelling.h"
 
-@implementation Event
-@synthesize name=_name;
-@synthesize date=_date;
+@implementation Dwelling
 
 - (id)init
 {

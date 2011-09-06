@@ -10,6 +10,8 @@
 
 @interface Event : NSObject {
     NSString* _name;
+    NSDate* _date;
 }
 @property(nonatomic,retain) NSString* name;
+@property(nonatomic,retain) NSDate* date;
 @end

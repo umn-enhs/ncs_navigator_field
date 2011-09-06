@@ -23,6 +23,8 @@
 
 @synthesize detailDescriptionLabel=_detailDescriptionLabel;
 
+@synthesize eventDateLabel=_eventDateLabel;
+
 @synthesize popoverController=_myPopoverController;
 
 
@@ -51,6 +53,10 @@
     // Update the user interface for the detail item.
 
     self.detailDescriptionLabel.text = [self.detailItem name];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
+    self.eventDateLabel.text = [dateFormatter stringFromDate:[self.detailItem date]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

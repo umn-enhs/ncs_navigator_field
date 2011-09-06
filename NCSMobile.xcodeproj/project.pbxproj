@@ -33,6 +33,7 @@
 		00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFB14112E670097A878 /* MobileCoreServices.framework */; };
 		00439FFE14112E6F0097A878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFD14112E6F0097A878 /* SystemConfiguration.framework */; };
 		006EBEE3141139B2003D69CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEE2141139B2003D69CF /* Event.m */; };
+		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,8 @@
 		00439FFD14112E6F0097A878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		006EBEE2141139B2003D69CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
+		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,14 +236,9 @@
 		0026E66E140347E700355BCB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0026E677140347E700355BCB /* NCSMobileAppDelegate.h */,
-				0026E678140347E700355BCB /* NCSMobileAppDelegate.m */,
-				0026E67D140347E700355BCB /* DetailViewController.h */,
-				0026E67E140347E700355BCB /* DetailViewController.m */,
-				0026E683140347E700355BCB /* RootViewController.h */,
-				0026E684140347E700355BCB /* RootViewController.m */,
-				006EBEE1141139B2003D69CF /* Event.h */,
-				006EBEE2141139B2003D69CF /* Event.m */,
+				006EBEE6141157BA003D69CF /* Models */,
+				006EBEE5141157B6003D69CF /* Controllers */,
+				006EBEE414115783003D69CF /* Delegates */,
 			);
 			name = Classes;
 			path = NCSMobile;
@@ -288,10 +286,8 @@
 		00439FFF141132B70097A878 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0026E670140347E700355BCB /* NCSMobile-Info.plist */,
-				0026E671140347E700355BCB /* InfoPlist.strings */,
-				0026E67A140347E700355BCB /* MainWindow.xib */,
-				0026E680140347E700355BCB /* DetailView.xib */,
+				006EBEE8141673A1003D69CF /* Other */,
+				006EBEE714115870003D69CF /* NIBs */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -303,6 +299,55 @@
 				0026E675140347E700355BCB /* main.m */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		006EBEE414115783003D69CF /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0026E677140347E700355BCB /* NCSMobileAppDelegate.h */,
+				0026E678140347E700355BCB /* NCSMobileAppDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		006EBEE5141157B6003D69CF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0026E67D140347E700355BCB /* DetailViewController.h */,
+				0026E67E140347E700355BCB /* DetailViewController.m */,
+				0026E683140347E700355BCB /* RootViewController.h */,
+				0026E684140347E700355BCB /* RootViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		006EBEE6141157BA003D69CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				006EBEE1141139B2003D69CF /* Event.h */,
+				006EBEE9141679E9003D69CF /* Dwelling.h */,
+				006EBEEA141679E9003D69CF /* Dwelling.m */,
+				006EBEE2141139B2003D69CF /* Event.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		006EBEE714115870003D69CF /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				0026E67A140347E700355BCB /* MainWindow.xib */,
+				0026E680140347E700355BCB /* DetailView.xib */,
+			);
+			name = NIBs;
+			sourceTree = "<group>";
+		};
+		006EBEE8141673A1003D69CF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0026E670140347E700355BCB /* NCSMobile-Info.plist */,
+				0026E671140347E700355BCB /* InfoPlist.strings */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +548,7 @@
 				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
 				0026E685140347E700355BCB /* RootViewController.m in Sources */,
 				006EBEE3141139B2003D69CF /* Event.m in Sources */,
+				006EBEEB141679E9003D69CF /* Dwelling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

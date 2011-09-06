@@ -32,7 +32,19 @@
     [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
     
     RKObjectMapping* eventMapping = [RKObjectMapping mappingForClass:[Event class]];
-    [eventMapping mapKeyPathsToAttributes: @"name", @"name", nil];
+    [eventMapping mapKeyPathsToAttributes: 
+        @"name", @"name",
+        @"date", @"date",
+        nil];
+    
+    
+    // "2005-07-16T19:20+01:00",
+    //http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369
+    [eventMapping.dateFormatStrings addObject:@"yyyy'-'MM'-'dd'T'HH':'mm'Z'"];
+    [eventMapping.dateFormatStrings addObject:@"yyyy-MM-dd'T'hh:mm:ssZZ"]; 
+    [eventMapping.dateFormatStrings addObject:@"yyyy-MM-dd'T'hh:mmZZ"]; 
+    [eventMapping.dateFormatStrings addObject:@"yyyy-MM-dd'T'hh:mmZ"]; 
+//	[eventMapping.dateFormatStrings addObject:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     // Register our mappings with the provider
     [objectManager.mappingProvider setMapping:eventMapping forKeyPath:@"events"];
