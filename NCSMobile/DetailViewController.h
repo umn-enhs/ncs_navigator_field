@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class Event;
+
 @interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
 
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
-
-@property (nonatomic, retain) id detailItem;
-
+@property (nonatomic, retain) Event* detailItem;
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
-
 @property (nonatomic, retain) IBOutlet UILabel *eventDateLabel;
+@property (nonatomic, retain) IBOutlet UILabel* dwellingIdLabel;
 
 
 @end

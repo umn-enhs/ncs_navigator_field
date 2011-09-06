@@ -11,6 +11,7 @@
 #import "RootViewController.h"
 #import <RestKit/RestKit.h>
 #import "Event.h"
+#import "Dwelling.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -31,11 +32,18 @@
     // Enable automatic network activity indicator management
     [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
     
+    RKObjectMapping* dwellingMapping = [RKObjectMapping mappingForClass:[Dwelling class]];
+    [dwellingMapping mapKeyPathsToAttributes: 
+        @"id", @"id",
+        nil];
+    
     RKObjectMapping* eventMapping = [RKObjectMapping mappingForClass:[Event class]];
     [eventMapping mapKeyPathsToAttributes: 
+        @"id", @"id",
         @"name", @"name",
         @"date", @"date",
         nil];
+    [eventMapping mapRelationship:@"dwelling" withMapping:dwellingMapping];
     
     
     // "2005-07-16T19:20+01:00",

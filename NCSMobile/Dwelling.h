@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Dwelling : NSObject
+@interface Dwelling : NSObject {
+    NSString* _id;
+}
 
+@property(nonatomic,retain) NSString* id;
+    
 @end

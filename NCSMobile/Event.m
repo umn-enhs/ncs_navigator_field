@@ -7,10 +7,13 @@
 //
 
 #import "Event.h"
+#import "Dwelling.h"
 
 @implementation Event
+@synthesize id=_id;
 @synthesize name=_name;
 @synthesize date=_date;
+@synthesize dwelling=_dwelling;
 
 - (id)init
 {
@@ -20,6 +23,14 @@
     }
     
     return self;
+}
+
+- (void) dealloc {
+    [_id release];
+    [_name release];
+    [_date release];
+    [_dwelling release];
+    [super dealloc];
 }
 
 @end

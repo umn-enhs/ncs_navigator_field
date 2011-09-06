@@ -10,6 +10,9 @@
 
 #import "RootViewController.h"
 
+#import "Event.h"
+#import "Dwelling.h"
+
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
@@ -27,13 +30,15 @@
 
 @synthesize popoverController=_myPopoverController;
 
+@synthesize dwellingIdLabel=_dwellingIdLabel;
+
 
 #pragma mark - Managing the detail item
 
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
  */
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(Event*)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         [_detailItem release];
@@ -57,6 +62,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
     self.eventDateLabel.text = [dateFormatter stringFromDate:[self.detailItem date]];
+    self.dwellingIdLabel.text = [self.detailItem dwelling].id;
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -8,10 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class Dwelling;
+
 @interface Event : NSObject {
+    NSString* _id;
     NSString* _name;
     NSDate* _date;
+    Dwelling* _dwelling;
 }
+
+@property(nonatomic,retain) NSString* id;
 @property(nonatomic,retain) NSString* name;
 @property(nonatomic,retain) NSDate* date;
+@property(nonatomic,retain) Dwelling* dwelling;
+
 @end

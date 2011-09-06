@@ -10,6 +10,8 @@
 
 @implementation Dwelling
 
+@synthesize id=_id;
+
 - (id)init
 {
     self = [super init];
@@ -18,6 +20,11 @@
     }
     
     return self;
+}
+
+- (void) dealloc {
+    [_id release];
+    [super dealloc];
 }
 
 @end
