@@ -21,8 +21,6 @@
 		0026E68D140347E700355BCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66A140347E700355BCB /* Foundation.framework */; };
 		0026E68E140347E700355BCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66C140347E700355BCB /* CoreGraphics.framework */; };
 		0026E696140347E700355BCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0026E694140347E700355BCB /* InfoPlist.strings */; };
-		0026E699140347E700355BCB /* NCSMobileTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0026E698140347E700355BCB /* NCSMobileTests.h */; };
-		0026E69B140347E700355BCB /* NCSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E69A140347E700355BCB /* NCSMobileTests.m */; };
 		00439FF214112E440097A878 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FEA14112DE30097A878 /* libRestKitCoreData.a */; };
 		00439FF314112E440097A878 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FE614112DE30097A878 /* libRestKitJSONParserJSONKit.a */; };
 		00439FF414112E440097A878 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FDA14112DE30097A878 /* libRestKitNetwork.a */; };
@@ -156,8 +154,6 @@
 		0026E693140347E700355BCB /* NCSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NCSMobileTests-Info.plist"; sourceTree = "<group>"; };
 		0026E695140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NCSMobileTests-Prefix.pch"; sourceTree = "<group>"; };
-		0026E698140347E700355BCB /* NCSMobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCSMobileTests.h; sourceTree = "<group>"; };
-		0026E69A140347E700355BCB /* NCSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCSMobileTests.m; sourceTree = "<group>"; };
 		00439FC514112DE20097A878 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		00439FF714112E500097A878 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		00439FF914112E5E0097A878 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -261,8 +257,6 @@
 		0026E691140347E700355BCB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0026E698140347E700355BCB /* NCSMobileTests.h */,
-				0026E69A140347E700355BCB /* NCSMobileTests.m */,
 				0026E692140347E700355BCB /* Supporting Files */,
 				00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */,
 				00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */,
@@ -545,7 +539,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0026E696140347E700355BCB /* InfoPlist.strings in Resources */,
-				0026E699140347E700355BCB /* NCSMobileTests.h in Resources */,
 				00FF37E81417D2B80009B1D4 /* DetailViewPresenterTest.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,7 +582,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0026E69B140347E700355BCB /* NCSMobileTests.m in Sources */,
 				00FF37E71417D2380009B1D4 /* DetailViewPresenterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
