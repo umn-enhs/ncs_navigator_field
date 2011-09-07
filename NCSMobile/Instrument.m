@@ -14,4 +14,11 @@
 @synthesize version=_version;
 @synthesize name=_name;
 
+- (void)dealloc {
+    [_id release];
+    [_version release];
+    [_name release];
+    [super dealloc];
+}
+
 @end

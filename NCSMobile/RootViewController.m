@@ -74,7 +74,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
-    		
 }
 
 		
@@ -90,11 +89,12 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
     }
 
     Event* e = [self.events objectAtIndex:indexPath.row];
     cell.textLabel.text = e.name;
+    cell.detailTextLabel.text = @"Test";
     	
     return cell;
 }

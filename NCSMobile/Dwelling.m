@@ -12,16 +12,6 @@
 
 @synthesize id=_id;
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 - (void) dealloc {
     [_id release];
     [super dealloc];
