@@ -31,8 +31,14 @@
     return a;
 }
 //
-//- (NSArray*) eventsByTime {
-//    return nil; //[NSArray arrayWithObjects: @"value1", @"key1", @"value2", @"key2", nil];
-//}
+- (NSArray*) getEventsByDate: (NSDate*) date {
+    NSMutableArray* a = [[NSMutableArray alloc] init];
+    for (Event* e in _events) {
+        if ([date isEqualToDate:e.date]) {
+            [a addObject:e];
+        }
+    }
+    return a;
+}
 
 @end

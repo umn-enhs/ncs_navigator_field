@@ -30,12 +30,15 @@ Event* e3;
     [f setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 
     e1 = [[Event alloc] init];
+    e1.name = @"Blood Draw";
     e1.date = [f dateFromString:@"2010-12-08 09:30"];
     
     e2 = [[Event alloc] init];
+    e2.name = @"Collect Soil";
     e2.date = [f dateFromString:@"2010-12-08 09:30"];
     
     e3 = [[Event alloc] init];
+    e3.name = @"Avoid Subject";
     e3.date = [f dateFromString:@"2010-12-09 09:30"];
     
     NSArray *events = [NSArray arrayWithObjects:e1, e2, e3, nil];
@@ -50,15 +53,17 @@ Event* e3;
 }
 
 - (void)testGroupedEventTimes {
-    NSArray* keys = [dvp groupedEventTimes];
-    STAssertEquals([keys count], 2U, @"Wrong number of event times");
-    STAssertTrue([keys containsObject:e1.date], @"Should include date");
-    STAssertTrue([keys containsObject:e3.date], @"Should include date");
+    NSArray* a = [dvp groupedEventTimes];
+    STAssertEquals([a count], 2U, @"Wrong number of event times");
+    STAssertEquals([a objectAtIndex:0], e1.date, @"Dates should be equal");
+    STAssertEquals([a objectAtIndex:1], e3.date, @"Dates should be equal");
 }
 
-- (void)testGetEventsByTime {
-//    NSArray* actual = [dvp eventsByTime];
-
+- (void)testGetEventsByDate {
+    NSArray* a = [dvp getEventsByDate:e1.date];
+    STAssertEquals([a count], 2U, @"Wrong number of event times");
+    STAssertEquals([[a objectAtIndex:0] name], @"Blood Draw", @"Wrong event");
+    STAssertEquals([[a objectAtIndex:1] name], @"Collect Soil", @"Wrong event");
 }
 
 @end

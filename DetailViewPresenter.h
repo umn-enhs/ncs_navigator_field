@@ -14,6 +14,7 @@
 
 - (DetailViewPresenter*)initWithEvents: (NSArray*)events;
 - (NSArray*) groupedEventTimes;
+- (NSArray*) getEventsByDate: (NSDate*) date;
 
 @property(nonatomic,retain) NSArray* events;
 
