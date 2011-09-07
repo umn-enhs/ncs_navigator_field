@@ -32,10 +32,13 @@
 		00439FFA14112E5E0097A878 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFB14112E670097A878 /* MobileCoreServices.framework */; };
 		00439FFE14112E6F0097A878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFD14112E6F0097A878 /* SystemConfiguration.framework */; };
-		006EBEE3141139B2003D69CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEE2141139B2003D69CF /* Event.m */; };
+		0045BDA91418017F007BB8AA /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDA81418017F007BB8AA /* Event.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
+		00FF37E11417CA2D0009B1D4 /* DetailViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* DetailViewPresenter.m */; };
+		00FF37E71417D2380009B1D4 /* DetailViewPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */; };
+		00FF37E81417D2B80009B1D4 /* DetailViewPresenterTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,14 +163,18 @@
 		00439FF914112E5E0097A878 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00439FFB14112E670097A878 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		00439FFD14112E6F0097A878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0045BDA81418017F007BB8AA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		006EBEE2141139B2003D69CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
 		00FF37D91417C3D20009B1D4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = ../Person.h; sourceTree = "<group>"; };
 		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
 		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
+		00FF37DF1417CA2D0009B1D4 /* DetailViewPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewPresenter.h; path = ../DetailViewPresenter.h; sourceTree = "<group>"; };
+		00FF37E01417CA2D0009B1D4 /* DetailViewPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewPresenter.m; path = ../DetailViewPresenter.m; sourceTree = "<group>"; };
+		00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewPresenterTest.h; sourceTree = "<group>"; };
+		00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewPresenterTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +249,7 @@
 		0026E66E140347E700355BCB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				00FF37E21417CA320009B1D4 /* Presenters */,
 				006EBEE6141157BA003D69CF /* Models */,
 				006EBEE5141157B6003D69CF /* Controllers */,
 				006EBEE414115783003D69CF /* Delegates */,
@@ -256,6 +264,8 @@
 				0026E698140347E700355BCB /* NCSMobileTests.h */,
 				0026E69A140347E700355BCB /* NCSMobileTests.m */,
 				0026E692140347E700355BCB /* Supporting Files */,
+				00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */,
+				00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */,
 			);
 			name = Tests;
 			path = NCSMobileTests;
@@ -333,9 +343,9 @@
 				00FF37D91417C3D20009B1D4 /* Person.h */,
 				00FF37DA1417C3D20009B1D4 /* Person.m */,
 				006EBEE1141139B2003D69CF /* Event.h */,
+				0045BDA81418017F007BB8AA /* Event.m */,
 				006EBEE9141679E9003D69CF /* Dwelling.h */,
 				006EBEEA141679E9003D69CF /* Dwelling.m */,
-				006EBEE2141139B2003D69CF /* Event.m */,
 				00FF37DC1417C50D0009B1D4 /* Instrument.h */,
 				00FF37DD1417C50D0009B1D4 /* Instrument.m */,
 			);
@@ -358,6 +368,15 @@
 				0026E671140347E700355BCB /* InfoPlist.strings */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		00FF37E21417CA320009B1D4 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				00FF37DF1417CA2D0009B1D4 /* DetailViewPresenter.h */,
+				00FF37E01417CA2D0009B1D4 /* DetailViewPresenter.m */,
+			);
+			name = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +546,7 @@
 			files = (
 				0026E696140347E700355BCB /* InfoPlist.strings in Resources */,
 				0026E699140347E700355BCB /* NCSMobileTests.h in Resources */,
+				00FF37E81417D2B80009B1D4 /* DetailViewPresenterTest.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,10 +577,11 @@
 				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
 				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
 				0026E685140347E700355BCB /* RootViewController.m in Sources */,
-				006EBEE3141139B2003D69CF /* Event.m in Sources */,
 				006EBEEB141679E9003D69CF /* Dwelling.m in Sources */,
 				00FF37DB1417C3D20009B1D4 /* Person.m in Sources */,
 				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
+				00FF37E11417CA2D0009B1D4 /* DetailViewPresenter.m in Sources */,
+				0045BDA91418017F007BB8AA /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0026E69B140347E700355BCB /* NCSMobileTests.m in Sources */,
+				00FF37E71417D2380009B1D4 /* DetailViewPresenterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
