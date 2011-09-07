@@ -12,6 +12,8 @@
 #import <RestKit/RestKit.h>
 #import "Event.h"
 #import "Dwelling.h"
+#import "Person.h"
+#import "Instrument.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -32,19 +34,40 @@
     // Enable automatic network activity indicator management
     [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
     
+    // Dwelling Mapping
     RKObjectMapping* dwellingMapping = [RKObjectMapping mappingForClass:[Dwelling class]];
     [dwellingMapping mapKeyPathsToAttributes: 
         @"id", @"id",
         nil];
     
+    // Person Mapping
+    RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];
+    [personMapping mapKeyPathsToAttributes: 
+     @"id", @"id",
+     @"name", @"name",
+     nil];
+    
+    // Instrument Mapping
+    RKObjectMapping* instrumentMapping = [RKObjectMapping mappingForClass:[Instrument class]];
+    [instrumentMapping mapKeyPathsToAttributes: 
+     @"id", @"id",
+     @"version", @"version",
+     @"name", @"name",
+     nil];
+    
+    // Event Mapping
     RKObjectMapping* eventMapping = [RKObjectMapping mappingForClass:[Event class]];
     [eventMapping mapKeyPathsToAttributes: 
         @"id", @"id",
         @"name", @"name",
         @"date", @"date",
         nil];
-    [eventMapping mapRelationship:@"dwelling" withMapping:dwellingMapping];
     
+    // Event associations
+    [eventMapping mapRelationship:@"dwelling" withMapping:dwellingMapping];
+    [eventMapping mapRelationship:@"person" withMapping:personMapping];
+    [eventMapping mapRelationship:@"instruments" withMapping:instrumentMapping];
+
     
     // "2005-07-16T19:20+01:00",
     //http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369

@@ -40,25 +40,7 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    self.title = @"Contacts";
-
-   /* NSDictionary *a = [NSDictionary dictionaryWithObjectsAndKeys: 
-                       @"Jane", @"Name", 
-                       @"123 Easy Street", @"Address",
-                       nil];
-    
-    NSDictionary *b = [NSDictionary dictionaryWithObjectsAndKeys: 
-                       @"Kelly", @"Name", 
-                       @"1/2 Seasame Street", @"Address",
-                       nil];
-    
-    self.contacts = [NSArray arrayWithObjects:a, b, nil] ;
-      
-    NSIndexPath *p = [NSIndexPath indexPathForRow:0 inSection:0];
-    [[self tableView] selectRowAtIndexPath:p animated:YES scrollPosition:0];
-    self.detailViewController.detailItem = a;
-    */
-    
+    self.title = @"Contacts";    
     
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];    

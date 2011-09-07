@@ -34,6 +34,8 @@
 		00439FFE14112E6F0097A878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFD14112E6F0097A878 /* SystemConfiguration.framework */; };
 		006EBEE3141139B2003D69CF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEE2141139B2003D69CF /* Event.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
+		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
+		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +164,10 @@
 		006EBEE2141139B2003D69CF /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
+		00FF37D91417C3D20009B1D4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = ../Person.h; sourceTree = "<group>"; };
+		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
+		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
+		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,10 +330,14 @@
 		006EBEE6141157BA003D69CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00FF37D91417C3D20009B1D4 /* Person.h */,
+				00FF37DA1417C3D20009B1D4 /* Person.m */,
 				006EBEE1141139B2003D69CF /* Event.h */,
 				006EBEE9141679E9003D69CF /* Dwelling.h */,
 				006EBEEA141679E9003D69CF /* Dwelling.m */,
 				006EBEE2141139B2003D69CF /* Event.m */,
+				00FF37DC1417C50D0009B1D4 /* Instrument.h */,
+				00FF37DD1417C50D0009B1D4 /* Instrument.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -549,6 +559,8 @@
 				0026E685140347E700355BCB /* RootViewController.m in Sources */,
 				006EBEE3141139B2003D69CF /* Event.m in Sources */,
 				006EBEEB141679E9003D69CF /* Dwelling.m in Sources */,
+				00FF37DB1417C3D20009B1D4 /* Person.m in Sources */,
+				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

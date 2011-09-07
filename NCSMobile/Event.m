@@ -13,23 +13,17 @@
 @synthesize id=_id;
 @synthesize name=_name;
 @synthesize date=_date;
+@synthesize person=_person;
 @synthesize dwelling=_dwelling;
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
+@synthesize instruments=_instruments;
 
 - (void) dealloc {
     [_id release];
     [_name release];
     [_date release];
+    [_person release];
     [_dwelling release];
+    [_instruments release];
     [super dealloc];
 }
 
