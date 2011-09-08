@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject {
+@interface Person : NSObject<NSCopying> {
     NSString* _id;
     NSString* _name;
 }
+
+-(id) copyWithZone: (NSZone *) zone;
 
 @property(nonatomic,retain) NSString* id;
 @property(nonatomic,retain) NSString* name;

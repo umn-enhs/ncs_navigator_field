@@ -66,5 +66,12 @@ Event* e3;
     STAssertEquals([[a objectAtIndex:1] name], @"Collect Soil", @"Wrong event");
 }
 
+//- (void) testContactsOrderedByDate {
+//    NSArray* a = [dvp contactsOrderedByDate];
+//    STAssertEquals([a count], 2U, @"Wrong number of event times");
+//    STAssertEquals([a objectAtIndex:0], e1.date, @"Dates should be equal");
+//    STAssertEquals([a objectAtIndex:1], e3.date, @"Dates should be equal");
+//}
+
 @end
 

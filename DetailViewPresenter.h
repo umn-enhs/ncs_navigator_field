@@ -22,6 +22,7 @@
 - (NSInteger) numberOfSections;
 - (NSInteger) numberOfRowsInSection: (NSInteger)section;
 - (NSString*) sectionName: (NSInteger)section;
+//- (NSArray*) contactsOrderedByDate;
 
 @property(nonatomic,retain) NSArray* events;
 

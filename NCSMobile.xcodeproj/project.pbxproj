@@ -31,6 +31,8 @@
 		00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFB14112E670097A878 /* MobileCoreServices.framework */; };
 		00439FFE14112E6F0097A878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFD14112E6F0097A878 /* SystemConfiguration.framework */; };
 		0045BDA91418017F007BB8AA /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDA81418017F007BB8AA /* Event.m */; };
+		0045BDAC14191FB1007BB8AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAB14191FB1007BB8AA /* Contact.m */; };
+		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
@@ -160,6 +162,10 @@
 		00439FFB14112E670097A878 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		00439FFD14112E6F0097A878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0045BDA81418017F007BB8AA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		0045BDAA14191FB1007BB8AA /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		0045BDAB14191FB1007BB8AA /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		0045BDAD141921CD007BB8AA /* ContactTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTest.h; sourceTree = "<group>"; };
+		0045BDAE141921CD007BB8AA /* ContactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTest.m; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
@@ -260,6 +266,8 @@
 				0026E692140347E700355BCB /* Supporting Files */,
 				00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */,
 				00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */,
+				0045BDAD141921CD007BB8AA /* ContactTest.h */,
+				0045BDAE141921CD007BB8AA /* ContactTest.m */,
 			);
 			name = Tests;
 			path = NCSMobileTests;
@@ -336,6 +344,8 @@
 			children = (
 				00FF37D91417C3D20009B1D4 /* Person.h */,
 				00FF37DA1417C3D20009B1D4 /* Person.m */,
+				0045BDAA14191FB1007BB8AA /* Contact.h */,
+				0045BDAB14191FB1007BB8AA /* Contact.m */,
 				006EBEE1141139B2003D69CF /* Event.h */,
 				0045BDA81418017F007BB8AA /* Event.m */,
 				006EBEE9141679E9003D69CF /* Dwelling.h */,
@@ -575,6 +585,7 @@
 				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
 				00FF37E11417CA2D0009B1D4 /* DetailViewPresenter.m in Sources */,
 				0045BDA91418017F007BB8AA /* Event.m in Sources */,
+				0045BDAC14191FB1007BB8AA /* Contact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FF37E71417D2380009B1D4 /* DetailViewPresenterTest.m in Sources */,
+				0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

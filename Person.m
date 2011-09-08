@@ -13,6 +13,13 @@
 @synthesize id=_id;
 @synthesize name=_name;
 
+-(id) copyWithZone: (NSZone *) zone {
+    Person *copy = [[Person allocWithZone:zone] init];
+    copy.id = self.id;
+    copy.name = self.name;
+    return copy;
+}
+
 - (void)dealloc {
     [_id release];
     [_name release];
