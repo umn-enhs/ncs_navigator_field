@@ -99,7 +99,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    Event* e = [self.events objectAtIndex:indexPath.row];
+    Event* e = [self.presenter eventAtIndex:indexPath.row];
     cell.textLabel.text = e.name;
     cell.detailTextLabel.text = @"Test";
     	

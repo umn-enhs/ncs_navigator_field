@@ -21,6 +21,11 @@
     return self;
 }
 
+- (Event*) eventAtIndex: (NSInteger)index {
+    NSArray* sorted = [self eventsSortedByName:_events];
+    return [sorted objectAtIndex:index];
+}
+
 - (NSArray*) groupedEventDates {
     NSMutableArray* a = [[NSMutableArray alloc] init];
     for (Event* e in _events) {
@@ -38,7 +43,13 @@
             [a addObject:e];
         }
     }
-    return a;
+    
+    return [self eventsSortedByName:a];
+}
+
+- (NSArray*) eventsSortedByName: (NSArray*)events {
+    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease];
+    return [events sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
 
 - (NSInteger) numberOfSections {

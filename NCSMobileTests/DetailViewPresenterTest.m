@@ -30,11 +30,11 @@ Event* e3;
     [f setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 
     e1 = [[Event alloc] init];
-    e1.name = @"Blood Draw";
+    e1.name = @"Collect Soil";
     e1.date = [f dateFromString:@"2010-12-08 09:30"];
     
     e2 = [[Event alloc] init];
-    e2.name = @"Collect Soil";
+    e2.name = @"Blood Draw";
     e2.date = [f dateFromString:@"2010-12-08 09:30"];
     
     e3 = [[Event alloc] init];
