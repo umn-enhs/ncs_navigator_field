@@ -17,7 +17,7 @@
 - (NSArray*) getEventsByDate: (NSDate*) date;
 - (NSInteger) numberOfSections;
 - (NSInteger) numberOfRowsInSection: (NSInteger)section;
-
+- (NSString*) sectionName: (NSInteger)section;
 
 @property(nonatomic,retain) NSArray* events;
 

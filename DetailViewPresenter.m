@@ -49,4 +49,14 @@
     NSDate* d = [[self groupedEventDates] objectAtIndex:section];
     return [[self getEventsByDate:d] count];
 }
+
+- (NSString*) sectionName: (NSInteger)section {
+    NSDate* date = [[self groupedEventDates] objectAtIndex:section];
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"MMMM dd' at 'hh':'mm a"];
+    NSString *key = [f stringFromDate:date];
+    [f release];
+    return key;
+}
+
 @end

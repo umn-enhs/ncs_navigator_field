@@ -108,12 +108,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSDate* date = [[self.presenter groupedEventDates] objectAtIndex:section];
-    NSDateFormatter *f = [[NSDateFormatter alloc] init];
-    [f setDateFormat:@"MMMM dd' at 'hh':'mm a"];
-    NSString *key = [f stringFromDate:date];
-    [f release];
-    return key;
+    return [self.presenter sectionName:section];
 }
 
 /*
