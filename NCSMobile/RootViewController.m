@@ -9,22 +9,27 @@
 #import "RootViewController.h"
 
 #import "DetailViewController.h"
+#import "DetailViewPresenter.h"
 #import "Event.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* events;
-
+    @property(nonatomic,retain) DetailViewPresenter* presenter;
 @end
 
 @implementation RootViewController
 		
 @synthesize detailViewController=_detailViewController;
 @synthesize events=_events;
+@synthesize presenter=_presenter;
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	NSLog(@"Loaded events: %@", objects);    
 	[_events release];
 	_events = [objects retain];
+    
+    self.presenter = [[DetailViewPresenter alloc] initWithEvents:_events];
+    
 	[self.tableView reloadData];
 }
 
@@ -43,7 +48,9 @@
     self.title = @"Contacts";    
     
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];    
+    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];
+    
+    self.presenter = [[DetailViewPresenter alloc] initWithEvents:[NSArray arrayWithObjects: nil]];
 }
 
 		
@@ -73,13 +80,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [self.presenter numberOfSections];
 }
 
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.events count];
+    return [self.presenter numberOfRowsInSection: section];
 }
 
 		
@@ -97,6 +104,16 @@
     cell.detailTextLabel.text = @"Test";
     	
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSDate* date = [[self.presenter groupedEventDates] objectAtIndex:section];
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"MMMM dd' at 'hh':'mm a"];
+    NSString *key = [f stringFromDate:date];
+    [f release];
+    return key;
 }
 
 /*

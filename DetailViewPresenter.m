@@ -21,7 +21,7 @@
     return self;
 }
 
-- (NSArray*) groupedEventTimes {
+- (NSArray*) groupedEventDates {
     NSMutableArray* a = [[NSMutableArray alloc] init];
     for (Event* e in _events) {
         if (![a containsObject:e.date]) {
@@ -30,7 +30,7 @@
     }
     return a;
 }
-//
+
 - (NSArray*) getEventsByDate: (NSDate*) date {
     NSMutableArray* a = [[NSMutableArray alloc] init];
     for (Event* e in _events) {
@@ -41,4 +41,12 @@
     return a;
 }
 
+- (NSInteger) numberOfSections {
+    return (NSInteger) [[self groupedEventDates] count];
+}
+
+- (NSInteger) numberOfRowsInSection: (NSInteger)section {
+    NSDate* d = [[self groupedEventDates] objectAtIndex:section];
+    return [[self getEventsByDate:d] count];
+}
 @end

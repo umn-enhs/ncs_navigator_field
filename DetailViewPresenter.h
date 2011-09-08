@@ -13,8 +13,11 @@
 }
 
 - (DetailViewPresenter*)initWithEvents: (NSArray*)events;
-- (NSArray*) groupedEventTimes;
+- (NSArray*) groupedEventDates;
 - (NSArray*) getEventsByDate: (NSDate*) date;
+- (NSInteger) numberOfSections;
+- (NSInteger) numberOfRowsInSection: (NSInteger)section;
+
 
 @property(nonatomic,retain) NSArray* events;
 
