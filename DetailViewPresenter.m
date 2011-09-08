@@ -8,6 +8,7 @@
 
 #import "DetailViewPresenter.h"
 #import "Event.h"
+#import "Contact.h"
 
 @implementation DetailViewPresenter
 
@@ -21,53 +22,44 @@
     return self;
 }
 
-- (Event*) eventAtIndex: (NSInteger)index {
-    NSArray* sorted = [self eventsSortedByName:_events];
-    return [sorted objectAtIndex:index];
+- (Contact*) contactAtIndex: (NSInteger)index {
+    NSArray *contacts = [self buildContactsFromEvents];
+    return [contacts objectAtIndex:index];
 }
 
-- (NSArray*) groupedEventDates {
-    NSMutableArray* a = [[NSMutableArray alloc] init];
-    for (Event* e in _events) {
-        if (![a containsObject:e.date]) {
-            [a addObject:e.date];
+- (NSArray*) buildContactsFromEvents {
+    NSArray *sorted = [self eventsSortedByDateAndPersonName];
+    NSMutableArray *contacts = [[NSMutableArray alloc] init];
+    for (Event *e in sorted) {
+        Contact *last = [contacts lastObject];
+        if ([last isEventPartOfContact: e]) {
+            [last addEvent:e];
+        } else {
+            Contact *c = [[Contact alloc]initWithEvent:e];
+            [contacts addObject:c];
         }
     }
-    return a;
+    return contacts;
 }
 
-- (NSArray*) getEventsByDate: (NSDate*) date {
-    NSMutableArray* a = [[NSMutableArray alloc] init];
-    for (Event* e in _events) {
-        if ([date isEqualToDate:e.date]) {
-            [a addObject:e];
-        }
-    }
-    
-    return [self eventsSortedByName:a];
-}
-
-- (NSArray*) eventsSortedByName: (NSArray*)events {
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease];
-    return [events sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+- (NSArray*) eventsSortedByDateAndPersonName {
+    NSSortDescriptor *date = [[[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES] autorelease];
+    NSSortDescriptor *name = [[[NSSortDescriptor alloc] initWithKey:@"person.name" ascending:YES] autorelease];
+    return [_events sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, name, nil]];
 }
 
 - (NSInteger) numberOfSections {
-    return (NSInteger) [[self groupedEventDates] count];
+//    return (NSInteger) [[self groupedEventDates] count];
+    return 0;
 }
 
+
 - (NSInteger) numberOfRowsInSection: (NSInteger)section {
-    NSDate* d = [[self groupedEventDates] objectAtIndex:section];
-    return [[self getEventsByDate:d] count];
+    return 0;
 }
 
 - (NSString*) sectionName: (NSInteger)section {
-    NSDate* date = [[self groupedEventDates] objectAtIndex:section];
-    NSDateFormatter *f = [[NSDateFormatter alloc] init];
-    [f setDateFormat:@"MMMM dd' at 'hh':'mm a"];
-    NSString *key = [f stringFromDate:date];
-    [f release];
-    return key;
+    return @"Section";
 }
 
 @end

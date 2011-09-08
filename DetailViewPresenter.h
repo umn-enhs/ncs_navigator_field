@@ -9,20 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @class Event;
+@class Contact;
 
 @interface DetailViewPresenter : NSObject {
     NSArray* _events;
 }
 
 - (DetailViewPresenter*)initWithEvents: (NSArray*)events;
-- (Event*) eventAtIndex: (NSInteger)index;
-- (NSArray*) groupedEventDates;
-- (NSArray*) getEventsByDate: (NSDate*) date;
-- (NSArray*) eventsSortedByName: (NSArray*)events;
 - (NSInteger) numberOfSections;
 - (NSInteger) numberOfRowsInSection: (NSInteger)section;
 - (NSString*) sectionName: (NSInteger)section;
-//- (NSArray*) contactsOrderedByDate;
+- (NSArray*) buildContactsFromEvents;
+- (NSArray*) eventsSortedByDateAndPersonName;
+- (Contact*) contactAtIndex: (NSInteger)index;
+
 
 @property(nonatomic,retain) NSArray* events;
 

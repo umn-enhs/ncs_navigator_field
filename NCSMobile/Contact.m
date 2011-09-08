@@ -8,6 +8,7 @@
 
 #import "Contact.h"
 #import "Event.h"
+#import "Person.h"
 
 @implementation Contact
 
@@ -29,6 +30,12 @@
         self.events = [[NSMutableArray alloc] init];
     }
     [self.events addObject:event];
+}
+
+- (BOOL) isEventPartOfContact: (Event*)event {
+    BOOL dates = [self.startDate isEqualToDate:event.date];
+    BOOL persons = [self.person.id isEqualToString:event.person.id];
+    return dates && persons;
 }
 
 - (void) dealloc {
