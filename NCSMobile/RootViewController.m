@@ -11,6 +11,7 @@
 #import "DetailViewController.h"
 #import "DetailViewPresenter.h"
 #import "Event.h"
+#import "Contact.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* events;
@@ -100,9 +101,11 @@
     }
 
 //    Event* e = [self.presenter eventAtIndex:indexPath.row];
-    Event *e = NULL;
-//    cell.textLabel.text = e.name;
-//    cell.detailTextLabel.text = @"Test";
+    NSLog(@"NSInteger value :%@", indexPath.row);
+    Contact *c = [self.presenter contactInSection:indexPath.section index:indexPath.row];
+    cell.textLabel.text = [c.person name];
+    NSNumber *instrumentCount = [[NSNumber alloc] initWithInteger:[c.events count]];
+    cell.detailTextLabel.text = [[instrumentCount stringValue] stringByAppendingString:@" instruments"];;
     	
     return cell;
 }

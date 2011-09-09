@@ -20,8 +20,11 @@
 - (NSInteger) numberOfRowsInSection: (NSInteger)section;
 - (NSString*) sectionName: (NSInteger)section;
 - (NSArray*) buildContactsFromEvents;
-- (NSArray*) eventsSortedByDateAndPersonName;
-- (Contact*) contactAtIndex: (NSInteger)index;
+- (NSArray*) sortEventsByDateAndPersonName:(NSArray*)events;
+- (Contact*) contactInSection:(NSInteger)section index: (NSInteger)index;
+- (NSArray*) contactDates;
+//- (NSDictionary*) groupContactsByDate;
+- (NSArray*) contactsWithDate:(NSDate*)date;
 
 
 @property(nonatomic,retain) NSArray* events;
