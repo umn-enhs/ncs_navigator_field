@@ -173,7 +173,7 @@
 		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
 		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
-		00FF37DF1417CA2D0009B1D4 /* ContactNavigationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; name = ContactNavigationPresenter.h; path = ../ContactNavigationPresenter.h; sourceTree = "<group>"; };
+		00FF37DF1417CA2D0009B1D4 /* ContactNavigationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactNavigationPresenter.h; path = ../ContactNavigationPresenter.h; sourceTree = "<group>"; };
 		00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactNavigationPresenter.m; path = ../ContactNavigationPresenter.m; sourceTree = "<group>"; };
 		00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationPresenterTest.h; sourceTree = "<group>"; };
 		00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationPresenterTest.m; sourceTree = "<group>"; };

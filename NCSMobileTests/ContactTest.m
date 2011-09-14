@@ -56,5 +56,19 @@ Event *e;
     
     STAssertFalse([c isEventPartOfContact:diff], @"Event should not be part of this contact");
 }
+//coalesce
+
+- (void)testContactsWithEvents {
+    Event *e1 = [[[Event alloc] init] autorelease];
+    e1.date = [f dateFromString:@"2010-12-08 09:30"];
+    
+    Event *e2 = [[[Event alloc] init] autorelease];
+    e2.date = [f dateFromString:@"2010-12-08 10:30"];
+    
+    NSArray *contacts = [Contact contactsFromEvents: e1, e2, nil];
+    STAssertEquals([contacts count], 2U, @"Wrong number of contacts");
+    STAssertEquals(e1.date, [[contacts objectAtIndex:0] startDate], @"Wrong start date");
+    STAssertEquals(e2.date, [[contacts objectAtIndex:1] startDate], @"Wrong start date");
+}
 
 @end

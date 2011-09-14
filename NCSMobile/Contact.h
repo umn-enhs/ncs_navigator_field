@@ -20,6 +20,8 @@
 - (Contact*) initWithEvent:(Event*)event;
 - (void) addEvent: (Event*)event;
 - (BOOL) isEventPartOfContact: (Event*)event;
++ (NSArray*) contactsFromEvents:(Event*) firstEvent, ...;
+
 
 @property(nonatomic,retain) Person *person;
 @property(nonatomic,retain) NSDate *startDate;

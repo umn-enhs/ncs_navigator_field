@@ -25,6 +25,24 @@
     return self;
 }
 
++ (NSArray*) contactsFromEvents:(Event*) firstEvent, ... {
+    NSMutableArray *contacts = [[NSMutableArray alloc] init ];
+    id eachObject;
+    va_list argumentList;
+    if (firstEvent)
+    {            
+        Contact *first = [[Contact alloc] initWithEvent:firstEvent];
+        [contacts addObject: first];
+        va_start(argumentList, firstEvent);
+        while ((eachObject = va_arg(argumentList, Event*))) {
+            Contact *c = [[Contact alloc] initWithEvent:eachObject];
+            [contacts addObject:c];
+        }
+        va_end(argumentList);
+    }
+    return contacts;
+}
+
 - (void) addEvent: (Event*)event {
     if (_events == NULL) {
         self.events = [[NSMutableArray alloc] init];
