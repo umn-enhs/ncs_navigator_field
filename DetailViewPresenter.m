@@ -61,18 +61,6 @@
     }
     return dates;
 }
-//
-//- (NSDictionary*) groupContactsByDate {
-//    NSMutableDictionary *grouped = [[NSMutableDictionary alloc]init];
-//    for (Contact *c in [self buildContactsFromEvents]) {
-//        NSDate *key = c.startDate;
-//        if ([grouped objectForKey:key] == NULL) {
-//            [grouped setObject:[[NSMutableArray alloc]init] forKey:key];
-//        }
-//        [[grouped objectForKey:key] addObject:c];
-//    }
-//    return grouped; 
-//}
 
 - (NSInteger) numberOfRowsInSection: (NSInteger)section {
     NSDate *date = [[self contactDates] objectAtIndex:section];
@@ -93,16 +81,6 @@
     }
     return contacts;
 }
-    
-//    NSMutableArray* result = NSm
-//    NSArray *sorted = [self eventsSortedByDateAndPersonName];
-//    for (Event *e in sorted) {
-//        if ([date isEqualToDate:e.date]) {
-//            Contact *last = [contacts lastObject];
-//
-//        }
-//    }
-//}
 
 - (NSString*) sectionName: (NSInteger)section {
     NSArray *dates = [self contactDates];

@@ -23,7 +23,6 @@
 - (NSArray*) sortEventsByDateAndPersonName:(NSArray*)events;
 - (Contact*) contactInSection:(NSInteger)section index: (NSInteger)index;
 - (NSArray*) contactDates;
-//- (NSDictionary*) groupContactsByDate;
 - (NSArray*) contactsWithDate:(NSDate*)date;
 
 
