@@ -11,11 +11,11 @@
 @class Event;
 @class Contact;
 
-@interface DetailViewPresenter : NSObject {
+@interface ContactNavigationPresenter : NSObject {
     NSArray* _events;
 }
 
-- (DetailViewPresenter*)initWithEvents: (NSArray*)events;
+- (ContactNavigationPresenter*)initWithEvents: (NSArray*)events;
 - (NSInteger) numberOfSections;
 - (NSInteger) numberOfRowsInSection: (NSInteger)section;
 - (NSString*) sectionName: (NSInteger)section;

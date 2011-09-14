@@ -9,13 +9,13 @@
 #import "RootViewController.h"
 
 #import "DetailViewController.h"
-#import "DetailViewPresenter.h"
+#import "ContactNavigationPresenter.h"
 #import "Event.h"
 #import "Contact.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* events;
-    @property(nonatomic,retain) DetailViewPresenter* presenter;
+    @property(nonatomic,retain) ContactNavigationPresenter* presenter;
 @end
 
 @implementation RootViewController
@@ -29,7 +29,7 @@
 	[_events release];
 	_events = [objects retain];
     
-    self.presenter = [[DetailViewPresenter alloc] initWithEvents:_events];
+    self.presenter = [[ContactNavigationPresenter alloc] initWithEvents:_events];
     
 	[self.tableView reloadData];
 }
@@ -51,7 +51,7 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];
     
-    self.presenter = [[DetailViewPresenter alloc] initWithEvents:[NSArray arrayWithObjects: nil]];
+    self.presenter = [[ContactNavigationPresenter alloc] initWithEvents:[NSArray arrayWithObjects: nil]];
 }
 
 		

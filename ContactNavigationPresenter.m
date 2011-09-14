@@ -6,15 +6,15 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailViewPresenter.h"
+#import "ContactNavigationPresenter.h"
 #import "Event.h"
 #import "Contact.h"
 
-@implementation DetailViewPresenter
+@implementation ContactNavigationPresenter
 
 @synthesize events=_events;
 
-- (DetailViewPresenter*)initWithEvents: (NSArray*)events {
+- (ContactNavigationPresenter*)initWithEvents: (NSArray*)events {
     self = [super init];
     if (self) {
         self.events = events;

@@ -6,8 +6,8 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailViewPresenterTest.h"
-#import "DetailViewPresenter.h"
+#import "ContactNavigationPresenterTest.h"
+#import "ContactNavigationPresenter.h"
 #import "Event.h"
 #import "Person.h"
 #import "Contact.h"
@@ -17,9 +17,9 @@
 //- (void)configureView;
 //@end
 
-@implementation DetailViewPresenterTest
+@implementation ContactNavigationPresenterTest
 
-DetailViewPresenter* dvp;
+ContactNavigationPresenter* dvp;
 Event* e1;
 Event* e2;
 Event* e3;
@@ -51,7 +51,7 @@ Event* e3;
     e3.person = fred;
     
     NSArray *events = [NSArray arrayWithObjects:e1, e2, e3, nil];
-    dvp = [[[DetailViewPresenter alloc] initWithEvents:events] autorelease];
+    dvp = [[[ContactNavigationPresenter alloc] initWithEvents:events] autorelease];
 }
 
 - (void)tearDown

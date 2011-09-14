@@ -36,9 +36,9 @@
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
-		00FF37E11417CA2D0009B1D4 /* DetailViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* DetailViewPresenter.m */; };
-		00FF37E71417D2380009B1D4 /* DetailViewPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */; };
-		00FF37E81417D2B80009B1D4 /* DetailViewPresenterTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */; };
+		00FF37E11417CA2D0009B1D4 /* ContactNavigationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */; };
+		00FF37E71417D2380009B1D4 /* ContactNavigationPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */; };
+		00FF37E81417D2B80009B1D4 /* ContactNavigationPresenterTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,10 +173,10 @@
 		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
 		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
-		00FF37DF1417CA2D0009B1D4 /* DetailViewPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewPresenter.h; path = ../DetailViewPresenter.h; sourceTree = "<group>"; };
-		00FF37E01417CA2D0009B1D4 /* DetailViewPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewPresenter.m; path = ../DetailViewPresenter.m; sourceTree = "<group>"; };
-		00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewPresenterTest.h; sourceTree = "<group>"; };
-		00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewPresenterTest.m; sourceTree = "<group>"; };
+		00FF37DF1417CA2D0009B1D4 /* ContactNavigationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; name = ContactNavigationPresenter.h; path = ../ContactNavigationPresenter.h; sourceTree = "<group>"; };
+		00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactNavigationPresenter.m; path = ../ContactNavigationPresenter.m; sourceTree = "<group>"; };
+		00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationPresenterTest.h; sourceTree = "<group>"; };
+		00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationPresenterTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				0026E692140347E700355BCB /* Supporting Files */,
-				00FF37E31417CFA30009B1D4 /* DetailViewPresenterTest.h */,
-				00FF37E41417CFA30009B1D4 /* DetailViewPresenterTest.m */,
+				00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */,
+				00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */,
 				0045BDAD141921CD007BB8AA /* ContactTest.h */,
 				0045BDAE141921CD007BB8AA /* ContactTest.m */,
 			);
@@ -377,8 +377,8 @@
 		00FF37E21417CA320009B1D4 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				00FF37DF1417CA2D0009B1D4 /* DetailViewPresenter.h */,
-				00FF37E01417CA2D0009B1D4 /* DetailViewPresenter.m */,
+				00FF37DF1417CA2D0009B1D4 /* ContactNavigationPresenter.h */,
+				00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0026E696140347E700355BCB /* InfoPlist.strings in Resources */,
-				00FF37E81417D2B80009B1D4 /* DetailViewPresenterTest.h in Resources */,
+				00FF37E81417D2B80009B1D4 /* ContactNavigationPresenterTest.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +583,7 @@
 				006EBEEB141679E9003D69CF /* Dwelling.m in Sources */,
 				00FF37DB1417C3D20009B1D4 /* Person.m in Sources */,
 				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
-				00FF37E11417CA2D0009B1D4 /* DetailViewPresenter.m in Sources */,
+				00FF37E11417CA2D0009B1D4 /* ContactNavigationPresenter.m in Sources */,
 				0045BDA91418017F007BB8AA /* Event.m in Sources */,
 				0045BDAC14191FB1007BB8AA /* Contact.m in Sources */,
 			);
@@ -593,7 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00FF37E71417D2380009B1D4 /* DetailViewPresenterTest.m in Sources */,
+				00FF37E71417D2380009B1D4 /* ContactNavigationPresenterTest.m in Sources */,
 				0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
