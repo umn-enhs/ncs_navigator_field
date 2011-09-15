@@ -77,7 +77,7 @@ Event* e3;
 //}
 
 - (void)testContactAtIndex {
-    Contact* a = [dvp contactInSection:0 index:0];
+    Contact* a = [dvp contactAtSection:0 index:0];
     STAssertEquals([a.events count], 2U, @"Wrong number of events");
     STAssertTrue([a.events containsObject:e1], @"Should contain 'Collect Soil' event");
     STAssertTrue([a.events containsObject:e2], @"Should contain 'Blood Draw' event");

@@ -12,6 +12,8 @@
 #import "ContactNavigationPresenter.h"
 #import "Event.h"
 #import "Contact.h"
+#import "Section.h"
+#import "Row.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* events;
@@ -81,13 +83,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.presenter numberOfSections];
+    NSArray *sections = self.presenter.sections;
+    return [self.presenter.sections count];
 }
-
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.presenter numberOfRowsInSection: section];
+    Section *s = [self.presenter.sections objectAtIndex:section];
+    return [s.rows count];
 }
 
 		
@@ -102,17 +105,18 @@
 
 //    Event* e = [self.presenter eventAtIndex:indexPath.row];
     NSLog(@"NSInteger value :%@", indexPath.row);
-    Contact *c = [self.presenter contactInSection:indexPath.section index:indexPath.row];
-    cell.textLabel.text = [c.person name];
-    NSNumber *instrumentCount = [[NSNumber alloc] initWithInteger:[c.events count]];
-    cell.detailTextLabel.text = [[instrumentCount stringValue] stringByAppendingString:@" instruments"];;
+    Section *s = [self.presenter.sections objectAtIndex:indexPath.section];
+    Row *r = [s.rows objectAtIndex:indexPath.row];
+    cell.textLabel.text = r.text;
+    cell.detailTextLabel.text = r.subText;
     	
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.presenter sectionName:section];
+    Section *s = [self.presenter.sections objectAtIndex:section];
+    return s.name;
 }
 
 /*

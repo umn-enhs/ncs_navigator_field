@@ -8,27 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class Row;
 @class Event;
 @class Contact;
 
 @interface ContactNavigationPresenter : NSObject {
     NSArray* _events;
     NSArray* _contacts;
+    NSArray* _sections;
 }
 
 - (ContactNavigationPresenter*)initWithEvents: (NSArray*)events;
-- (NSInteger) numberOfSections;
-- (NSInteger) numberOfRowsInSection: (NSInteger)section;
-- (NSString*) sectionName: (NSInteger)section;
-- (NSArray*) buildContactsFromEvents;
-- (NSArray*) sortEventsByDateAndPersonName:(NSArray*)events;
-- (Contact*) contactInSection:(NSInteger)section index: (NSInteger)index;
-- (NSArray*) contactDates;
-- (NSArray*) contactsWithDate:(NSDate*)date;
-
+- (NSArray*) buildSectionsUsingContacts:(NSArray*) contacts;
+- (NSString*) buildSectionNameUsingDate:(NSDate*)date;
+- (NSArray*) buildRowsUsingContacts:(NSArray*)contacts;
 
 @property(nonatomic,retain) NSArray* events;
 @property(nonatomic,retain) NSArray* contacts;
+@property(nonatomic,retain) NSArray* sections;
 
 
 @end
