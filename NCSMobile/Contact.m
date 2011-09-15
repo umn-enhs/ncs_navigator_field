@@ -56,6 +56,11 @@
     return dates && persons;
 }
 
+- (BOOL) canBeCoalescedWith:(Contact*)contact {
+    BOOL datesEqual = [self.startDate isEqualToDate:contact.startDate];
+    BOOL personsEqual = [self.person.id isEqualToString:contact.person.id];
+    return datesEqual && personsEqual;
+}
 - (void) dealloc {
     [_startDate release];
     [_person release];
