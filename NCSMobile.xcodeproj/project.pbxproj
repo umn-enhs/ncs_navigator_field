@@ -35,6 +35,8 @@
 		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
+		00E3234B14227F8100D3AEED /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3234A14227F8100D3AEED /* ContactManager.m */; };
+		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
 		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
 		00FF37E11417CA2D0009B1D4 /* ContactNavigationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */; };
@@ -172,6 +174,10 @@
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
+		00E3234914227F8100D3AEED /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
+		00E3234A14227F8100D3AEED /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
+		00E3234F142280AD00D3AEED /* ContactManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManagerTest.h; sourceTree = "<group>"; };
+		00E32350142280AD00D3AEED /* ContactManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManagerTest.m; sourceTree = "<group>"; };
 		00FF37D91417C3D20009B1D4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = ../Person.h; sourceTree = "<group>"; };
 		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
 		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 				0045BDAE141921CD007BB8AA /* ContactTest.m */,
 				00E32346142153CD00D3AEED /* Fixtures.h */,
 				00E32347142153CD00D3AEED /* Fixtures.m */,
+				00E3234F142280AD00D3AEED /* ContactManagerTest.h */,
+				00E32350142280AD00D3AEED /* ContactManagerTest.m */,
 			);
 			name = Tests;
 			path = NCSMobileTests;
@@ -351,6 +359,8 @@
 				00FF37DA1417C3D20009B1D4 /* Person.m */,
 				0045BDAA14191FB1007BB8AA /* Contact.h */,
 				0045BDAB14191FB1007BB8AA /* Contact.m */,
+				00E3234914227F8100D3AEED /* ContactManager.h */,
+				00E3234A14227F8100D3AEED /* ContactManager.m */,
 				006EBEE1141139B2003D69CF /* Event.h */,
 				0045BDA81418017F007BB8AA /* Event.m */,
 				006EBEE9141679E9003D69CF /* Dwelling.h */,
@@ -591,6 +601,7 @@
 				00FF37E11417CA2D0009B1D4 /* ContactNavigationPresenter.m in Sources */,
 				0045BDA91418017F007BB8AA /* Event.m in Sources */,
 				0045BDAC14191FB1007BB8AA /* Contact.m in Sources */,
+				00E3234B14227F8100D3AEED /* ContactManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +612,7 @@
 				00FF37E71417D2380009B1D4 /* ContactNavigationPresenterTest.m in Sources */,
 				0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */,
 				00E32348142153CD00D3AEED /* Fixtures.m in Sources */,
+				00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

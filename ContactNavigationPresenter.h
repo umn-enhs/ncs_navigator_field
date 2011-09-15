@@ -13,6 +13,7 @@
 
 @interface ContactNavigationPresenter : NSObject {
     NSArray* _events;
+    NSArray* _contacts;
 }
 
 - (ContactNavigationPresenter*)initWithEvents: (NSArray*)events;
@@ -27,5 +28,7 @@
 
 
 @property(nonatomic,retain) NSArray* events;
+@property(nonatomic,retain) NSArray* contacts;
+
 
 @end

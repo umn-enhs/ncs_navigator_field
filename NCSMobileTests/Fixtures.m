@@ -9,6 +9,7 @@
 #import "Fixtures.h"
 #import "Person.h"
 #import "Event.h"
+#import "Contact.h"
 
 @implementation Fixtures
 
@@ -39,4 +40,18 @@
     return [e autorelease];
 }
 
++ (Event*) createEventWithName:(NSString*)name date:(NSDate*)date person:(Person*)person {
+    Event *e = [self createEventWithName:name date:date];
+    e.person = person;
+    return [e autorelease];
+}
+
++ (Contact*) createContactWithName:(NSString*)name startDate:(NSDate*)date person:(Person*)person {
+    Contact *c = [[Contact alloc] init];
+    c.startDate = date;
+    c.person = person;
+    Event *e = [self createEventWithName:name date:date person:person];
+    [c addEvent:e];
+    return [c autorelease];
+}
 @end

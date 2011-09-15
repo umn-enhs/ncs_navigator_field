@@ -26,19 +26,26 @@
 }
 
 + (NSArray*) contactsFromEvents:(Event*) firstEvent, ... {
-    NSMutableArray *contacts = [[NSMutableArray alloc] init ];
+    NSMutableArray *events = [[[NSMutableArray alloc] init ] autorelease];
     id eachObject;
     va_list argumentList;
     if (firstEvent)
     {            
-        Contact *first = [[Contact alloc] initWithEvent:firstEvent];
-        [contacts addObject: first];
+        [events addObject: firstEvent];
         va_start(argumentList, firstEvent);
         while ((eachObject = va_arg(argumentList, Event*))) {
-            Contact *c = [[Contact alloc] initWithEvent:eachObject];
-            [contacts addObject:c];
+            [events addObject:eachObject];
         }
         va_end(argumentList);
+    }
+    
+    return [Contact contactsFromEventsArray:events];
+}
+
++ (NSArray*) contactsFromEventsArray:(NSArray*) events {
+    NSMutableArray *contacts = [[[NSMutableArray alloc] init] autorelease];
+    for (Event* e in events) {
+        [contacts addObject:[[Contact alloc] initWithEvent:e]];
     }
     return contacts;
 }
@@ -61,6 +68,25 @@
     BOOL personsEqual = [self.person.id isEqualToString:contact.person.id];
     return datesEqual && personsEqual;
 }
+
+- (void) coalesce:(Contact*)contact {
+    if ([self canBeCoalescedWith:contact]) {
+        for (Event *e in contact.events) {
+            [self addEvent:e];
+        }
+    }
+}
+
+- (NSArray*) coalescableContacts:(NSArray*)contacts {
+    NSMutableArray *coalescable = [[NSMutableArray new] autorelease];
+    for (Contact *c in contacts) {
+        if ([self canBeCoalescedWith:c]) {
+            [coalescable addObject:c];
+        }
+    }
+    return coalescable;
+}
+
 - (void) dealloc {
     [_startDate release];
     [_person release];

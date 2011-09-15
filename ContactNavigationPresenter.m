@@ -9,18 +9,41 @@
 #import "ContactNavigationPresenter.h"
 #import "Event.h"
 #import "Contact.h"
+#import "ContactManager.h"
 
 @implementation ContactNavigationPresenter
 
 @synthesize events=_events;
-
+@synthesize contacts=_contacts;
 - (ContactNavigationPresenter*)initWithEvents: (NSArray*)events {
     self = [super init];
     if (self) {
         self.events = events;
+        self.contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
     }
     return self;
 }
+//
+//- (NSArray*) contactsFromEvents:(NSArray*)events {
+//    NSMutableArray* pending = [NSMutableArray arrayWithArray:[Contact contactsFromEventsArray:events]];
+//    
+//    NSMutableArray* result = [[NSMutableArray alloc] init];
+//    
+//    while ([pending count] > 0) {
+//        Contact *initial = [pending objectAtIndex:0];
+//        [result addObject:initial];
+//        [pending removeObjectAtIndex:0];
+//
+//        NSArray *coalescable = [initial coalescableContacts:pending];
+//        [pending removeObjectsInArray:coalescable];
+//        for (Contact *c in coalescable) {
+//            [initial coalesce:c];
+//        }
+//        
+//    }
+//    
+//    return result;
+//}
 
 - (Contact*) contactInSection:(NSInteger)section index: (NSInteger)index {
     NSDate *date = [[self contactDates] objectAtIndex:section];

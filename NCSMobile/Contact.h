@@ -22,6 +22,9 @@
 - (BOOL) isEventPartOfContact: (Event*)event;
 + (NSArray*) contactsFromEvents:(Event*) firstEvent, ...;
 - (BOOL) canBeCoalescedWith:(Contact*)contact;
++ (NSArray*) contactsFromEventsArray:(NSArray*) events;
+- (void) coalesce:(Contact*)contact;
+- (NSArray*) coalescableContacts:(NSArray*) contacts;
 
 
 @property(nonatomic,retain) Person *person;
