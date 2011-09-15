@@ -82,7 +82,7 @@ Person *tom, *jen;
     
 }
 
-- (void) testContactCanBeCoalescedDifferentDate {
+- (void) testContactCanBeCoalescedWithDifferentDate {
     e1.person = tom;
     e2.person = tom;
     e1.date = [Fixtures createDateFromString:@"2010-12-08 09:30"];
@@ -93,7 +93,7 @@ Person *tom, *jen;
     STAssertFalse([c1 canBeCoalescedWith:c2], @"Should not be able to be coalesced");
 }
 
-- (void) testContactCanBeCoalescedDifferentPerson {
+- (void) testContactCanBeCoalescedWithDifferentPerson {
     e1.person = tom;
     e2.person = jen;
     e1.date = [Fixtures createDateFromString:@"2010-12-08 09:30"];
