@@ -31,6 +31,11 @@ Person *tom, *jen;
     jen = [Fixtures createPersonWithId:@"J9" name:@"Jen"];
 }
 
+- (void)tearDown
+{
+    [super tearDown];
+}
+
 - (void)testInitWithEvent {
     e1.person = tom;
     

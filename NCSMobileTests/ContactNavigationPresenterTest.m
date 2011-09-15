@@ -12,17 +12,10 @@
 #import "Person.h"
 #import "Contact.h"
 
-//@interface DetailViewPresenterTest ()
-//@property (nonatomic, retain) UIPopoverController *popoverController;
-//- (void)configureView;
-//@end
-
 @implementation ContactNavigationPresenterTest
 
 ContactNavigationPresenter* dvp;
-Event* e1;
-Event* e2;
-Event* e3;
+Event *e1, *e2, *e3;
 
 - (void)setUp
 {
@@ -37,17 +30,17 @@ Event* e3;
     
     e1 = [[[Event alloc] init] autorelease];
     e1.name = @"Collect Soil";
-    e1.date = [f dateFromString:@"2010-12-08 09:30"];
+    e1.date = [f dateFromString:@"2010-12-08 00:00"];
     e1.person = fred;
     
     e2 = [[[Event alloc] init] autorelease];
     e2.name = @"Blood Draw";
-    e2.date = [f dateFromString:@"2010-12-08 09:30"];
+    e2.date = [f dateFromString:@"2010-12-08 00:00"];
     e2.person = fred;
     
     e3 = [[[Event alloc] init] autorelease];
     e3.name = @"Avoid Subject";
-    e3.date = [f dateFromString:@"2010-12-09 09:30"];
+    e3.date = [f dateFromString:@"2010-12-09 00:00"];
     e3.person = fred;
     
     NSArray *events = [NSArray arrayWithObjects:e1, e2, e3, nil];
@@ -56,52 +49,16 @@ Event* e3;
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
-    
     [super tearDown];
 }
-//
-//- (void)testGroupedEventTimes {
-//    NSArray* a = [dvp groupedEventDates];
-//    STAssertEquals([a count], 2U, @"Wrong number of event times");
-//    STAssertEquals([a objectAtIndex:0], e1.date, @"Dates should be equal");
-//    STAssertEquals([a objectAtIndex:1], e3.date, @"Dates should be equal");
-//}
-//
-//- (void)testGetEventsByDate {
-//    NSArray* a = [dvp getEventsByDate:e1.date];
-//    STAssertEquals([a count], 2U, @"Wrong number of event times");
-//    STAssertEquals([[a objectAtIndex:0] name], @"Blood Draw", @"Wrong event");
-//    STAssertEquals([[a objectAtIndex:1] name], @"Collect Soil", @"Wrong event");
-//}
 
-- (void)testContactAtIndex {
-    Contact* a = [dvp contactAtSection:0 index:0];
-    STAssertEquals([a.events count], 2U, @"Wrong number of events");
-    STAssertTrue([a.events containsObject:e1], @"Should contain 'Collect Soil' event");
-    STAssertTrue([a.events containsObject:e2], @"Should contain 'Blood Draw' event");
+- (void)testSections {
+    NSArray* sections = dvp.sections;
+    STAssertEquals([sections count], 2U, @"Wrong number of sections");
+    // TODO: Test section name
 }
-//
-//- (void)testNumberOfSections {
-//    - (NSInteger) numberOfSections;
-//}
-//
-//- (void)testNumberOfRowsInSection {
-//    - (NSInteger) numberOfRowsInSection: (NSInteger)section;
-//}
-//
-//- (void)testSectionName {
-//    - (NSString*) sectionName: (NSInteger)section;    
-//    
-//}
 
-//- (void) testContactsOrderedByDate {
-//    NSArray* a = [dvp contactsOrderedByDate];
-//    STAssertEquals([a count], 2U, @"Wrong number of event times");
-//    STAssertEquals([a objectAtIndex:0], e1.date, @"Dates should be equal");
-//    STAssertEquals([a objectAtIndex:1], e3.date, @"Dates should be equal");
-//}
+// Test rows
 
 @end
 

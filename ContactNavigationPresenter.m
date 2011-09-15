@@ -26,7 +26,6 @@
         self.events = events;
         self.contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
         self.sections = [self buildSectionsUsingContacts:self.contacts];
-        
     }
     return self;
 }
