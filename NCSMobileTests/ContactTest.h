@@ -9,6 +9,5 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @interface ContactTest : SenTestCase
-- (void)testInitWithEvent;
-- (void)testAddEvent;
+
 @end
