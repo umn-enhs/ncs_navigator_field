@@ -13,6 +13,12 @@
 @synthesize rows=_rows;
 @synthesize name=_name;
 
+- (void)addRow:(Row*)row{
+    NSMutableArray *rows = [NSMutableArray arrayWithArray:self.rows];
+    [rows addObject:row];
+    self.rows = rows;
+}
+
 - (void) dealloc {
     [_rows release];
     [_name release];

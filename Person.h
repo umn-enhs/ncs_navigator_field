@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class Dwelling;
+
 @interface Person : NSObject<NSCopying> {
     NSString* _id;
     NSString* _name;
+    Dwelling* _dwelling;
 }
 
 -(id) copyWithZone: (NSZone *) zone;
 
 @property(nonatomic,retain) NSString* id;
 @property(nonatomic,retain) NSString* name;
+@property(nonatomic,retain) Dwelling* dwelling;
 
 @end

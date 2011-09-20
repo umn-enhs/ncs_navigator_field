@@ -12,17 +12,20 @@
 
 @synthesize id=_id;
 @synthesize name=_name;
+@synthesize dwelling=_dwelling;
 
 -(id) copyWithZone: (NSZone *) zone {
     Person *copy = [[Person allocWithZone:zone] init];
     copy.id = self.id;
     copy.name = self.name;
+    copy.dwelling = self.dwelling;
     return copy;
 }
 
 - (void)dealloc {
     [_id release];
     [_name release];
+    [_dwelling release];
     [super dealloc];
 }
 @end

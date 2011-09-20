@@ -60,7 +60,8 @@
     for (Contact *c in contacts) {
         Row *r = [Row new];
         r.text = c.person.name;
-        r.subText = [NSString stringWithFormat:@"%@ instruments", [NSNumber numberWithInt:[c.events count]]];
+        r.detailText = [NSString stringWithFormat:@"%@ instruments", [NSNumber numberWithInt:[c.events count]]];
+        r.entity = c;
         [rows addObject:r];
     }
     return rows;

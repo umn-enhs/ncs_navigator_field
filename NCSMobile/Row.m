@@ -10,12 +10,29 @@
 
 @implementation Row
 
+@synthesize entity=_entity;
 @synthesize text=_text;
-@synthesize subText=_subText;
+@synthesize detailText=_detailText;
+
+- (id) initWithText:(NSString*)text {
+    if (self = [super init]) {
+        self.text = text;
+    }
+    return self;
+}
+
+- (id) initWithText:(NSString*)text detailText:(NSString*)dt {
+    if (self = [super init]) {
+        self.text = text;
+    }
+    return self;
+}
+
 
 - (void) dealloc {
+    [_entity release];
     [_text release];
-    [_subText release];
+    [_detailText release];
     [super dealloc];
 }
 @end

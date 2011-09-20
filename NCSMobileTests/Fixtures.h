@@ -11,6 +11,8 @@
 @class Person;
 @class Event;
 @class Contact;
+@class Dwelling;
+@class Address;
 
 @interface Fixtures : NSObject
 
@@ -19,5 +21,6 @@
 + (Event*) createEventWithName:(NSString*)name date:(NSDate*)date;
 + (Event*) createEventWithName:(NSString*)name date:(NSDate*)date person:(Person*)person;
 + (Contact*) createContactWithName:(NSString*)name startDate:(NSDate*)date person:(Person*)person;
-
++ (Dwelling*) createDwellingWithId:(NSString*)id address:(Address*)address;
++ (Address*) createAddressWithStreet:(NSString*)address city:(NSString*)city state:(NSString*)state zip:(NSInteger)zip;
 @end

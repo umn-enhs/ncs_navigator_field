@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Row : NSObject {
+    id entity;
     NSString *_text;
-    NSString *_subText;
+    NSString *_detailText;
 }
 
+@property(nonatomic,retain) id entity;
 @property(nonatomic,retain) NSString *text;
-@property(nonatomic,retain) NSString *subText;
+@property(nonatomic,retain) NSString *detailText;
 
 @end

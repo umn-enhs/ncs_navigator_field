@@ -10,6 +10,8 @@
 #import "Person.h"
 #import "Event.h"
 #import "Contact.h"
+#import "Dwelling.h"
+#import "Address.h"
 
 @implementation Fixtures
 
@@ -53,5 +55,21 @@
     Event *e = [self createEventWithName:name date:date person:person];
     [c addEvent:e];
     return [c autorelease];
+}
+
++ (Dwelling*) createDwellingWithId:(NSString*)id address:(Address*)address {
+    Dwelling *d = [Dwelling new];
+    d.id = id;
+    d.address = address;
+    return [d autorelease];
+}
+
++ (Address*) createAddressWithStreet:(NSString*)street city:(NSString*)city state:(NSString*)state zip:(NSInteger)zip {
+    Address *a = [Address new];
+    a.street = street;
+    a.city = city;
+    a.state = state;
+    a.zip = [NSNumber numberWithInteger:zip];
+    return [a autorelease];
 }
 @end

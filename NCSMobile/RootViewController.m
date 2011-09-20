@@ -83,7 +83,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSArray *sections = self.presenter.sections;
     return [self.presenter.sections count];
 }
 		
@@ -108,7 +107,7 @@
     Section *s = [self.presenter.sections objectAtIndex:indexPath.section];
     Row *r = [s.rows objectAtIndex:indexPath.row];
     cell.textLabel.text = r.text;
-    cell.detailTextLabel.text = r.subText;
+    cell.detailTextLabel.text = r.detailText;
     	
     return cell;
 }
@@ -154,8 +153,10 @@
 {
     // Navigation logic may go here -- for example, create and push another view controller.
 //    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
-    Event* e = [self.events objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = e;
+//    Event* e = [self.events objectAtIndex:indexPath.row];
+    Section *s = [self.presenter.sections objectAtIndex:indexPath.section];
+    Row *r = [s.rows objectAtIndex:indexPath.row];
+    self.detailViewController.detailItem = r.entity;
     // ...
     // Pass the selected object to the new view controller.
 //    [self.navigationController pushViewController:detailViewController animated:YES];

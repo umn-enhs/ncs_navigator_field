@@ -14,6 +14,7 @@
 #import "Dwelling.h"
 #import "Person.h"
 #import "Instrument.h"
+#import "Address.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -28,6 +29,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // TODO: These mappings should be in their own mapping class
+    
     // Initialize RestKit
 	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
     
@@ -39,6 +42,16 @@
     [dwellingMapping mapKeyPathsToAttributes: 
         @"id", @"id",
         nil];
+    
+    RKObjectMapping *addressMapping = [RKObjectMapping mappingForClass:[Address class]];
+    [addressMapping mapKeyPathsToAttributes:
+        @"street", @"street",
+        @"city", @"city",
+        @"state", @"state",
+        @"zipcode", @"zipcode",
+        nil];
+    
+    [dwellingMapping mapRelationship:@"address" withMapping:addressMapping];
     
     // Person Mapping
     RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];

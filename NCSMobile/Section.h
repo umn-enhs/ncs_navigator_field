@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class Row;
 @interface Section : NSObject {
     NSArray *_rows;
     NSString *_name;
@@ -15,5 +16,7 @@
 
 @property(nonatomic,retain) NSArray *rows;
 @property(nonatomic,retain) NSString *name;
+
+- (void)addRow:(Row*)row;
 
 @end

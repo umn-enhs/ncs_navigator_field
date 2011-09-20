@@ -1,4 +1,4 @@
-//
+
 //  DetailViewController.m
 //  NCSMobile
 //
@@ -9,9 +9,14 @@
 #import "DetailViewController.h"
 
 #import "RootViewController.h"
+#import "ContactPresenter.h"
 
 #import "Event.h"
 #import "Dwelling.h"
+#import "Section.h"
+#import "Row.h"
+#import "Contact.h"
+#import "Person.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -32,13 +37,15 @@
 
 @synthesize dwellingIdLabel=_dwellingIdLabel;
 
+@synthesize presenter=_presenter;
+@synthesize tableView=_tableView;
 
 #pragma mark - Managing the detail item
 
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
  */
-- (void)setDetailItem:(Event*)newDetailItem
+- (void)setDetailItem:(Contact*)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         [_detailItem release];
@@ -53,17 +60,24 @@
     }        
 }
 
+#pragma mark - UITableView
+
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    self.detailDescriptionLabel.text = [self.detailItem name];
+    Contact *c = self.detailItem;
+    self.presenter = [[ContactPresenter alloc]initUsingContact:c];
+    self.detailDescriptionLabel.text = c.person.name;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
-    self.eventDateLabel.text = [dateFormatter stringFromDate:[self.detailItem date]];
-    self.dwellingIdLabel.text = [self.detailItem dwelling].id;
+    self.eventDateLabel.text = [dateFormatter stringFromDate:c.startDate];
+//    self.dwellingIdLabel.text = [self.detailItem dwelling].id;
+    [self.tableView reloadData];
 }
+
+#pragma mark - View lifecycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -88,6 +102,52 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
+
+#pragma mark - Table view support
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    Section *s = [self.presenter.sections objectAtIndex:section];
+    return [s.rows count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        if (indexPath.section == 2) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
+                cell.textLabel.font =[UIFont fontWithName:@"Arial" size:16];
+        } else {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:CellIdentifier] autorelease];
+            cell.textLabel.numberOfLines = 0;
+            cell.detailTextLabel.numberOfLines = 0;
+//            cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        }
+    }
+    
+    //    Event* e = [self.presenter eventAtIndex:indexPath.row];
+//    NSLog(@"NSInteger value :%@", indexPath.row);
+    Section *s = [self.presenter.sections objectAtIndex:indexPath.section];
+    Row *r = [s.rows objectAtIndex:indexPath.row];
+    cell.textLabel.text = r.text;
+    cell.detailTextLabel.text = r.detailText;
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSArray* a = self.presenter.sections;
+    NSLog(@"There are %@ section", [NSNumber numberWithInteger:[a count]]);
+    return [a count];
+}
+
+
+
+
+
 
 #pragma mark - Split view support
 
