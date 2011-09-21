@@ -64,12 +64,12 @@
     return [d autorelease];
 }
 
-+ (Address*) createAddressWithStreet:(NSString*)street city:(NSString*)city state:(NSString*)state zip:(NSInteger)zip {
++ (Address*) createAddressWithStreet:(NSString*)street city:(NSString*)city state:(NSString*)state zipCode:(NSInteger)zip {
     Address *a = [Address new];
     a.street = street;
     a.city = city;
     a.state = state;
-    a.zip = [NSNumber numberWithInteger:zip];
+    a.zipcode = [NSNumber numberWithInteger:zip];
     return [a autorelease];
 }
 @end

@@ -77,6 +77,7 @@
     header.backgroundColor = [UIColor groupTableViewBackgroundColor];
     header.textAlignment = UITextAlignmentCenter;
     header.text = c.person.name;
+    header.font = [UIFont fontWithName:@"Arial" size:26]; 
     self.tableView.tableHeaderView = header;
     [self.tableView reloadData];
 }
@@ -122,13 +123,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         // TODO: Ugly, structure this
-        if (indexPath.section == 2) {
+        if (indexPath.section == 3) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
                 cell.textLabel.font =[UIFont fontWithName:@"Arial" size:16];
         } else {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:CellIdentifier] autorelease];
             cell.textLabel.numberOfLines = 0;
             cell.detailTextLabel.numberOfLines = 0;
+//            cell.detailTextLabel.
         }
     }
     

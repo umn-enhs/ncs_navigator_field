@@ -13,6 +13,9 @@
 @interface Person : NSObject<NSCopying> {
     NSString* _id;
     NSString* _name;
+    NSString* _email;
+    NSString* _cellPhone;
+    NSString* _homePhone;
     Dwelling* _dwelling;
 }
 
@@ -20,6 +23,9 @@
 
 @property(nonatomic,retain) NSString* id;
 @property(nonatomic,retain) NSString* name;
+@property(nonatomic,retain) NSString* email;
+@property(nonatomic,retain) NSString* cellPhone;
+@property(nonatomic,retain) NSString* homePhone;
 @property(nonatomic,retain) Dwelling* dwelling;
 
 @end

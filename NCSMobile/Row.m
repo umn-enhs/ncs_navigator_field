@@ -24,10 +24,10 @@
 - (id) initWithText:(NSString*)text detailText:(NSString*)dt {
     if (self = [super init]) {
         self.text = text;
+        self.detailText = dt;
     }
     return self;
 }
-
 
 - (void) dealloc {
     [_entity release];

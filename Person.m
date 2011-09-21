@@ -12,6 +12,9 @@
 
 @synthesize id=_id;
 @synthesize name=_name;
+@synthesize email=_email;
+@synthesize homePhone=_homePhone;
+@synthesize cellPhone=_cellPhone;
 @synthesize dwelling=_dwelling;
 
 -(id) copyWithZone: (NSZone *) zone {
@@ -19,12 +22,18 @@
     copy.id = self.id;
     copy.name = self.name;
     copy.dwelling = self.dwelling;
+    copy.homePhone = self.homePhone;
+    copy.cellPhone = self.cellPhone;
+    copy.email = self.email;
     return copy;
 }
 
 - (void)dealloc {
     [_id release];
     [_name release];
+    [_homePhone release];
+    [_cellPhone release];
+    [_email release];
     [_dwelling release];
     [super dealloc];
 }

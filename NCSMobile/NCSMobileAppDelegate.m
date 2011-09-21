@@ -58,6 +58,9 @@
     [personMapping mapKeyPathsToAttributes: 
      @"id", @"id",
      @"name", @"name",
+     @"home_phone", @"homePhone",
+     @"cell_phone", @"cellPhone",
+     @"email", @"email",
      nil];
     
     // Instrument Mapping

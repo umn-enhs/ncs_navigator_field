@@ -18,4 +18,6 @@
 @property(nonatomic,retain) NSString *text;
 @property(nonatomic,retain) NSString *detailText;
 
+- (id) initWithText:(NSString*)text;
+- (id) initWithText:(NSString*)text detailText:(NSString*)dt;
 @end
