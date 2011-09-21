@@ -45,11 +45,10 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUITableView" id="495406756">
 						<reference key="NSNextResponder" ref="647120888"/>
-						<int key="NSvFlags">301</int>
-						<string key="NSFrame">{{301, 44}, {703, 704}}</string>
+						<int key="NSvFlags">278</int>
+						<string key="NSFrame">{{0, 44}, {538, 704}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAgMAA</bytes>

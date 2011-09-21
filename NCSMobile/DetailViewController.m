@@ -68,12 +68,16 @@
     // Update the user interface for the detail item.
     Contact *c = self.detailItem;
     self.presenter = [[ContactPresenter alloc]initUsingContact:c];
-    self.detailDescriptionLabel.text = c.person.name;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
     self.eventDateLabel.text = [dateFormatter stringFromDate:c.startDate];
 //    self.dwellingIdLabel.text = [self.detailItem dwelling].id;
+    UILabel *header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 44)];
+    header.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    header.textAlignment = UITextAlignmentCenter;
+    header.text = c.person.name;
+    self.tableView.tableHeaderView = header;
     [self.tableView reloadData];
 }
 
@@ -117,6 +121,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
+        // TODO: Ugly, structure this
         if (indexPath.section == 2) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
                 cell.textLabel.font =[UIFont fontWithName:@"Arial" size:16];
@@ -124,12 +129,9 @@
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:CellIdentifier] autorelease];
             cell.textLabel.numberOfLines = 0;
             cell.detailTextLabel.numberOfLines = 0;
-//            cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         }
     }
     
-    //    Event* e = [self.presenter eventAtIndex:indexPath.row];
-//    NSLog(@"NSInteger value :%@", indexPath.row);
     Section *s = [self.presenter.sections objectAtIndex:indexPath.section];
     Row *r = [s.rows objectAtIndex:indexPath.row];
     cell.textLabel.text = r.text;
@@ -139,15 +141,47 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSArray* a = self.presenter.sections;
-    NSLog(@"There are %@ section", [NSNumber numberWithInteger:[a count]]);
-    return [a count];
+    return [self.presenter.sections count];
 }
 
-
-
-
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Section *s = [self.presenter.sections objectAtIndex:section];
+    return s.name;
+}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    if (section != 0) {
+//        return self.tableView.tableHeaderView;
+//    }
+//    // Create a header view. Wrap it in a container to allow us to position
+//    // it better.
+//    //
+//	// create the parent view that will hold header Label
+////    NSLog(self.view.frame.size.width )
+////	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, self.view.frame.size.width - 20, 200.0)];
+//	
+//	// create the button object
+////	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+//    UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, self.view.frame.size.width  - 20, 100.0)];
+//	headerLabel.backgroundColor = [UIColor redColor];
+//	headerLabel.opaque = NO;
+//	headerLabel.textColor = [UIColor blackColor];
+//	headerLabel.highlightedTextColor = [UIColor whiteColor];
+//	headerLabel.font = [UIFont boldSystemFontOfSize:20];
+//	headerLabel.frame = CGRectMake(10.0, 0.0, self.view.frame.size.width  - 20, 100.0);
+//    [headerLabel sizeToFit];
+//    headerLabel.textAlignment = UITextAlignmentCenter;
+//    
+//	// If you want to align the header text as centered
+////	headerLabel.frame = CGRectMake(150.0, 0.0, 300.0, 44.0);
+//    
+//	headerLabel.text = @"Poop";
+////    customView.center
+////	[customView addSubview:headerLabel];
+////    [customView setNeedsLayout];
+//    
+//	return headerLabel;
+//}
 
 #pragma mark - Split view support
 
