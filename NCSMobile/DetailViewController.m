@@ -152,48 +152,10 @@
     return s.name;
 }
 
-//#import "NCSMobileAppDelegate.h"
-//#define UIAppDelegate ((NCSMobileAppDelegate *)[UIApplication sharedApplication].delegate)
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Create the root view controller for the navigation controller
-    
-    // The new view controller configures a Cancel and Done button for the
-    
-    // navigation bar.
-    
-    SurveyorImageViewController *addController = [[SurveyorImageViewController alloc]
-                                              
-                                              initWithNibName:@"SurveyorImageViewController" bundle:nil];
-    
-    
-    
-    // Configure the RecipeAddViewController. In this case, it reports any
-    
-    // changes to a custom delegate object.
-    
-//    addController.delegate = self;
-    
-    
-    
-    // Create the navigation controller and present it modally.
-    
-    UINavigationController *navigationController = [[UINavigationController alloc]
-                                                    
-                                                    initWithRootViewController:addController];
-    
-    [self presentModalViewController:navigationController animated:YES];
-    
-    
-    
-    // The navigation controller is now owned by the current view controller
-    
-    // and the root view controller is owned by the navigation controller,
-    
-    // so both objects should be released to prevent over-retention.
-    
-    [navigationController release];
-    
-    [addController release];}
+    [UIAppDelegate.rootViewController loadSurveyor];
+}
 
 //
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
