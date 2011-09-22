@@ -131,7 +131,6 @@
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:CellIdentifier] autorelease];
             cell.textLabel.numberOfLines = 0;
             cell.detailTextLabel.numberOfLines = 0;
-//            cell.detailTextLabel.
         }
     }
     
@@ -157,7 +156,12 @@
     [UIAppDelegate.rootViewController loadSurveyor];
     [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
     UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:indexPath];
-    oldCell.detailTextLabel.text = @"Completed 10/2/2011";
+    
+    NSDateFormatter *f = [NSDateFormatter new];
+    [f setDateStyle:NSDateFormatterShortStyle];
+    [f setTimeStyle:NSDateFormatterShortStyle];
+    NSDate *d = [NSDate new];
+    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
 }
 
 //
