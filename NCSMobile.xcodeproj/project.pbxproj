@@ -36,6 +36,8 @@
 		00590AC81428F7D0008335EA /* ContactPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactPresenterTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
+		0075E17C142BBB6E006E8801 /* SurveyorImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0075E17A142BBB6E006E8801 /* SurveyorImageViewController.m */; };
+		0075E17D142BBB6E006E8801 /* SurveyorImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0075E17B142BBB6E006E8801 /* SurveyorImageViewController.xib */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
 		00E3234B14227F8100D3AEED /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3234A14227F8100D3AEED /* ContactManager.m */; };
 		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
@@ -181,6 +183,9 @@
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
+		0075E179142BBB6E006E8801 /* SurveyorImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyorImageViewController.h; sourceTree = "<group>"; };
+		0075E17A142BBB6E006E8801 /* SurveyorImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyorImageViewController.m; sourceTree = "<group>"; };
+		0075E17B142BBB6E006E8801 /* SurveyorImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurveyorImageViewController.xib; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		00E3234914227F8100D3AEED /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
@@ -365,6 +370,9 @@
 				0026E67E140347E700355BCB /* DetailViewController.m */,
 				0026E683140347E700355BCB /* RootViewController.h */,
 				0026E684140347E700355BCB /* RootViewController.m */,
+				0075E179142BBB6E006E8801 /* SurveyorImageViewController.h */,
+				0075E17A142BBB6E006E8801 /* SurveyorImageViewController.m */,
+				0075E17B142BBB6E006E8801 /* SurveyorImageViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -581,6 +589,7 @@
 				0026E673140347E700355BCB /* InfoPlist.strings in Resources */,
 				0026E67C140347E700355BCB /* MainWindow.xib in Resources */,
 				0026E682140347E700355BCB /* DetailView.xib in Resources */,
+				0075E17D142BBB6E006E8801 /* SurveyorImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +640,7 @@
 				00E3235A1422B08200D3AEED /* Row.m in Sources */,
 				00E3235D1422EB6A00D3AEED /* ContactPresenter.m in Sources */,
 				00590ACB14291818008335EA /* Address.m in Sources */,
+				0075E17C142BBB6E006E8801 /* SurveyorImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
