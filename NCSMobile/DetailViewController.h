@@ -14,6 +14,8 @@
 @interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *_tableView;
     ContactPresenter *_presenter;
+    bool _flag;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;

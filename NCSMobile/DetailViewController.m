@@ -125,7 +125,7 @@
     if (cell == nil) {
         // TODO: Ugly, structure this
         if (indexPath.section == 3) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:CellIdentifier] autorelease];
                 cell.textLabel.font =[UIFont fontWithName:@"Arial" size:16];
         } else {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:CellIdentifier] autorelease];
@@ -155,6 +155,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [UIAppDelegate.rootViewController loadSurveyor];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
+    UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:indexPath];
+    oldCell.detailTextLabel.text = @"Completed 10/2/2011";
 }
 
 //
