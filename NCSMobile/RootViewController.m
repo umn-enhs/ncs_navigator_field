@@ -29,8 +29,8 @@
 @synthesize events=_events;
 @synthesize presenter=_presenter;
 
+#pragma surveyor
 - (void) loadSurveyor {
-    
     SurveyorRootViewController *surveyController = [[SurveyorRootViewController alloc] init];
     SurveySectionViewController *sectionController = [[SurveySectionViewController alloc] init];
     surveyController.detailViewController = sectionController;
@@ -39,7 +39,26 @@
     self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
 }
 
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    NSLog(@"willShowViewController");
+//}
 
+#pragma mark -
+#pragma mark navigation controller delegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    Class src = [[self.splitViewController.viewControllers objectAtIndex:1] class];
+    Class dst = [viewController class];
+    if ( src == [SurveySectionViewController class] &&  dst == [RootViewController class]) {
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, _detailViewController, nil];
+    }    
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+//    NSLog(@"DELEGATE: switched views: message from the nav controller delegate");
+}
+
+#pragma RestKit
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	NSLog(@"Loaded events: %@", objects);    
 	[_events release];
