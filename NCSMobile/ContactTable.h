@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISimpleTable.h"
 
 @class Contact;
 @class Section;
 
-@interface ContactTable : NSObject {
+@interface ContactTable : NSObject<ISimpleTable> {
     Contact *_contact;
     NSArray *_sections;
 }
@@ -21,5 +22,9 @@
 
 - (id)initUsingContact:(Contact*)contact;
 - (NSArray*) buildSectionsFromContact:(Contact*)contact;
+- (Section*) addresses;
+- (Section*) phones;
+- (Section*) emails;
+- (Section*) instruments;
 
 @end

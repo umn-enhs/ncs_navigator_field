@@ -31,31 +31,46 @@
 }
 
 - (NSArray*) buildSectionsFromContact:(Contact*)contact { 
-    Section *addresses = [Section new];
-    Row *ar = [Row new];
-    ar.text = @"Home";
-    Event *e0 = [contact.events objectAtIndex:0];
-    Address *a = e0.dwelling.address;
-    ar.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipcode];
-    [addresses addRow:ar];
-    
-    Section *phones = [Section new];
-    [phones addRow:[[Row alloc] initWithText:@"Home" detailText:contact.person.homePhone]];
-    [phones addRow:[[Row alloc] initWithText:@"Cell" detailText:contact.person.cellPhone]];
-    
-    Section *emails = [Section new];
+    return [NSArray arrayWithObjects: 
+                [self addresses], 
+                [self phones], 
+                [self emails], 
+                [self instruments], 
+                nil];
+}
 
-    [emails addRow:[[Row alloc] initWithText:@"Home" detailText:contact.person.email]];
+- (Section*) addresses {
+    Row *home = [[Row alloc] initWithText:@"Home"];
     
-    Section *instruments = [Section new];
+    // TODO: Data shouldn't be structured like this
+    Event *e0 = [self.contact.events objectAtIndex:0];
+    Address *a = e0.dwelling.address;
+    home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipcode];
+    
+    return [[[Section alloc] initWithRows:home, nil] autorelease];
+}
+
+- (Section*) phones {
+    Row* home = [[[Row alloc] initWithText:@"Home" detailText:self.contact.person.homePhone] autorelease];
+    Row* cell = [[[Row alloc] initWithText:@"Cell" detailText:self.contact.person.cellPhone] autorelease];
+    
+    return [[[Section alloc] initWithRows:home, cell, nil] autorelease];
+}
+
+- (Section*) emails {
+    Row* home =[[Row alloc] initWithText:@"Home" detailText:self.contact.person.email];
+    return [[[Section alloc] initWithRows:home, nil] autorelease];
+}
+
+- (Section*) instruments {
+    Section *instruments = [[Section new] autorelease];
     instruments.name = @"Instruments";
-    for (Event *e in contact.events) {
+    for (Event *e in self.contact.events) {
         Row *r = [Row new];
         r.text = e.name;
         [instruments addRow:r];
     }
-     
-    return [NSArray arrayWithObjects: addresses, phones, emails, instruments, nil];
+    return instruments;
 }
 
 - (void) dealloc {
