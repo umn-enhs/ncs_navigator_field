@@ -17,7 +17,6 @@
 #import "Row.h"
 #import "Contact.h"
 #import "Person.h"
-#import "SurveyorImageViewController.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;

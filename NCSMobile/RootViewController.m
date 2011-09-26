@@ -14,7 +14,6 @@
 #import "Contact.h"
 #import "Section.h"
 #import "Row.h"
-#import "SurveyorImageViewController.h"
 #import "SurveyorRootViewController.h"
 #import "SurveySectionViewController.h"
 
