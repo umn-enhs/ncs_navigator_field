@@ -40,7 +40,7 @@ ContactPresenter *presenter;
 }
 
 - (void)testSections {
-    STAssertEquals([presenter.sections count], 2U, @"Wrong number of sections");
+    STAssertEquals([presenter.sections count], 4U, @"Wrong number of sections");
 }
 
 

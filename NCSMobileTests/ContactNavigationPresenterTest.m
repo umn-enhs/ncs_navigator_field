@@ -7,14 +7,14 @@
 //
 
 #import "ContactNavigationPresenterTest.h"
-#import "ContactNavigationPresenter.h"
+#import "ContactNavigationTable.h"
 #import "Event.h"
 #import "Person.h"
 #import "Contact.h"
 
 @implementation ContactNavigationPresenterTest
 
-ContactNavigationPresenter* dvp;
+ContactNavigationTable* dvp;
 Event *e1, *e2, *e3;
 
 - (void)setUp
@@ -44,7 +44,7 @@ Event *e1, *e2, *e3;
     e3.person = fred;
     
     NSArray *events = [NSArray arrayWithObjects:e1, e2, e3, nil];
-    dvp = [[[ContactNavigationPresenter alloc] initWithEvents:events] autorelease];
+    dvp = [[[ContactNavigationTable alloc] initWithEvents:events] autorelease];
 }
 
 - (void)tearDown
@@ -57,8 +57,6 @@ Event *e1, *e2, *e3;
     STAssertEquals([sections count], 2U, @"Wrong number of sections");
     // TODO: Test section name
 }
-
-// Test rows
 
 @end
 

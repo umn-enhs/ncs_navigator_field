@@ -6,7 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactNavigationPresenter.h"
+#import "ContactNavigationTable.h"
 #import "Event.h"
 #import "Contact.h"
 #import "ContactManager.h"
@@ -14,13 +14,13 @@
 #import "Row.h"
 #import "Person.h"
 
-@implementation ContactNavigationPresenter
+@implementation ContactNavigationTable
 
 @synthesize events=_events;
 @synthesize contacts=_contacts;
 @synthesize sections=_sections;
 
-- (ContactNavigationPresenter*)initWithEvents: (NSArray*)events {
+- (ContactNavigationTable*)initWithEvents: (NSArray*)events {
     self = [super init];
     if (self) {
         self.events = events;

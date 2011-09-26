@@ -75,6 +75,7 @@
 		007B2BF8142BD15C00A5F7F4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B2BEB142BD15C00A5F7F4 /* SBJsonUTF8Stream.m */; };
 		007B2BF9142BD15C00A5F7F4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B2BED142BD15C00A5F7F4 /* SBJsonWriter.m */; };
 		007B2BFA142BD3DA00A5F7F4 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B2B9B142BD02300A5F7F4 /* TextFieldCell.m */; };
+		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
 		00E3234B14227F8100D3AEED /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3234A14227F8100D3AEED /* ContactManager.m */; };
 		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
@@ -83,7 +84,7 @@
 		00E3235D1422EB6A00D3AEED /* ContactPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3235C1422EB6A00D3AEED /* ContactPresenter.m */; };
 		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
-		00FF37E11417CA2D0009B1D4 /* ContactNavigationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */; };
+		00FF37E11417CA2D0009B1D4 /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* ContactNavigationTable.m */; };
 		00FF37E71417D2380009B1D4 /* ContactNavigationPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */; };
 		00FF37E81417D2B80009B1D4 /* ContactNavigationPresenterTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */; };
 /* End PBXBuildFile section */
@@ -768,6 +769,11 @@
 		007B2BEB142BD15C00A5F7F4 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		007B2BEC142BD15C00A5F7F4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		007B2BED142BD15C00A5F7F4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		009AD2E2142D391A0038650B /* SimpleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableController.h; sourceTree = "<group>"; };
+		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
+		009AD2E5142E47B50038650B /* SimpleTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableDataSource.h; sourceTree = "<group>"; };
+		009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableRowDelegate.h; sourceTree = "<group>"; };
+		009AD2E71430DA180038650B /* ISimpleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISimpleTable.h; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		00E3234914227F8100D3AEED /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
@@ -784,8 +790,8 @@
 		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
 		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
-		00FF37DF1417CA2D0009B1D4 /* ContactNavigationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactNavigationPresenter.h; path = ../ContactNavigationPresenter.h; sourceTree = "<group>"; };
-		00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactNavigationPresenter.m; path = ../ContactNavigationPresenter.m; sourceTree = "<group>"; };
+		00FF37DF1417CA2D0009B1D4 /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactNavigationTable.h; path = ../ContactNavigationTable.h; sourceTree = "<group>"; };
+		00FF37E01417CA2D0009B1D4 /* ContactNavigationTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactNavigationTable.m; path = ../ContactNavigationTable.m; sourceTree = "<group>"; };
 		00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationPresenterTest.h; sourceTree = "<group>"; };
 		00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationPresenterTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -943,6 +949,9 @@
 			children = (
 				0026E677140347E700355BCB /* NCSMobileAppDelegate.h */,
 				0026E678140347E700355BCB /* NCSMobileAppDelegate.m */,
+				009AD2E5142E47B50038650B /* SimpleTableDataSource.h */,
+				009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */,
+				009AD2E71430DA180038650B /* ISimpleTable.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -957,6 +966,8 @@
 				0075E179142BBB6E006E8801 /* SurveyorImageViewController.h */,
 				0075E17A142BBB6E006E8801 /* SurveyorImageViewController.m */,
 				0075E17B142BBB6E006E8801 /* SurveyorImageViewController.xib */,
+				009AD2E2142D391A0038650B /* SimpleTableController.h */,
+				009AD2E3142D391A0038650B /* SimpleTableController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -3298,8 +3309,8 @@
 		00FF37E21417CA320009B1D4 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				00FF37DF1417CA2D0009B1D4 /* ContactNavigationPresenter.h */,
-				00FF37E01417CA2D0009B1D4 /* ContactNavigationPresenter.m */,
+				00FF37DF1417CA2D0009B1D4 /* ContactNavigationTable.h */,
+				00FF37E01417CA2D0009B1D4 /* ContactNavigationTable.m */,
 				00E3235B1422EB6A00D3AEED /* ContactPresenter.h */,
 				00E3235C1422EB6A00D3AEED /* ContactPresenter.m */,
 			);
@@ -3550,7 +3561,7 @@
 				006EBEEB141679E9003D69CF /* Dwelling.m in Sources */,
 				00FF37DB1417C3D20009B1D4 /* Person.m in Sources */,
 				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
-				00FF37E11417CA2D0009B1D4 /* ContactNavigationPresenter.m in Sources */,
+				00FF37E11417CA2D0009B1D4 /* ContactNavigationTable.m in Sources */,
 				0045BDA91418017F007BB8AA /* Event.m in Sources */,
 				0045BDAC14191FB1007BB8AA /* Contact.m in Sources */,
 				00E3234B14227F8100D3AEED /* ContactManager.m in Sources */,
@@ -3571,6 +3582,7 @@
 				007B2BF7142BD15C00A5F7F4 /* SBJsonTokeniser.m in Sources */,
 				007B2BF8142BD15C00A5F7F4 /* SBJsonUTF8Stream.m in Sources */,
 				007B2BF9142BD15C00A5F7F4 /* SBJsonWriter.m in Sources */,
+				009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

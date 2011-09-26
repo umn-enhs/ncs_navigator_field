@@ -7,18 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ISimpleTable.h"
 
 @class Row;
 @class Event;
 @class Contact;
 
-@interface ContactNavigationPresenter : NSObject {
+@interface ContactNavigationTable : NSObject<ISimpleTable> {
     NSArray* _events;
     NSArray* _contacts;
     NSArray* _sections;
 }
 
-- (ContactNavigationPresenter*)initWithEvents: (NSArray*)events;
+- (ContactNavigationTable*)initWithEvents: (NSArray*)events;
 - (NSArray*) buildSectionsUsingContacts:(NSArray*) contacts;
 - (NSString*) buildSectionNameUsingDate:(NSDate*)date;
 - (NSArray*) buildRowsUsingContacts:(NSArray*)contacts;

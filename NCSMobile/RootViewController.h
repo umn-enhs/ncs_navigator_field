@@ -8,15 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
+#import "SimpleTableController.h"
+#import "SimpleTableRowDelegate.h"
 
 @class DetailViewController;
 
-@interface RootViewController : UITableViewController<RKObjectLoaderDelegate,UINavigationControllerDelegate> {
+@interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate> {
 }
 
 		
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
 - (void) loadSurveyor;
+- (void) didSelectRow:(Row*)row;
+
 
 @end
