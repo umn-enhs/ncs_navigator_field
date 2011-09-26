@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 
 #import "RootViewController.h"
-#import "ContactPresenter.h"
+#import "ContactTable.h"
 
 #import "Event.h"
 #import "Dwelling.h"
@@ -68,7 +68,7 @@
 {
     // Update the user interface for the detail item.
     Contact *c = self.detailItem;
-    self.presenter = [[ContactPresenter alloc]initUsingContact:c];
+    self.presenter = [[ContactTable alloc]initUsingContact:c];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];

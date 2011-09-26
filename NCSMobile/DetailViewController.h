@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class Contact;
-@class ContactPresenter;
+@class ContactTable;
 
 @interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *_tableView;
-    ContactPresenter *_presenter;
+    ContactTable *_presenter;
     bool _flag;
 
 }
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
 @property (nonatomic, retain) IBOutlet UILabel *eventDateLabel;
 @property (nonatomic, retain) IBOutlet UILabel* dwellingIdLabel;
-@property (nonatomic, retain) ContactPresenter *presenter;
+@property (nonatomic, retain) ContactTable *presenter;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 

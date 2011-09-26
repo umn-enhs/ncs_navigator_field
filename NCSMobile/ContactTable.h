@@ -11,7 +11,7 @@
 @class Contact;
 @class Section;
 
-@interface ContactPresenter : NSObject {
+@interface ContactTable : NSObject {
     Contact *_contact;
     NSArray *_sections;
 }

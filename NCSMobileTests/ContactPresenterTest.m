@@ -7,7 +7,7 @@
 //
 
 #import "ContactPresenterTest.h"
-#import "ContactPresenter.h"
+#import "ContactTable.h"
 #import "Fixtures.h"
 #import "Contact.h"
 #import "Address.h"
@@ -17,7 +17,7 @@
 
 Contact *c;
 Person *tom;
-ContactPresenter *presenter;
+ContactTable *presenter;
 
 - (void)setUp
 {
@@ -35,7 +35,7 @@ ContactPresenter *presenter;
     Event *e = [c.events objectAtIndex:0];
     e.dwelling = [Fixtures createDwellingWithId:@"D1" address:a];
 
-    presenter = [[ContactPresenter alloc] initUsingContact:c];
+    presenter = [[ContactTable alloc] initUsingContact:c];
 
 }
 

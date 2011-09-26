@@ -6,7 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactPresenter.h"
+#import "ContactTable.h"
 #import "Contact.h"
 #import "Section.h"
 #import "Row.h"
@@ -15,7 +15,7 @@
 #import "Dwelling.h"
 #import "Address.h"
 
-@implementation ContactPresenter
+@implementation ContactTable
 
 @synthesize contact=_contact;
 @synthesize sections=_sections;
