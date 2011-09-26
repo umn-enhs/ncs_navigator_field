@@ -13,11 +13,9 @@
 
 @interface SimpleTableController : UITableViewController {
     id<ISimpleTable> _simpleTable;
-//    UIViewController* _detailViewController;
 }
 
 @property(nonatomic,retain) id<ISimpleTable> simpleTable;
-//@property(nonatomic,retain) UIViewController* detailViewController;
 
 - (void) didSelectRow:(Row*)row;
 

@@ -14,7 +14,6 @@
 @implementation SimpleTableController 
 
 @synthesize simpleTable=_simpleTable;
-//@synthesize detailViewController=_detailViewController;
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -38,8 +37,6 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    //    Event* e = [self.simpleTable eventAtIndex:indexPath.row];
-    NSLog(@"NSInteger value :%@", indexPath.row);
     Section *s = [self.simpleTable.sections objectAtIndex:indexPath.section];
     Row *r = [s.rows objectAtIndex:indexPath.row];
     cell.textLabel.text = r.text;
@@ -57,19 +54,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here -- for example, create and push another view controller.
-    //    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
-    //    Event* e = [self.events objectAtIndex:indexPath.row];
     Section *s = [self.simpleTable.sections objectAtIndex:indexPath.section];
     Row *r = [s.rows objectAtIndex:indexPath.row];
     if ([self conformsToProtocol:@protocol(SimpleTableRowDelegate)]) {
         [self didSelectRow:r];
     }
-//    self.detailViewController.detailItem = r.entity;
-    // ...
-    // Pass the selected object to the new view controller.
-    //    [self.navigationController pushViewController:detailViewController animated:YES];
-    //    [detailViewController release];
 }
 
 - (void) didSelectRow:(Row*)row {}
