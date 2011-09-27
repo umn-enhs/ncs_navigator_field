@@ -33,7 +33,7 @@
 		0045BDA91418017F007BB8AA /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDA81418017F007BB8AA /* Event.m */; };
 		0045BDAC14191FB1007BB8AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAB14191FB1007BB8AA /* Contact.m */; };
 		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
-		00590AC81428F7D0008335EA /* ContactPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactPresenterTest.m */; };
+		00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactTableTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		007B2BBB142BD05E00A5F7F4 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B2B5E142BD02300A5F7F4 /* DatePickerViewController.m */; };
@@ -83,8 +83,8 @@
 		00FF37DB1417C3D20009B1D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DA1417C3D20009B1D4 /* Person.m */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
 		00FF37E11417CA2D0009B1D4 /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E01417CA2D0009B1D4 /* ContactNavigationTable.m */; };
-		00FF37E71417D2380009B1D4 /* ContactNavigationPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */; };
-		00FF37E81417D2B80009B1D4 /* ContactNavigationPresenterTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */; };
+		00FF37E71417D2380009B1D4 /* ContactNavigationTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* ContactNavigationTableTest.m */; };
+		00FF37E81417D2B80009B1D4 /* ContactNavigationTableTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* ContactNavigationTableTest.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,8 +226,8 @@
 		0045BDAB14191FB1007BB8AA /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		0045BDAD141921CD007BB8AA /* ContactTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTest.h; sourceTree = "<group>"; };
 		0045BDAE141921CD007BB8AA /* ContactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTest.m; sourceTree = "<group>"; };
-		00590AC61428F7D0008335EA /* ContactPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPresenterTest.h; sourceTree = "<group>"; };
-		00590AC71428F7D0008335EA /* ContactPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPresenterTest.m; sourceTree = "<group>"; };
+		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ContactTableTest.h; sourceTree = "<group>"; };
+		00590AC71428F7D0008335EA /* ContactTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableTest.m; sourceTree = "<group>"; };
 		00590AC914291818008335EA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		00590ACA14291818008335EA /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -786,8 +786,8 @@
 		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
 		00FF37DF1417CA2D0009B1D4 /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactNavigationTable.h; path = ../ContactNavigationTable.h; sourceTree = "<group>"; };
 		00FF37E01417CA2D0009B1D4 /* ContactNavigationTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactNavigationTable.m; path = ../ContactNavigationTable.m; sourceTree = "<group>"; };
-		00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationPresenterTest.h; sourceTree = "<group>"; };
-		00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationPresenterTest.m; sourceTree = "<group>"; };
+		00FF37E31417CFA30009B1D4 /* ContactNavigationTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTableTest.h; sourceTree = "<group>"; };
+		00FF37E41417CFA30009B1D4 /* ContactNavigationTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationTableTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -877,16 +877,16 @@
 			isa = PBXGroup;
 			children = (
 				0026E692140347E700355BCB /* Supporting Files */,
-				00FF37E31417CFA30009B1D4 /* ContactNavigationPresenterTest.h */,
-				00FF37E41417CFA30009B1D4 /* ContactNavigationPresenterTest.m */,
+				00FF37E31417CFA30009B1D4 /* ContactNavigationTableTest.h */,
+				00FF37E41417CFA30009B1D4 /* ContactNavigationTableTest.m */,
 				0045BDAD141921CD007BB8AA /* ContactTest.h */,
 				0045BDAE141921CD007BB8AA /* ContactTest.m */,
 				00E32346142153CD00D3AEED /* Fixtures.h */,
 				00E32347142153CD00D3AEED /* Fixtures.m */,
 				00E3234F142280AD00D3AEED /* ContactManagerTest.h */,
 				00E32350142280AD00D3AEED /* ContactManagerTest.m */,
-				00590AC61428F7D0008335EA /* ContactPresenterTest.h */,
-				00590AC71428F7D0008335EA /* ContactPresenterTest.m */,
+				00590AC61428F7D0008335EA /* ContactTableTest.h */,
+				00590AC71428F7D0008335EA /* ContactTableTest.m */,
 			);
 			name = Tests;
 			path = NCSMobileTests;
@@ -3501,7 +3501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0026E696140347E700355BCB /* InfoPlist.strings in Resources */,
-				00FF37E81417D2B80009B1D4 /* ContactNavigationPresenterTest.h in Resources */,
+				00FF37E81417D2B80009B1D4 /* ContactNavigationTableTest.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3578,11 +3578,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00FF37E71417D2380009B1D4 /* ContactNavigationPresenterTest.m in Sources */,
+				00FF37E71417D2380009B1D4 /* ContactNavigationTableTest.m in Sources */,
 				0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */,
 				00E32348142153CD00D3AEED /* Fixtures.m in Sources */,
 				00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */,
-				00590AC81428F7D0008335EA /* ContactPresenterTest.m in Sources */,
+				00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

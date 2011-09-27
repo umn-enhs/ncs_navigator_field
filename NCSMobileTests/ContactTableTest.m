@@ -6,14 +6,14 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactPresenterTest.h"
+#import "ContactTableTest.h"
 #import "ContactTable.h"
 #import "Fixtures.h"
 #import "Contact.h"
 #import "Address.h"
 #import "Event.h"
 
-@implementation ContactPresenterTest
+@implementation ContactTableTest
 
 Contact *c;
 Person *tom;

@@ -9,5 +9,5 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface ContactPresenterTest : SenTestCase
+@interface ContactTableTest : SenTestCase
 @end

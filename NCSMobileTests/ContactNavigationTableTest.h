@@ -8,7 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface ContactNavigationPresenterTest : SenTestCase {
+@interface ContactNavigationTableTest : SenTestCase {
 @private
     
 }

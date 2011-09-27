@@ -6,13 +6,13 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactNavigationPresenterTest.h"
+#import "ContactNavigationTableTest.h"
 #import "ContactNavigationTable.h"
 #import "Event.h"
 #import "Person.h"
 #import "Contact.h"
 
-@implementation ContactNavigationPresenterTest
+@implementation ContactNavigationTableTest
 
 ContactNavigationTable* dvp;
 Event *e1, *e2, *e3;

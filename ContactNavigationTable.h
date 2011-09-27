@@ -15,8 +15,6 @@
 
 @interface ContactNavigationTable : NSObject<ISimpleTable> {
     @private
-    NSArray* _events;
-    NSArray* _contacts;
     NSArray* _sections;
 }
 

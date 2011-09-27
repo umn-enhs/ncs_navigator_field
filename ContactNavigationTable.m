@@ -21,9 +21,8 @@
 - (ContactNavigationTable*)initWithEvents: (NSArray*)events {
     self = [super init];
     if (self) {
-        _events = events;
-        _contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
-        self.sections = [self buildSectionsUsingContacts:_contacts];
+        NSArray *contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
+        self.sections = [self buildSectionsUsingContacts:contacts];
     }
     return self;
 }
@@ -66,8 +65,6 @@
 }
 
 - (void)dealloc {
-    [_events release];
-    [_contacts release];
     [_sections release];
     [super dealloc];
 }
