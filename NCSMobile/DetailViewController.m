@@ -121,16 +121,20 @@
 }
 
 - (void) didSelectRow:(Row*)row {
-    [UIAppDelegate.rootViewController loadSurveyor];
-//    [self.view deselectRowAtIndexPath:indexPath animated:YES]; 
-//    UITableViewCell *oldCell = [self.view cellForRowAtIndexPath:indexPath];
-    
-    NSDateFormatter *f = [NSDateFormatter new];
-    [f setDateStyle:NSDateFormatterShortStyle];
-    [f setTimeStyle:NSDateFormatterShortStyle];
-    NSDate *d = [NSDate new];
-    
-//    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
+    if ([row.rowClass isEqualToString:@"instrument"]) {
+        [UIAppDelegate.rootViewController loadSurveyor];
+
+        //    [self.view deselectRowAtIndexPath:indexPath animated:YES]; 
+        //    UITableViewCell *oldCell = [self.view cellForRowAtIndexPath:indexPath];
+        
+        NSDateFormatter *f = [NSDateFormatter new];
+        [f setDateStyle:NSDateFormatterShortStyle];
+        [f setTimeStyle:NSDateFormatterShortStyle];
+        NSDate *d = [NSDate new];
+        
+        //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
+        
+    }
 }
 
 #pragma mark - Split view support
