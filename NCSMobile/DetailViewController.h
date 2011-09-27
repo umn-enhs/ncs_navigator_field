@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SimpleTableController.h"
+#import "SimpleTableRowDelegate.h"
 
 @class Contact;
 @class ContactTable;
 
-@interface DetailViewController : SimpleTableController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
+@interface DetailViewController : SimpleTableController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, SimpleTableRowDelegate> {
 //    IBOutlet UITableView *_tableView;
 //    ContactTable *_presenter;
 }
