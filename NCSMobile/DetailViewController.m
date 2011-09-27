@@ -37,8 +37,8 @@
 
 @synthesize dwellingIdLabel=_dwellingIdLabel;
 
-@synthesize presenter=_presenter;
-@synthesize tableView=_tableView;
+//@synthesize presenter=_presenter;
+//@synthesize tableView=_tableView;
 
 #pragma mark - Managing the detail item
 
@@ -67,7 +67,7 @@
 {
     // Update the user interface for the detail item.
     Contact *c = self.detailItem;
-    self.presenter = [[ContactTable alloc]initUsingContact:c];
+    self.simpleTable = [[ContactTable alloc]initUsingContact:c];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
@@ -112,7 +112,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    Section *s = [self.presenter.sections objectAtIndex:section];
+    Section *s = [self.simpleTable.sections objectAtIndex:section];
     return [s.rows count];
 }
 
@@ -133,7 +133,7 @@
         }
     }
     
-    Section *s = [self.presenter.sections objectAtIndex:indexPath.section];
+    Section *s = [self.simpleTable.sections objectAtIndex:indexPath.section];
     Row *r = [s.rows objectAtIndex:indexPath.row];
     cell.textLabel.text = r.text;
     cell.detailTextLabel.text = r.detailText;
@@ -142,11 +142,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.presenter.sections count];
+    return [self.simpleTable.sections count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    Section *s = [self.presenter.sections objectAtIndex:section];
+    Section *s = [self.simpleTable.sections objectAtIndex:section];
     return s.name;
 }
 

@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SimpleTableController.h"
 
 @class Contact;
 @class ContactTable;
 
-@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
-    IBOutlet UITableView *_tableView;
-    ContactTable *_presenter;
+@interface DetailViewController : SimpleTableController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
+//    IBOutlet UITableView *_tableView;
+//    ContactTable *_presenter;
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
@@ -21,8 +22,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
 @property (nonatomic, retain) IBOutlet UILabel *eventDateLabel;
 @property (nonatomic, retain) IBOutlet UILabel* dwellingIdLabel;
-@property (nonatomic, retain) ContactTable *presenter;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+//@property (nonatomic, retain) ContactTable *presenter;
+//@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 
 @end
