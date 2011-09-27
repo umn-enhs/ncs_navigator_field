@@ -30,19 +30,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
     Section *s = [self.simpleTable.sections objectAtIndex:indexPath.section];
     Row *r = [s.rows objectAtIndex:indexPath.row];
+
+    
+    NSString *cellIdentifier;
+    if (r.rowClass) {
+        cellIdentifier = r.rowClass;
+    } else {
+        cellIdentifier = @"default";
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [self cellForRowClass:cellIdentifier];
+    }
+    
     cell.textLabel.text = r.text;
     cell.detailTextLabel.text = r.detailText;
     
     return cell;
+}
+
+- (UITableViewCell*)cellForRowClass:(NSString*)rowClass {
+    return [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:rowClass] autorelease];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

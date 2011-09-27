@@ -151,52 +151,19 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [UIAppDelegate.rootViewController loadSurveyor];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
-    UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    NSDateFormatter *f = [NSDateFormatter new];
-    [f setDateStyle:NSDateFormatterShortStyle];
-    [f setTimeStyle:NSDateFormatterShortStyle];
-    NSDate *d = [NSDate new];
-    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
-}
-
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    if (section != 0) {
-//        return self.tableView.tableHeaderView;
-//    }
-//    // Create a header view. Wrap it in a container to allow us to position
-//    // it better.
-//    //
-//	// create the parent view that will hold header Label
-////    NSLog(self.view.frame.size.width )
-////	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, self.view.frame.size.width - 20, 200.0)];
-//	
-//	// create the button object
-////	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-//    UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, self.view.frame.size.width  - 20, 100.0)];
-//	headerLabel.backgroundColor = [UIColor redColor];
-//	headerLabel.opaque = NO;
-//	headerLabel.textColor = [UIColor blackColor];
-//	headerLabel.highlightedTextColor = [UIColor whiteColor];
-//	headerLabel.font = [UIFont boldSystemFontOfSize:20];
-//	headerLabel.frame = CGRectMake(10.0, 0.0, self.view.frame.size.width  - 20, 100.0);
-//    [headerLabel sizeToFit];
-//    headerLabel.textAlignment = UITextAlignmentCenter;
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [UIAppDelegate.rootViewController loadSurveyor];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
+//    UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:indexPath];
 //    
-//	// If you want to align the header text as centered
-////	headerLabel.frame = CGRectMake(150.0, 0.0, 300.0, 44.0);
-//    
-//	headerLabel.text = @"Poop";
-////    customView.center
-////	[customView addSubview:headerLabel];
-////    [customView setNeedsLayout];
-//    
-//	return headerLabel;
+//    NSDateFormatter *f = [NSDateFormatter new];
+//    [f setDateStyle:NSDateFormatterShortStyle];
+//    [f setTimeStyle:NSDateFormatterShortStyle];
+//    NSDate *d = [NSDate new];
+//    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
 //}
+
+
 
 #pragma mark - Split view support
 

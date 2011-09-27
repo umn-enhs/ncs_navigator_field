@@ -18,5 +18,6 @@
 @property(nonatomic,retain) id<ISimpleTable> simpleTable;
 
 - (void) didSelectRow:(Row*)row;
+- (UITableViewCell*)cellForRowClass:(NSString*)rowClass;
 
 @end
