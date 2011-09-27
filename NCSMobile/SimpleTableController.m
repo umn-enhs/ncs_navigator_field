@@ -73,4 +73,9 @@
 }
 
 - (void) didSelectRow:(Row*)row {}
+
+- (void) dealloc {
+    [_simpleTable release];
+    [super dealloc];
+}
 @end

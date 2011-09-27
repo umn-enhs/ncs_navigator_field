@@ -110,30 +110,18 @@
 
 #pragma mark - Table view support
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        // TODO: Ugly, structure this
-        if (indexPath.section == 3) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:CellIdentifier] autorelease];
-                cell.textLabel.font =[UIFont fontWithName:@"Arial" size:16];
-        } else {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:CellIdentifier] autorelease];
-            cell.textLabel.numberOfLines = 0;
-            cell.detailTextLabel.numberOfLines = 0;
-        }
+- (UITableViewCell*) cellForRowClass:(NSString *)rowClass {
+    UITableViewCell *cell;
+    if ([rowClass isEqualToString:@"instrument"]) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:rowClass] autorelease];
+        cell.textLabel.font =[[UIFont fontWithName:@"Arial" size:16] autorelease];
+    } else {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:rowClass] autorelease];
+        cell.textLabel.numberOfLines = 0;
+        cell.detailTextLabel.numberOfLines = 0;
     }
-    
-    Section *s = [self.simpleTable.sections objectAtIndex:indexPath.section];
-    Row *r = [s.rows objectAtIndex:indexPath.row];
-    cell.textLabel.text = r.text;
-    cell.detailTextLabel.text = r.detailText;
     return cell;
 }
-
 
 - (void) didSelectRow:(Row*)row {
     [UIAppDelegate.rootViewController loadSurveyor];

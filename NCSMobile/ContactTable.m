@@ -68,7 +68,7 @@
     for (Event *e in self.contact.events) {
         Row *r = [[Row new] autorelease];
         r.text = e.name;
-        r.rowClass = @"instument";
+        r.rowClass = @"instrument";
         [instruments addRow:r];
     }
     return instruments;
