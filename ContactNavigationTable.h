@@ -14,6 +14,7 @@
 @class Contact;
 
 @interface ContactNavigationTable : NSObject<ISimpleTable> {
+    @private
     NSArray* _events;
     NSArray* _contacts;
     NSArray* _sections;
@@ -23,9 +24,8 @@
 - (NSArray*) buildSectionsUsingContacts:(NSArray*) contacts;
 - (NSString*) buildSectionNameUsingDate:(NSDate*)date;
 - (NSArray*) buildRowsUsingContacts:(NSArray*)contacts;
+- (void)dealloc;
 
-@property(nonatomic,retain) NSArray* events;
-@property(nonatomic,retain) NSArray* contacts;
 @property(nonatomic,retain) NSArray* sections;
 
 

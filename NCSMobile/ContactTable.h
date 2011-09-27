@@ -13,11 +13,11 @@
 @class Section;
 
 @interface ContactTable : NSObject<ISimpleTable> {
+    @private
     Contact *_contact;
     NSArray *_sections;
 }
 
-@property(nonatomic,retain) Contact *contact;
 @property(nonatomic,retain) NSArray *sections;
 
 - (id)initUsingContact:(Contact*)contact;
@@ -26,5 +26,6 @@
 - (Section*) phones;
 - (Section*) emails;
 - (Section*) instruments;
+- (void) dealloc;
 
 @end

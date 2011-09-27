@@ -17,13 +17,12 @@
 
 @implementation ContactTable
 
-@synthesize contact=_contact;
 @synthesize sections=_sections;
 
 - (id)initUsingContact:(Contact*)contact {
     self = [super init];
     if (self) {
-        self.contact = contact;
+        _contact = contact;
         self.sections = [self buildSectionsFromContact:contact];
     }
     
@@ -43,7 +42,7 @@
     Row *home = [[Row alloc] initWithText:@"Home"];
     
     // TODO: Data shouldn't be structured like this
-    Event *e0 = [self.contact.events objectAtIndex:0];
+    Event *e0 = [_contact.events objectAtIndex:0];
     Address *a = e0.dwelling.address;
     home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipcode];
     
@@ -51,21 +50,21 @@
 }
 
 - (Section*) phones {
-    Row* home = [[[Row alloc] initWithText:@"Home" detailText:self.contact.person.homePhone] autorelease];
-    Row* cell = [[[Row alloc] initWithText:@"Cell" detailText:self.contact.person.cellPhone] autorelease];
+    Row* home = [[[Row alloc] initWithText:@"Home" detailText:_contact.person.homePhone] autorelease];
+    Row* cell = [[[Row alloc] initWithText:@"Cell" detailText:_contact.person.cellPhone] autorelease];
     
     return [[[Section alloc] initWithRows:home, cell, nil] autorelease];
 }
 
 - (Section*) emails {
-    Row* home =[[Row alloc] initWithText:@"Home" detailText:self.contact.person.email];
+    Row* home =[[Row alloc] initWithText:@"Home" detailText:_contact.person.email];
     return [[[Section alloc] initWithRows:home, nil] autorelease];
 }
 
 - (Section*) instruments {
     Section *instruments = [[Section new] autorelease];
     instruments.name = @"Instruments";
-    for (Event *e in self.contact.events) {
+    for (Event *e in _contact.events) {
         Row *r = [[Row new] autorelease];
         r.text = e.name;
         r.rowClass = @"instrument";

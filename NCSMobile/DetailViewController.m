@@ -37,9 +37,6 @@
 
 @synthesize dwellingIdLabel=_dwellingIdLabel;
 
-//@synthesize presenter=_presenter;
-//@synthesize tableView=_tableView;
-
 #pragma mark - Managing the detail item
 
 /*
@@ -80,6 +77,32 @@
     header.font = [UIFont fontWithName:@"Arial" size:26]; 
     self.tableView.tableHeaderView = header;
     [self.tableView reloadData];
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
 }
 
 #pragma mark - Table view support

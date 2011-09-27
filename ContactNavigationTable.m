@@ -16,16 +16,14 @@
 
 @implementation ContactNavigationTable
 
-@synthesize events=_events;
-@synthesize contacts=_contacts;
 @synthesize sections=_sections;
 
 - (ContactNavigationTable*)initWithEvents: (NSArray*)events {
     self = [super init];
     if (self) {
-        self.events = events;
-        self.contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
-        self.sections = [self buildSectionsUsingContacts:self.contacts];
+        _events = events;
+        _contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
+        self.sections = [self buildSectionsUsingContacts:_contacts];
     }
     return self;
 }
@@ -65,5 +63,12 @@
         [rows addObject:r];
     }
     return rows;
+}
+
+- (void)dealloc {
+    [_events release];
+    [_contacts release];
+    [_sections release];
+    [super dealloc];
 }
 @end
