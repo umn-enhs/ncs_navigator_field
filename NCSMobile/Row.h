@@ -12,11 +12,13 @@
     id entity;
     NSString *_text;
     NSString *_detailText;
+    NSString *_rowClass;
 }
 
 @property(nonatomic,retain) id entity;
-@property(nonatomic,retain) NSString *text;
-@property(nonatomic,retain) NSString *detailText;
+@property(nonatomic,copy) NSString *text;
+@property(nonatomic,copy) NSString *detailText;
+@property(nonatomic,copy) NSString *rowClass;
 
 - (id) initWithText:(NSString*)text;
 - (id) initWithText:(NSString*)text detailText:(NSString*)dt;

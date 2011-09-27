@@ -779,7 +779,7 @@
 		00E323561422A23A00D3AEED /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		00E323581422B08200D3AEED /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; };
 		00E323591422B08200D3AEED /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
-		00E3235B1422EB6A00D3AEED /* ContactTable.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ContactTable.h; sourceTree = "<group>"; };
+		00E3235B1422EB6A00D3AEED /* ContactTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTable.h; sourceTree = "<group>"; };
 		00E3235C1422EB6A00D3AEED /* ContactTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTable.m; sourceTree = "<group>"; };
 		00FF37D91417C3D20009B1D4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = ../Person.h; sourceTree = "<group>"; };
 		00FF37DA1417C3D20009B1D4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };

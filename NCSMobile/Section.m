@@ -24,6 +24,7 @@
             eachObject = va_arg(argumentList, id);
             while (eachObject) { // As many times as we can get an argument of type "id"
                 [self addRow: eachObject]; // that isn't nil, add it to self's contents.
+                eachObject = va_arg(argumentList, id);
             }
             va_end(argumentList);
         }

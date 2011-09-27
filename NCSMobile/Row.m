@@ -13,6 +13,7 @@
 @synthesize entity=_entity;
 @synthesize text=_text;
 @synthesize detailText=_detailText;
+@synthesize rowClass=_rowClass;
 
 - (id) initWithText:(NSString*)text {
     if (self = [super init]) {
@@ -33,6 +34,7 @@
     [_entity release];
     [_text release];
     [_detailText release];
+    [_rowClass release];
     [super dealloc];
 }
 @end

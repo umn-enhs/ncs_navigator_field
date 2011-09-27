@@ -66,8 +66,9 @@
     Section *instruments = [[Section new] autorelease];
     instruments.name = @"Instruments";
     for (Event *e in self.contact.events) {
-        Row *r = [Row new];
+        Row *r = [[Row new] autorelease];
         r.text = e.name;
+        r.rowClass = @"instument";
         [instruments addRow:r];
     }
     return instruments;
