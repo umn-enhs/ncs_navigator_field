@@ -11,11 +11,9 @@
 @class Contact;
 @class ContactTable;
 
-@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
     IBOutlet UITableView *_tableView;
     ContactTable *_presenter;
-    bool _flag;
-
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
