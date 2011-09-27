@@ -766,7 +766,6 @@
 		007B2BED142BD15C00A5F7F4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		009AD2E2142D391A0038650B /* SimpleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableController.h; sourceTree = "<group>"; };
 		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
-		009AD2E5142E47B50038650B /* SimpleTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableDataSource.h; sourceTree = "<group>"; };
 		009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableRowDelegate.h; sourceTree = "<group>"; };
 		009AD2E71430DA180038650B /* ISimpleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISimpleTable.h; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
@@ -944,7 +943,6 @@
 			children = (
 				0026E677140347E700355BCB /* NCSMobileAppDelegate.h */,
 				0026E678140347E700355BCB /* NCSMobileAppDelegate.m */,
-				009AD2E5142E47B50038650B /* SimpleTableDataSource.h */,
 				009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */,
 				009AD2E71430DA180038650B /* ISimpleTable.h */,
 			);
