@@ -15,7 +15,7 @@
     Address* _address;
 }
 
-@property(nonatomic,retain) NSString* id;
+@property(nonatomic,copy) NSString* id;
 @property(nonatomic,retain) Address* address;
     
 @end

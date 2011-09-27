@@ -14,8 +14,8 @@
     NSString* _name;
 }
 
-@property(nonatomic,retain) NSString* id;
-@property(nonatomic,retain) NSNumber* version;
-@property(nonatomic,retain) NSString* name;
+@property(nonatomic,copy) NSString* id;
+@property(nonatomic,copy) NSNumber* version;
+@property(nonatomic,copy) NSString* name;
 
 @end

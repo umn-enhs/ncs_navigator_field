@@ -15,9 +15,9 @@
     NSString* _state;
 }
 
-@property(nonatomic,retain) NSString* street;
-@property(nonatomic,retain) NSString* city;
-@property(nonatomic,retain) NSNumber* zipcode; 
-@property(nonatomic,retain) NSString* state;
+@property(nonatomic,copy) NSString* street;
+@property(nonatomic,copy) NSString* city;
+@property(nonatomic,copy) NSNumber* zipcode; 
+@property(nonatomic,copy) NSString* state;
 
 @end

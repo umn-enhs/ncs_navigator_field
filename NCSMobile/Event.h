@@ -20,9 +20,9 @@
     NSArray* _instruments;
 }
 
-@property(nonatomic,retain) NSString* id;
-@property(nonatomic,retain) NSString* name;
-@property(nonatomic,retain) NSDate* date;
+@property(nonatomic,copy) NSString* id;
+@property(nonatomic,copy) NSString* name;
+@property(nonatomic,copy) NSDate* date;
 @property(nonatomic,retain) Person* person;
 @property(nonatomic,retain) Dwelling* dwelling;
 @property(nonatomic,retain) NSArray* instruments;

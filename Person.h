@@ -21,11 +21,11 @@
 
 -(id) copyWithZone: (NSZone *) zone;
 
-@property(nonatomic,retain) NSString* id;
-@property(nonatomic,retain) NSString* name;
-@property(nonatomic,retain) NSString* email;
-@property(nonatomic,retain) NSString* cellPhone;
-@property(nonatomic,retain) NSString* homePhone;
+@property(nonatomic,copy) NSString* id;
+@property(nonatomic,copy) NSString* name;
+@property(nonatomic,copy) NSString* email;
+@property(nonatomic,copy) NSString* cellPhone;
+@property(nonatomic,copy) NSString* homePhone;
 @property(nonatomic,retain) Dwelling* dwelling;
 
 @end
