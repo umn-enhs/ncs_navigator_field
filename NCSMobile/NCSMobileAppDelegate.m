@@ -27,18 +27,9 @@
 
 @synthesize detailViewController=_detailViewController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // TODO: These mappings should be in their own mapping class
-    
-    // Initialize RestKit
-	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
-    
-    // Enable automatic network activity indicator management
-    [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
-    
+- (void)addMappingsToObjectManager:(RKObjectManager *)objectManager  {
     // Dwelling Mapping
-    RKObjectMapping* dwellingMapping = [RKObjectMapping mappingForClass:[Dwelling class]];
+      RKObjectMapping* dwellingMapping = [RKObjectMapping mappingForClass:[Dwelling class]];
     [dwellingMapping mapKeyPathsToAttributes: 
         @"id", @"id",
         nil];
@@ -95,6 +86,20 @@
     
     // Register our mappings with the provider
     [objectManager.mappingProvider setMapping:eventMapping forKeyPath:@"events"];
+
+}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // TODO: These mappings should be in their own mapping class
+    
+    // Initialize RestKit
+	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
+    
+    // Enable automatic network activity indicator management
+    [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
+    
+    [self addMappingsToObjectManager: objectManager];
+
 
     // Override point for customization after application launch.
     // Add the split view controller's view to the window and display.

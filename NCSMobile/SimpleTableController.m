@@ -15,7 +15,7 @@
 
 @synthesize simpleTable=_simpleTable;
 
-
+// TODO: Can this be replaced with Three20? (https://github.com/facebook/three20)
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [self.simpleTable.sections count];

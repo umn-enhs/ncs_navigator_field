@@ -226,7 +226,7 @@
 		0045BDAB14191FB1007BB8AA /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		0045BDAD141921CD007BB8AA /* ContactTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTest.h; sourceTree = "<group>"; };
 		0045BDAE141921CD007BB8AA /* ContactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTest.m; sourceTree = "<group>"; };
-		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ContactTableTest.h; sourceTree = "<group>"; };
+		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableTest.h; sourceTree = "<group>"; };
 		00590AC71428F7D0008335EA /* ContactTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableTest.m; sourceTree = "<group>"; };
 		00590AC914291818008335EA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		00590ACA14291818008335EA /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
@@ -823,6 +823,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00212CCC14326F8000294D82 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
@@ -864,6 +871,7 @@
 		0026E66E140347E700355BCB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				00212CCC14326F8000294D82 /* Resources */,
 				00FF37E21417CA320009B1D4 /* Presenters */,
 				006EBEE6141157BA003D69CF /* Models */,
 				006EBEE5141157B6003D69CF /* Controllers */,
