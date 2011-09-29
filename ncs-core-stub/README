@@ -1,0 +1,31 @@
+/staff/xyz123/events.json
+
+Scheduled Events for the fieldworker (with ability to specify start/end date)
+    Identifier
+    Type (name)
+    Scheduled date/time (ISO8601)
+    Person
+        Identifier
+        Name
+    Instruments
+        Identifier
+        Version
+        Type (name)
+    Dwelling
+        Identifier
+        Address
+    Household identifier
+Person
+    Identifier
+    Date of birth
+    Dwelling address
+    Phone number
+    Email
+    PPG status?
+    Sample info segment?
+Household
+    Identifier
+    Dwelling identifier
+    Persons in household
+        Relationship to participant
+Previous Contacts?
