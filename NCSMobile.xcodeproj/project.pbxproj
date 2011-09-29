@@ -442,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				006C600A1434DF0D00F52CD8 /* README.md */,
-				009827571434D088002A8777 /* RestKit.xcodeproj */,
 				0043A016141133410097A878 /* Other Sources */,
 				00439FFF141132B70097A878 /* Resources */,
 				0026E66E140347E700355BCB /* Classes */,
@@ -464,6 +463,7 @@
 		0026E667140347E700355BCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				009827571434D088002A8777 /* RestKit.xcodeproj */,
 				001AD3471434C46400AD0AFD /* json-framework */,
 				001008271434250D007C0EE9 /* surveyor_ios */,
 				00439FFD14112E6F0097A878 /* SystemConfiguration.framework */,
