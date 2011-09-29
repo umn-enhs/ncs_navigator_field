@@ -1,12 +1,12 @@
 NCS Navigator Field
 ===================
 
-This is an ios application to assist field workers in data collection for the National Childrens Study. 
+This is an ios application to assist field workers in data collection for the National Children's Study. 
 
 Testing
 -------
 
-NCS Navigator Field currently only supports pulling data from a ncs core stub service which is located in the ncs-cores-stub subdirectory.
+NCS Navigator Field currently only supports pulling data from a ncs core services stub service which is located in the ncs-core-stub subdirectory.
 
 To run this you need to:
 
