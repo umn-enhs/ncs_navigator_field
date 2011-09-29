@@ -35,7 +35,6 @@
 		0010086E1434250D007C0EE9 /* undotted.png in Resources */ = {isa = PBXBuildFile; fileRef = 001008511434250D007C0EE9 /* undotted.png */; };
 		0010086F1434250D007C0EE9 /* undotted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001008521434250D007C0EE9 /* undotted@2x.png */; };
 		001008701434250D007C0EE9 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 001008541434250D007C0EE9 /* UUID.m */; };
-		001008711434254B007C0EE9 /* NUSurveyorIOS-Prefix.pch in Sources */ = {isa = PBXBuildFile; fileRef = 001008341434250D007C0EE9 /* NUSurveyorIOS-Prefix.pch */; };
 		001AD3611434C46400AD0AFD /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AD3491434C46400AD0AFD /* NSObject+SBJson.m */; };
 		001AD3621434C46400AD0AFD /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AD34C1434C46400AD0AFD /* SBJsonParser.m */; };
 		001AD3631434C46400AD0AFD /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AD34E1434C46400AD0AFD /* SBJsonStreamParser.m */; };
@@ -74,6 +73,10 @@
 		00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactTableTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
+		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
+		009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276C1434D088002A8777 /* libRestKitNetwork.a */; };
+		009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276E1434D088002A8777 /* libRestKitObjectMapping.a */; };
+		009827861434D10C002A8777 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827701434D088002A8777 /* libRestKitSupport.a */; };
 		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
 		00E3234B14227F8100D3AEED /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3234A14227F8100D3AEED /* ContactManager.m */; };
@@ -94,6 +97,90 @@
 			remoteGlobalIDString = 0026E663140347E700355BCB;
 			remoteInfo = NCSMobile;
 		};
+		0098276B1434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A07FC1255161B00976E89;
+			remoteInfo = RestKitNetwork;
+		};
+		0098276D1434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A08031255162C00976E89;
+			remoteInfo = RestKitObjectMapping;
+		};
+		0098276F1434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A080C12551D3000976E89;
+			remoteInfo = RestKitSupport;
+		};
+		009827711434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20808DBD13DE8CDC000A156A;
+			remoteInfo = "RestKitJSONParser+NXJSON";
+		};
+		009827731434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E64F125231F600531FA8;
+			remoteInfo = "RestKitJSONParser+YAJL";
+		};
+		009827751434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E66B1252353700531FA8;
+			remoteInfo = "RestKitJSONParser+SBJSON";
+		};
+		009827771434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 73057FD11331AD2E001908EE;
+			remoteInfo = "RestKitJSONParser+JSONKit";
+		};
+		009827791434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
+			remoteInfo = "RestKitXMLParser+Libxml";
+		};
+		0098277B1434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A081412551D5300976E89;
+			remoteInfo = RestKitCoreData;
+		};
+		0098277D1434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2523360511E79F090048F9B4;
+			remoteInfo = RestKitThree20;
+		};
+		0098277F1434D088002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
+			remoteInfo = "RestKit Specs";
+		};
+		009827811434D0CD002A8777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
+			remoteInfo = RestKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -109,7 +196,6 @@
 		001008311434250D007C0EE9 /* NUSectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSectionVC.h; sourceTree = "<group>"; };
 		001008321434250D007C0EE9 /* NUSectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUSectionVC.m; sourceTree = "<group>"; };
 		001008331434250D007C0EE9 /* NUSurveyorIOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NUSurveyorIOS-Info.plist"; sourceTree = "<group>"; };
-		001008341434250D007C0EE9 /* NUSurveyorIOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NUSurveyorIOS-Prefix.pch"; sourceTree = "<group>"; };
 		001008361434250D007C0EE9 /* NUSurveyorIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NUSurveyorIOS.xcdatamodel; sourceTree = "<group>"; };
 		001008371434250D007C0EE9 /* NUSurveyorIOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSurveyorIOSAppDelegate.h; sourceTree = "<group>"; };
 		001008381434250D007C0EE9 /* NUSurveyorIOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUSurveyorIOSAppDelegate.m; sourceTree = "<group>"; };
@@ -206,6 +292,7 @@
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
+		009827571434D088002A8777 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		009AD2E2142D391A0038650B /* SimpleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableController.h; sourceTree = "<group>"; };
 		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
 		009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableRowDelegate.h; sourceTree = "<group>"; };
@@ -233,6 +320,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */,
+				009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */,
+				009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */,
+				009827861434D10C002A8777 /* libRestKitSupport.a in Frameworks */,
 				00439FFE14112E6F0097A878 /* SystemConfiguration.framework in Frameworks */,
 				00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */,
 				00439FFA14112E5E0097A878 /* CoreData.framework in Frameworks */,
@@ -271,7 +362,6 @@
 				001008311434250D007C0EE9 /* NUSectionVC.h */,
 				001008321434250D007C0EE9 /* NUSectionVC.m */,
 				001008331434250D007C0EE9 /* NUSurveyorIOS-Info.plist */,
-				001008341434250D007C0EE9 /* NUSurveyorIOS-Prefix.pch */,
 				001008351434250D007C0EE9 /* NUSurveyorIOS.xcdatamodeld */,
 				001008371434250D007C0EE9 /* NUSurveyorIOSAppDelegate.h */,
 				001008381434250D007C0EE9 /* NUSurveyorIOSAppDelegate.m */,
@@ -349,6 +439,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				009827571434D088002A8777 /* RestKit.xcodeproj */,
 				0043A016141133410097A878 /* Other Sources */,
 				00439FFF141132B70097A878 /* Resources */,
 				0026E66E140347E700355BCB /* Classes */,
@@ -510,6 +601,24 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		009827581434D088002A8777 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0098276C1434D088002A8777 /* libRestKitNetwork.a */,
+				0098276E1434D088002A8777 /* libRestKitObjectMapping.a */,
+				009827701434D088002A8777 /* libRestKitSupport.a */,
+				009827721434D088002A8777 /* libRestKitJSONParserNXJSON.a */,
+				009827741434D088002A8777 /* libRestKitJSONParserYAJL.a */,
+				009827761434D088002A8777 /* libRestKitJSONParserSBJSON.a */,
+				009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */,
+				0098277A1434D088002A8777 /* libRestKitXMLParserLibxml.a */,
+				0098277C1434D088002A8777 /* libRestKitCoreData.a */,
+				0098277E1434D088002A8777 /* libRestKitThree20.a */,
+				009827801434D088002A8777 /* RestKitSpecs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		00FF37E21417CA320009B1D4 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +644,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				009827821434D0CD002A8777 /* PBXTargetDependency */,
 			);
 			name = NCSMobile;
 			productName = NCSMobile;
@@ -575,6 +685,12 @@
 			mainGroup = 0026E659140347E700355BCB;
 			productRefGroup = 0026E665140347E700355BCB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 009827581434D088002A8777 /* Products */;
+					ProjectRef = 009827571434D088002A8777 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0026E663140347E700355BCB /* NCSMobile */,
@@ -582,6 +698,86 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0098276C1434D088002A8777 /* libRestKitNetwork.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitNetwork.a;
+			remoteRef = 0098276B1434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0098276E1434D088002A8777 /* libRestKitObjectMapping.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitObjectMapping.a;
+			remoteRef = 0098276D1434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		009827701434D088002A8777 /* libRestKitSupport.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitSupport.a;
+			remoteRef = 0098276F1434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		009827721434D088002A8777 /* libRestKitJSONParserNXJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserNXJSON.a;
+			remoteRef = 009827711434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		009827741434D088002A8777 /* libRestKitJSONParserYAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserYAJL.a;
+			remoteRef = 009827731434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		009827761434D088002A8777 /* libRestKitJSONParserSBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserSBJSON.a;
+			remoteRef = 009827751434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserJSONKit.a;
+			remoteRef = 009827771434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0098277A1434D088002A8777 /* libRestKitXMLParserLibxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitXMLParserLibxml.a;
+			remoteRef = 009827791434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0098277C1434D088002A8777 /* libRestKitCoreData.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitCoreData.a;
+			remoteRef = 0098277B1434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0098277E1434D088002A8777 /* libRestKitThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitThree20.a;
+			remoteRef = 0098277D1434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		009827801434D088002A8777 /* RestKitSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RestKitSpecs.app;
+			remoteRef = 0098277F1434D088002A8777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0026E662140347E700355BCB /* Resources */ = {
@@ -638,7 +834,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001008711434254B007C0EE9 /* NUSurveyorIOS-Prefix.pch in Sources */,
 				0026E676140347E700355BCB /* main.m in Sources */,
 				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
 				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
@@ -705,6 +900,11 @@
 			isa = PBXTargetDependency;
 			target = 0026E663140347E700355BCB /* NCSMobile */;
 			targetProxy = 0026E68F140347E700355BCB /* PBXContainerItemProxy */;
+		};
+		009827821434D0CD002A8777 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 009827811434D0CD002A8777 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

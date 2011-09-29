@@ -78,10 +78,10 @@
     
     // "2005-07-16T19:20+01:00",
     //http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369
-    [eventMapping.dateFormatStrings addObject:@"yyyy'-'MM'-'dd'T'HH':'mm'Z'"];
-    [eventMapping.dateFormatStrings addObject:@"yyyy-MM-dd'T'hh:mm:ssZZ"]; 
-    [eventMapping.dateFormatStrings addObject:@"yyyy-MM-dd'T'hh:mmZZ"]; 
-    [eventMapping.dateFormatStrings addObject:@"yyyy-MM-dd'T'hh:mmZ"]; 
+    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy'-'MM'-'dd'T'HH':'mm'Z'" inTimeZone:nil];
+    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mm:ssZZ" inTimeZone:nil]; 
+    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZZ" inTimeZone:nil]; 
+    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZ" inTimeZone:nil]; 
 //	[eventMapping.dateFormatStrings addObject:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     // Register our mappings with the provider
