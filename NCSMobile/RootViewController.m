@@ -14,8 +14,8 @@
 #import "Contact.h"
 #import "Section.h"
 #import "Row.h"
-#import "SurveyorRootViewController.h"
-#import "SurveySectionViewController.h"
+#import "NUSurveyVC.h"
+#import "NUSectionVC.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* events;
@@ -30,9 +30,9 @@
 
 #pragma surveyor
 - (void) loadSurveyor {
-    SurveyorRootViewController *surveyController = [[SurveyorRootViewController alloc] init];
-    SurveySectionViewController *sectionController = [[SurveySectionViewController alloc] init];
-    surveyController.detailViewController = sectionController;
+    NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
+    NUSectionVC *sectionController = [[NUSectionVC alloc] init];
+    surveyController.sectionController = sectionController;
     [self.navigationController pushViewController:surveyController animated:NO];
 
     self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
@@ -48,7 +48,7 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     Class src = [[self.splitViewController.viewControllers objectAtIndex:1] class];
     Class dst = [viewController class];
-    if ( src == [SurveySectionViewController class] &&  dst == [RootViewController class]) {
+    if ( src == [NUSectionVC class] &&  dst == [RootViewController class]) {
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, _detailViewController, nil];
     }    
 }
