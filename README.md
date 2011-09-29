@@ -6,7 +6,7 @@ This is an ios application to assist field workers in data collection for the Na
 Testing
 -------
 
-NCS Navigator Field currently only supports pulling data from a ncs core services stub service which is located in the ncs-core-stub subdirectory.
+NCS Navigator Field currently only supports pulling data from the ncs core services stub service located in the ncs-core-stub subdirectory.
 
 To run this you need to:
 

@@ -72,6 +72,7 @@
 		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
 		00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactTableTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
+		006C600B1434DF0D00F52CD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 006C600A1434DF0D00F52CD8 /* README.md */; };
 		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
 		009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276C1434D088002A8777 /* libRestKitNetwork.a */; };
@@ -289,6 +290,7 @@
 		00590AC71428F7D0008335EA /* ContactTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableTest.m; sourceTree = "<group>"; };
 		00590AC914291818008335EA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		00590ACA14291818008335EA /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		006C600A1434DF0D00F52CD8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
 		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				006C600A1434DF0D00F52CD8 /* README.md */,
 				009827571434D088002A8777 /* RestKit.xcodeproj */,
 				0043A016141133410097A878 /* Other Sources */,
 				00439FFF141132B70097A878 /* Resources */,
@@ -799,6 +802,7 @@
 				0010086D1434250D007C0EE9 /* unchecked@2x.png in Resources */,
 				0010086E1434250D007C0EE9 /* undotted.png in Resources */,
 				0010086F1434250D007C0EE9 /* undotted@2x.png in Resources */,
+				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
