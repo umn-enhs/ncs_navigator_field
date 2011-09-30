@@ -33,6 +33,7 @@
     NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
     NUSectionVC *sectionController = [[NUSectionVC alloc] init];
     surveyController.sectionController = sectionController;
+    UIAppDelegate.sectionController = sectionController;
     [self.navigationController pushViewController:surveyController animated:NO];
 
     self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];

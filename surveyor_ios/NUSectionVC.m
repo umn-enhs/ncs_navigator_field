@@ -7,9 +7,9 @@
 //
 
 #import "NUSectionVC.h"
-#import "TextFieldCell.h"
-#import "UILabel+Resize.h"
 #import "NUSurveyVC.h"
+#import "PageCell.h"
+#import "UILabel+Resize.h"
 #import "UUID.h"
 
 static const double PageViewControllerTextAnimationDuration = 0.33;
@@ -53,7 +53,7 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
   // setup fetch request
 	NSError *error = nil;
   NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-//  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Response" inManagedObjectContext:[NUSurveyorUIAppDelegate managedObjectContext]];
+//  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Response" inManagedObjectContext:[UIAppDelegate managedObjectContext]];
 //  [request setEntity:entity];
   
   // Set predicate
@@ -62,7 +62,7 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
                             responseSet, [ids objectForKey:@"qid"], [ids objectForKey:@"aid"]];
   [request setPredicate:predicate];
   
-//  NSArray *results = [[NUSurveyorUIAppDelegate managedObjectContext] executeFetchRequest:request error:&error];
+//  NSArray *results = [[UIAppDelegate managedObjectContext] executeFetchRequest:request error:&error];
 //  if (results == nil)
 //  {
 //    /*
@@ -74,24 +74,24 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
 //  }
   //  DLog(@"responseForAnswer: %@ result: %@", aid, [results lastObject]);
   //  DLog(@"responseForAnswer #:%d", [results count]);
-    return NULL; //results;
+  return NULL;
 }
 - (NSManagedObject *) newResponseForIndexPath:(NSIndexPath *)i Value:(NSString *)value{
-  NSDictionary *ids = [self idsForIndexPath:i];
-//  DLog(@"%@", responseSet);
-  NSManagedObject *newResponse = [NSEntityDescription insertNewObjectForEntityForName:@"Response" inManagedObjectContext:[NUSurveyorUIAppDelegate managedObjectContext]];
-  [newResponse setValue:responseSet forKey:@"responseSet"];
-  [newResponse setValue:[ids objectForKey:@"qid"] forKey:@"Question"];
-  [newResponse setValue:[ids objectForKey:@"aid"] forKey:@"Answer"];
-  [newResponse setValue:value forKey:@"Value"];
+//  NSDictionary *ids = [self idsForIndexPath:i];
+////  DLog(@"%@", responseSet);
+//  NSManagedObject *newResponse = [NSEntityDescription insertNewObjectForEntityForName:@"Response" inManagedObjectContext:[NUSurveyorUIAppDelegate managedObjectContext]];
+//  [newResponse setValue:responseSet forKey:@"responseSet"];
+//  [newResponse setValue:[ids objectForKey:@"qid"] forKey:@"Question"];
+//  [newResponse setValue:[ids objectForKey:@"aid"] forKey:@"Answer"];
+//  [newResponse setValue:value forKey:@"Value"];
+//  
+//  [newResponse setValue:[NSDate date] forKey:@"CreatedAt"];
+//  [newResponse setValue:[UUID generateUuidString] forKey:@"UUID"];
+//  
+//  // Save the context.
+//  [NUSurveyorUIAppDelegate saveContext:@"QuestionResponse newResponseForAnswerValue"];
   
-  [newResponse setValue:[NSDate date] forKey:@"CreatedAt"];
-  [newResponse setValue:[UUID generateUuidString] forKey:@"UUID"];
-  
-  // Save the context.
-  [NUSurveyorUIAppDelegate saveContext:@"QuestionResponse newResponseForAnswerValue"];
-  
-  return newResponse;
+  return nil;
 }
 - (NSManagedObject *) newResponseForIndexPath:i {
   return [self newResponseForIndexPath:i Value:nil];
@@ -109,13 +109,13 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
   }
 }
 - (void) deleteResponseForIndexPath:(NSIndexPath *)i {
-  NSArray *existingResponses = [self responsesForIndexPath:i];
-  for (NSManagedObject *existingResponse in existingResponses) {
-    [[NUSurveyorUIAppDelegate managedObjectContext] deleteObject:existingResponse];
-  }
-  
+//  NSArray *existingResponses = [self responsesForIndexPath:i];
+//  for (NSManagedObject *existingResponse in existingResponses) {
+//    [[NUSurveyorUIAppDelegate managedObjectContext] deleteObject:existingResponse];
+//  }
+//  
   // Save the context
-  [NUSurveyorUIAppDelegate saveContext:@"tableViewdidSelectRowAtIndexPath removing"];  
+//  [NUSurveyorUIAppDelegate saveContext:@"tableViewdidSelectRowAtIndexPath removing"];  
 }
 
 #pragma mark - Memory management
@@ -151,10 +151,10 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
   [super viewDidLoad];
 	self.useCustomHeaders = YES;
   
-//  UISwipeGestureRecognizer *r = [[UISwipeGestureRecognizer alloc] initWithTarget:NUSurveyorUIAppDelegate.surveyController action:@selector(prevSection)];
+//  UISwipeGestureRecognizer *r = [[UISwipeGestureRecognizer alloc] initWithTarget:UIAppDelegate.surveyController action:@selector(prevSection)];
 //  r.direction = UISwipeGestureRecognizerDirectionRight;
-  
-//  UISwipeGestureRecognizer *l = [[UISwipeGestureRecognizer alloc] initWithTarget:NUSurveyorUIAppDelegate.surveyController action:@selector(nextSection)];
+//  
+//  UISwipeGestureRecognizer *l = [[UISwipeGestureRecognizer alloc] initWithTarget:UIAppDelegate.surveyController action:@selector(nextSection)];
 //  l.direction = UISwipeGestureRecognizerDirectionLeft;
 //  [self.view addGestureRecognizer:r];
 //  [self.view addGestureRecognizer:l];
@@ -171,7 +171,7 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
+  // Return YES for supported orientations
 	return YES;
 }
 
@@ -229,12 +229,12 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
         if ([questionOrGroup objectForKey:@"text"] != nil) {
           [sectionTitles insertObject:[questionOrGroup objectForKey:@"text"] atIndex:i];
         } else {
-          [sectionTitles insertObject:@"" atIndex:i];  
+            [sectionTitles insertObject:@"" atIndex:i];  
         }
         if ([questionOrGroup objectForKey:@"help_text"]) {
           [sectionSubTitles insertObject:[questionOrGroup objectForKey:@"help_text"] atIndex:i];
         } else {
-          [sectionSubTitles insertObject:@"" atIndex:i];
+            [sectionSubTitles insertObject:@"" atIndex:i];  
         }
         i++;
         for (NSDictionary *question in [questionOrGroup objectForKey:@"questions"]) {
@@ -254,12 +254,12 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
   if ([question objectForKey:@"text"] != nil) {
     [sectionTitles insertObject:[question objectForKey:@"text"] atIndex:i];
   } else {
-    [sectionTitles insertObject:@"" atIndex:i];
+      [sectionTitles insertObject:@"" atIndex:i];  
   }
   if ([question objectForKey:@"help_text"]) {
     [sectionSubTitles insertObject:[question objectForKey:@"help_text"] atIndex:i];
   } else {
-    [sectionSubTitles insertObject:@"" atIndex:i];
+      [sectionSubTitles insertObject:@"" atIndex:i];  
   }
   
   if ([(NSString *)[question objectForKey:@"type"] isEqualToString:@"dropdown"] || [(NSString *)[question objectForKey:@"type"] isEqualToString:@"slider"]){
@@ -406,18 +406,22 @@ subTitleForHeaderInSection:(NSInteger)section
 // Update the rowData for the text field rows to match the edited value of the
 // text field.
 //
-//- (void)textFieldDidEndEditing:(UITextField *)textField
-//{
-//	UIView *parentOfParent = textField.superview.superview;
-//	if ([parentOfParent isKindOfClass:[TextFieldCell class]])
-//	{
-//		TextFieldCell *cell = (TextFieldCell *)parentOfParent;
-//		NSIndexPath *indexPathForCell = [self.tableView indexPathForCell:cell];
-//		NSMutableDictionary *rowData =
-//    [self dataForRow:indexPathForCell.row inSection:indexPathForCell.section];
-//		[rowData setObject:textField.text forKey:@"value"];
-//	}
-//}
+- (void)textFieldDidEndEditing:(UITextField *)aTextField {
+  NSIndexPath *idx = [self.tableView indexPathForCell:(UITableViewCell *)aTextField.superview.superview];
+  [self deleteResponseForIndexPath:idx];
+  if (aTextField.text != nil && ![aTextField.text isEqualToString:@""]) {
+    [self newResponseForIndexPath:idx Value:aTextField.text];
+  }
+}
+
+#pragma mark - UITextViewDelegate
+- (void)textViewDidEndEditing:(UITextView *)aTextView {
+  NSIndexPath *idx = [self.tableView indexPathForCell:(UITableViewCell *)aTextView.superview.superview];
+  [self deleteResponseForIndexPath:idx];
+  if (aTextView.text != nil && ![aTextView.text isEqualToString:@""]) {
+    [self newResponseForIndexPath:idx Value:aTextView.text];
+  }
+}
 
 #pragma mark - Keyboard support
 //

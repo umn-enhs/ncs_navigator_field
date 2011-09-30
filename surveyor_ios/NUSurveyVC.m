@@ -66,11 +66,11 @@
   dict = [[parser objectWithString:responseString] retain];
     
   // Create a new response set
-//  NSManagedObject *rs = [NSEntityDescription insertNewObjectForEntityForName:@"ResponseSet" inManagedObjectContext:[NUSurveyorUIAppDelegate managedObjectContext]];
+//  NSManagedObject *rs = [NSEntityDescription insertNewObjectForEntityForName:@"ResponseSet" inManagedObjectContext:[UIAppDelegate managedObjectContext]];
 //  [rs setValue:[NSDate date] forKey:@"CreatedAt"];
 //  [rs setValue:[[dict objectForKey:@"survey"] objectForKey:@"title"] forKey:@"UUID"];
 //  [rs setValue:[UUID generateUuidString] forKey:@"UUID"];
-//  [NUSurveyorUIAppDelegate saveContext:@"NUSurveyVC viewDidLoad new response set"];
+//  [UIAppDelegate saveContext:@"NUSurveyVC viewDidLoad new response set"];
 //  self.responseSet = rs;
   
 	// Setup sectionController

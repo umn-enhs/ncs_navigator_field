@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NUSectionVC.h"
 @class RootViewController;
 
 @class DetailViewController;
@@ -22,5 +22,7 @@
 @property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+
+@property (nonatomic, retain) NUSectionVC *sectionController;
 
 @end

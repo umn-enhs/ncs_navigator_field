@@ -28,6 +28,8 @@
 
 @synthesize detailViewController=_detailViewController;
 
+@synthesize sectionController;
+
 - (void)addMappingsToObjectManager:(RKObjectManager *)objectManager  {
     // Dwelling Mapping
       RKObjectMapping* dwellingMapping = [RKObjectMapping mappingForClass:[Dwelling class]];
