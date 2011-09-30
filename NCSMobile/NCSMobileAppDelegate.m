@@ -9,6 +9,7 @@
 #import "NCSMobileAppDelegate.h"
 
 #import "RootViewController.h"
+#import "LoginController.h"
 #import <RestKit/RestKit.h>
 #import "Event.h"
 #import "Dwelling.h"
@@ -105,6 +106,12 @@
     // Add the split view controller's view to the window and display.
     self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
+    
+    //    
+    LoginController *login = [[LoginController alloc] init];
+    [self.rootViewController.navigationController presentModalViewController:login animated:NO];
+    [login release];
+
     return YES;
 }
 

@@ -63,6 +63,9 @@
 		0026E68D140347E700355BCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66A140347E700355BCB /* Foundation.framework */; };
 		0026E68E140347E700355BCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66C140347E700355BCB /* CoreGraphics.framework */; };
 		0026E696140347E700355BCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0026E694140347E700355BCB /* InfoPlist.strings */; };
+		002B2E4414362E4900410D09 /* nubic-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4214362E4900410D09 /* nubic-logo.png */; };
+		002B2E4514362E4900410D09 /* nu-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4314362E4900410D09 /* nu-logo.png */; };
+		002B2E471436402400410D09 /* blood.json in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E461436402400410D09 /* blood.json */; };
 		00439FF814112E500097A878 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF714112E500097A878 /* CFNetwork.framework */; };
 		00439FFA14112E5E0097A878 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFB14112E670097A878 /* MobileCoreServices.framework */; };
@@ -79,6 +82,8 @@
 		009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276E1434D088002A8777 /* libRestKitObjectMapping.a */; };
 		009827861434D10C002A8777 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827701434D088002A8777 /* libRestKitSupport.a */; };
 		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
+		009EE2791436220C00E6D658 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EE2781436220C00E6D658 /* LoginController.xib */; };
+		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
 		00E3234B14227F8100D3AEED /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3234A14227F8100D3AEED /* ContactManager.m */; };
 		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
@@ -277,6 +282,9 @@
 		0026E693140347E700355BCB /* NCSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NCSMobileTests-Info.plist"; sourceTree = "<group>"; };
 		0026E695140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NCSMobileTests-Prefix.pch"; sourceTree = "<group>"; };
+		002B2E4214362E4900410D09 /* nubic-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nubic-logo.png"; sourceTree = "<group>"; };
+		002B2E4314362E4900410D09 /* nu-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nu-logo.png"; sourceTree = "<group>"; };
+		002B2E461436402400410D09 /* blood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = blood.json; path = NCSMobile/blood.json; sourceTree = SOURCE_ROOT; };
 		00439FF714112E500097A878 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		00439FF914112E5E0097A878 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00439FFB14112E670097A878 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -299,6 +307,9 @@
 		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
 		009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableRowDelegate.h; sourceTree = "<group>"; };
 		009AD2E71430DA180038650B /* ISimpleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISimpleTable.h; sourceTree = "<group>"; };
+		009EE2781436220C00E6D658 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginController.xib; path = NCSMobile/LoginController.xib; sourceTree = "<group>"; };
+		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		00A392DD14361C53003B19F3 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		00E3234914227F8100D3AEED /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
@@ -352,6 +363,7 @@
 		001008271434250D007C0EE9 /* surveyor_ios */ = {
 			isa = PBXGroup;
 			children = (
+				002B2E461436402400410D09 /* blood.json */,
 				001008281434250D007C0EE9 /* checked.png */,
 				001008291434250D007C0EE9 /* checked@2x.png */,
 				0010082A1434250D007C0EE9 /* dotted.png */,
@@ -434,6 +446,8 @@
 		00212CCC14326F8000294D82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				002B2E4214362E4900410D09 /* nubic-logo.png */,
+				002B2E4314362E4900410D09 /* nu-logo.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -557,6 +571,8 @@
 				0026E684140347E700355BCB /* RootViewController.m */,
 				009AD2E2142D391A0038650B /* SimpleTableController.h */,
 				009AD2E3142D391A0038650B /* SimpleTableController.m */,
+				00A392DC14361C53003B19F3 /* LoginController.h */,
+				00A392DD14361C53003B19F3 /* LoginController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -590,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				0026E67A140347E700355BCB /* MainWindow.xib */,
+				009EE2781436220C00E6D658 /* LoginController.xib */,
 				0026E680140347E700355BCB /* DetailView.xib */,
 			);
 			name = NIBs;
@@ -787,6 +804,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002B2E4414362E4900410D09 /* nubic-logo.png in Resources */,
+				002B2E4514362E4900410D09 /* nu-logo.png in Resources */,
 				0026E673140347E700355BCB /* InfoPlist.strings in Resources */,
 				0026E67C140347E700355BCB /* MainWindow.xib in Resources */,
 				0026E682140347E700355BCB /* DetailView.xib in Resources */,
@@ -803,6 +822,8 @@
 				0010086E1434250D007C0EE9 /* undotted.png in Resources */,
 				0010086F1434250D007C0EE9 /* undotted@2x.png in Resources */,
 				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
+				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
+				002B2E471436402400410D09 /* blood.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,6 +903,7 @@
 				001AD36C1434C46400AD0AFD /* SBJsonWriter.m in Sources */,
 				0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */,
 				002646601434CE02008D612B /* Person.m in Sources */,
+				00A392DF14361C53003B19F3 /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
