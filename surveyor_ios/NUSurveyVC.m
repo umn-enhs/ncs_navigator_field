@@ -60,7 +60,7 @@
 
 	// JSON data
 	NSError *strError;
-	NSString *strPath = [[NSBundle mainBundle] pathForResource:@"ks_with_uuid" ofType:@"json"];
+	NSString *strPath = [[NSBundle mainBundle] pathForResource:@"blood" ofType:@"json"];
   NSString *responseString = [NSString stringWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:&strError];
   SBJsonParser *parser = [[SBJsonParser alloc] init];  
   dict = [[parser objectWithString:responseString] retain];

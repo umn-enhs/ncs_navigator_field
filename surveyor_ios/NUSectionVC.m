@@ -228,9 +228,13 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
         [sections insertObject:questionOrGroup atIndex:i];
         if ([questionOrGroup objectForKey:@"text"] != nil) {
           [sectionTitles insertObject:[questionOrGroup objectForKey:@"text"] atIndex:i];
+        } else {
+          [sectionTitles insertObject:@"" atIndex:i];  
         }
         if ([questionOrGroup objectForKey:@"help_text"]) {
           [sectionSubTitles insertObject:[questionOrGroup objectForKey:@"help_text"] atIndex:i];
+        } else {
+          [sectionSubTitles insertObject:@"" atIndex:i];
         }
         i++;
         for (NSDictionary *question in [questionOrGroup objectForKey:@"questions"]) {
@@ -249,9 +253,13 @@ static const double PageViewControllerTextAnimationDuration = 0.33;
   [sections insertObject:question atIndex:i];
   if ([question objectForKey:@"text"] != nil) {
     [sectionTitles insertObject:[question objectForKey:@"text"] atIndex:i];
+  } else {
+    [sectionTitles insertObject:@"" atIndex:i];
   }
   if ([question objectForKey:@"help_text"]) {
     [sectionSubTitles insertObject:[question objectForKey:@"help_text"] atIndex:i];
+  } else {
+    [sectionSubTitles insertObject:@"" atIndex:i];
   }
   
   if ([(NSString *)[question objectForKey:@"type"] isEqualToString:@"dropdown"] || [(NSString *)[question objectForKey:@"type"] isEqualToString:@"slider"]){
