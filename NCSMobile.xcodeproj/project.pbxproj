@@ -455,6 +455,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				00AF72871462F3A700F328F8 /* CAS */,
 				006C600A1434DF0D00F52CD8 /* README.md */,
 				0043A016141133410097A878 /* Other Sources */,
 				00439FFF141132B70097A878 /* Resources */,
@@ -637,6 +638,14 @@
 				009827801434D088002A8777 /* RestKitSpecs.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		00AF72871462F3A700F328F8 /* CAS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CAS;
+			path = NCSMobile;
 			sourceTree = "<group>";
 		};
 		00FF37E21417CA320009B1D4 /* Presenters */ = {
