@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NUSectionVC.h"
+#import "NUSurveyVC.h"
 @class RootViewController;
 
 @class DetailViewController;
@@ -23,6 +24,19 @@
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
+/* imported for surveyor_ios */
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
+
+- (void) saveContext:(NSString *)triggeredBy;
+- (void) errorWithTitle:(NSString *)errorTitle message:(NSString *)errorMessage;
+
+@property (nonatomic, retain) IBOutlet NUSurveyVC *surveyController;
 @property (nonatomic, retain) NUSectionVC *sectionController;
+/* */
 
 @end
