@@ -3,9 +3,9 @@ require "bundler/setup"
 
 require 'sinatra'
 
-get '/staff/:staff_id/events.json' do
+get '/staff/:staff_id/contacts.json' do
   content_type :json
-  IO.read("events.json")
+  IO.read("contacts.json")
 end
 
 get '/staff/:netid/instruments/:instrument_id.json' do
