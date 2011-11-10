@@ -89,7 +89,7 @@
     self.title = @"Contacts";    
     
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];
+    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
     
     self.table = [[ContactNavigationTable alloc] initWithContacts:[NSArray arrayWithObjects: nil]];
 }
