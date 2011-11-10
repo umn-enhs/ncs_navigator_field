@@ -18,14 +18,14 @@
 #import "NUSectionVC.h"
 
 @interface RootViewController () 
-    @property(nonatomic,retain) NSArray* events;
+    @property(nonatomic,retain) NSArray* contacts;
     @property(nonatomic,retain) ContactNavigationTable* table;
 @end
 
 @implementation RootViewController
 		
 @synthesize detailViewController=_detailViewController;
-@synthesize events=_events;
+@synthesize contacts=_contacts;
 @synthesize table=_table;
 
 #pragma surveyor
@@ -61,10 +61,10 @@
 #pragma RestKit
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	NSLog(@"Loaded events: %@", objects);    
-	[_events release];
-	_events = [objects retain];
+	[_contacts release];
+	_contacts = [objects retain];
     
-    self.simpleTable = [[ContactNavigationTable alloc] initWithEvents:_events];
+    self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
     
 	[self.tableView reloadData];
 }
@@ -91,7 +91,7 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/events.json" delegate:self];
     
-    self.table = [[ContactNavigationTable alloc] initWithEvents:[NSArray arrayWithObjects: nil]];
+    self.table = [[ContactNavigationTable alloc] initWithContacts:[NSArray arrayWithObjects: nil]];
 }
 
 		
@@ -137,7 +137,7 @@
 - (void)dealloc
 {
     [_detailViewController release];
-    [_events release];
+    [_contacts release];
     [super dealloc];
 }
 

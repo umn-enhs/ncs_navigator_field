@@ -16,7 +16,9 @@
 #import "Person.h"
 #import "Instrument.h"
 #import "Address.h"
+#import "Location.h"
 #import "NUResponseSet.h"
+#import "Contact.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -37,53 +39,53 @@
 
 
 - (void)addMappingsToObjectManager:(RKObjectManager *)objectManager  {
-    // Dwelling Mapping
-      RKObjectMapping* dwellingMapping = [RKObjectMapping mappingForClass:[Dwelling class]];
-    [dwellingMapping mapKeyPathsToAttributes: 
-        @"id", @"id",
-        nil];
+    // Instrument Mapping
+    RKObjectMapping* instrument = [RKObjectMapping mappingForClass:[Instrument class]];
+    [instrument mapKeyPathsToAttributes: 
+        @"survey_ref", @"surveyRef", nil];
     
-    RKObjectMapping *addressMapping = [RKObjectMapping mappingForClass:[Address class]];
-    [addressMapping mapKeyPathsToAttributes:
+    // Event Mapping
+    RKObjectMapping* event = [RKObjectMapping mappingForClass:[Event class]];
+    [event mapKeyPathsToAttributes: 
+        @"name", @"name", nil];
+    [event mapRelationship:@"instruments" withMapping:instrument];
+    
+    // Address Mapping
+    RKObjectMapping *address = [RKObjectMapping mappingForClass:[Address class]];
+    [address mapKeyPathsToAttributes:
         @"street", @"street",
         @"city", @"city",
         @"state", @"state",
-        @"zipcode", @"zipcode",
-        nil];
-    
-    [dwellingMapping mapRelationship:@"address" withMapping:addressMapping];
+        @"zipcode", @"zipcode", nil];
+
+    // Location Mapping
+    RKObjectMapping* location = [RKObjectMapping mappingForClass:[Location class]];
+    [location mapKeyPathsToAttributes:
+        @"code", @"code",
+        @"other", @"other",
+        @"details", @"details", nil];
+    [location mapRelationship:@"address" withMapping:address];
     
     // Person Mapping
-    RKObjectMapping* personMapping = [RKObjectMapping mappingForClass:[Person class]];
-    [personMapping mapKeyPathsToAttributes: 
-     @"id", @"id",
-     @"name", @"name",
-     @"home_phone", @"homePhone",
-     @"cell_phone", @"cellPhone",
-     @"email", @"email",
-     nil];
-    
-    // Instrument Mapping
-    RKObjectMapping* instrumentMapping = [RKObjectMapping mappingForClass:[Instrument class]];
-    [instrumentMapping mapKeyPathsToAttributes: 
-     @"id", @"id",
-     @"version", @"version",
-     @"name", @"name",
-     nil];
-    
-    // Event Mapping
-    RKObjectMapping* eventMapping = [RKObjectMapping mappingForClass:[Event class]];
-    [eventMapping mapKeyPathsToAttributes: 
+    RKObjectMapping* person = [RKObjectMapping mappingForClass:[Person class]];
+    [person mapKeyPathsToAttributes: 
         @"id", @"id",
         @"name", @"name",
-        @"date", @"date",
-        nil];
+        @"home_phone", @"homePhone",
+        @"cell_phone", @"cellPhone",
+        @"email", @"email", nil];
     
-    // Event associations
-    [eventMapping mapRelationship:@"dwelling" withMapping:dwellingMapping];
-    [eventMapping mapRelationship:@"person" withMapping:personMapping];
-    [eventMapping mapRelationship:@"instruments" withMapping:instrumentMapping];
+    // Contact Mapping
+    RKObjectMapping* contact = [RKObjectMapping mappingForClass:[Contact class]];
+    [contact mapKeyPathsToAttributes:
+        @"type", @"type", 
+        @"start_date", @"startDate",
+        @"end_date", @"endDate", nil];
+    [contact mapRelationship:@"person" withMapping:person];
+    [contact mapRelationship:@"location" withMapping:location];
+    [contact mapRelationship:@"events" withMapping:event];
 
+     [objectManager.mappingProvider setMapping:contact forKeyPath:@"contacts"];
     
     // "2005-07-16T19:20+01:00",
     //http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369
@@ -92,10 +94,6 @@
     [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZZ" inTimeZone:nil]; 
     [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZ" inTimeZone:nil]; 
 //	[eventMapping.dateFormatStrings addObject:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-    
-    // Register our mappings with the provider
-    [objectManager.mappingProvider setMapping:eventMapping forKeyPath:@"events"];
-
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

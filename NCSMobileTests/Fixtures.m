@@ -38,13 +38,11 @@
 + (Event*) createEventWithName:(NSString*)name date:(NSDate*)date {
     Event *e = [[Event alloc] init];
     e.name = name;
-    e.date = date;
     return [e autorelease];
 }
 
 + (Event*) createEventWithName:(NSString*)name date:(NSDate*)date person:(Person*)person {
     Event *e = [self createEventWithName:name date:date];
-    e.person = person;
     return [e autorelease];
 }
 
@@ -52,8 +50,7 @@
     Contact *c = [[Contact alloc] init];
     c.startDate = date;
     c.person = person;
-    Event *e = [self createEventWithName:name date:date person:person];
-    [c addEvent:e];
+//    Event *e = [self createEventWithName:name date:date person:person];
     return [c autorelease];
 }
 

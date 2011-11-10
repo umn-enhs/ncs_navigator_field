@@ -18,10 +18,9 @@
 
 @synthesize sections=_sections;
 
-- (ContactNavigationTable*)initWithEvents: (NSArray*)events {
+- (ContactNavigationTable*)initWithContacts: (NSArray*)contacts {
     self = [super init];
     if (self) {
-        NSArray *contacts = [ContactManager coalesce:[Contact contactsFromEventsArray:events]];
         self.sections = [self buildSectionsUsingContacts:contacts];
     }
     return self;

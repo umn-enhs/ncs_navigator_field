@@ -10,7 +10,6 @@
 #import "ISimpleTable.h"
 
 @class Row;
-@class Event;
 @class Contact;
 
 @interface ContactNavigationTable : NSObject<ISimpleTable> {
@@ -18,7 +17,7 @@
     NSArray* _sections;
 }
 
-- (ContactNavigationTable*)initWithEvents: (NSArray*)events;
+- (ContactNavigationTable*)initWithContacts: (NSArray*)events;
 - (NSArray*) buildSectionsUsingContacts:(NSArray*) contacts;
 - (NSString*) buildSectionNameUsingDate:(NSDate*)date;
 - (NSArray*) buildRowsUsingContacts:(NSArray*)contacts;

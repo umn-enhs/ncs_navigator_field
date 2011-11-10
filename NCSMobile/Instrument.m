@@ -10,14 +10,10 @@
 
 @implementation Instrument
 
-@synthesize id=_id;
-@synthesize version=_version;
-@synthesize name=_name;
+@synthesize surveyRef=_surveyRef;
 
 - (void)dealloc {
-    [_id release];
-    [_version release];
-    [_name release];
+    [_surveyRef release];
     [super dealloc];
 }
 

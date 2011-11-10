@@ -49,9 +49,9 @@ NSArray *contacts;
     [super tearDown];
 }
 
-- (void)testCombineByPersonAndDate {
-    NSArray *actual = [ContactManager coalesce:contacts];
-    STAssertEquals([actual count], 3U, @"Wrong number of contacts");
-}
+//- (void)testCombineByPersonAndDate {
+//    NSArray *actual = [ContactManager coalesce:contacts];
+//    STAssertEquals([actual count], 3U, @"Wrong number of contacts");
+//}
 
 @end

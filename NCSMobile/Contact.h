@@ -10,25 +10,24 @@
 
 @class Event;
 @class Person;
+@class Location;
 
 @interface Contact : NSObject {
-    Person *_person;
-    NSDate *_startDate;
-    NSMutableArray *_events;
+    NSNumber* type;
+    Person* _person;
+    NSDate* _startDate;
+    NSDate* _endDate;
+    Location* _location;
+    NSMutableArray* _events;
 }
 
-- (Contact*) initWithEvent:(Event*)event;
-- (void) addEvent: (Event*)event;
-- (BOOL) isEventPartOfContact: (Event*)event;
-+ (NSArray*) contactsFromEvents:(Event*) firstEvent, ...;
-- (BOOL) canBeCoalescedWith:(Contact*)contact;
-+ (NSArray*) contactsFromEventsArray:(NSArray*) events;
-- (void) coalesce:(Contact*)contact;
-- (NSArray*) coalescableContacts:(NSArray*) contacts;
 
 
-@property(nonatomic,retain) Person *person;
-@property(nonatomic,retain) NSDate *startDate;
-@property(nonatomic,retain) NSMutableArray *events;
+@property(nonatomic,retain) NSNumber* type;
+@property(nonatomic,retain) Person* person;
+@property(nonatomic,retain) NSDate* startDate;
+@property(nonatomic,retain) NSDate* endDate;
+@property(nonatomic,retain) NSMutableArray* events;
+@property(nonatomic,retain) Location* location;
 
 @end

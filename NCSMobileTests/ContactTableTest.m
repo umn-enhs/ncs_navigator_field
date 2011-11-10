@@ -33,7 +33,7 @@ ContactTable *presenter;
     Address *a = [Fixtures createAddressWithStreet:@"1 Sesame St" city: @"Chicago" state:@"IL" zipCode:60611];
     
     Event *e = [c.events objectAtIndex:0];
-    e.dwelling = [Fixtures createDwellingWithId:@"D1" address:a];
+//    e.dwelling = [Fixtures createDwellingWithId:@"D1" address:a];
 
     presenter = [[ContactTable alloc] initUsingContact:c];
 

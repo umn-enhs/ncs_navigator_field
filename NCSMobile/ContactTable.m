@@ -14,6 +14,7 @@
 #import "Event.h"
 #import "Dwelling.h"
 #import "Address.h"
+#import "Location.h"
 
 @implementation ContactTable
 
@@ -42,8 +43,7 @@
     Row *home = [[Row alloc] initWithText:@"Home"];
     
     // TODO: Data shouldn't be structured like this
-    Event *e0 = [_contact.events objectAtIndex:0];
-    Address *a = e0.dwelling.address;
+    Address *a = _contact.location.address;
     home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipcode];
     
     return [[[Section alloc] initWithRows:home, nil] autorelease];

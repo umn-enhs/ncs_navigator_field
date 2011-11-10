@@ -15,4 +15,11 @@
 @synthesize zipcode=_zipcode;
 @synthesize state=_state;
 
+- (void) dealloc {
+    [_street release];
+    [_city release];
+    [_zipcode release];
+    [_state release];
+}
+
 @end
