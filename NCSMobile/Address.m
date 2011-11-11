@@ -10,16 +10,7 @@
 
 @implementation Address
 
-@synthesize street=_street;
-@synthesize city=_city;
-@synthesize zipcode=_zipcode;
-@synthesize state=_state;
+@dynamic street, city, zipCode, state;
 
-- (void) dealloc {
-    [_street release];
-    [_city release];
-    [_zipcode release];
-    [_state release];
-}
 
 @end

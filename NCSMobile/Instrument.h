@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Instrument : NSObject {
-    NSString* _surveyRef;
-}
+@interface Instrument : NSManagedObject 
 
-@property(nonatomic,copy) NSString* surveyRef;
+@property(nonatomic,retain) NSString* surveyRef;
 
 @end

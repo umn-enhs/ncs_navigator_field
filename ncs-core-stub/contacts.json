@@ -4,12 +4,12 @@
       "type": "1",
       "start_date": "2005-07-18T15:20",
       "end_date": "",
-      "person": { "id": "P6", "name": "Beyonce Z", "email": "beyonce@z.com", "cell_phone": "312-222-9999", "home_phone": "312-222-9999"},
+      "person": { "name": "Beyonce Z", "email": "beyonce@z.com", "cell_phone": "312-222-9999", "home_phone": "312-222-9999"},
       "location": {
         "code": "1", 
         "other": "", 
         "details": "",
-        "address": { "street": "321 Purple Rn", "city": "Chicago", "state": "IL", "zipcode": "60611"}
+        "address": { "street": "321 Purple Rn", "city": "Chicago", "state": "IL", "zip_code": "60611"}
         },
       "events": [
         {
@@ -22,12 +22,12 @@
       "type": "3",
       "start_date": "2005-07-17T15:20",
       "end_date": "",
-      "person": { "id": "P6", "name": "Appollonia", "email": "apple@formerly.com", "cell_phone": "312-222-3333", "home_phone": "312-222-3334"},
+      "person": { "name": "Appollonia", "email": "apple@formerly.com", "cell_phone": "312-222-3333", "home_phone": "312-222-3334"},
       "location": {
         "code": "2", 
         "other": "", 
         "details": "",
-        "address": { "street": "750 North Lake Shore Drive 10th Floor", "city": "Chicago", "state": "IL", "zipcode": "60611"}
+        "address": { "street": "750 North Lake Shore Drive 10th Floor", "city": "Chicago", "state": "IL", "zip_code": "60611"}
       },
       "events": [
         {
@@ -40,12 +40,12 @@
       "type": "1",
       "start_date": "2005-07-17T15:20",
       "end_date": "",
-      "person": { "id": "P5", "name": "Prince Rogers Nelson", "email": "prog@formerly.com", "cell_phone": "312-111-2222", "home_phone": "312-111-2223"},
+      "person": { "name": "Prince Rogers Nelson", "email": "prog@formerly.com", "cell_phone": "312-111-2222", "home_phone": "312-111-2223"},
       "location": {
         "code": "1", 
         "other": "", 
         "details": "",
-        "address": { "street": "123 Alphabet St", "city": "Chicago", "state": "IL", "zipcode": "60611"}
+        "address": { "street": "123 Alphabet St", "city": "Chicago", "state": "IL", "zip_code": "60611"}
       },
       "events": [
         {

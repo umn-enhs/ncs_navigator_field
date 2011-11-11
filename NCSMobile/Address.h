@@ -8,16 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Address : NSObject {
-    NSString* _street;
-    NSString* _city;
-    NSNumber* _zipcode;
-    NSString* _state;
-}
-
-@property(nonatomic,copy) NSString* street;
-@property(nonatomic,copy) NSString* city;
-@property(nonatomic,copy) NSNumber* zipcode; 
-@property(nonatomic,copy) NSString* state;
+@interface Address : NSManagedObject 
+@property(nonatomic,retain) NSString* street;
+@property(nonatomic,retain) NSString* city;
+@property(nonatomic,retain) NSNumber* zipCode; 
+@property(nonatomic,retain) NSString* state;
 
 @end

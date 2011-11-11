@@ -11,13 +11,6 @@
 
 @implementation Location
 
-@synthesize code=_code;
-@synthesize other=_other;
-@synthesize details=_details;
-@synthesize address=_address;
+@dynamic code, other, details, address;
 
-- (void) dealloc {
-    [_address release];
-    [super dealloc];
-}
 @end

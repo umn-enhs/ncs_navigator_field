@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class Row;
-@interface Section : NSObject {
+@interface Section : NSManagedObject {
     NSArray *_rows;
     NSString *_name;
 }

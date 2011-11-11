@@ -10,11 +10,7 @@
 
 @implementation Instrument
 
-@synthesize surveyRef=_surveyRef;
+@dynamic surveyRef;
 
-- (void)dealloc {
-    [_surveyRef release];
-    [super dealloc];
-}
 
 @end

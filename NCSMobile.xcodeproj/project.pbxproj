@@ -61,7 +61,6 @@
 		0065B8DC14631E1D00743D14 /* undotted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65214631D1A00743D14 /* undotted.png */; };
 		0065B8DD14631E1D00743D14 /* undotted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65314631D1A00743D14 /* undotted@2x.png */; };
 		006C600B1434DF0D00F52CD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 006C600A1434DF0D00F52CD8 /* README.md */; };
-		006EBEEB141679E9003D69CF /* Dwelling.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EBEEA141679E9003D69CF /* Dwelling.m */; };
 		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
 		009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276C1434D088002A8777 /* libRestKitNetwork.a */; };
 		009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276E1434D088002A8777 /* libRestKitObjectMapping.a */; };
@@ -71,8 +70,9 @@
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */; };
+		00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098277C1434D088002A8777 /* libRestKitCoreData.a */; };
+		00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
-		00E3234B14227F8100D3AEED /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3234A14227F8100D3AEED /* ContactManager.m */; };
 		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
 		00E323571422A23A00D3AEED /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E323561422A23A00D3AEED /* Section.m */; };
 		00E3235A1422B08200D3AEED /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E323591422B08200D3AEED /* Row.m */; };
@@ -790,8 +790,6 @@
 		0065B8B114631D2D00743D14 /* WriterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriterTest.m; sourceTree = "<group>"; };
 		006C600A1434DF0D00F52CD8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		006EBEE9141679E9003D69CF /* Dwelling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dwelling.h; sourceTree = "<group>"; };
-		006EBEEA141679E9003D69CF /* Dwelling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dwelling.m; sourceTree = "<group>"; };
 		009827571434D088002A8777 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		009AD2E2142D391A0038650B /* SimpleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableController.h; sourceTree = "<group>"; };
 		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
@@ -803,10 +801,9 @@
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSMobile.xcdatamodel; sourceTree = "<group>"; };
+		00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSCoreData.xcdatamodel; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
-		00E3234914227F8100D3AEED /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
-		00E3234A14227F8100D3AEED /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
 		00E3234F142280AD00D3AEED /* ContactManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManagerTest.h; sourceTree = "<group>"; };
 		00E32350142280AD00D3AEED /* ContactManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManagerTest.m; sourceTree = "<group>"; };
 		00E323551422A23A00D3AEED /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
@@ -826,6 +823,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */,
 				0065B8C414631D3D00743D14 /* libsbjson-ios.a in Frameworks */,
 				009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */,
 				009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */,
@@ -950,6 +948,7 @@
 				006EBEE8141673A1003D69CF /* Other */,
 				006EBEE714115870003D69CF /* NIBs */,
 				00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */,
+				00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2550,12 +2549,8 @@
 				0026465F1434CE02008D612B /* Person.m */,
 				0045BDAA14191FB1007BB8AA /* Contact.h */,
 				0045BDAB14191FB1007BB8AA /* Contact.m */,
-				00E3234914227F8100D3AEED /* ContactManager.h */,
-				00E3234A14227F8100D3AEED /* ContactManager.m */,
 				006EBEE1141139B2003D69CF /* Event.h */,
 				0045BDA81418017F007BB8AA /* Event.m */,
-				006EBEE9141679E9003D69CF /* Dwelling.h */,
-				006EBEEA141679E9003D69CF /* Dwelling.m */,
 				00590AC914291818008335EA /* Address.h */,
 				00590ACA14291818008335EA /* Address.m */,
 				00FF37DC1417C50D0009B1D4 /* Instrument.h */,
@@ -2916,11 +2911,9 @@
 				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
 				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
 				0026E685140347E700355BCB /* RootViewController.m in Sources */,
-				006EBEEB141679E9003D69CF /* Dwelling.m in Sources */,
 				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
 				0045BDA91418017F007BB8AA /* Event.m in Sources */,
 				0045BDAC14191FB1007BB8AA /* Contact.m in Sources */,
-				00E3234B14227F8100D3AEED /* ContactManager.m in Sources */,
 				00E323571422A23A00D3AEED /* Section.m in Sources */,
 				00E3235A1422B08200D3AEED /* Row.m in Sources */,
 				00E3235D1422EB6A00D3AEED /* ContactTable.m in Sources */,
@@ -2931,6 +2924,7 @@
 				00A392DF14361C53003B19F3 /* LoginController.m in Sources */,
 				00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */,
 				00B6CD00146B1A77004767BE /* Location.m in Sources */,
+				00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3145,7 +3139,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NCSMobile/NCSMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
+				HEADER_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build",
+					"$(SOURCE_ROOT)/../json-framework/Classes",
+				);
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
@@ -3172,7 +3169,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NCSMobile/NCSMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
+				HEADER_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build",
+					"$(SOURCE_ROOT)/../json-framework/Classes",
+				);
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
@@ -3287,6 +3287,17 @@
 			currentVersion = 00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */;
 			name = NCSMobile.xcdatamodeld;
 			path = NCSMobile/NCSMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */,
+			);
+			currentVersion = 00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */;
+			name = NCSCoreData.xcdatamodeld;
+			path = NCSMobile/NCSCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

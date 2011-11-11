@@ -7,17 +7,8 @@
 //
 
 #import "Event.h"
-#import "Dwelling.h"
 
 @implementation Event
 
-@synthesize name=_name;
-@synthesize instruments=_instruments;
-
-- (void) dealloc {
-    [_name release];
-    [_instruments release];
-    [super dealloc];
-}
-
+@dynamic name, instruments;
 @end

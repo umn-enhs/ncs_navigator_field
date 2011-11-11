@@ -12,7 +12,6 @@
 #import "ContactTable.h"
 
 #import "Event.h"
-#import "Dwelling.h"
 #import "Section.h"
 #import "Row.h"
 #import "Contact.h"

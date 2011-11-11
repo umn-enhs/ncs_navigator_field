@@ -9,7 +9,6 @@
 #import "ContactNavigationTable.h"
 #import "Event.h"
 #import "Contact.h"
-#import "ContactManager.h"
 #import "Section.h"
 #import "Row.h"
 #import "Person.h"

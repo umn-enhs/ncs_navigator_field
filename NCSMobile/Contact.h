@@ -12,22 +12,13 @@
 @class Person;
 @class Location;
 
-@interface Contact : NSObject {
-    NSNumber* type;
-    Person* _person;
-    NSDate* _startDate;
-    NSDate* _endDate;
-    Location* _location;
-    NSMutableArray* _events;
-}
-
-
+@interface Contact : NSManagedObject
 
 @property(nonatomic,retain) NSNumber* type;
 @property(nonatomic,retain) Person* person;
 @property(nonatomic,retain) NSDate* startDate;
 @property(nonatomic,retain) NSDate* endDate;
-@property(nonatomic,retain) NSMutableArray* events;
+@property(nonatomic,retain) NSSet* events;
 @property(nonatomic,retain) Location* location;
 
 @end

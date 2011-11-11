@@ -12,22 +12,8 @@
 
 @implementation Contact
 
-@synthesize type=_type;
-@synthesize startDate=_startDate;
-@synthesize endDate=_endDate;
-@synthesize person=_person;
-@synthesize location=_location;
-@synthesize events=_events;
+@dynamic type, startDate, endDate, person, location, events;
 
 
-- (void) dealloc {
-    [_type release];
-    [_startDate release];
-    [_endDate release];
-    [_person release];
-    [_location release];
-    [_events release];
-    [super dealloc];
-}
 
 @end

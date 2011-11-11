@@ -8,15 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class Dwelling;
-@class Person;
-
-@interface Event : NSObject {
-    NSString* _name;
-    NSArray* _instruments;
-}
-
+@interface Event : NSManagedObject
 @property(nonatomic,copy) NSString* name;
-@property(nonatomic,retain) NSArray* instruments;
+@property(nonatomic,retain) NSSet* instruments;
 
 @end

@@ -10,12 +10,7 @@
 
 @class Address;
 
-@interface Location : NSObject {
-    NSNumber* _code;
-    NSString* _other;
-    NSString* _details;
-    Address* _address;
-}
+@interface Location : NSManagedObject
 
 @property(nonatomic,retain) NSNumber* code;
 

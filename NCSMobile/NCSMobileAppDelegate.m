@@ -11,8 +11,8 @@
 #import "RootViewController.h"
 #import "LoginController.h"
 #import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 #import "Event.h"
-#import "Dwelling.h"
 #import "Person.h"
 #import "Instrument.h"
 #import "Address.h"
@@ -40,26 +40,26 @@
 
 - (void)addMappingsToObjectManager:(RKObjectManager *)objectManager  {
     // Instrument Mapping
-    RKObjectMapping* instrument = [RKObjectMapping mappingForClass:[Instrument class]];
+    RKManagedObjectMapping* instrument = [RKManagedObjectMapping mappingForClass:[Instrument class]];
     [instrument mapKeyPathsToAttributes: 
         @"survey_ref", @"surveyRef", nil];
     
     // Event Mapping
-    RKObjectMapping* event = [RKObjectMapping mappingForClass:[Event class]];
+    RKManagedObjectMapping* event = [RKManagedObjectMapping mappingForClass:[Event class]];
     [event mapKeyPathsToAttributes: 
         @"name", @"name", nil];
     [event mapRelationship:@"instruments" withMapping:instrument];
     
     // Address Mapping
-    RKObjectMapping *address = [RKObjectMapping mappingForClass:[Address class]];
+    RKManagedObjectMapping *address = [RKManagedObjectMapping mappingForClass:[Address class]];
     [address mapKeyPathsToAttributes:
         @"street", @"street",
         @"city", @"city",
         @"state", @"state",
-        @"zipcode", @"zipcode", nil];
+        @"zip_code", @"zipCode", nil];
 
     // Location Mapping
-    RKObjectMapping* location = [RKObjectMapping mappingForClass:[Location class]];
+    RKManagedObjectMapping* location = [RKManagedObjectMapping mappingForClass:[Location class]];
     [location mapKeyPathsToAttributes:
         @"code", @"code",
         @"other", @"other",
@@ -67,7 +67,7 @@
     [location mapRelationship:@"address" withMapping:address];
     
     // Person Mapping
-    RKObjectMapping* person = [RKObjectMapping mappingForClass:[Person class]];
+    RKManagedObjectMapping* person = [RKManagedObjectMapping mappingForClass:[Person class]];
     [person mapKeyPathsToAttributes: 
         @"id", @"id",
         @"name", @"name",
@@ -76,7 +76,7 @@
         @"email", @"email", nil];
     
     // Contact Mapping
-    RKObjectMapping* contact = [RKObjectMapping mappingForClass:[Contact class]];
+    RKManagedObjectMapping* contact = [RKManagedObjectMapping mappingForClass:[Contact class]];
     [contact mapKeyPathsToAttributes:
         @"type", @"type", 
         @"start_date", @"startDate",
@@ -89,21 +89,28 @@
     
     // "2005-07-16T19:20+01:00",
     //http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369
-    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy'-'MM'-'dd'T'HH':'mm'Z'" inTimeZone:nil];
-    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mm:ssZZ" inTimeZone:nil]; 
-    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZZ" inTimeZone:nil]; 
-    [RKObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZ" inTimeZone:nil]; 
+    [RKManagedObjectMapping addDefaultDateFormatterForString:@"yyyy'-'MM'-'dd'T'HH':'mm'Z'" inTimeZone:nil];
+    [RKManagedObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mm:ssZZ" inTimeZone:nil]; 
+    [RKManagedObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZZ" inTimeZone:nil]; 
+    [RKManagedObjectMapping addDefaultDateFormatterForString:@"yyyy-MM-dd'T'hh:mmZ" inTimeZone:nil]; 
 //	[eventMapping.dateFormatStrings addObject:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
 }
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // TODO: These mappings should be in their own mapping class
-    
+    [self managedObjectContext];
     // Initialize RestKit
 	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
     
+//    // Initialize store
+    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"NCSCoreData.sqlite" usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
+//    objectStore.delegate = self;
+    objectManager.objectStore = objectStore;
+
+    
     // Enable automatic network activity indicator management
-    [RKRequestQueue sharedQueue].showsNetworkActivityIndicatorWhenBusy = YES;
+    [RKClient sharedClient].requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
     
     [self addMappingsToObjectManager: objectManager];
 

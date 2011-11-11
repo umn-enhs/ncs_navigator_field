@@ -12,7 +12,6 @@
 #import "Row.h"
 #import "Person.h"
 #import "Event.h"
-#import "Dwelling.h"
 #import "Address.h"
 #import "Location.h"
 
@@ -44,7 +43,7 @@
     
     // TODO: Data shouldn't be structured like this
     Address *a = _contact.location.address;
-    home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipcode];
+    home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipCode];
     
     return [[[Section alloc] initWithRows:home, nil] autorelease];
 }

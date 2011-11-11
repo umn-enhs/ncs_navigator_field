@@ -10,22 +10,11 @@
 
 @class Dwelling;
 
-@interface Person : NSObject<NSCopying> {
-    NSString* _id;
-    NSString* _name;
-    NSString* _email;
-    NSString* _cellPhone;
-    NSString* _homePhone;
-    Dwelling* _dwelling;
-}
+@interface Person : NSManagedObject
 
--(id) copyWithZone: (NSZone *) zone;
-
-@property(nonatomic,copy) NSString* id;
 @property(nonatomic,copy) NSString* name;
 @property(nonatomic,copy) NSString* email;
 @property(nonatomic,copy) NSString* cellPhone;
 @property(nonatomic,copy) NSString* homePhone;
-@property(nonatomic,retain) Dwelling* dwelling;
 
 @end
