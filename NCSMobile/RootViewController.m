@@ -61,11 +61,11 @@
 #pragma RestKit
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	NSLog(@"Loaded events: %@", objects);    
-	[_contacts release];
-	_contacts = [objects retain];
-    
+ 
+    [self loadObjectsFromDataStore];
+
     self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
-    
+
 	[self.tableView reloadData];
 }
 
@@ -80,21 +80,55 @@
     self.detailViewController.detailItem = row.entity;
 }
 
-#pragma lifecycle
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    self.title = @"Contacts";    
+#pragma Actions
+- (void)reloadButtonWasPressed:(id)sender {
+    NSLog(@"Reload Pressed!!!");
+    [self loadData];
+//
+//    RKObjectManager* objectManager = [RKObjectManager sharedManager];
+//    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
     
-    RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
-    
-    self.table = [[ContactNavigationTable alloc] initWithContacts:[NSArray arrayWithObjects: nil]];
+//    self.table = [[ContactNavigationTable alloc] initWithContacts:[NSArray arrayWithObjects: nil]];
+
 }
 
+- (void)loadData {
+    // Load the object model via RestKit	
+    RKObjectManager* objectManager = [RKObjectManager sharedManager];
+    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
+}
+
+- (void)loadObjectsFromDataStore {
+	NSFetchRequest* request = [Contact fetchRequest];
+	NSSortDescriptor* descriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES];
+	[request setSortDescriptors:[NSArray arrayWithObject:descriptor]];
+	self.contacts = [[Contact objectsWithFetchRequest:request] retain];
+}
+
+#pragma lifecycle
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//
+//
+//}
+
 		
+- (void) loadView {
+    [super loadView];
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    self.title = @"Contacts";
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadButtonWasPressed:)] autorelease];
+    
+    //    RKObjectManager* objectManager = [RKObjectManager sharedManager];
+    //    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
+    //    
+
+    [self loadObjectsFromDataStore];
+    self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
