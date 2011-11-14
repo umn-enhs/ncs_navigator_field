@@ -257,8 +257,8 @@
 		0026E693140347E700355BCB /* NCSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NCSMobileTests-Info.plist"; sourceTree = "<group>"; };
 		0026E695140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NCSMobileTests-Prefix.pch"; sourceTree = "<group>"; };
-		002B2E4214362E4900410D09 /* nubic-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nubic-logo.png"; sourceTree = "<group>"; };
-		002B2E4314362E4900410D09 /* nu-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nu-logo.png"; sourceTree = "<group>"; };
+		002B2E4214362E4900410D09 /* nubic-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nubic-logo.png"; path = "NCSMobile/nubic-logo.png"; sourceTree = "<group>"; };
+		002B2E4314362E4900410D09 /* nu-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nu-logo.png"; path = "NCSMobile/nu-logo.png"; sourceTree = "<group>"; };
 		00439FF714112E500097A878 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		00439FF914112E5E0097A878 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00439FFB14112E670097A878 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -852,15 +852,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00212CCC14326F8000294D82 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				002B2E4214362E4900410D09 /* nubic-logo.png */,
-				002B2E4314362E4900410D09 /* nu-logo.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
@@ -903,7 +894,6 @@
 		0026E66E140347E700355BCB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				00212CCC14326F8000294D82 /* Resources */,
 				00FF37E21417CA320009B1D4 /* Presenters */,
 				006EBEE6141157BA003D69CF /* Models */,
 				006EBEE5141157B6003D69CF /* Controllers */,
@@ -945,6 +935,7 @@
 		00439FFF141132B70097A878 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0088C7D714717D580051AAE6 /* Images */,
 				006EBEE8141673A1003D69CF /* Other */,
 				006EBEE714115870003D69CF /* NIBs */,
 				00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */,
@@ -2580,6 +2571,15 @@
 				0026E671140347E700355BCB /* InfoPlist.strings */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		0088C7D714717D580051AAE6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				002B2E4214362E4900410D09 /* nubic-logo.png */,
+				002B2E4314362E4900410D09 /* nu-logo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		009827581434D088002A8777 /* Products */ = {
