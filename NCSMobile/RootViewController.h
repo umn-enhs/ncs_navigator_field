@@ -21,8 +21,9 @@
 
 - (void) loadSurveyor;
 - (void) didSelectRow:(Row*)row;
-- (void)reloadButtonWasPressed:(id)sender;
 - (void)loadData;
 - (void)loadObjectsFromDataStore;
+- (void)reloadButtonWasPressed;
+- (void) deleteButtonWasPressed;
 
 @end

@@ -81,7 +81,7 @@
 }
 
 #pragma Actions
-- (void)reloadButtonWasPressed:(id)sender {
+- (void)reloadButtonWasPressed {
     NSLog(@"Reload Pressed!!!");
     [self loadData];
 //
@@ -90,6 +90,29 @@
     
 //    self.table = [[ContactNavigationTable alloc] initWithContacts:[NSArray arrayWithObjects: nil]];
 
+}
+
+- (void) deleteButtonWasPressed {
+    NSLog(@"Delete button pressed");
+
+//    NCSMobileAppDelegate* d = [[_contacts objectAtIndex:0] managedObjectContext];
+    for (Contact* c in _contacts) {
+        NSManagedObjectContext* ctx = [c managedObjectContext];
+        [ctx deleteObject:c];
+        
+        NSError* error = nil;
+        
+        [[c managedObjectContext] save:&error];
+        
+        if (nil != error) {
+            NSLog(@"Error while deting contact.");
+        }
+    }
+    self.contacts = [NSArray array];
+    
+    self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
+    
+	[self.tableView reloadData];
 }
 
 - (void)loadData {
@@ -119,8 +142,8 @@
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     self.title = @"Contacts";
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadButtonWasPressed:)] autorelease];
-    
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadButtonWasPressed)] autorelease];
+    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteButtonWasPressed)] autorelease];
     //    RKObjectManager* objectManager = [RKObjectManager sharedManager];
     //    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
     //    
