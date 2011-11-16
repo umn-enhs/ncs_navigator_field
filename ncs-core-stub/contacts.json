@@ -13,7 +13,7 @@
         },
       "events": [
         {
-          "instruments": [{"survey_ref": "100", "response_set": {}}],
+          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
           "name":"PPG 1" 
         }
       ]
@@ -31,7 +31,7 @@
       },
       "events": [
         {
-          "instruments": [{"survey_ref": "100", "response_set": {}}],
+          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
           "name":"PPG 1" 
         }
       ]
@@ -49,17 +49,65 @@
       },
       "events": [
         {
-          "instruments": [{"survey_ref": "100", "response_set": {}}],
+          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
           "name":"Blood Draw" 
         },
         {
-          "instruments": [{"survey_ref": "100", "response_set": {}}],
+          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
           "name":"Collect Soil" 
         }
       ]
     }
   ],
   "instrument_templates": [
-    {"id": "100", "survey": {"questions":[], "answer": []}}
+      {
+          "id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+          "json": {
+            "survey": {
+                "title": "KitchenSinksurvey",
+                "uuid": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+                "sections": [
+                    {
+                        "title": "Basicquestions",
+                        "questions_and_groups": [
+                            {
+                                "uuid": "dedbe850-e5f8-012e-9f18-00254bc472f4",
+                                "text": "Thesequestionsareexamplesofthebasicsupportedinputtypes",
+                                "type": "label"
+                            },
+                            {
+                                "reference": "1",
+                                "pick": "one",
+                                "uuid": "dedc0970-e5f8-012e-9f18-00254bc472f4",
+                                "text": "Whatisyourfavoritecolor?",
+                                "answers": [
+                                    {
+                                        "uuid": "deebf9f0-e5f8-012e-9f18-00254bc472f4",
+                                        "text": "red"
+                                    },
+                                    {
+                                        "uuid": "deec1600-e5f8-012e-9f18-00254bc472f4",
+                                        "text": "blue"
+                                    },
+                                    {
+                                        "uuid": "deec2b20-e5f8-012e-9f18-00254bc472f4",
+                                        "text": "green"
+                                    },
+                                    {
+                                        "uuid": "deec3f70-e5f8-012e-9f18-00254bc472f4",
+                                        "text": "yellow"
+                                    },
+                                    {
+                                        "uuid": "deec5440-e5f8-012e-9f18-00254bc472f4",
+                                        "text": "Other"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+     }
   ]
 }
