@@ -121,7 +121,7 @@
 
 - (void) didSelectRow:(Row*)row {
     if ([row.rowClass isEqualToString:@"instrument"]) {
-        [UIAppDelegate.rootViewController loadSurveyor];
+        [UIAppDelegate.rootViewController loadSurveyor:row.entity];
 
         //    [self.view deselectRowAtIndexPath:indexPath animated:YES]; 
         //    UITableViewCell *oldCell = [self.view cellForRowAtIndexPath:indexPath];

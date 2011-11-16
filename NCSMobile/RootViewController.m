@@ -32,8 +32,10 @@
 @synthesize table=_table;
 
 #pragma surveyor
-- (void) loadSurveyor {
+- (void) loadSurveyor:(Instrument*)instrument {
+    NSString* survey = instrument.instrumentTemplate.json;
     NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
+    surveyController.surveyRepresentation = survey;
     NUSectionVC *sectionController = [[NUSectionVC alloc] init];
     surveyController.sectionController = sectionController;
     UIAppDelegate.sectionController = sectionController;
@@ -62,15 +64,7 @@
 }
 
 #pragma RestKit
-//- (void)objectLoader:(RKObjectLoader *)loader willMapData:(id *)mappableData {
-//  if (loader.objectMapping.objectClass == [InstrumentTemplate class]) {  
-//      NSLog(@"Mapping Instrument Template");
-//      [mappableData 
-//  }
-//}
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
-//    if (loader.objectMapping.objectClass == [InstrumentTemplate class]) {  
-//        NSLog(@"Mapping Instrument Template: %@", *mappableData);
     SBJsonWriter *jsonWriter = [SBJsonWriter new];
 
     NSMutableArray* modifiedTemplates = [NSMutableArray new];
@@ -83,14 +77,11 @@
     }
     [*mappableData setObject:modifiedTemplates forKey:@"instrument_templates"];    
     
-    
-        NSLog(@"Mapping Instrument Template: %@", *mappableData);
-//        [mappableData  
-//    }    
+    NSLog(@"Mapping Instrument Template: %@", *mappableData);
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
-	NSLog(@"Loaded events: %@", objects);    
+	NSLog(@"Loaded contacts: %@", objects);    
  
     [self loadObjectsFromDataStore];
 

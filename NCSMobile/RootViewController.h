@@ -12,6 +12,7 @@
 #import "SimpleTableRowDelegate.h"
 
 @class DetailViewController;
+@class Instrument;
 
 @interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate> {
 }
@@ -19,7 +20,7 @@
 		
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
-- (void) loadSurveyor;
+- (void) loadSurveyor:(Instrument*)instrument;
 - (void) didSelectRow:(Row*)row;
 - (void)loadData;
 - (void)loadObjectsFromDataStore;

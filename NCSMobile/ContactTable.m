@@ -14,6 +14,7 @@
 #import "Event.h"
 #import "Address.h"
 #import "Location.h"
+#import "Instrument.h"
 
 @implementation ContactTable
 
@@ -64,10 +65,13 @@
     Section *instruments = [[Section new] autorelease];
     instruments.name = @"Instruments";
     for (Event *e in _contact.events) {
-        Row *r = [[Row new] autorelease];
-        r.text = e.name;
-        r.rowClass = @"instrument";
-        [instruments addRow:r];
+        for (Instrument* i in e.instruments) {
+            Row *r = [[Row new] autorelease];
+            r.text = e.name;
+            r.rowClass = @"instrument";
+            r.entity = i;
+            [instruments addRow:r];
+        }
     }
     return instruments;
 }
