@@ -71,21 +71,17 @@
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
 //    if (loader.objectMapping.objectClass == [InstrumentTemplate class]) {  
 //        NSLog(@"Mapping Instrument Template: %@", *mappableData);
+    SBJsonWriter *jsonWriter = [SBJsonWriter new];
 
-    NSArray* myArray = [[*mappableData valueForKey:@"instrument_templates"] copy];
-    NSMutableArray* newArray = [NSMutableArray new];
-    for (NSDictionary* dict in myArray) {
-        NSMutableDictionary* myDictionary = [dict mutableCopy];
-        NSDictionary* json = [myDictionary valueForKey:@"json"];
-        SBJsonWriter *jsonWriter = [SBJsonWriter new];
+    NSMutableArray* modifiedTemplates = [NSMutableArray new];
+    for (NSDictionary* templ in [*mappableData valueForKey:@"instrument_templates"]) {
+        NSDictionary* json = [templ valueForKey:@"json"];
         NSString *jsonString = [jsonWriter stringWithObject:json];
-//        NSLog(@"JSON STRING: %@", jsonString);
-        [myDictionary removeObjectForKey:@"json"];
-        [myDictionary setObject:jsonString forKey:@"json"];
-        [newArray addObject:myDictionary];
+        NSMutableDictionary* mod = [templ mutableCopy];
+        [mod setObject:jsonString forKey:@"json"];
+        [modifiedTemplates addObject:mod];
     }
-    [*mappableData removeObjectForKey:@"instrument_templates"];
-    [*mappableData setObject:newArray forKey:@"instrument_templates"];    
+    [*mappableData setObject:modifiedTemplates forKey:@"instrument_templates"];    
     
     
         NSLog(@"Mapping Instrument Template: %@", *mappableData);
