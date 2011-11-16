@@ -33,15 +33,17 @@
 
 #pragma surveyor
 - (void) loadSurveyor:(Instrument*)instrument {
-    NSString* survey = instrument.instrumentTemplate.json;
-    NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
-    surveyController.surveyRepresentation = survey;
-    NUSectionVC *sectionController = [[NUSectionVC alloc] init];
-    surveyController.sectionController = sectionController;
-    UIAppDelegate.sectionController = sectionController;
-    [self.navigationController pushViewController:surveyController animated:NO];
-
-    self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
+    if (instrument != NULL) {
+        NSString* survey = instrument.instrumentTemplate.json;
+        NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
+        surveyController.surveyJSONRepresentation = survey;
+        NUSectionVC *sectionController = [[NUSectionVC alloc] init];
+        surveyController.sectionController = sectionController;
+        UIAppDelegate.sectionController = sectionController;
+        [self.navigationController pushViewController:surveyController animated:NO];
+        
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
+    }
 }
 
 //- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
