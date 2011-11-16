@@ -10,7 +10,7 @@
 
 @implementation Instrument
 
-@dynamic surveyRef;
-
+@dynamic instrumentTemplateId;
+@dynamic instrumentTemplate;
 
 @end

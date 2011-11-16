@@ -19,6 +19,7 @@
 #import "Location.h"
 #import "NUResponseSet.h"
 #import "Contact.h"
+#import "InstrumentTemplate.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -39,10 +40,20 @@
 
 
 - (void)addMappingsToObjectManager:(RKObjectManager *)objectManager  {
+    // Instrument Template
+    RKManagedObjectMapping* instrumentTemplate = [RKManagedObjectMapping mappingForClass:[InstrumentTemplate class]];
+    [instrumentTemplate mapKeyPathsToAttributes:
+     @"id", @"identifier",
+     @"json", @"json", nil];
+    [instrumentTemplate setPrimaryKeyAttribute:@"identifier"];
+    [objectManager.mappingProvider setMapping:instrumentTemplate forKeyPath:@"instrument_templates"];
+    
     // Instrument Mapping
     RKManagedObjectMapping* instrument = [RKManagedObjectMapping mappingForClass:[Instrument class]];
     [instrument mapKeyPathsToAttributes: 
-        @"survey_ref", @"surveyRef", nil];
+        @"instrument_template_id", @"instrumentTemplateId", nil];
+    [instrument mapRelationship:@"instrumentTemplate" withMapping:instrumentTemplate];
+    [instrument connectRelationship:@"instrumentTemplate" withObjectForPrimaryKeyAttribute:@"instrumentTemplateId"];
     
     // Event Mapping
     RKManagedObjectMapping* event = [RKManagedObjectMapping mappingForClass:[Event class]];
@@ -84,8 +95,7 @@
     [contact mapRelationship:@"person" withMapping:person];
     [contact mapRelationship:@"location" withMapping:location];
     [contact mapRelationship:@"events" withMapping:event];
-
-     [objectManager.mappingProvider setMapping:contact forKeyPath:@"contacts"];
+    [objectManager.mappingProvider setMapping:contact forKeyPath:@"contacts"];
     
     // "2005-07-16T19:20+01:00",
     //http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369

@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class InstrumentTemplate;
+
 @interface Instrument : NSManagedObject 
 
-@property(nonatomic,retain) NSString* surveyRef;
+@property(nonatomic,retain) NSString* instrumentTemplateId;
+
+@property(nonatomic,retain) InstrumentTemplate* instrumentTemplate;
 
 @end

@@ -70,6 +70,7 @@
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */; };
+		00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */; };
 		00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098277C1434D088002A8777 /* libRestKitCoreData.a */; };
 		00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
@@ -801,6 +802,8 @@
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSMobile.xcdatamodel; sourceTree = "<group>"; };
+		00C4095B1471DD5E00F0F3FA /* InstrumentTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentTemplate.h; sourceTree = "<group>"; };
+		00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentTemplate.m; sourceTree = "<group>"; };
 		00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSCoreData.xcdatamodel; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
@@ -2550,6 +2553,8 @@
 				00E323561422A23A00D3AEED /* Section.m */,
 				00E323581422B08200D3AEED /* Row.h */,
 				00E323591422B08200D3AEED /* Row.m */,
+				00C4095B1471DD5E00F0F3FA /* InstrumentTemplate.h */,
+				00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2925,6 +2930,7 @@
 				00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */,
 				00B6CD00146B1A77004767BE /* Location.m in Sources */,
 				00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */,
+				00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

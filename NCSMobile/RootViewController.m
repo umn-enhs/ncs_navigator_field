@@ -16,6 +16,9 @@
 #import "Row.h"
 #import "NUSurveyVC.h"
 #import "NUSectionVC.h"
+#import "Instrument.h"
+#import "InstrumentTemplate.h"
+#import "SBJsonWriter.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -59,13 +62,130 @@
 }
 
 #pragma RestKit
+//- (void)objectLoader:(RKObjectLoader *)loader willMapData:(id *)mappableData {
+//  if (loader.objectMapping.objectClass == [InstrumentTemplate class]) {  
+//      NSLog(@"Mapping Instrument Template");
+//      [mappableData 
+//  }
+//}
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
+//    if (loader.objectMapping.objectClass == [InstrumentTemplate class]) {  
+//        NSLog(@"Mapping Instrument Template: %@", *mappableData);
+
+    NSArray* myArray = [[*mappableData valueForKey:@"instrument_templates"] copy];
+    NSMutableArray* newArray = [NSMutableArray new];
+    for (NSDictionary* dict in myArray) {
+        NSMutableDictionary* myDictionary = [dict mutableCopy];
+        NSDictionary* json = [myDictionary valueForKey:@"json"];
+        SBJsonWriter *jsonWriter = [SBJsonWriter new];
+        NSString *jsonString = [jsonWriter stringWithObject:json];
+//        NSLog(@"JSON STRING: %@", jsonString);
+        [myDictionary removeObjectForKey:@"json"];
+        [myDictionary setObject:jsonString forKey:@"json"];
+        [newArray addObject:myDictionary];
+    }
+    [*mappableData removeObjectForKey:@"instrument_templates"];
+    [*mappableData setObject:newArray forKey:@"instrument_templates"];    
+    
+    
+        NSLog(@"Mapping Instrument Template: %@", *mappableData);
+//        [mappableData  
+//    }    
+}
+
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	NSLog(@"Loaded events: %@", objects);    
  
     [self loadObjectsFromDataStore];
 
     self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
+    
 
+    
+    ////////////
+    
+    Contact* c = [_contacts objectAtIndex:0];
+//    NSLog(@"Contact %@", c.type);
+//    Event* e = [[c.events objectEnumerator] nextObject];
+//    Instrument* i = [[e.instruments objectEnumerator] nextObject]; 
+//    InstrumentTemplate* it = i.instrumentTemplate;
+//    NSLog(@"Instrument %@", i);
+    
+    NSManagedObjectContext *moc = [c managedObjectContext];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              
+                                              entityForName:@"Event" inManagedObjectContext:moc];
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    
+    [request setEntity:entityDescription];
+    
+    
+    
+    // Set example predicate and sort orderings...
+    
+//    NSNumber *minimumSalary = ...;
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+//                              
+//                              @"(lastName LIKE[c] 'Worsley') AND (salary > %@)", minimumSalary];
+//    
+//    [request setPredicate:predicate];
+    
+    
+//    
+//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+//                                        
+//                                        initWithKey:@"firstName" ascending:YES];
+//    
+//    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+//    
+//    [sortDescriptor release];
+    
+    
+    
+    NSError *error = nil;
+    
+    NSArray *array = [moc executeFetchRequest:request error:&error];
+    
+    for (Event* e in array) {
+        NSLog(@"Event name: %@", e.name);
+        for (Instrument* i in e.instruments) {
+            NSLog(@"Instrument with instrument template id: %@", i.instrumentTemplateId);
+            NSLog(@"Instrument with instrument template: %@", i.instrumentTemplate);
+        }
+    }
+    if (array == nil)
+        
+    {
+        
+        // Deal with error...
+        
+    }
+    
+    
+    entityDescription = [NSEntityDescription entityForName:@"InstrumentTemplate" inManagedObjectContext:moc];
+    
+    request = [[[NSFetchRequest alloc] init] autorelease];
+    
+    [request setEntity:entityDescription];
+    array = [moc executeFetchRequest:request error:&error];
+    
+//    NSLog(@"Instrument template size: %@", [array count]);
+    for (InstrumentTemplate* t in array) {
+        NSLog(@"InstrumentTemplate id: %@", t.identifier);
+        NSLog(@"InstrumentTemplate json: %@", t.json);
+    }
+    if (array == nil)
+        
+    {
+        
+        // Deal with error...
+        
+    }
+    ///////////////////////
+    
 	[self.tableView reloadData];
 }
 
