@@ -129,7 +129,7 @@
         NSDateFormatter *f = [NSDateFormatter new];
         [f setDateStyle:NSDateFormatterShortStyle];
         [f setTimeStyle:NSDateFormatterShortStyle];
-        NSDate *d = [NSDate new];
+//        NSDate *d = [NSDate new];
         
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         

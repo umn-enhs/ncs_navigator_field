@@ -16,4 +16,6 @@
 
 @property(nonatomic,retain) InstrumentTemplate* instrumentTemplate;
 
+@property(nonatomic,retain) NSString* externalResponseSetId;
+
 @end

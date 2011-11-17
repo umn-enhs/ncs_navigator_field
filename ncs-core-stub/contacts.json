@@ -1,113 +1,204 @@
 {
-  "contacts": [
-    {
-      "type": "1",
-      "start_date": "2005-07-18T15:20",
-      "end_date": "",
-      "person": { "name": "Beyonce Z", "email": "beyonce@z.com", "cell_phone": "312-222-9999", "home_phone": "312-222-9999"},
-      "location": {
-        "code": "1", 
-        "other": "", 
-        "details": "",
-        "address": { "street": "321 Purple Rn", "city": "Chicago", "state": "IL", "zip_code": "60611"}
-        },
-      "events": [
+    "contacts": [
         {
-          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
-          "name":"PPG 1" 
-        }
-      ]
-    },
-    {
-      "type": "3",
-      "start_date": "2005-07-17T15:20",
-      "end_date": "",
-      "person": { "name": "Appollonia", "email": "apple@formerly.com", "cell_phone": "312-222-3333", "home_phone": "312-222-3334"},
-      "location": {
-        "code": "2", 
-        "other": "", 
-        "details": "",
-        "address": { "street": "750 North Lake Shore Drive 10th Floor", "city": "Chicago", "state": "IL", "zip_code": "60611"}
-      },
-      "events": [
-        {
-          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
-          "name":"PPG 1" 
-        }
-      ]
-    },
-    {
-      "type": "1",
-      "start_date": "2005-07-17T15:20",
-      "end_date": "",
-      "person": { "name": "Prince Rogers Nelson", "email": "prog@formerly.com", "cell_phone": "312-111-2222", "home_phone": "312-111-2223"},
-      "location": {
-        "code": "1", 
-        "other": "", 
-        "details": "",
-        "address": { "street": "123 Alphabet St", "city": "Chicago", "state": "IL", "zip_code": "60611"}
-      },
-      "events": [
-        {
-          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
-          "name":"Blood Draw" 
+            "type": "1",
+            "start_date": "2005-07-18T15:20",
+            "end_date": "",
+            "person": {
+                "name": "Beyonce Z",
+                "email": "beyonce@z.com",
+                "cell_phone": "312-222-9999",
+                "home_phone": "312-222-9999"
+            },
+            "location": {
+                "code": "1",
+                "other": "",
+                "details": "",
+                "address": {
+                    "street": "321 Purple Rn",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "zip_code": "60611"
+                }
+            },
+            "events": [
+                {
+                    "instruments": [
+                        {
+                            "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+                            "response_set": {}
+                        }
+                    ],
+                    "name": "PPG 1"
+                }
+            ]
         },
         {
-          "instruments": [{"instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4", "response_set": {}}],
-          "name":"Collect Soil" 
+            "type": "3",
+            "start_date": "2005-07-17T15:20",
+            "end_date": "",
+            "person": {
+                "name": "Appollonia",
+                "email": "apple@formerly.com",
+                "cell_phone": "312-222-3333",
+                "home_phone": "312-222-3334"
+            },
+            "location": {
+                "code": "2",
+                "other": "",
+                "details": "",
+                "address": {
+                    "street": "750 North Lake Shore Drive 10th Floor",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "zip_code": "60611"
+                }
+            },
+            "events": [
+                {
+                    "instruments": [
+                        {
+                            "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+                            "response_set": {}
+                        }
+                    ],
+                    "name": "PPG 1"
+                }
+            ]
+        },
+        {
+            "type": "1",
+            "start_date": "2005-07-17T15:20",
+            "end_date": "",
+            "person": {
+                "name": "Prince Rogers Nelson",
+                "email": "prog@formerly.com",
+                "cell_phone": "312-111-2222",
+                "home_phone": "312-111-2223"
+            },
+            "location": {
+                "code": "1",
+                "other": "",
+                "details": "",
+                "address": {
+                    "street": "123 Alphabet St",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "zip_code": "60611"
+                }
+            },
+            "events": [
+                {
+                    "instruments": [
+                        {
+                            "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+                            "response_set": {}
+                        }
+                    ],
+                    "name": "Blood Draw"
+                },
+                {
+                    "instruments": [
+                        {
+                            "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+                            "response_set": {}
+                        }
+                    ],
+                    "name": "Collect Soil"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "instrument_templates": [
-      {
-          "id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
-          "json": {
-            "survey": {
-                "title": "KitchenSinksurvey",
-                "uuid": "ded83f10-e5f8-012e-9f18-00254bc472f4",
-                "sections": [
-                    {
-                        "title": "Basicquestions",
-                        "questions_and_groups": [
-                            {
-                                "uuid": "dedbe850-e5f8-012e-9f18-00254bc472f4",
-                                "text": "Thesequestionsareexamplesofthebasicsupportedinputtypes",
-                                "type": "label"
-                            },
-                            {
-                                "reference": "1",
-                                "pick": "one",
-                                "uuid": "dedc0970-e5f8-012e-9f18-00254bc472f4",
-                                "text": "Whatisyourfavoritecolor?",
-                                "answers": [
-                                    {
-                                        "uuid": "deebf9f0-e5f8-012e-9f18-00254bc472f4",
-                                        "text": "red"
-                                    },
-                                    {
-                                        "uuid": "deec1600-e5f8-012e-9f18-00254bc472f4",
-                                        "text": "blue"
-                                    },
-                                    {
-                                        "uuid": "deec2b20-e5f8-012e-9f18-00254bc472f4",
-                                        "text": "green"
-                                    },
-                                    {
-                                        "uuid": "deec3f70-e5f8-012e-9f18-00254bc472f4",
-                                        "text": "yellow"
-                                    },
-                                    {
-                                        "uuid": "deec5440-e5f8-012e-9f18-00254bc472f4",
-                                        "text": "Other"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+    ],
+    "instrument_templates": [
+        {
+            "id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+            "json": {
+                "survey": {
+                    "title": "KitchenSinksurvey",
+                    "uuid": "ded83f10-e5f8-012e-9f18-00254bc472f4",
+                    "sections": [
+                        {
+                            "title": "Basicquestions",
+                            "questions_and_groups": [
+                                {
+                                    "uuid": "dedbe850-e5f8-012e-9f18-00254bc472f4",
+                                    "text": "Thesequestionsareexamplesofthebasicsupportedinputtypes",
+                                    "type": "label"
+                                },
+                                {
+                                    "reference": "1",
+                                    "pick": "one",
+                                    "uuid": "dedc0970-e5f8-012e-9f18-00254bc472f4",
+                                    "text": "Whatisyourfavoritecolor?",
+                                    "answers": [
+                                        {
+                                            "uuid": "deebf9f0-e5f8-012e-9f18-00254bc472f4",
+                                            "text": "red"
+                                        },
+                                        {
+                                            "uuid": "deec1600-e5f8-012e-9f18-00254bc472f4",
+                                            "text": "blue"
+                                        },
+                                        {
+                                            "uuid": "deec2b20-e5f8-012e-9f18-00254bc472f4",
+                                            "text": "green"
+                                        },
+                                        {
+                                            "uuid": "deec3f70-e5f8-012e-9f18-00254bc472f4",
+                                            "text": "yellow"
+                                        },
+                                        {
+                                            "uuid": "deec5440-e5f8-012e-9f18-00254bc472f4",
+                                            "text": "Other"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pick": "any",
+                                    "text": "Choose the colors you don't like",
+                                    "answers": [
+                                        {
+                                            "text": "red",
+                                            "uuid": "51ffe660-98fb-012e-9ee0-00254bc472f4"
+                                        },
+                                        {
+                                            "text": "blue",
+                                            "uuid": "51fff990-98fb-012e-9ee0-00254bc472f4"
+                                        },
+                                        {
+                                            "text": "green",
+                                            "uuid": "52000bd0-98fb-012e-9ee0-00254bc472f4"
+                                        },
+                                        {
+                                            "text": "yellow",
+                                            "uuid": "52001ef0-98fb-012e-9ee0-00254bc472f4"
+                                        },
+                                        {
+                                            "text": "Omit",
+                                            "uuid": "52003340-98fb-012e-9ee0-00254bc472f4",
+                                            "exclusive": true
+                                        }
+                                    ],
+                                    "uuid": "51ffd280-98fb-012e-9ee0-00254bc472f4",
+                                    "reference": "2"
+                                },
+                                {
+                                    "text": "Please explain why you don't like this color?",
+                                    "answers": [
+                                        {
+                                            "type": "text",
+                                            "text": "explanation",
+                                            "uuid": "52005d40-98fb-012e-9ee0-00254bc472f4"
+                                        }
+                                    ],
+                                    "uuid": "520048f0-98fb-012e-9ee0-00254bc472f4",
+                                    "reference": "2a"
+                                }
+                            ]
+                        }
+                    ]
+                }
             }
         }
-     }
-  ]
+    ]
 }

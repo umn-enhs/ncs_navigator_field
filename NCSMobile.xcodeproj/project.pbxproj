@@ -68,6 +68,7 @@
 		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
 		009EE2791436220C00E6D658 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EE2781436220C00E6D658 /* LoginController.xib */; };
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
+		00AEB0461474D31C00952EBD /* TASKS.md in Resources */ = {isa = PBXBuildFile; fileRef = 00AEB0451474D31C00952EBD /* TASKS.md */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */; };
 		00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */; };
@@ -799,6 +800,7 @@
 		009EE2781436220C00E6D658 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginController.xib; path = NCSMobile/LoginController.xib; sourceTree = "<group>"; };
 		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		00A392DD14361C53003B19F3 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		00AEB0451474D31C00952EBD /* TASKS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TASKS.md; sourceTree = "<group>"; };
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSMobile.xcdatamodel; sourceTree = "<group>"; };
@@ -858,6 +860,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				00AEB0451474D31C00952EBD /* TASKS.md */,
 				006C600A1434DF0D00F52CD8 /* README.md */,
 				0043A016141133410097A878 /* Other Sources */,
 				00439FFF141132B70097A878 /* Resources */,
@@ -2862,6 +2865,7 @@
 				0026E682140347E700355BCB /* DetailView.xib in Resources */,
 				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
 				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
+				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,7 @@
         <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instrument" syncable="YES"/>
     </entity>
     <entity name="Instrument" representedClassName="Instrument" syncable="YES">
+        <attribute name="externalResponseSetId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="instrumentTemplateId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="instrumentTemplate" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="InstrumentTemplate" syncable="YES"/>
     </entity>
@@ -46,7 +47,7 @@
         <element name="Address" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Contact" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Instrument" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Instrument" positionX="160" positionY="192" width="128" height="90"/>
         <element name="InstrumentTemplate" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Location" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Person" positionX="160" positionY="192" width="128" height="120"/>

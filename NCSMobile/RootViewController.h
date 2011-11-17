@@ -15,6 +15,7 @@
 @class Instrument;
 
 @interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate> {
+    Instrument* _administeredInstrument;
 }
 
 		
@@ -26,5 +27,6 @@
 - (void)loadObjectsFromDataStore;
 - (void)reloadButtonWasPressed;
 - (void) deleteButtonWasPressed;
+- (void) unloadSurveyor:(Instrument*)instrument responseSet:(NUResponseSet*)rs;
 
 @end

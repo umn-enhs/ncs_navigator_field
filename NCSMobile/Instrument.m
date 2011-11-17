@@ -12,5 +12,6 @@
 
 @dynamic instrumentTemplateId;
 @dynamic instrumentTemplate;
+@dynamic externalResponseSetId;
 
 @end

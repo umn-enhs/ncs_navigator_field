@@ -16,9 +16,11 @@
 #import "Row.h"
 #import "NUSurveyVC.h"
 #import "NUSectionVC.h"
+#import "NUResponseSet.h"
 #import "Instrument.h"
 #import "InstrumentTemplate.h"
 #import "SBJsonWriter.h"
+#import "NUResponseSet.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -35,14 +37,47 @@
 - (void) loadSurveyor:(Instrument*)instrument {
     if (instrument != NULL) {
         NSString* survey = instrument.instrumentTemplate.json;
+        
+        
+        //TODO: Pass response set id to load existing if exists
+        NUResponseSet* rs = NULL;
+        if (instrument.externalResponseSetId != NULL) {
+            NSManagedObjectContext* moc = UIAppDelegate.managedObjectContext;
+            NSEntityDescription *desc = [NSEntityDescription entityForName:@"ResponseSet" inManagedObjectContext:moc];
+            NSFetchRequest *req = [[[NSFetchRequest alloc] init] autorelease];
+            
+            [req setEntity:desc];
+            
+            NSPredicate *p = [NSPredicate predicateWithFormat:
+                                      @"uuid = %@", instrument.externalResponseSetId];
+            
+            [req setPredicate:p];
+            
+            NSError *error = nil;
+            
+            NSArray *array = [moc executeFetchRequest:req error:&error];
+            
+            if (array == nil)
+            {
+                NSLog(@"Error during fetch");                
+            } else {
+                NSLog(@"fetched response set: %@", array);
+                rs = [[array objectEnumerator] nextObject];
+            }
+        }
+        
+        //
+        
         NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
         surveyController.surveyJSONRepresentation = survey;
+        surveyController.responseSet = rs;
         NUSectionVC *sectionController = [[NUSectionVC alloc] init];
         surveyController.sectionController = sectionController;
         UIAppDelegate.sectionController = sectionController;
         [self.navigationController pushViewController:surveyController animated:NO];
         
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
+        _administeredInstrument = instrument;
     }
 }
 
@@ -57,10 +92,35 @@
     Class src = [[self.splitViewController.viewControllers objectAtIndex:1] class];
     Class dst = [viewController class];
     if ( src == [NUSectionVC class] &&  dst == [RootViewController class]) {
+        NUSectionVC* sectionVC = (NUSectionVC*) [self.splitViewController.viewControllers objectAtIndex:1];
+        NUResponseSet* rs = sectionVC.responseSet;
+        if (rs != NULL) {
+            [self unloadSurveyor:_administeredInstrument responseSet:rs];
+            _administeredInstrument = NULL;
+        }
+        
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, _detailViewController, nil];
     }    
 }
 
+- (void) unloadSurveyor:(Instrument*)instrument responseSet:(NUResponseSet*)rs {
+//    NSLog(@"Response set: %@", rs);
+    NSLog(@"Response set uuid: %@", rs.uuid);
+//    NSLog(@"Administered instrument: %@", instrument);
+    
+    NSManagedObjectContext* moc = [instrument managedObjectContext];
+    instrument.externalResponseSetId = rs.uuid;
+    NSError *error = nil;
+    
+    if (![moc save:&error]) {
+        NSLog(@"Error saving instrument uuid");
+    }
+    NSLog(@"Administered instrument with external response uuid: %@", instrument);
+
+//    [surveyorMoc 
+    
+}
+             
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
 //    NSLog(@"DELEGATE: switched views: message from the nav controller delegate");
 }
