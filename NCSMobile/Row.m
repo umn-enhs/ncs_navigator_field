@@ -14,6 +14,7 @@
 @synthesize text=_text;
 @synthesize detailText=_detailText;
 @synthesize rowClass=_rowClass;
+@synthesize editable=_editable;
 
 - (id) initWithText:(NSString*)text {
     if (self = [super init]) {

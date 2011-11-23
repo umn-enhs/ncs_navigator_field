@@ -34,7 +34,8 @@
     return [NSArray arrayWithObjects: 
                 [self addresses], 
                 [self phones], 
-                [self emails], 
+                [self emails],
+                [self contact],
                 [self instruments], 
                 nil];
 }
@@ -42,7 +43,6 @@
 - (Section*) addresses {
     Row *home = [[Row alloc] initWithText:@"Home"];
     
-    // TODO: Data shouldn't be structured like this
     Address *a = _contact.location.address;
     home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipCode];
     
@@ -74,6 +74,17 @@
         }
     }
     return instruments;
+}
+
+- (Section*) contact {
+    Section *s = [[Section new] autorelease];
+    s.name = @"Contact";
+    Row *r = [[Row new] autorelease];
+    r.text = @"Initialize Contact";
+    r.rowClass = @"contact";
+    r.entity = _contact;
+    [s addRow:r];
+    return s;
 }
 
 - (void) dealloc {

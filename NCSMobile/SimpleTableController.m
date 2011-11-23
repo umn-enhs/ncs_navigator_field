@@ -72,6 +72,10 @@
     }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {    
+    return YES;  
+}
+
 - (void) didSelectRow:(Row*)row {}
 
 - (void) dealloc {

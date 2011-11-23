@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 
 #import "RootViewController.h"
+#import "ContactDetailController.h"
 #import "ContactTable.h"
 
 #import "Event.h"
@@ -35,6 +36,8 @@
 @synthesize popoverController=_myPopoverController;
 
 @synthesize dwellingIdLabel=_dwellingIdLabel;
+
+@synthesize contactDetailController=_contactDetailController;
 
 #pragma mark - Managing the detail item
 
@@ -120,7 +123,8 @@
 }
 
 - (void) didSelectRow:(Row*)row {
-    if ([row.rowClass isEqualToString:@"instrument"]) {
+    NSString* rc = row.rowClass;
+    if ([rc isEqualToString:@"instrument"]) {
         [UIAppDelegate.rootViewController loadSurveyor:row.entity];
 
         //    [self.view deselectRowAtIndexPath:indexPath animated:YES]; 
@@ -133,6 +137,11 @@
         
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         
+    } else if ([rc isEqualToString:@"contact"]) {
+//        ContactDetailController* cc = [[ContactDetailController alloc] initWithNibName:@"ContactDetailController" bundle:nil];
+        [self.contactDetailController setDetailItem:row.entity];
+        [UIAppDelegate.rootViewController.navigationController presentModalViewController:self.contactDetailController animated:YES];
+//        [self.navigationController presentModalViewController:cc animated:NO];
     }
 }
 
