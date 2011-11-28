@@ -35,7 +35,7 @@
                 [self addresses], 
                 [self phones], 
                 [self emails],
-                [self contact],
+                [self contactDetails],
                 [self instruments], 
                 nil];
 }
@@ -76,7 +76,7 @@
     return instruments;
 }
 
-- (Section*) contact {
+- (Section*) contactDetails {
     Section *s = [[Section new] autorelease];
     s.name = @"Contact";
     Row *r = [[Row new] autorelease];

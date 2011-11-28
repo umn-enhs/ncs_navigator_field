@@ -12,7 +12,9 @@
 
 @class Contact;
 
-@interface ContactDetailController : SimpleTableController<SimpleTableRowDelegate>
+@interface ContactDetailController : SimpleTableController<SimpleTableRowDelegate> {
+    Contact* _detailItem;
+}
 
 @property (nonatomic, retain) Contact* detailItem;
 

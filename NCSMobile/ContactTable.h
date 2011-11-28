@@ -25,7 +25,7 @@
 - (Section*) addresses;
 - (Section*) phones;
 - (Section*) emails;
-- (Section*) contact;
+- (Section*) contactDetails;
 - (Section*) instruments;
 - (void) dealloc;
 

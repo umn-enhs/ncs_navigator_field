@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 000ADCC7147C1D91002F1940 /* ContactDetailTable.m */; };
+		000BAE83147D36290073B27E /* ContactDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000BAE82147D36290073B27E /* ContactDetailController.xib */; };
 		0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465C1434CDF9008D612B /* ContactNavigationTable.m */; };
 		002646601434CE02008D612B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465F1434CE02008D612B /* Person.m */; };
 		0026E669140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
@@ -239,6 +240,7 @@
 /* Begin PBXFileReference section */
 		000ADCC6147C1D91002F1940 /* ContactDetailTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailTable.h; sourceTree = "<group>"; };
 		000ADCC7147C1D91002F1940 /* ContactDetailTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailTable.m; sourceTree = "<group>"; };
+		000BAE82147D36290073B27E /* ContactDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailController.xib; sourceTree = "<group>"; };
 		0026465B1434CDF9008D612B /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTable.h; sourceTree = "<group>"; };
 		0026465C1434CDF9008D612B /* ContactNavigationTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationTable.m; sourceTree = "<group>"; };
 		0026465E1434CE02008D612B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -2576,6 +2578,7 @@
 				0026E67A140347E700355BCB /* MainWindow.xib */,
 				009EE2781436220C00E6D658 /* LoginController.xib */,
 				0026E680140347E700355BCB /* DetailView.xib */,
+				000BAE82147D36290073B27E /* ContactDetailController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -2876,6 +2879,7 @@
 				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
 				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
 				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
+				000BAE83147D36290073B27E /* ContactDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -139,9 +139,12 @@
         
     } else if ([rc isEqualToString:@"contact"]) {
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithNibName:@"ContactDetailController" bundle:nil];
-        [self.contactDetailController setDetailItem:row.entity];
-        [UIAppDelegate.rootViewController.navigationController presentModalViewController:self.contactDetailController animated:YES];
-//        [self.navigationController presentModalViewController:cc animated:NO];
+        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
+//        cc.ta
+        NSLog(@"Row.entity: %@", row.entity);
+        [cc setDetailItem:row.entity];
+//        [UIAppDelegate.rootViewController.navigationController presentModalViewController:self.contactDetailController animated:YES];
+        [UIAppDelegate.rootViewController.navigationController presentModalViewController:cc animated:NO];
     }
 }
 
