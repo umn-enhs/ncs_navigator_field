@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 
-#import "DetailViewController.h"
+#import "ContactDisplayController.h"
 #import "ContactNavigationTable.h"
 #import "Event.h"
 #import "Contact.h"

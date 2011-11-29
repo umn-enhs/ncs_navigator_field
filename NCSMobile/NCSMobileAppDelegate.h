@@ -11,7 +11,7 @@
 #import "NUSurveyVC.h"
 @class RootViewController;
 
-@class DetailViewController;
+@class ContactDisplayController;
 
 @interface NCSMobileAppDelegate : NSObject <UIApplicationDelegate> {
 }
@@ -22,7 +22,7 @@
 
 @property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
 
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 
 /* imported for surveyor_ios */
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;

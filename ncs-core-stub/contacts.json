@@ -205,6 +205,70 @@
                                     ],
                                     "uuid":"5201a880-98fb-012e-9ee0-00254bc472f4",
                                     "reference":"montypython3"
+                                },
+                                {
+                                    "pick":"one",
+                                    "text":"What is your favorite color?",
+                                    "answers":[
+                                       {
+                                          "text":"red",
+                                          "uuid":"51ff6d90-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"blue",
+                                          "uuid":"51ff7fd0-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"green",
+                                          "uuid":"51ff9600-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"yellow",
+                                          "uuid":"51ffa700-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"Other",
+                                          "uuid":"51ffbae0-98fb-012e-9ee0-00254bc472f4"
+                                       }
+                                    ],
+                                    "uuid":"51feb7e0-98fb-012e-9ee0-00254bc472f4",
+                                    "reference":"1"
+                                },
+                                {
+                                    "type":"dropdown",
+                                    "pick":"one",
+                                    "text":"Make",
+                                    "answers":[
+                                       {
+                                          "text":"Toyota",
+                                          "uuid":"522736e0-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"Ford",
+                                          "uuid":"52274950-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"GMChevy",
+                                          "uuid":"52275bc0-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"Ferrari",
+                                          "uuid":"52276f70-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"Tesla",
+                                          "uuid":"52278210-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"Honda",
+                                          "uuid":"522794d0-98fb-012e-9ee0-00254bc472f4"
+                                       },
+                                       {
+                                          "text":"Other weak brand",
+                                          "uuid":"5227a820-98fb-012e-9ee0-00254bc472f4"
+                                       }
+                                    ],
+                                    "uuid":"522721c0-98fb-012e-9ee0-00254bc472f4"
                                 }
                             ]
                         }

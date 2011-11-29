@@ -6,11 +6,11 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactDetailController.h"
+#import "ContactUpdateController.h"
 #import "Contact.h"
 #include "ContactDetailTable.h"
 
-@implementation ContactDetailController
+@implementation ContactUpdateController
 
 @synthesize detailItem=_detailItem;
 
@@ -35,7 +35,7 @@
 {
     // Update the user interface for the detail item.
     Contact *c = self.detailItem;
-    self.simpleTable = [[ContactDetailTable alloc]initUsingContact:c];
+//    self.simpleTable = [[ContactDetailTable alloc]initUsingContact:c];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
@@ -47,7 +47,7 @@
 //    header.text = c.person.name;
 //    header.font = [UIFont fontWithName:@"Arial" size:26]; 
 //    self.tableView.tableHeaderView = header;
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

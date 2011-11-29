@@ -6,10 +6,10 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "ContactDisplayController.h"
 
 #import "RootViewController.h"
-#import "ContactDetailController.h"
+#import "ContactUpdateController.h"
 #import "ContactTable.h"
 
 #import "Event.h"
@@ -18,12 +18,12 @@
 #import "Contact.h"
 #import "Person.h"
 
-@interface DetailViewController ()
+@interface ContactDisplayController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
 @end
 
-@implementation DetailViewController
+@implementation ContactDisplayController
 
 @synthesize toolbar=_toolbar;
 
@@ -138,8 +138,8 @@
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         
     } else if ([rc isEqualToString:@"contact"]) {
-//        ContactDetailController* cc = [[ContactDetailController alloc] initWithNibName:@"ContactDetailController" bundle:nil];
-        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
+        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
+//        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
 //        cc.ta
         NSLog(@"Row.entity: %@", row.entity);
         [cc setDetailItem:row.entity];

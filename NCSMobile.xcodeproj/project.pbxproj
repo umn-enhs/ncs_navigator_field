@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 000ADCC7147C1D91002F1940 /* ContactDetailTable.m */; };
-		000BAE83147D36290073B27E /* ContactDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000BAE82147D36290073B27E /* ContactDetailController.xib */; };
 		0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465C1434CDF9008D612B /* ContactNavigationTable.m */; };
 		002646601434CE02008D612B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465F1434CE02008D612B /* Person.m */; };
 		0026E669140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
@@ -18,7 +17,7 @@
 		0026E676140347E700355BCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E675140347E700355BCB /* main.m */; };
 		0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E678140347E700355BCB /* NCSMobileAppDelegate.m */; };
 		0026E67C140347E700355BCB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0026E67A140347E700355BCB /* MainWindow.xib */; };
-		0026E67F140347E700355BCB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E67E140347E700355BCB /* DetailViewController.m */; };
+		0026E67F140347E700355BCB /* ContactDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E67E140347E700355BCB /* ContactDisplayController.m */; };
 		0026E682140347E700355BCB /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0026E680140347E700355BCB /* DetailView.xib */; };
 		0026E685140347E700355BCB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026E684140347E700355BCB /* RootViewController.m */; };
 		0026E68C140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
@@ -34,6 +33,7 @@
 		0045BDA91418017F007BB8AA /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDA81418017F007BB8AA /* Event.m */; };
 		0045BDAC14191FB1007BB8AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAB14191FB1007BB8AA /* Contact.m */; };
 		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
+		005108EE148440C000732623 /* NUScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005108ED148440C000732623 /* NUScrollView.m */; };
 		00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactTableTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
 		0065B8C414631D3D00743D14 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0065B8BE14631D2D00743D14 /* libsbjson-ios.a */; };
@@ -70,7 +70,7 @@
 		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
 		009EE2791436220C00E6D658 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EE2781436220C00E6D658 /* LoginController.xib */; };
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
-		00AE6422147C076700D77A4C /* ContactDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE6420147C076700D77A4C /* ContactDetailController.m */; };
+		00AE6422147C076700D77A4C /* ContactUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE6420147C076700D77A4C /* ContactUpdateController.m */; };
 		00AEB0461474D31C00952EBD /* TASKS.md in Resources */ = {isa = PBXBuildFile; fileRef = 00AEB0451474D31C00952EBD /* TASKS.md */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */; };
@@ -240,7 +240,6 @@
 /* Begin PBXFileReference section */
 		000ADCC6147C1D91002F1940 /* ContactDetailTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailTable.h; sourceTree = "<group>"; };
 		000ADCC7147C1D91002F1940 /* ContactDetailTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailTable.m; sourceTree = "<group>"; };
-		000BAE82147D36290073B27E /* ContactDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailController.xib; sourceTree = "<group>"; };
 		0026465B1434CDF9008D612B /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTable.h; sourceTree = "<group>"; };
 		0026465C1434CDF9008D612B /* ContactNavigationTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationTable.m; sourceTree = "<group>"; };
 		0026465E1434CE02008D612B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -256,11 +255,11 @@
 		0026E677140347E700355BCB /* NCSMobileAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCSMobileAppDelegate.h; sourceTree = "<group>"; };
 		0026E678140347E700355BCB /* NCSMobileAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCSMobileAppDelegate.m; sourceTree = "<group>"; };
 		0026E67B140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		0026E67D140347E700355BCB /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		0026E67E140347E700355BCB /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0026E67D140347E700355BCB /* ContactDisplayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ContactDisplayController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0026E67E140347E700355BCB /* ContactDisplayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactDisplayController.m; sourceTree = "<group>"; };
 		0026E681140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
 		0026E683140347E700355BCB /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		0026E684140347E700355BCB /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0026E684140347E700355BCB /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RootViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0026E68B140347E700355BCB /* NCSMobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NCSMobileTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0026E693140347E700355BCB /* NCSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NCSMobileTests-Info.plist"; sourceTree = "<group>"; };
 		0026E695140347E700355BCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -276,6 +275,8 @@
 		0045BDAB14191FB1007BB8AA /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		0045BDAD141921CD007BB8AA /* ContactTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTest.h; sourceTree = "<group>"; };
 		0045BDAE141921CD007BB8AA /* ContactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTest.m; sourceTree = "<group>"; };
+		005108EC148440C000732623 /* NUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUScrollView.h; sourceTree = "<group>"; };
+		005108ED148440C000732623 /* NUScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUScrollView.m; sourceTree = "<group>"; };
 		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableTest.h; sourceTree = "<group>"; };
 		00590AC71428F7D0008335EA /* ContactTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableTest.m; sourceTree = "<group>"; };
 		00590AC914291818008335EA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
@@ -806,8 +807,8 @@
 		009EE2781436220C00E6D658 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginController.xib; path = NCSMobile/LoginController.xib; sourceTree = "<group>"; };
 		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		00A392DD14361C53003B19F3 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
-		00AE641F147C076700D77A4C /* ContactDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailController.h; sourceTree = "<group>"; };
-		00AE6420147C076700D77A4C /* ContactDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailController.m; sourceTree = "<group>"; };
+		00AE641F147C076700D77A4C /* ContactUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUpdateController.h; sourceTree = "<group>"; };
+		00AE6420147C076700D77A4C /* ContactUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUpdateController.m; sourceTree = "<group>"; };
 		00AEB0451474D31C00952EBD /* TASKS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TASKS.md; sourceTree = "<group>"; };
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
@@ -2533,16 +2534,18 @@
 		006EBEE5141157B6003D69CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0026E67D140347E700355BCB /* DetailViewController.h */,
-				0026E67E140347E700355BCB /* DetailViewController.m */,
-				00AE641F147C076700D77A4C /* ContactDetailController.h */,
-				00AE6420147C076700D77A4C /* ContactDetailController.m */,
+				0026E67D140347E700355BCB /* ContactDisplayController.h */,
+				0026E67E140347E700355BCB /* ContactDisplayController.m */,
+				00AE641F147C076700D77A4C /* ContactUpdateController.h */,
+				00AE6420147C076700D77A4C /* ContactUpdateController.m */,
 				0026E683140347E700355BCB /* RootViewController.h */,
 				0026E684140347E700355BCB /* RootViewController.m */,
 				009AD2E2142D391A0038650B /* SimpleTableController.h */,
 				009AD2E3142D391A0038650B /* SimpleTableController.m */,
 				00A392DC14361C53003B19F3 /* LoginController.h */,
 				00A392DD14361C53003B19F3 /* LoginController.m */,
+				005108EC148440C000732623 /* NUScrollView.h */,
+				005108ED148440C000732623 /* NUScrollView.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -2578,7 +2581,6 @@
 				0026E67A140347E700355BCB /* MainWindow.xib */,
 				009EE2781436220C00E6D658 /* LoginController.xib */,
 				0026E680140347E700355BCB /* DetailView.xib */,
-				000BAE82147D36290073B27E /* ContactDetailController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -2879,7 +2881,6 @@
 				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
 				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
 				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
-				000BAE83147D36290073B27E /* ContactDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2932,7 +2933,7 @@
 				0065B8D314631DEE00743D14 /* UUID.m in Sources */,
 				0026E676140347E700355BCB /* main.m in Sources */,
 				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
-				0026E67F140347E700355BCB /* DetailViewController.m in Sources */,
+				0026E67F140347E700355BCB /* ContactDisplayController.m in Sources */,
 				0026E685140347E700355BCB /* RootViewController.m in Sources */,
 				00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */,
 				0045BDA91418017F007BB8AA /* Event.m in Sources */,
@@ -2949,8 +2950,9 @@
 				00B6CD00146B1A77004767BE /* Location.m in Sources */,
 				00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */,
 				00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */,
-				00AE6422147C076700D77A4C /* ContactDetailController.m in Sources */,
+				00AE6422147C076700D77A4C /* ContactUpdateController.m in Sources */,
 				000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */,
+				005108EE148440C000732623 /* NUScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

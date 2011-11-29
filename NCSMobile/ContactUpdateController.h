@@ -12,7 +12,7 @@
 
 @class Contact;
 
-@interface ContactDetailController : SimpleTableController<SimpleTableRowDelegate> {
+@interface ContactUpdateController : UIViewController {
     Contact* _detailItem;
 }
 

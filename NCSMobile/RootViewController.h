@@ -11,7 +11,7 @@
 #import "SimpleTableController.h"
 #import "SimpleTableRowDelegate.h"
 
-@class DetailViewController;
+@class ContactDisplayController;
 @class Instrument;
 
 @interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate> {
@@ -19,7 +19,7 @@
 }
 
 		
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 
 - (void) loadSurveyor:(Instrument*)instrument;
 - (void) didSelectRow:(Row*)row;

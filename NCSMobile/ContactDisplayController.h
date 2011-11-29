@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  ContactUpdateController
 //  NCSMobile
 //
 //  Created by John Dzak on 8/22/11.
@@ -12,10 +12,10 @@
 
 @class Contact;
 @class ContactTable;
-@class ContactDetailController;
+@class ContactUpdateController;
 
-@interface DetailViewController : SimpleTableController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, SimpleTableRowDelegate> {
-    ContactDetailController* _contactDetailController;
+@interface ContactDisplayController : SimpleTableController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, SimpleTableRowDelegate> {
+    ContactUpdateController* _contactDetailController;
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
@@ -24,6 +24,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *eventDateLabel;
 @property (nonatomic, retain) IBOutlet UILabel* dwellingIdLabel;
 
-@property(nonatomic, retain) IBOutlet ContactDetailController* contactDetailController;
+@property(nonatomic, retain) IBOutlet ContactUpdateController* contactDetailController;
 
 @end
