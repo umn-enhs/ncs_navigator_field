@@ -34,6 +34,9 @@
 		0045BDAC14191FB1007BB8AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAB14191FB1007BB8AA /* Contact.m */; };
 		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
 		004D14A5148538F3003378EE /* ContactUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004D14A4148538F3003378EE /* ContactUpdateController.xib */; };
+		004FC7131486BF8300A378DC /* PickerOptionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 004FC7111486BE8200A378DC /* PickerOptionTest.m */; };
+		004FC7161486BFBC00A378DC /* PickerOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 004FC7151486BFBC00A378DC /* PickerOption.m */; };
+		004FC7191486CC1200A378DC /* ModelLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 004FC7181486CC1200A378DC /* ModelLoader.m */; };
 		005108EE148440C000732623 /* NUScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005108ED148440C000732623 /* NUScrollView.m */; };
 		00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactTableTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
@@ -64,6 +67,7 @@
 		0065B8DC14631E1D00743D14 /* undotted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65214631D1A00743D14 /* undotted.png */; };
 		0065B8DD14631E1D00743D14 /* undotted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65314631D1A00743D14 /* undotted@2x.png */; };
 		006C600B1434DF0D00F52CD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 006C600A1434DF0D00F52CD8 /* README.md */; };
+		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
 		009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276C1434D088002A8777 /* libRestKitNetwork.a */; };
 		009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276E1434D088002A8777 /* libRestKitObjectMapping.a */; };
@@ -277,6 +281,12 @@
 		0045BDAD141921CD007BB8AA /* ContactTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTest.h; sourceTree = "<group>"; };
 		0045BDAE141921CD007BB8AA /* ContactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTest.m; sourceTree = "<group>"; };
 		004D14A4148538F3003378EE /* ContactUpdateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactUpdateController.xib; path = NCSMobile/ContactUpdateController.xib; sourceTree = "<group>"; };
+		004FC7101486BE8200A378DC /* PickerOptionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerOptionTest.h; sourceTree = "<group>"; };
+		004FC7111486BE8200A378DC /* PickerOptionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerOptionTest.m; sourceTree = "<group>"; };
+		004FC7141486BFBC00A378DC /* PickerOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerOption.h; sourceTree = "<group>"; };
+		004FC7151486BFBC00A378DC /* PickerOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerOption.m; sourceTree = "<group>"; };
+		004FC7171486CC1200A378DC /* ModelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLoader.h; sourceTree = "<group>"; };
+		004FC7181486CC1200A378DC /* ModelLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLoader.m; sourceTree = "<group>"; };
 		005108EC148440C000732623 /* NUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUScrollView.h; sourceTree = "<group>"; };
 		005108ED148440C000732623 /* NUScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUScrollView.m; sourceTree = "<group>"; };
 		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableTest.h; sourceTree = "<group>"; };
@@ -859,6 +869,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */,
 				0026E68C140347E700355BCB /* UIKit.framework in Frameworks */,
 				0026E68D140347E700355BCB /* Foundation.framework in Frameworks */,
 				0026E68E140347E700355BCB /* CoreGraphics.framework in Frameworks */,
@@ -927,6 +938,8 @@
 				00FF37E31417CFA30009B1D4 /* ContactNavigationTableTest.h */,
 				00FF37E41417CFA30009B1D4 /* ContactNavigationTableTest.m */,
 				0045BDAD141921CD007BB8AA /* ContactTest.h */,
+				004FC7171486CC1200A378DC /* ModelLoader.h */,
+				004FC7181486CC1200A378DC /* ModelLoader.m */,
 				0045BDAE141921CD007BB8AA /* ContactTest.m */,
 				00E32346142153CD00D3AEED /* Fixtures.h */,
 				00E32347142153CD00D3AEED /* Fixtures.m */,
@@ -934,6 +947,8 @@
 				00E32350142280AD00D3AEED /* ContactManagerTest.m */,
 				00590AC61428F7D0008335EA /* ContactTableTest.h */,
 				00590AC71428F7D0008335EA /* ContactTableTest.m */,
+				004FC7101486BE8200A378DC /* PickerOptionTest.h */,
+				004FC7111486BE8200A378DC /* PickerOptionTest.m */,
 			);
 			name = Tests;
 			path = NCSMobileTests;
@@ -2633,6 +2648,8 @@
 				00E3235C1422EB6A00D3AEED /* ContactTable.m */,
 				000ADCC6147C1D91002F1940 /* ContactDetailTable.h */,
 				000ADCC7147C1D91002F1940 /* ContactDetailTable.m */,
+				004FC7141486BFBC00A378DC /* PickerOption.h */,
+				004FC7151486BFBC00A378DC /* PickerOption.m */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -2957,6 +2974,7 @@
 				00AE6422147C076700D77A4C /* ContactUpdateController.m in Sources */,
 				000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */,
 				005108EE148440C000732623 /* NUScrollView.m in Sources */,
+				004FC7161486BFBC00A378DC /* PickerOption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2964,11 +2982,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004FC7131486BF8300A378DC /* PickerOptionTest.m in Sources */,
 				00FF37E71417D2380009B1D4 /* ContactNavigationTableTest.m in Sources */,
 				0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */,
 				00E32348142153CD00D3AEED /* Fixtures.m in Sources */,
 				00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */,
 				00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */,
+				004FC7191486CC1200A378DC /* ModelLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

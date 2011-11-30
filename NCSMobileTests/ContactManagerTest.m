@@ -7,7 +7,7 @@
 //
 
 #import "ContactManagerTest.h"
-#import "ContactManager.h"
+//#import "ContactManager.h"
 #import "Contact.h"
 #import "Fixtures.h"
 

@@ -10,14 +10,12 @@
 #import "Person.h"
 #import "Event.h"
 #import "Contact.h"
-#import "Dwelling.h"
 #import "Address.h"
 
 @implementation Fixtures
 
 + (Person*) createPersonWithId:(NSString*)id name:(NSString*) n {
     Person *p = [[Person alloc] init];
-    p.id = id;
     p.name = n;
     return [p autorelease];
 }
@@ -54,19 +52,14 @@
     return [c autorelease];
 }
 
-+ (Dwelling*) createDwellingWithId:(NSString*)id address:(Address*)address {
-    Dwelling *d = [Dwelling new];
-    d.id = id;
-    d.address = address;
-    return [d autorelease];
-}
+
 
 + (Address*) createAddressWithStreet:(NSString*)street city:(NSString*)city state:(NSString*)state zipCode:(NSInteger)zip {
     Address *a = [Address new];
     a.street = street;
     a.city = city;
     a.state = state;
-    a.zipcode = [NSNumber numberWithInteger:zip];
+    a.zipCode = [NSNumber numberWithInteger:zip];
     return [a autorelease];
 }
 @end

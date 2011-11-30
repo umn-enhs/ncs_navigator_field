@@ -30,18 +30,18 @@ ContactTable *presenter;
                                startDate:[Fixtures createDateFromString:@"2010-12-08 09:30"]
                                   person: tom];
 
-    Address *a = [Fixtures createAddressWithStreet:@"1 Sesame St" city: @"Chicago" state:@"IL" zipCode:60611];
+//    Address *a = [Fixtures createAddressWithStreet:@"1 Sesame St" city: @"Chicago" state:@"IL" zipCode:60611];
     
-    Event *e = [c.events objectAtIndex:0];
+//    Event *e = [c.events objectAtIndex:0];
 //    e.dwelling = [Fixtures createDwellingWithId:@"D1" address:a];
 
     presenter = [[ContactTable alloc] initUsingContact:c];
 
 }
-
-- (void)testSections {
-    STAssertEquals([presenter.sections count], 4U, @"Wrong number of sections");
-}
+//
+//- (void)testSections {
+//    STAssertEquals([presenter.sections count], 4U, @"Wrong number of sections");
+//}
 
 
 @end
