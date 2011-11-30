@@ -33,6 +33,7 @@
 		0045BDA91418017F007BB8AA /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDA81418017F007BB8AA /* Event.m */; };
 		0045BDAC14191FB1007BB8AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAB14191FB1007BB8AA /* Contact.m */; };
 		0045BDAF141921CD007BB8AA /* ContactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0045BDAE141921CD007BB8AA /* ContactTest.m */; };
+		004D14A5148538F3003378EE /* ContactUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004D14A4148538F3003378EE /* ContactUpdateController.xib */; };
 		005108EE148440C000732623 /* NUScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005108ED148440C000732623 /* NUScrollView.m */; };
 		00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590AC71428F7D0008335EA /* ContactTableTest.m */; };
 		00590ACB14291818008335EA /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00590ACA14291818008335EA /* Address.m */; };
@@ -275,6 +276,7 @@
 		0045BDAB14191FB1007BB8AA /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		0045BDAD141921CD007BB8AA /* ContactTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTest.h; sourceTree = "<group>"; };
 		0045BDAE141921CD007BB8AA /* ContactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTest.m; sourceTree = "<group>"; };
+		004D14A4148538F3003378EE /* ContactUpdateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactUpdateController.xib; path = NCSMobile/ContactUpdateController.xib; sourceTree = "<group>"; };
 		005108EC148440C000732623 /* NUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUScrollView.h; sourceTree = "<group>"; };
 		005108ED148440C000732623 /* NUScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUScrollView.m; sourceTree = "<group>"; };
 		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableTest.h; sourceTree = "<group>"; };
@@ -2581,6 +2583,7 @@
 				0026E67A140347E700355BCB /* MainWindow.xib */,
 				009EE2781436220C00E6D658 /* LoginController.xib */,
 				0026E680140347E700355BCB /* DetailView.xib */,
+				004D14A4148538F3003378EE /* ContactUpdateController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -2881,6 +2884,7 @@
 				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
 				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
 				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
+				004D14A5148538F3003378EE /* ContactUpdateController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

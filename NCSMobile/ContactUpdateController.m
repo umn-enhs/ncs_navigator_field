@@ -9,10 +9,13 @@
 #import "ContactUpdateController.h"
 #import "Contact.h"
 #include "ContactDetailTable.h"
+#include "NUPickerVC.h"
 
 @implementation ContactUpdateController
 
 @synthesize detailItem=_detailItem;
+@synthesize popover=_popover;
+@synthesize pickerController=_pickerController;
 
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
@@ -65,6 +68,49 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - Actions
+
+- (IBAction) contactTypeButtonPressed:(id)sender {
+    NSLog(@"Pressed Button: %@", sender);
+    NSLog(@"Self: %@", self);
+
+    self.pickerController = [[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil];
+    self.pickerController.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
+    [self.pickerController loadView];
+    [self.pickerController setupDelegate:self withTitle:@"Contact Type" date:FALSE];
+    
+    UIButton* button = (UIButton*) sender;
+    self.popover = [[UIPopoverController alloc] initWithContentViewController: self.pickerController];
+    self.popover.delegate = self;
+    [self.popover presentPopoverFromRect:button.frame inView:button.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+}
+
+#pragma mark -
+#pragma mark Picker view data source
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+#pragma mark -
+#pragma mark Picker view delegate
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 2;
+}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel *pickerRow = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
+    pickerRow.backgroundColor = [UIColor clearColor];
+    pickerRow.font = [UIFont systemFontOfSize:16.0];
+    pickerRow.text = @"Hello";
+    
+    return pickerRow;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSLog(@"Selected row: %@", row);
 }
 
 #pragma mark - View lifecycle
