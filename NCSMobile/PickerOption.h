@@ -16,4 +16,7 @@
 @property(nonatomic,retain) NSString* text;
 
 - (id) initWithText:(NSString*)t value:(NSInteger)v;
+- (NSInteger) value;
++ (NSArray*) allContactTypes;
++ (PickerOption*) findWithValue:(NSInteger)value fromOptions:(NSArray*)options; 
 @end

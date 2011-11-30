@@ -15,7 +15,8 @@
 - (void)test_shouldBeInitializedProperly
 {
     PickerOption* o = [[PickerOption alloc] initWithText:@"Red" value:1];
-    STAssertEquals(true, false, @"HUH");
+    STAssertEquals(@"Red", o.text, @"Wrong text");
+    STAssertEquals(1, o.value, @"Wrong value");
 }
 
 @end

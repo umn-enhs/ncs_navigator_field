@@ -10,6 +10,7 @@
 #import "Contact.h"
 #include "ContactDetailTable.h"
 #include "NUPickerVC.h"
+#include "PickerOption.h"
 
 @implementation ContactUpdateController
 
@@ -42,6 +43,7 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
+    
 //    self.eventDateLabel.text = [dateFormatter stringFromDate:c.startDate];
     //    self.dwellingIdLabel.text = [self.detailItem dwelling].id;
 //    UILabel *header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 44)];
@@ -73,7 +75,9 @@
 #pragma mark - Actions
 
 - (IBAction) contactTypeButtonPressed:(id)sender {
-    _pickerOptions = [[NSArray alloc] initWithObjects:@"Foo", @"Bar", nil ];
+    // TODO: Convert to use PickerOption class with plist file
+    _pickerOptions = [PickerOption allContactTypes];
+    
     self.pickerController = [[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil];
     self.pickerController.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
     [self.pickerController loadView];
@@ -102,7 +106,7 @@
     UILabel *pickerRow = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     pickerRow.backgroundColor = [UIColor clearColor];
     pickerRow.font = [UIFont systemFontOfSize:16.0];
-    pickerRow.text = [_pickerOptions objectAtIndex:row];
+    pickerRow.text = ((PickerOption*)[_pickerOptions objectAtIndex:row]).text;
     
     return pickerRow;
 }
@@ -116,7 +120,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    if (_detailItem.type != NULL) {
+        PickerOption* o = [PickerOption findWithValue:[_detailItem.type integerValue]  fromOptions:[PickerOption allContactTypes]]; 
+        [_contactTypeButton setTitle:o.text forState: UIControlStateNormal];        
+        //        [_contactTypeButton setTitle:o.text forState: UIControlStateApplication];
+        //        [_contactTypeButton setTitle:o.text forState: UIControlStateHighlighted];
+        //        [_contactTypeButton setTitle:o.text forState: UIControlStateReserved];
+        //        [_contactTypeButton setTitle:o.text forState: UIControlStateSelected];
+        //        [_contactTypeButton setTitle:o.text forState: UIControlStateDisabled];
+        
+    }
+    
+
 }
 
 - (void)viewDidUnload

@@ -18,6 +18,7 @@
     UIPopoverController* _popover;
     NUPickerVC* _pickerController;
     NSArray* _pickerOptions;
+    IBOutlet UIButton* _contactTypeButton;
 }
 
 @property(nonatomic,retain) Contact* detailItem;
