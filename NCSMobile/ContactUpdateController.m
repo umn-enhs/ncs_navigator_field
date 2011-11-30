@@ -73,9 +73,7 @@
 #pragma mark - Actions
 
 - (IBAction) contactTypeButtonPressed:(id)sender {
-    NSLog(@"Pressed Button: %@", sender);
-    NSLog(@"Self: %@", self);
-
+    _pickerOptions = [[NSArray alloc] initWithObjects:@"Foo", @"Bar", nil ];
     self.pickerController = [[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil];
     self.pickerController.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
     [self.pickerController loadView];
@@ -98,19 +96,19 @@
 #pragma mark Picker view delegate
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return 2;
+    return [_pickerOptions count];
 }
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     UILabel *pickerRow = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     pickerRow.backgroundColor = [UIColor clearColor];
     pickerRow.font = [UIFont systemFontOfSize:16.0];
-    pickerRow.text = @"Hello";
+    pickerRow.text = [_pickerOptions objectAtIndex:row];
     
     return pickerRow;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"Selected row: %@", row);
+    _detailItem.type = [NSNumber numberWithInteger:row];
 }
 
 #pragma mark - View lifecycle
