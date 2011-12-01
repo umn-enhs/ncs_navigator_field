@@ -17,6 +17,7 @@
 @synthesize detailItem=_detailItem;
 @synthesize popover=_popover;
 @synthesize pickerController=_pickerController;
+@synthesize acceptNewValue=_acceptNewValue;
 
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
@@ -74,19 +75,28 @@
 
 #pragma mark - Actions
 
-- (IBAction) contactTypeButtonPressed:(id)sender {
-    // TODO: Convert to use PickerOption class with plist file
-    _pickerOptions = [PickerOption allContactTypes];
-    
+- (void)setupPickerForButton:(id)sender withOptions:(NSArray*)options andTitle:(NSString*)title pickerChangeHandler:(PickerHandler)handler {
+    _pickerOptions = options; 
+    self.acceptNewValue = handler;
+
     self.pickerController = [[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil];
     self.pickerController.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
     [self.pickerController loadView];
-    [self.pickerController setupDelegate:self withTitle:@"Contact Type" date:FALSE];
+    [self.pickerController setupDelegate:self withTitle:title date:FALSE];
     
     UIButton* button = (UIButton*) sender;
     self.popover = [[UIPopoverController alloc] initWithContentViewController: self.pickerController];
     self.popover.delegate = self;
     [self.popover presentPopoverFromRect:button.frame inView:button.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+}
+
+- (IBAction) contactTypeButtonPressed:(id)sender {
+    PickerHandler h = ^(PickerOption* p, Contact* c, UIButton *b){
+        _detailItem.type = [NSNumber numberWithInteger:p.value];
+        [_contactTypeButton setTitle:p.text forState: UIControlStateNormal];
+    };
+    
+    [self setupPickerForButton:sender withOptions:[PickerOption allContactTypes] andTitle:@"Contact Type" pickerChangeHandler:h];
 }
 
 #pragma mark -
@@ -111,9 +121,22 @@
     return pickerRow;
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    _detailItem.type = [NSNumber numberWithInteger:row];
+- (void) pickerDone{
+    [self.popover dismissPopoverAnimated:NO];
+    NSUInteger selectedRow = [self.pickerController.picker selectedRowInComponent:0]; 
+    if (selectedRow != -1) {
+        PickerOption* p = [_pickerOptions objectAtIndex:selectedRow];
+        self.acceptNewValue(p, _detailItem, _contactTypeButton);
+    }
 }
+- (void) pickerCancel{
+    [self.popover dismissPopoverAnimated:NO];
+    [_pickerOptions dealloc];
+    [_acceptNewValue dealloc];
+    self.popover = NULL;
+    self.pickerController = NULL;
+}
+
 
 #pragma mark - View lifecycle
 
@@ -123,16 +146,8 @@
 
     if (_detailItem.type != NULL) {
         PickerOption* o = [PickerOption findWithValue:[_detailItem.type integerValue]  fromOptions:[PickerOption allContactTypes]]; 
-        [_contactTypeButton setTitle:o.text forState: UIControlStateNormal];        
-        //        [_contactTypeButton setTitle:o.text forState: UIControlStateApplication];
-        //        [_contactTypeButton setTitle:o.text forState: UIControlStateHighlighted];
-        //        [_contactTypeButton setTitle:o.text forState: UIControlStateReserved];
-        //        [_contactTypeButton setTitle:o.text forState: UIControlStateSelected];
-        //        [_contactTypeButton setTitle:o.text forState: UIControlStateDisabled];
-        
+        [_contactTypeButton setTitle:o.text forState: UIControlStateNormal];
     }
-    
-
 }
 
 - (void)viewDidUnload
@@ -148,20 +163,5 @@
 	return YES;
 }
 
-#pragma mark - Override simple table
-
-- (UITableViewCell*) cellForRowClass:(NSString *)rowClass {
-    UITableViewCell *cell;
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:rowClass] autorelease];
-        cell.textLabel.numberOfLines = 0;
-        cell.detailTextLabel.numberOfLines = 0;
-    return cell;
-}
-
-#pragma mark - Implement Simple table row delegate
-
-- (void) didSelectRow:(Row*)r{
-//    r
-}
 
 @end

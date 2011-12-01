@@ -12,6 +12,9 @@
 
 @class Contact;
 @class NUPickerVC;
+@class PickerOption;
+
+typedef void(^PickerHandler)(PickerOption* p, Contact* c, UIButton *b);
 
 @interface ContactUpdateController : UIViewController<UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     Contact* _detailItem;
@@ -19,11 +22,13 @@
     NUPickerVC* _pickerController;
     NSArray* _pickerOptions;
     IBOutlet UIButton* _contactTypeButton;
+    PickerHandler acceptNewValue;
 }
 
 @property(nonatomic,retain) Contact* detailItem;
 @property(nonatomic,retain) UIPopoverController* popover;
 @property(nonatomic,retain) NUPickerVC* pickerController;
+@property(nonatomic,copy) void(^acceptNewValue)(PickerOption* p, Contact* c, UIButton *b);
 
 - (void)configureView;
 - (void)setDetailItem:(Contact*)newDetailItem;

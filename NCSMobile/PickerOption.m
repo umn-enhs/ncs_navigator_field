@@ -32,7 +32,8 @@
     }
     return NULL;
 }
-    
+  
+// TODO: Convert to use PickerOption class with plist file
 + (NSArray*) allContactTypes {
     return [[NSArray alloc] initWithObjects:
              [[PickerOption alloc] initWithText:@"In-person" value:1],
