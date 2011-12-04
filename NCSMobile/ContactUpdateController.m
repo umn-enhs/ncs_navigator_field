@@ -14,19 +14,21 @@
 
 @implementation ContactUpdateController
 
-@synthesize detailItem=_detailItem;
+@synthesize detailItem=_contact;
 @synthesize popover=_popover;
 @synthesize pickerController=_pickerController;
 @synthesize acceptNewValue=_acceptNewValue;
-
+@synthesize dateFormatter=_dateFormatter;
+@synthesize pickerDate=_pickerDate;
+@synthesize acceptNewDate;
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
  */
-- (void)setDetailItem:(Contact*)newDetailItem
+- (void)setContact:(Contact*)newDetailItem
 {
-    if (_detailItem != newDetailItem) {
-        [_detailItem release];
-        _detailItem = [newDetailItem retain];
+    if (_contact != newDetailItem) {
+        [_contact release];
+        _contact = [newDetailItem retain];
         
         // Update the view.
         [self configureView];
@@ -75,7 +77,7 @@
 
 #pragma mark - Actions
 
-- (void)setupPickerForButton:(id)sender withOptions:(NSArray*)options andTitle:(NSString*)title pickerChangeHandler:(PickerHandler)handler {
+- (void)setupValuePickerForButton:(id)sender withOptions:(NSArray*)options andTitle:(NSString*)title pickerChangeHandler:(PickerHandler)handler {
     _pickerOptions = options; 
     self.acceptNewValue = handler;
 
@@ -90,13 +92,38 @@
     [self.popover presentPopoverFromRect:button.frame inView:button.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }
 
+- (void)setupDatePickerForButton:(id)sender withDate:(NSDate*)date andTitle:(NSString*)title pickerChangeHandler:(DatePickerHandler)handler {
+    self.pickerDate = date; 
+    self.acceptNewDate = handler;
+    
+    self.pickerController = [[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil];
+    self.pickerController.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
+    [self.pickerController loadView];
+    [self.pickerController setupDelegate:self withTitle:title date:YES];
+    self.pickerController.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+    self.pickerController.datePicker.date = date;
+    UIButton* button = (UIButton*) sender;
+    self.popover = [[UIPopoverController alloc] initWithContentViewController: self.pickerController];
+    self.popover.delegate = self;
+    [self.popover presentPopoverFromRect:button.frame inView:button.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+}
+
 - (IBAction) contactTypeButtonPressed:(id)sender {
     PickerHandler h = ^(PickerOption* p, Contact* c, UIButton *b){
-        _detailItem.type = [NSNumber numberWithInteger:p.value];
+        _contact.type = [NSNumber numberWithInteger:p.value];
         [_contactTypeButton setTitle:p.text forState: UIControlStateNormal];
     };
     
-    [self setupPickerForButton:sender withOptions:[PickerOption allContactTypes] andTitle:@"Contact Type" pickerChangeHandler:h];
+    [self setupValuePickerForButton:sender withOptions:[PickerOption allContactTypes] andTitle:@"Contact Type" pickerChangeHandler:h];
+}
+
+- (IBAction) startDatePressed:(id)sender {
+    DatePickerHandler h = ^(NSDate* d, Contact* c, UIButton *b){
+        _contact.startDate = d;
+        [_contactTypeButton setTitle:[self.dateFormatter stringFromDate:d] forState: UIControlStateNormal];
+    };
+    
+    [self setupDatePickerForButton:sender withDate:_contact.startDate andTitle:@"Contact Type" pickerChangeHandler:h];
 }
 
 #pragma mark -
@@ -126,14 +153,16 @@
     NSUInteger selectedRow = [self.pickerController.picker selectedRowInComponent:0]; 
     if (selectedRow != -1) {
         PickerOption* p = [_pickerOptions objectAtIndex:selectedRow];
-        self.acceptNewValue(p, _detailItem, _contactTypeButton);
+        self.acceptNewValue(p, _contact, _contactTypeButton);
     }
 }
+
 - (void) pickerCancel{
     [self.popover dismissPopoverAnimated:NO];
     [_pickerOptions dealloc];
     [_acceptNewValue dealloc];
     self.popover = NULL;
+    self.pickerDate = NULL;
     self.pickerController = NULL;
 }
 
@@ -143,10 +172,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    if (_detailItem.type != NULL) {
-        PickerOption* o = [PickerOption findWithValue:[_detailItem.type integerValue]  fromOptions:[PickerOption allContactTypes]]; 
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
+    
+    if (_contact.type != NULL) {
+        PickerOption* o = [PickerOption findWithValue:[_contact.type integerValue]  fromOptions:[PickerOption allContactTypes]]; 
         [_contactTypeButton setTitle:o.text forState: UIControlStateNormal];
+    }
+    
+    if (_contact.startDate != NULL) {
+        NSString* start = [_dateFormatter stringFromDate:_contact.startDate];
+        [_startDateButton setTitle:start forState:UIControlStateNormal];
     }
 }
 
@@ -161,6 +197,11 @@
 {
     // Return YES for supported orientations
 	return YES;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"View: %@", [self.view.subviews objectAtIndex:0]);
+    return TRUE;
 }
 
 

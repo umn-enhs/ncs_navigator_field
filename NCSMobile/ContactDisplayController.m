@@ -142,7 +142,7 @@
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
 //        cc.ta
         NSLog(@"Row.entity: %@", row.entity);
-        [cc setDetailItem:row.entity];
+        [cc setContact:row.entity];
 //        [UIAppDelegate.rootViewController.navigationController presentModalViewController:self.contactDetailController animated:YES];
         [UIAppDelegate.rootViewController.navigationController presentModalViewController:cc animated:NO];
     }

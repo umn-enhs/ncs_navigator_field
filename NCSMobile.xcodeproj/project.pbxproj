@@ -68,6 +68,8 @@
 		0065B8DD14631E1D00743D14 /* undotted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65314631D1A00743D14 /* undotted@2x.png */; };
 		006C600B1434DF0D00F52CD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 006C600A1434DF0D00F52CD8 /* README.md */; };
 		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
+		00810B5F14896B070098C0D0 /* DatePickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePickerButton.m */; };
+		008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */; };
 		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
 		009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276C1434D088002A8777 /* libRestKitNetwork.a */; };
 		009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276E1434D088002A8777 /* libRestKitObjectMapping.a */; };
@@ -811,6 +813,10 @@
 		0065B8B114631D2D00743D14 /* WriterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriterTest.m; sourceTree = "<group>"; };
 		006C600A1434DF0D00F52CD8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		00810B5D14896B070098C0D0 /* DatePickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerButton.h; sourceTree = "<group>"; };
+		00810B5E14896B070098C0D0 /* DatePickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerButton.m; sourceTree = "<group>"; };
+		008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUpdateVC.h; sourceTree = "<group>"; };
+		008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUpdateVC.m; sourceTree = "<group>"; };
 		009827571434D088002A8777 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		009AD2E2142D391A0038650B /* SimpleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableController.h; sourceTree = "<group>"; };
 		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
@@ -2650,6 +2656,10 @@
 				000ADCC7147C1D91002F1940 /* ContactDetailTable.m */,
 				004FC7141486BFBC00A378DC /* PickerOption.h */,
 				004FC7151486BFBC00A378DC /* PickerOption.m */,
+				00810B5D14896B070098C0D0 /* DatePickerButton.h */,
+				00810B5E14896B070098C0D0 /* DatePickerButton.m */,
+				008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */,
+				008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -2975,6 +2985,8 @@
 				000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */,
 				005108EE148440C000732623 /* NUScrollView.m in Sources */,
 				004FC7161486BFBC00A378DC /* PickerOption.m in Sources */,
+				00810B5F14896B070098C0D0 /* DatePickerButton.m in Sources */,
+				008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
