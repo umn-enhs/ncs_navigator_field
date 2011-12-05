@@ -17,6 +17,6 @@
 
 - (id) initWithText:(NSString*)t value:(NSInteger)v;
 - (NSInteger) value;
-+ (NSArray*) allContactTypes;
++ (NSArray*) contactTypes;
 + (PickerOption*) findWithValue:(NSInteger)value fromOptions:(NSArray*)options; 
 @end

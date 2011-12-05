@@ -11,6 +11,7 @@
 #import "RootViewController.h"
 #import "ContactUpdateController.h"
 #import "ContactTable.h"
+#import "ContactUpdateVC.h"
 
 #import "Event.h"
 #import "Section.h"
@@ -138,7 +139,8 @@
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         
     } else if ([rc isEqualToString:@"contact"]) {
-        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
+        ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithView:self.view contact:self.detailItem];
+//        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
 //        cc.ta
         NSLog(@"Row.entity: %@", row.entity);

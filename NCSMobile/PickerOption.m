@@ -34,7 +34,7 @@
 }
   
 // TODO: Convert to use PickerOption class with plist file
-+ (NSArray*) allContactTypes {
++ (NSArray*) contactTypes {
     return [[NSArray alloc] initWithObjects:
              [[PickerOption alloc] initWithText:@"In-person" value:1],
              [[PickerOption alloc] initWithText:@"Mail" value:2],

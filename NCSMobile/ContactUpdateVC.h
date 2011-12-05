@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactUpdateVC : UIViewController
+@class FormBuilder;
+@class Contact;
+
+@interface ContactUpdateVC : UIViewController {
+    Contact* _contact;
+    FormBuilder* _builder;
+}
+
+@property(nonatomic,retain) Contact* contact;
+@property(nonatomic,retain) FormBuilder* builder;
+
+- (id)initWithView:(UIView*)view contact:(Contact*)contact;
+
 
 @end

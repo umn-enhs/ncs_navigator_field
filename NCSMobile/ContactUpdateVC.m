@@ -7,14 +7,24 @@
 //
 
 #import "ContactUpdateVC.h"
+#import "PickerOption.h"
+#import "FormBuilder.h"
 
 @implementation ContactUpdateVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+@synthesize contact=_contact;
+@synthesize builder=_builder;
+
+- (id)initWithView:view contact:contact {
+    NSLog(@"Init called");
+
+    if (self = [super init]) {
+        self.builder = [[FormBuilder alloc] initwithView:self.view object:self.contact];
+        
+        // Contact Type
+        [self.builder labelWithText:@"Contact Type"];
+        [self.builder pickerForField:@selector(type) WithOptions:[PickerOption contactTypes]];
+
     }
     return self;
 }
