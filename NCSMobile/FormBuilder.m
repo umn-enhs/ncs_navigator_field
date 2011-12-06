@@ -35,7 +35,7 @@
 }
 
 - (void) singleOptionPickerForField:(SEL)field WithPickerOptions:(NSArray*)options {
-    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:(NSInteger)[self objectValueForKey:field] pickerOptions:options] autorelease];
+    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:(NSInteger*)[self objectValueForKey:field] pickerOptions:options] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];

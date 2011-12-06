@@ -66,7 +66,7 @@
         [self.button setTitle:title.text forState:UIControlStateNormal];
     }
     NSInteger index = [self.pickerOptions indexOfObject:title];
-    [p.picker selectRow:index inComponent:1 animated:NO];
+    [p.picker selectRow:1 inComponent:0 animated:NO];
     return p;
 }
 
@@ -118,7 +118,8 @@
     return [self.pickerOptions count];
 }
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.pickerOptions objectAtIndex:row];
+    PickerOption* p = [self.pickerOptions objectAtIndex:row];
+    return p.text;
 }
 
 
