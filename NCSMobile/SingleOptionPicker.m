@@ -66,7 +66,7 @@
         [self.button setTitle:title.text forState:UIControlStateNormal];
     }
     NSInteger index = [self.pickerOptions indexOfObject:title];
-    [p.picker selectRow:1 inComponent:0 animated:NO];
+    [p.picker selectRow:index inComponent:0 animated:NO];
     return p;
 }
 
