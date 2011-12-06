@@ -87,20 +87,18 @@
 }
 
 - (void) pickerDone{
+    NSUInteger selected = [self.picker.picker selectedRowInComponent:0]; 
+    PickerOption* o = [self.pickerOptions objectAtIndex:selected];
+    NSNumber* new = [NSNumber numberWithInteger:o.value];
+    self.value = new;
+    [self.handler updatedValue:new];
+    [self.button setTitle:o.text forState:UIControlStateNormal];
     [self.popover dismissPopoverAnimated:NO];
-//    NSDate* d = [self.picker.picker date]; 
-//    self.value = d;
-//    [self.handler updatedValue:d];
-//    [self.button setTitle:[self formatTitleUsingDate:d] forState:UIControlStateNormal];
-    
-    //        [delegate deleteResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
-    //        [delegate newResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
-    //        [delegate showAndHideDependenciesTriggeredBy:[self myIndexPathWithRow:selectedRow]];
-    //        self.textLabel.text = [(NSDictionary *)[answers objectAtIndex:selectedRow] objectForKey:@"text"];
-    //        self.textLabel.textColor = RGB(1, 113, 233);
 }
 - (void) pickerCancel{
-//    self.picker.picker.date = self.date;
+    NSInteger old = [self.value integerValue];
+    PickerOption* o = [PickerOption findWithValue:old fromOptions:self.pickerOptions];
+    [self.picker.picker selectRow:[self.pickerOptions indexOfObject:o] inComponent:0 animated:NO];
     [self.popover dismissPopoverAnimated:NO];
 }
 
