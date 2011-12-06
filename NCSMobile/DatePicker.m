@@ -61,7 +61,9 @@
     [p setupDelegate:self withTitle:@"Pick One" date:YES];
     p.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
     p.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-    p.datePicker.date = self.date;
+    if (self.date) {
+        p.datePicker.date = self.date;
+    }
     return p;
 }
 
@@ -95,7 +97,9 @@
 //        self.textLabel.textColor = RGB(1, 113, 233);
 }
 - (void) pickerCancel{
-    self.picker.datePicker.date = self.date;
+    if (self.date) {
+        self.picker.datePicker.date = self.date;
+    }
     [self.popover dismissPopoverAnimated:NO];
 }
 

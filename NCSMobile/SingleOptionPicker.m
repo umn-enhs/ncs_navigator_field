@@ -40,6 +40,8 @@
         PickerOption* title = [PickerOption findWithValue:[value integerValue] fromOptions:options];
         if (title) {
             [self.button setTitle:title.text forState:UIControlStateNormal];
+        } else {
+            [self.button setTitle:@"Pick One" forState:UIControlStateNormal];
         }
 
         // Setup button target

@@ -26,6 +26,15 @@
         // Contact Start Date
         [self.builder labelWithText:@"Start Date"];
         [self.builder datePickerForField:@selector(startDate)];
+        
+        // Contact Start Date
+        [self.builder labelWithText:@"End Date"];
+        [self.builder datePickerForField:@selector(endDate)];
+        
+        // Who contacted
+        [self.builder labelWithText:@"Who was contacted"];
+        [self.builder singleOptionPickerForField:@selector(whoContacted) WithPickerOptions:[PickerOption whoContacted]];
+        
 
     }
     return self;
