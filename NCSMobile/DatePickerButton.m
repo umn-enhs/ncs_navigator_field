@@ -95,6 +95,7 @@
 //        self.textLabel.textColor = RGB(1, 113, 233);
 }
 - (void) pickerCancel{
+    self.picker.datePicker.date = self.date;
     [self.popover dismissPopoverAnimated:NO];
 }
 
