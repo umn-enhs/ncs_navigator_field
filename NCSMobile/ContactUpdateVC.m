@@ -20,8 +20,12 @@
         self.builder = [[FormBuilder alloc] initwithView:self.view object:contact];
         
         // Contact Type
+        [self.builder labelWithText:@"Contact Type"];
+        [self.builder singleOptionPickerForField:@selector(type) WithPickerOptions:[PickerOption contactTypes]];
+        
+        // Contact Start Date
         [self.builder labelWithText:@"Start Date"];
-        [self.builder datePickerForField:@selector(startDate) WithPickerOptions:[PickerOption contactTypes]];
+        [self.builder datePickerForField:@selector(startDate)];
 
     }
     return self;

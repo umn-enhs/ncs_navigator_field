@@ -9,27 +9,42 @@
 #import "SingleOptionPicker.h"
 #import "NUPickerVC.h"
 #import "ChangeHandler.h"
+#import "PickerOption.h"
 
 @implementation SingleOptionPicker
 
 @synthesize value = _value;
+
 @synthesize button = _button;
+
 @synthesize picker = _picker;
+
 @synthesize popover = _popover;
+
 @synthesize handler = _handler;
 
-- (id)initWithFrame:(CGRect)frame value:(NSDate*)value {
+@synthesize pickerOptions = _pickerOptions;
+
+- (id)initWithFrame:(CGRect)frame value:(NSNumber*)value pickerOptions:(NSArray*)options {
     self = [super initWithFrame:frame];
     if (self) {
+        self.value = value;
+        self.pickerOptions = options;
+
+        
         // Create button
         self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.button.frame = CGRectMake(0, 0, 200, 30);
-        [self.button setTitle:[self formatTitleUsingDate:value] forState:UIControlStateNormal];
         
+        // Set title
+        PickerOption* title = [PickerOption findWithValue:[value integerValue] fromOptions:options];
+        if (title) {
+            [self.button setTitle:title.text forState:UIControlStateNormal];
+        }
+
         // Setup button target
         [self.button addTarget:self action:@selector(showPicker) forControlEvents:UIControlEventTouchUpInside];
         
-        self.value = value;
         
         [self addSubview:self.button];
     }
@@ -40,23 +55,18 @@
     self.handler = handler;
 }
 
-- (NSString*) formatTitleUsingDate:(NSDate*)date {
-    return date ? [self.dateFormatter stringFromDate:date] : @"Pick One";
-}
-
-- (NSDateFormatter*) getDateFormatter {
-    NSDateFormatter* dateFormatter = [[NSDateFormatter new] autorelease];
-    [dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
-    return dateFormatter;
-}
-
 - (NUPickerVC*) initPickerVC {
     NUPickerVC* p= [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
     [p loadView];
-    [p setupDelegate:self withTitle:@"Pick One" date:YES];
+    [p setupDelegate:self withTitle:@"Pick One" date:NO];
     p.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
-    p.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-    p.datePicker.date = self.date;
+
+    PickerOption* title = [PickerOption findWithValue:[self.value integerValue] fromOptions:self.pickerOptions];
+    if (title) {
+        [self.button setTitle:title.text forState:UIControlStateNormal];
+    }
+    NSInteger index = [self.pickerOptions indexOfObject:title];
+    [p.picker selectRow:index inComponent:1 animated:NO];
     return p;
 }
 
@@ -78,10 +88,10 @@
 
 - (void) pickerDone{
     [self.popover dismissPopoverAnimated:NO];
-    NSDate* d = [self.picker.datePicker date]; 
-    self.date = d;
-    [self.handler updatedValue:d];
-    [self.button setTitle:[self formatTitleUsingDate:d] forState:UIControlStateNormal];
+//    NSDate* d = [self.picker.picker date]; 
+//    self.value = d;
+//    [self.handler updatedValue:d];
+//    [self.button setTitle:[self formatTitleUsingDate:d] forState:UIControlStateNormal];
     
     //        [delegate deleteResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
     //        [delegate newResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
@@ -90,8 +100,26 @@
     //        self.textLabel.textColor = RGB(1, 113, 233);
 }
 - (void) pickerCancel{
-    self.picker.datePicker.date = self.date;
+//    self.picker.picker.date = self.date;
     [self.popover dismissPopoverAnimated:NO];
 }
+
+#pragma mark -
+#pragma mark Picker view data source
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+#pragma mark -
+#pragma mark Picker view delegate
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [self.pickerOptions count];
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [self.pickerOptions objectAtIndex:row];
+}
+
 
 @end
