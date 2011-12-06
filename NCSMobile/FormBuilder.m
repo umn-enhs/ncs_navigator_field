@@ -34,8 +34,8 @@
 }
 
 - (void) pickerForField:(SEL)field WithPickerOptions:(NSArray*)options {
-    ChangeHandler* h = [[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease ];
-    DatePickerButton* b = [[[DatePickerButton alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field] onChange:h] autorelease];
+    DatePickerButton* b = [[[DatePickerButton alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field]] autorelease];
+    [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }

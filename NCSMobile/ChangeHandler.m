@@ -21,4 +21,9 @@
     return self;
 }
 
+- (void) updatedValue:(id)value {
+    if ([self.object respondsToSelector:self.field]) {
+        [self.object performSelector:self.field withObject:value];
+    }
+}
 @end

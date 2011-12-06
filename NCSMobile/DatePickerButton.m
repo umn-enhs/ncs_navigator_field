@@ -8,6 +8,7 @@
 
 #import "DatePickerButton.h"
 #import "NUPickerVC.h"
+#import "ChangeHandler.h"
 
 @interface DatePickerButton ()
 - (NSString*) formatTitleUsingDate:(NSDate*)date;
@@ -19,9 +20,10 @@
 @synthesize button = _button;
 @synthesize picker = _picker;
 @synthesize popover = _popover;
+@synthesize handler = _handler;
 @synthesize dateFormatter = _dateFormatter;
 
-- (id)initWithFrame:(CGRect)frame value:(NSDate*)value onChange:(ChangeHandler*)changeHandler {
+- (id)initWithFrame:(CGRect)frame value:(NSDate*)value {
     self = [super initWithFrame:frame];
     if (self) {
         // Create button
@@ -37,6 +39,10 @@
         [self addSubview:self.button];
     }
     return self;
+}
+
+- (void) addChangeHandler:(ChangeHandler*)handler {
+    self.handler = handler;
 }
 
 - (NSString*) formatTitleUsingDate:(NSDate*)date {
@@ -66,23 +72,27 @@
 }
 
 - (void)showPicker {
-    self.picker = [self initPickerVC];
-    self.popover = [self initPopoverVCWithPicker:self.picker];
+    if (!self.picker) {
+        self.picker = [self initPickerVC];
+    }
+    if (!self.popover) {
+        self.popover = [self initPopoverVCWithPicker:self.picker];
+    }
     [self.popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }
 
 - (void) pickerDone{
     [self.popover dismissPopoverAnimated:NO];
-    NSUInteger selectedRow = [self.picker.picker selectedRowInComponent:0]; 
-    if (selectedRow != -1) {
-//        [handler updateWithValue:self.picker.datePicker.date];
+    NSDate* d = [self.picker.datePicker date]; 
+    self.date = d;
+    [self.handler updatedValue:d];
+    [self.button setTitle:[self formatTitleUsingDate:d] forState:UIControlStateNormal];
         
 //        [delegate deleteResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
 //        [delegate newResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
 //        [delegate showAndHideDependenciesTriggeredBy:[self myIndexPathWithRow:selectedRow]];
 //        self.textLabel.text = [(NSDictionary *)[answers objectAtIndex:selectedRow] objectForKey:@"text"];
 //        self.textLabel.textColor = RGB(1, 113, 233);
-    }
 }
 - (void) pickerCancel{
     [self.popover dismissPopoverAnimated:NO];

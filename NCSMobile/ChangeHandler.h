@@ -17,5 +17,5 @@
 @property(nonatomic) SEL field;
 
 - (id) initWithObject:(id)object field:(SEL)field;
-    
+- (void) updatedValue:(id)value;
 @end

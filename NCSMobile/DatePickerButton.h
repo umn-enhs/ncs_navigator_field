@@ -15,14 +15,17 @@
     NSDate* _date;
     UIButton* _button;
     NUPickerVC* _picker;
+    ChangeHandler* _handler;
     UIPopoverController* _popover;
 }
 
 @property(nonatomic,retain) NSDate* date;
 @property(nonatomic,retain) UIButton* button;
 @property(nonatomic,retain) NUPickerVC* picker;
+@property(nonatomic,retain) ChangeHandler* handler;
 @property(nonatomic,retain) UIPopoverController* popover;
 @property(readonly,getter = getDateFormatter) NSDateFormatter* dateFormatter;
 
-- (id)initWithFrame:(CGRect)frame value:(NSDate*)value onChange:(ChangeHandler*)changeHandler;
+- (id)initWithFrame:(CGRect)frame value:(NSDate*)value;
+- (void) addChangeHandler:(ChangeHandler*)handler;
 @end
