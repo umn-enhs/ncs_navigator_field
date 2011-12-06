@@ -50,13 +50,13 @@
 }
 
 - (NUPickerVC*) initPickerVC {
-    NUPickerVC* pickerVC = [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
-    pickerVC.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
-    [pickerVC loadView];
-    [pickerVC setupDelegate:self withTitle:@"Pick One" date:YES];
-    pickerVC.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-    pickerVC.datePicker.date = self.date;
-    return pickerVC;
+    NUPickerVC* p= [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
+    [p loadView];
+    [p setupDelegate:self withTitle:@"Pick One" date:YES];
+    p.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
+    p.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+    p.datePicker.date = self.date;
+    return p;
 }
 
 - (UIPopoverController*)initPopoverVCWithPicker:(NUPickerVC*)picker {
@@ -75,7 +75,7 @@
     [self.popover dismissPopoverAnimated:NO];
     NSUInteger selectedRow = [self.picker.picker selectedRowInComponent:0]; 
     if (selectedRow != -1) {
-//        handler
+//        [handler updateWithValue:self.picker.datePicker.date];
         
 //        [delegate deleteResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
 //        [delegate newResponseForIndexPath:[self myIndexPathWithRow:selectedRow]];
