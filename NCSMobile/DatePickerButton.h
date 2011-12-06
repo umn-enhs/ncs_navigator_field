@@ -9,15 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @class NUPickerVC;
+@class ChangeHandler;
 
-@interface DatePickerButton : UIButton {
-    NUPickerVC* _pickerVC;
-    UIPopoverController* _popoverVC;
+@interface DatePickerButton : UIView<UIPopoverControllerDelegate> {
+    NSDate* _date;
+    UIButton* _button;
+    NUPickerVC* _picker;
+    UIPopoverController* _popover;
 }
 
-@property(nonatomic,retain) NUPickerVC* pickerVC;
-@property(nonatomic,retain) UIPopoverController* popoverVC;
+@property(nonatomic,retain) NSDate* date;
+@property(nonatomic,retain) UIButton* button;
+@property(nonatomic,retain) NUPickerVC* picker;
+@property(nonatomic,retain) UIPopoverController* popover;
+@property(readonly,getter = getDateFormatter) NSDateFormatter* dateFormatter;
 
-- (void)showPicker;
-
+- (id)initWithFrame:(CGRect)frame value:(NSDate*)value onChange:(ChangeHandler*)changeHandler;
 @end

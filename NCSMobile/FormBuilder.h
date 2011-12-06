@@ -22,5 +22,6 @@
 
 - (id) initwithView:(UIView*)view object:(id)obj;
 - (void) labelWithText:(NSString*)text;
-- (void) pickerForField:(SEL)field WithOptions:(NSArray*)options;
+- (void) pickerForField:(SEL)field WithPickerOptions:(NSArray*)options;
+- (id) objectValueForKey:(SEL)key;
 @end

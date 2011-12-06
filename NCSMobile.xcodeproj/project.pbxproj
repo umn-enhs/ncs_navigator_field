@@ -67,6 +67,7 @@
 		0065B8DC14631E1D00743D14 /* undotted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65214631D1A00743D14 /* undotted.png */; };
 		0065B8DD14631E1D00743D14 /* undotted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065B65314631D1A00743D14 /* undotted@2x.png */; };
 		006C600B1434DF0D00F52CD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 006C600A1434DF0D00F52CD8 /* README.md */; };
+		006D47FC148D94970035DC01 /* ChangeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 006D47FB148D94970035DC01 /* ChangeHandler.m */; };
 		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00810B5F14896B070098C0D0 /* DatePickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePickerButton.m */; };
 		008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */; };
@@ -814,6 +815,8 @@
 		0065B8B014631D2D00743D14 /* StreamParserIntegrationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreamParserIntegrationTest.m; sourceTree = "<group>"; };
 		0065B8B114631D2D00743D14 /* WriterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriterTest.m; sourceTree = "<group>"; };
 		006C600A1434DF0D00F52CD8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		006D47FA148D94970035DC01 /* ChangeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeHandler.h; sourceTree = "<group>"; };
+		006D47FB148D94970035DC01 /* ChangeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeHandler.m; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		00810B5D14896B070098C0D0 /* DatePickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerButton.h; sourceTree = "<group>"; };
 		00810B5E14896B070098C0D0 /* DatePickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerButton.m; sourceTree = "<group>"; };
@@ -2654,6 +2657,8 @@
 		00FF37E21417CA320009B1D4 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				006D47FA148D94970035DC01 /* ChangeHandler.h */,
+				006D47FB148D94970035DC01 /* ChangeHandler.m */,
 				008F7DA5148C64AC009BCF1D /* FormBuilderCursor.h */,
 				008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */,
 				0026465B1434CDF9008D612B /* ContactNavigationTable.h */,
@@ -2999,6 +3004,7 @@
 				008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */,
 				008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */,
 				008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */,
+				006D47FC148D94970035DC01 /* ChangeHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

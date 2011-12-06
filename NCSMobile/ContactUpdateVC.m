@@ -16,14 +16,12 @@
 @synthesize builder=_builder;
 
 - (id)initWithView:view contact:contact {
-    NSLog(@"Init called");
-
     if (self = [super init]) {
-        self.builder = [[FormBuilder alloc] initwithView:self.view object:self.contact];
+        self.builder = [[FormBuilder alloc] initwithView:self.view object:contact];
         
         // Contact Type
-        [self.builder labelWithText:@"Contact Type"];
-        [self.builder pickerForField:@selector(type) WithOptions:[PickerOption contactTypes]];
+        [self.builder labelWithText:@"Start Date"];
+        [self.builder pickerForField:@selector(startDate) WithPickerOptions:[PickerOption contactTypes]];
 
     }
     return self;
