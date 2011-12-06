@@ -35,7 +35,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIScrollView" id="224227734">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIView" id="987049028">
@@ -390,7 +390,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 773}, {89, 37}}</string>
 								<reference key="NSSuperview" ref="987049028"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -523,7 +522,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{814, 916}</string>
-				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="987049028"/>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -774,7 +772,7 @@
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="44.CustomClassName">DatePickerButton</string>
+				<string key="44.CustomClassName">DatePicker</string>
 				<dictionary class="NSMutableDictionary" key="44.IBAttributePlaceholdersKey"/>
 				<string key="44.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

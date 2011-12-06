@@ -8,7 +8,8 @@
 
 #import "FormBuilder.h"
 #import "FormBuilderCursor.h"
-#import "DatePickerButton.h"
+#import "DatePicker.h"
+#import "SingleOptionPicker.h"
 #import "ChangeHandler.h"
 
 @implementation FormBuilder
@@ -33,8 +34,15 @@
     [self.cursor addNewLine];
 }
 
-- (void) pickerForField:(SEL)field WithPickerOptions:(NSArray*)options {
-    DatePickerButton* b = [[[DatePickerButton alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field]] autorelease];
+- (void) singleOptionPickerForField:(SEL)field WithPickerOptions:(NSArray*)options {
+    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field]] autorelease];
+    [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
+    [self.view addSubview:b];
+    [self.cursor addNewLine];
+}
+
+- (void) datePickerForField:(SEL)field {
+    DatePicker* b = [[[DatePicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field]] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];

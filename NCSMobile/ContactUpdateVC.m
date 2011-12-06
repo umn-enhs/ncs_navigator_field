@@ -21,7 +21,7 @@
         
         // Contact Type
         [self.builder labelWithText:@"Start Date"];
-        [self.builder pickerForField:@selector(startDate) WithPickerOptions:[PickerOption contactTypes]];
+        [self.builder datePickerForField:@selector(startDate) WithPickerOptions:[PickerOption contactTypes]];
 
     }
     return self;

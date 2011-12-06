@@ -26,6 +26,7 @@
 		0026E696140347E700355BCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0026E694140347E700355BCB /* InfoPlist.strings */; };
 		002B2E4414362E4900410D09 /* nubic-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4214362E4900410D09 /* nubic-logo.png */; };
 		002B2E4514362E4900410D09 /* nu-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4314362E4900410D09 /* nu-logo.png */; };
+		00393C92148E54C000671899 /* SingleOptionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00393C91148E54C000671899 /* SingleOptionPicker.m */; };
 		00439FF814112E500097A878 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF714112E500097A878 /* CFNetwork.framework */; };
 		00439FFA14112E5E0097A878 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00439FFC14112E670097A878 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FFB14112E670097A878 /* MobileCoreServices.framework */; };
@@ -69,7 +70,7 @@
 		006C600B1434DF0D00F52CD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 006C600A1434DF0D00F52CD8 /* README.md */; };
 		006D47FC148D94970035DC01 /* ChangeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 006D47FB148D94970035DC01 /* ChangeHandler.m */; };
 		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
-		00810B5F14896B070098C0D0 /* DatePickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePickerButton.m */; };
+		00810B5F14896B070098C0D0 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePicker.m */; };
 		008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */; };
 		008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA3148C1B16009BCF1D /* FormBuilder.m */; };
 		008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */; };
@@ -276,6 +277,8 @@
 		0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NCSMobileTests-Prefix.pch"; sourceTree = "<group>"; };
 		002B2E4214362E4900410D09 /* nubic-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nubic-logo.png"; path = "NCSMobile/nubic-logo.png"; sourceTree = "<group>"; };
 		002B2E4314362E4900410D09 /* nu-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nu-logo.png"; path = "NCSMobile/nu-logo.png"; sourceTree = "<group>"; };
+		00393C90148E54C000671899 /* SingleOptionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SingleOptionPicker.h; sourceTree = "<group>"; };
+		00393C91148E54C000671899 /* SingleOptionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleOptionPicker.m; sourceTree = "<group>"; };
 		00439FF714112E500097A878 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		00439FF914112E5E0097A878 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00439FFB14112E670097A878 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -818,8 +821,8 @@
 		006D47FA148D94970035DC01 /* ChangeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeHandler.h; sourceTree = "<group>"; };
 		006D47FB148D94970035DC01 /* ChangeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeHandler.m; sourceTree = "<group>"; };
 		006EBEE1141139B2003D69CF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		00810B5D14896B070098C0D0 /* DatePickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerButton.h; sourceTree = "<group>"; };
-		00810B5E14896B070098C0D0 /* DatePickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerButton.m; sourceTree = "<group>"; };
+		00810B5D14896B070098C0D0 /* DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DatePicker.h; sourceTree = "<group>"; };
+		00810B5E14896B070098C0D0 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
 		008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUpdateVC.h; sourceTree = "<group>"; };
 		008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUpdateVC.m; sourceTree = "<group>"; };
 		008F7DA2148C1B16009BCF1D /* FormBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormBuilder.h; sourceTree = "<group>"; };
@@ -2657,6 +2660,8 @@
 		00FF37E21417CA320009B1D4 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				00393C90148E54C000671899 /* SingleOptionPicker.h */,
+				00393C91148E54C000671899 /* SingleOptionPicker.m */,
 				006D47FA148D94970035DC01 /* ChangeHandler.h */,
 				006D47FB148D94970035DC01 /* ChangeHandler.m */,
 				008F7DA5148C64AC009BCF1D /* FormBuilderCursor.h */,
@@ -2669,8 +2674,8 @@
 				000ADCC7147C1D91002F1940 /* ContactDetailTable.m */,
 				004FC7141486BFBC00A378DC /* PickerOption.h */,
 				004FC7151486BFBC00A378DC /* PickerOption.m */,
-				00810B5D14896B070098C0D0 /* DatePickerButton.h */,
-				00810B5E14896B070098C0D0 /* DatePickerButton.m */,
+				00810B5D14896B070098C0D0 /* DatePicker.h */,
+				00810B5E14896B070098C0D0 /* DatePicker.m */,
 				008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */,
 				008F7DA2148C1B16009BCF1D /* FormBuilder.h */,
 				008F7DA3148C1B16009BCF1D /* FormBuilder.m */,
@@ -3000,11 +3005,12 @@
 				000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */,
 				005108EE148440C000732623 /* NUScrollView.m in Sources */,
 				004FC7161486BFBC00A378DC /* PickerOption.m in Sources */,
-				00810B5F14896B070098C0D0 /* DatePickerButton.m in Sources */,
+				00810B5F14896B070098C0D0 /* DatePicker.m in Sources */,
 				008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */,
 				008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */,
 				008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */,
 				006D47FC148D94970035DC01 /* ChangeHandler.m in Sources */,
+				00393C92148E54C000671899 /* SingleOptionPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

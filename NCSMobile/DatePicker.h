@@ -11,7 +11,7 @@
 @class NUPickerVC;
 @class ChangeHandler;
 
-@interface DatePickerButton : UIView<UIPopoverControllerDelegate> {
+@interface DatePicker : UIView<UIPopoverControllerDelegate> {
     NSDate* _date;
     UIButton* _button;
     NUPickerVC* _picker;

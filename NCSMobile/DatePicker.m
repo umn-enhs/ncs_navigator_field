@@ -6,15 +6,15 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "DatePickerButton.h"
+#import "DatePicker.h"
 #import "NUPickerVC.h"
 #import "ChangeHandler.h"
 
-@interface DatePickerButton ()
+@interface DatePicker ()
 - (NSString*) formatTitleUsingDate:(NSDate*)date;
 @end
 
-@implementation DatePickerButton
+@implementation DatePicker
 
 @synthesize date = _date;
 @synthesize button = _button;
