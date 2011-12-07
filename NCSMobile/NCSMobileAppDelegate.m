@@ -89,7 +89,7 @@
     // Contact Mapping
     RKManagedObjectMapping* contact = [RKManagedObjectMapping mappingForClass:[Contact class]];
     [contact mapKeyPathsToAttributes:
-        @"type", @"type", 
+        @"type", @"typeId", 
         @"start_date", @"startDate",
         @"end_date", @"endDate", nil];
     [contact mapRelationship:@"person" withMapping:person];

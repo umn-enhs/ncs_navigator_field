@@ -65,4 +65,61 @@
             [self po:@"Other" value:-5],
             [self po:@"Missing in Error" value:-4], nil ];
 }
+
++ (NSArray*) language {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"English" value:1],
+            [self po:@"Spanish" value:2],
+            [self po:@"Arabic" value:3],
+            [self po:@"Chinese" value:4],
+            [self po:@"French" value:5],
+            [self po:@"French Creole" value:6],
+            [self po:@"German" value:7],
+            [self po:@"Italian" value:8],
+            [self po:@"Korean" value:9],
+            [self po:@"Polish" value:10],
+            [self po:@"Russian" value:11],
+            [self po:@"Tagalog" value:12],
+            [self po:@"Vietnamese" value:13],
+            [self po:@"Urdu" value:14],
+            [self po:@"Punjabi" value:15],
+            [self po:@"Bengali" value:16],
+            [self po:@"Farsi" value:17],
+            [self po:@"Refused" value:-1],
+            [self po:@"Other" value:-5],
+            [self po:@"Unknown" value:-6],
+            [self po:@"Missing in Error" value:-4], nil ];
+}
+
++ (NSArray*) interpreter {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Bilingual interviewer" value:1],
+            [self po:@"In-person professional interpreter" value:2],
+            [self po:@"In person family member interpreter" value:3],
+            [self po:@"Language-line interpreter" value:4],
+            [self po:@"Video interpreter" value:5],
+            [self po:@"Sign Language Interpreter" value:6],
+            [self po:@"Other" value:-5],
+            [self po:@"Legitimate Skip" value:-3],
+            [self po:@"Missing in Error" value:-4], nil];
+}
+
++ (NSArray*) location {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Person/participant home" value:1],
+            [self po:@"NCS Site office" value:2],
+            [self po:@"Provider office" value:3],
+            [self po:@"Hospital" value:4],
+            [self po:@"Community event" value:5],
+            [self po:@"School" value:6],
+            [self po:@"Other" value:-5],
+            [self po:@"Missing in Error" value:-4] , nil];
+}
+
++ (NSArray*) private {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Yes" value:1],
+            [self po:@"No" value:2],
+            [self po:@"Missing in Error" value:-4], nil];
+}
 @end

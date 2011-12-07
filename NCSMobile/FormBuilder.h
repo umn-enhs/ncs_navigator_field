@@ -22,7 +22,7 @@
 
 - (id) initwithView:(UIView*)view object:(id)obj;
 - (void) labelWithText:(NSString*)text;
-- (void) singleOptionPickerForField:(SEL)field WithPickerOptions:(NSArray*)options;
-- (void) datePickerForField:(SEL)field;
+- (void) singleOptionPickerForProperty:(SEL)field WithPickerOptions:(NSArray*)options;
+- (void) datePickerForProperty:(SEL)field;
 - (id) objectValueForKey:(SEL)key;
 @end

@@ -37,12 +37,14 @@
         self.button.frame = CGRectMake(0, 0, 200, 30);
         
         // Set title
-        PickerOption* title = [PickerOption findWithValue:[value integerValue] fromOptions:options];
-        if (title) {
-            [self.button setTitle:title.text forState:UIControlStateNormal];
-        } else {
-            [self.button setTitle:@"Pick One" forState:UIControlStateNormal];
+        NSString* title = @"Pick One";
+        if (value) {
+            PickerOption* o = [PickerOption findWithValue:[value integerValue] fromOptions:options];
+            if (o) {
+                title = o.text;
+            }
         }
+        [self.button setTitle:title forState:UIControlStateNormal];
 
         // Setup button target
         [self.button addTarget:self action:@selector(showPicker) forControlEvents:UIControlEventTouchUpInside];

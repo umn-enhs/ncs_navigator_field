@@ -34,20 +34,23 @@
     [self.cursor addNewLine];
 }
 
-- (void) singleOptionPickerForField:(SEL)field WithPickerOptions:(NSArray*)options {
+- (void) singleOptionPickerForProperty:(SEL)field WithPickerOptions:(NSArray*)options {
     SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:(NSNumber*)[self objectValueForKey:field] pickerOptions:options] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }
 
-- (void) datePickerForField:(SEL)field {
+- (void) datePickerForProperty:(SEL)field {
     DatePicker* b = [[[DatePicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field]] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }
 
+- (void) textFieldForProperty:(SEL)field {
+    
+}
 
 - (id) objectValueForKey:(SEL)key {
     return [_object respondsToSelector:key] ? [_object performSelector:key] : NULL;

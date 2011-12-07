@@ -21,20 +21,39 @@
         
         // Contact Type
         [self.builder labelWithText:@"Contact Type"];
-        [self.builder singleOptionPickerForField:@selector(type) WithPickerOptions:[PickerOption contactTypes]];
+        [self.builder singleOptionPickerForProperty:@selector(typeId) WithPickerOptions:[PickerOption contactTypes]];
         
         // Contact Start Date
         [self.builder labelWithText:@"Start Date"];
-        [self.builder datePickerForField:@selector(startDate)];
+        [self.builder datePickerForProperty:@selector(startDate)];
         
         // Contact Start Date
         [self.builder labelWithText:@"End Date"];
-        [self.builder datePickerForField:@selector(endDate)];
+        [self.builder datePickerForProperty:@selector(endDate)];
         
         // Who contacted
         [self.builder labelWithText:@"Who was contacted"];
-        [self.builder singleOptionPickerForField:@selector(whoContacted) WithPickerOptions:[PickerOption whoContacted]];
+        [self.builder singleOptionPickerForProperty:@selector(whoContactedId) WithPickerOptions:[PickerOption whoContacted]];
         
+        // Language
+        [self.builder labelWithText:@"Language"];
+        [self.builder singleOptionPickerForProperty:@selector(languageId) WithPickerOptions:[PickerOption language]];
+        
+        // Interpreter
+        [self.builder labelWithText:@"Interpreter"];
+        [self.builder singleOptionPickerForProperty:@selector(interpreterId) WithPickerOptions:[PickerOption interpreter]];
+        
+        // Location
+        [self.builder labelWithText:@"Location"];
+        [self.builder singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
+        
+        // Private
+        [self.builder labelWithText:@"Was contact private?"];
+        [self.builder singleOptionPickerForProperty:@selector(privateId) WithPickerOptions:[PickerOption private]];
+        
+        // Distance
+        [self.builder labelWithText:@"Distance traveled?"];
+//        [self.builder textFieldForProperty:@selector(distanceId) WithPickerOptions:[PickerOption distance]];        
 
     }
     return self;

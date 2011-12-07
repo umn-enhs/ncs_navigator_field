@@ -110,7 +110,7 @@
 
 - (IBAction) contactTypeButtonPressed:(id)sender {
     PickerHandler h = ^(PickerOption* p, Contact* c, UIButton *b){
-        _contact.type = [NSNumber numberWithInteger:p.value];
+        _contact.typeId = [NSNumber numberWithInteger:p.value];
         [_contactTypeButton setTitle:p.text forState: UIControlStateNormal];
     };
     
@@ -175,8 +175,8 @@
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setDateFormat:@"MMM dd 'at' HH:mm"];
     
-    if (_contact.type != NULL) {
-        PickerOption* o = [PickerOption findWithValue:[_contact.type integerValue]  fromOptions:[PickerOption allContactTypes]]; 
+    if (_contact.typeId != NULL) {
+        PickerOption* o = [PickerOption findWithValue:[_contact.typeId integerValue]  fromOptions:[PickerOption contactTypes]]; 
         [_contactTypeButton setTitle:o.text forState: UIControlStateNormal];
     }
     

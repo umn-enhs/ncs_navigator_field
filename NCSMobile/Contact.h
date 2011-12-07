@@ -14,7 +14,7 @@
 
 @interface Contact : NSManagedObject
 
-@property(nonatomic,retain) NSNumber* type;
+@property(nonatomic,retain) NSNumber* typeId;
 @property(nonatomic,retain) Person* person;
 @property(nonatomic,retain) NSDate* startDate;
 @property(nonatomic,retain) NSDate* endDate;

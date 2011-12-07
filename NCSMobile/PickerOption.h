@@ -19,4 +19,11 @@
 - (NSInteger) value;
 + (NSArray*) contactTypes;
 + (PickerOption*) findWithValue:(NSInteger)value fromOptions:(NSArray*)options; 
+
++ (NSArray*) contactTypes;
++ (NSArray*) whoContacted;
++ (NSArray*) language;
++ (NSArray*) interpreter;
++ (NSArray*) location;
++ (NSArray*) private;
 @end
