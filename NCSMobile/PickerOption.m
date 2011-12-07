@@ -122,4 +122,9 @@
             [self po:@"No" value:2],
             [self po:@"Missing in Error" value:-4], nil];
 }
+
++ (NSArray*) disposition {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"I need codes" value:-1], nil];
+}
 @end

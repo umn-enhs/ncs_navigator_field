@@ -26,4 +26,5 @@
 + (NSArray*) interpreter;
 + (NSArray*) location;
 + (NSArray*) private;
++ (NSArray*) disposition;
 @end

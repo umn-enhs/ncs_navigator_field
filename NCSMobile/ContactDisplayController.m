@@ -140,6 +140,7 @@
         
     } else if ([rc isEqualToString:@"contact"]) {
         UIScrollView* scrollView = [UIScrollView new];
+        scrollView.scrollEnabled = YES;
         ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithView:scrollView contact:self.detailItem];
 //        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];

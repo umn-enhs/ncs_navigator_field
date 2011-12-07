@@ -9,6 +9,7 @@
 #import "ContactUpdateVC.h"
 #import "PickerOption.h"
 #import "FormBuilder.h"
+#import "NUScrollView.h"
 
 @implementation ContactUpdateVC
 
@@ -17,7 +18,9 @@
 
 - (id)initWithView:view contact:contact {
     if (self = [super init]) {
-        self.view = [UIScrollView new];
+        self.view = [NUScrollView new];
+        ((UIScrollView*) self.view).scrollEnabled = YES;
+//        ((UIScrollView*) self.view).contentSize = CGSizeMake(200, 2000);
         self.builder = [[FormBuilder alloc] initwithView:self.view object:contact];
         
         // Contact Type
@@ -36,26 +39,49 @@
         [self.builder labelWithText:@"Who was contacted"];
         [self.builder singleOptionPickerForProperty:@selector(whoContactedId) WithPickerOptions:[PickerOption whoContacted]];
         
+        // Who contacted (Other)
+        [self.builder labelWithText:@"Who was contacted (Other)"];
+        [self.builder textFieldForProperty:@selector(whoContactedOther)];
+        
         // Language
         [self.builder labelWithText:@"Language"];
         [self.builder singleOptionPickerForProperty:@selector(languageId) WithPickerOptions:[PickerOption language]];
+        
+        // Language (Other)
+        [self.builder labelWithText:@"Language (Other)"];
+        [self.builder textFieldForProperty:@selector(languageOther)];
         
         // Interpreter
         [self.builder labelWithText:@"Interpreter"];
         [self.builder singleOptionPickerForProperty:@selector(interpreterId) WithPickerOptions:[PickerOption interpreter]];
         
+        // Interpreter
+        [self.builder labelWithText:@"Interpreter (Other)"];
+        [self.builder textFieldForProperty:@selector(interpreterOther)];
+        
         // Location
         [self.builder labelWithText:@"Location"];
         [self.builder singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
         
+        // Location (Other)
+        [self.builder labelWithText:@"Location (Other)"];
+        [self.builder textFieldForProperty:@selector(locationOther)];
+        
         // Private
-        [self.builder labelWithText:@"Was contact private?"];
+        [self.builder labelWithText:@"Was contact private"];
         [self.builder singleOptionPickerForProperty:@selector(privateId) WithPickerOptions:[PickerOption private]];
+
+        // Private Detail
+        [self.builder labelWithText:@"Private Detail"];
+        [self.builder textFieldForProperty:@selector(privateDetail)];
         
         // Distance
-        [self.builder labelWithText:@"Distance traveled?"];
-        [self.builder textFieldForProperty:@selector(distanceId)];        
-
+        [self.builder labelWithText:@"Distance traveled"];
+        [self.builder textFieldForProperty:@selector(distanceId)];
+        
+        // Disposition
+        [self.builder labelWithText:@"Disposition"];
+        [self.builder singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];
     }
     return self;
 }

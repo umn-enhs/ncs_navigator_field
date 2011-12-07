@@ -11,8 +11,11 @@
 @implementation NUScrollView
 
 - (void)didAddSubview:(UIView *)subview {
-    UIView* sub = [[self subviews] objectAtIndex:0];
-    self.contentSize = sub.frame.size;
+    CGRect r = subview.frame;
+    CGFloat newX = MAX(self.contentSize.width, r.origin.x + r.size.width);
+    CGFloat newY = MAX(self.contentSize.height, r.origin.y + r.size.height);
+//    NSLog(@"newX [%@ : %@]", newX, newY);
+    self.contentSize = CGSizeMake(newX, newY);
 }
-
+                       
 @end
