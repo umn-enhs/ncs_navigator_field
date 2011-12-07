@@ -11,7 +11,12 @@
 #import "DatePicker.h"
 #import "SingleOptionPicker.h"
 #import "ChangeHandler.h"
+#import "TextField.h"
 
+@interface FormBuilder()
+- (id) objectValueForKey:(SEL)key;
+@end
+    
 @implementation FormBuilder
 
 @synthesize view=_view;
@@ -34,22 +39,25 @@
     [self.cursor addNewLine];
 }
 
-- (void) singleOptionPickerForProperty:(SEL)field WithPickerOptions:(NSArray*)options {
-    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:(NSNumber*)[self objectValueForKey:field] pickerOptions:options] autorelease];
-    [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
+- (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options {
+    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:(NSNumber*)[self objectValueForKey:property] pickerOptions:options] autorelease];
+    [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }
 
-- (void) datePickerForProperty:(SEL)field {
-    DatePicker* b = [[[DatePicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:field]] autorelease];
-    [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:field] autorelease]];
+- (void) datePickerForProperty:(SEL)property {
+    DatePicker* b = [[[DatePicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:property]] autorelease];
+    [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }
 
-- (void) textFieldForProperty:(SEL)field {
-    
+- (void) textFieldForProperty:(SEL)property {
+    TextField* t = [[[TextField alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:property]] autorelease];
+    [t addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
+    [self.view addSubview:t];
+    [self.cursor addNewLine];
 }
 
 - (id) objectValueForKey:(SEL)key {

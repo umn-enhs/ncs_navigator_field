@@ -139,7 +139,8 @@
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         
     } else if ([rc isEqualToString:@"contact"]) {
-        ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithView:self.view contact:self.detailItem];
+        UIScrollView* scrollView = [UIScrollView new];
+        ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithView:scrollView contact:self.detailItem];
 //        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
 //        cc.ta

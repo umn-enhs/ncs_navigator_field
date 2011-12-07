@@ -17,6 +17,7 @@
 
 - (id)initWithView:view contact:contact {
     if (self = [super init]) {
+        self.view = [UIScrollView new];
         self.builder = [[FormBuilder alloc] initwithView:self.view object:contact];
         
         // Contact Type
@@ -53,7 +54,7 @@
         
         // Distance
         [self.builder labelWithText:@"Distance traveled?"];
-//        [self.builder textFieldForProperty:@selector(distanceId) WithPickerOptions:[PickerOption distance]];        
+        [self.builder textFieldForProperty:@selector(distanceId)];        
 
     }
     return self;

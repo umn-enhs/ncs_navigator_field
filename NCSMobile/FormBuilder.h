@@ -21,8 +21,12 @@
 @property(nonatomic,retain)FormBuilderCursor* cursor;
 
 - (id) initwithView:(UIView*)view object:(id)obj;
+
+// Builder methods
 - (void) labelWithText:(NSString*)text;
-- (void) singleOptionPickerForProperty:(SEL)field WithPickerOptions:(NSArray*)options;
-- (void) datePickerForProperty:(SEL)field;
-- (id) objectValueForKey:(SEL)key;
+- (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options;
+- (void) datePickerForProperty:(SEL)property;
+- (void) textFieldForProperty:(SEL)property;
+
+
 @end
