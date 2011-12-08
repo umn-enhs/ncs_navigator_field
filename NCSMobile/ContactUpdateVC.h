@@ -19,7 +19,7 @@
 @property(nonatomic,retain) Contact* contact;
 @property(nonatomic,retain) FormBuilder* builder;
 
-- (id)initWithView:(UIView*)view contact:(Contact*)contact;
+- (id)initWithContact:(Contact*)contact;
 
 
 @end

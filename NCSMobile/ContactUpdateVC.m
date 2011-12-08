@@ -16,11 +16,11 @@
 @synthesize contact=_contact;
 @synthesize builder=_builder;
 
-- (id)initWithView:view contact:contact {
+- (id)initWithContact:contact {
     if (self = [super init]) {
         self.view = [NUScrollView new];
         ((UIScrollView*) self.view).scrollEnabled = YES;
-//        ((UIScrollView*) self.view).contentSize = CGSizeMake(200, 2000);
+        
         self.builder = [[FormBuilder alloc] initwithView:self.view object:contact];
         
         // Contact Type

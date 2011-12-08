@@ -82,7 +82,6 @@
 		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
 		009EE2791436220C00E6D658 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EE2781436220C00E6D658 /* LoginController.xib */; };
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
-		00AE6422147C076700D77A4C /* ContactUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE6420147C076700D77A4C /* ContactUpdateController.m */; };
 		00AEB0461474D31C00952EBD /* TASKS.md in Resources */ = {isa = PBXBuildFile; fileRef = 00AEB0451474D31C00952EBD /* TASKS.md */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */; };
@@ -840,8 +839,6 @@
 		009EE2781436220C00E6D658 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginController.xib; path = NCSMobile/LoginController.xib; sourceTree = "<group>"; };
 		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		00A392DD14361C53003B19F3 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
-		00AE641F147C076700D77A4C /* ContactUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUpdateController.h; sourceTree = "<group>"; };
-		00AE6420147C076700D77A4C /* ContactUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUpdateController.m; sourceTree = "<group>"; };
 		00AEB0451474D31C00952EBD /* TASKS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TASKS.md; sourceTree = "<group>"; };
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
@@ -2573,9 +2570,9 @@
 			isa = PBXGroup;
 			children = (
 				0026E67D140347E700355BCB /* ContactDisplayController.h */,
+				008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */,
+				008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */,
 				0026E67E140347E700355BCB /* ContactDisplayController.m */,
-				00AE641F147C076700D77A4C /* ContactUpdateController.h */,
-				00AE6420147C076700D77A4C /* ContactUpdateController.m */,
 				0026E683140347E700355BCB /* RootViewController.h */,
 				0026E684140347E700355BCB /* RootViewController.m */,
 				009AD2E2142D391A0038650B /* SimpleTableController.h */,
@@ -2679,10 +2676,8 @@
 				004FC7151486BFBC00A378DC /* PickerOption.m */,
 				00810B5D14896B070098C0D0 /* DatePicker.h */,
 				00810B5E14896B070098C0D0 /* DatePicker.m */,
-				008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */,
 				008F7DA2148C1B16009BCF1D /* FormBuilder.h */,
 				008F7DA3148C1B16009BCF1D /* FormBuilder.m */,
-				008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */,
 				006FDD88148FD2E80001BADE /* TextField.h */,
 				006FDD89148FD2E80001BADE /* TextField.m */,
 			);
@@ -3006,7 +3001,6 @@
 				00B6CD00146B1A77004767BE /* Location.m in Sources */,
 				00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */,
 				00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */,
-				00AE6422147C076700D77A4C /* ContactUpdateController.m in Sources */,
 				000ADCC8147C1D91002F1940 /* ContactDetailTable.m in Sources */,
 				005108EE148440C000732623 /* NUScrollView.m in Sources */,
 				004FC7161486BFBC00A378DC /* PickerOption.m in Sources */,

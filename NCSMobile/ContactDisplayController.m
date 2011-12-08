@@ -9,7 +9,6 @@
 #import "ContactDisplayController.h"
 
 #import "RootViewController.h"
-#import "ContactUpdateController.h"
 #import "ContactTable.h"
 #import "ContactUpdateVC.h"
 
@@ -139,9 +138,7 @@
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         
     } else if ([rc isEqualToString:@"contact"]) {
-        UIScrollView* scrollView = [UIScrollView new];
-        scrollView.scrollEnabled = YES;
-        ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithView:scrollView contact:self.detailItem];
+        ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithContact:self.detailItem];
 //        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
 //        cc.ta
