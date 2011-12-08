@@ -19,7 +19,6 @@
 - (id)initWithContact:contact {
     if (self = [super init]) {
         self.view = [NUScrollView new];
-        ((UIScrollView*) self.view).scrollEnabled = YES;
         
         self.builder = [[FormBuilder alloc] initwithView:self.view object:contact];
         

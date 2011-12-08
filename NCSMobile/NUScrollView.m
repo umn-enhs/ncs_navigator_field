@@ -10,6 +10,13 @@
 
 @implementation NUScrollView
 
+- (id)init {
+    if (self = [super init]) {
+        self.scrollEnabled = YES;
+    }
+    return self;
+}
+
 - (void)didAddSubview:(UIView *)subview {
     CGRect r = subview.frame;
     CGFloat newX = MAX(self.contentSize.width, r.origin.x + r.size.width);
