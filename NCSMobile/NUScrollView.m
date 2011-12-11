@@ -10,18 +10,30 @@
 
 @implementation NUScrollView
 
-- (id)init {
-    if (self = [super init]) {
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         self.scrollEnabled = YES;
     }
     return self;
 }
 
-- (void)didAddSubview:(UIView *)subview {
-    CGRect r = subview.frame;
-    CGFloat newX = MAX(self.contentSize.width, r.origin.x + r.size.width);
-    CGFloat newY = MAX(self.contentSize.height, r.origin.y + r.size.height);
-    self.contentSize = CGSizeMake(newX, newY);
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.scrollEnabled = YES;
+    }
+    return self;    
 }
-                       
+
+- (void)didAddSubview:(UIView *)subview {
+    CGRect contentRect = CGRectZero;
+    for (UIView *sv in self.subviews) {
+        contentRect = CGRectUnion(contentRect, sv.frame);
+    }
+    self.contentSize = contentRect.size;;
+}
+
+//- (void)didMoveToSuperview {
+//    self.frame = CGRectMake(0, 0, self.superview.frame.size.width, self.superview.frame.size.height);
+//}
+                           
 @end

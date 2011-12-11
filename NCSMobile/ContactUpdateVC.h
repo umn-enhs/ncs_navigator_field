@@ -20,6 +20,7 @@
 @property(nonatomic,retain) FormBuilder* builder;
 
 - (id)initWithContact:(Contact*)contact;
+- (UIView*) contactFormWithFrame:(CGRect)frame;
 
 
 @end

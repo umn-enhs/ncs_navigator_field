@@ -11,5 +11,6 @@
 @interface NUScrollView : UIScrollView
 
 - (void)didAddSubview:(UIView *)subview;
+//- (void)didMoveToSuperview;
 
 @end

@@ -35,6 +35,7 @@
 - (void) labelWithText:(NSString*)text {
     UILabel* l = [[[UILabel alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30)] autorelease];
     l.text = text;
+    l.backgroundColor = [UIColor colorWithRed: 1.0 green: 1.0 blue: 1.0 alpha:0.0];
     [self.view addSubview:l];
     [self.cursor addNewLine];
 }

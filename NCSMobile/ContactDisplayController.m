@@ -11,6 +11,7 @@
 #import "RootViewController.h"
 #import "ContactTable.h"
 #import "ContactUpdateVC.h"
+#import "TempTooController.h"
 
 #import "Event.h"
 #import "Section.h"
@@ -139,13 +140,17 @@
         
     } else if ([rc isEqualToString:@"contact"]) {
         ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithContact:self.detailItem];
+        cc.modalPresentationStyle = UIModalPresentationFormSheet;
+        
 //        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
 //        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
 //        cc.ta
         NSLog(@"Row.entity: %@", row.entity);
-        [cc setContact:row.entity];
 //        [UIAppDelegate.rootViewController.navigationController presentModalViewController:self.contactDetailController animated:YES];
-        [UIAppDelegate.rootViewController.navigationController presentModalViewController:cc animated:NO];
+        [self presentModalViewController:cc animated:YES];
+//        cc.view.superview.frame = CGRectMake(10, 20, 600, self.view.frame.size.height);
+//        cc.view.superview.center = self.view.center;
+
     }
 }
 
