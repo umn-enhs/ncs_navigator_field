@@ -72,6 +72,7 @@
 		006FDD8A148FD2E80001BADE /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 006FDD89148FD2E80001BADE /* TextField.m */; };
 		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00810B5F14896B070098C0D0 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePicker.m */; };
+		008C5711149696DD005EC22E /* TextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 008C5710149696DD005EC22E /* TextArea.m */; };
 		008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */; };
 		008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA3148C1B16009BCF1D /* FormBuilder.m */; };
 		008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */; };
@@ -825,6 +826,8 @@
 		006FDD89148FD2E80001BADE /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
 		00810B5D14896B070098C0D0 /* DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePicker.h; sourceTree = "<group>"; };
 		00810B5E14896B070098C0D0 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
+		008C570F149696DD005EC22E /* TextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextArea.h; sourceTree = "<group>"; };
+		008C5710149696DD005EC22E /* TextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextArea.m; sourceTree = "<group>"; };
 		008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUpdateVC.h; sourceTree = "<group>"; };
 		008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUpdateVC.m; sourceTree = "<group>"; };
 		008F7DA2148C1B16009BCF1D /* FormBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormBuilder.h; sourceTree = "<group>"; };
@@ -2680,6 +2683,8 @@
 				008F7DA3148C1B16009BCF1D /* FormBuilder.m */,
 				006FDD88148FD2E80001BADE /* TextField.h */,
 				006FDD89148FD2E80001BADE /* TextField.m */,
+				008C570F149696DD005EC22E /* TextArea.h */,
+				008C5710149696DD005EC22E /* TextArea.m */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -3011,6 +3016,7 @@
 				006D47FC148D94970035DC01 /* ChangeHandler.m in Sources */,
 				00393C92148E54C000671899 /* SingleOptionPicker.m in Sources */,
 				006FDD8A148FD2E80001BADE /* TextField.m in Sources */,
+				008C5711149696DD005EC22E /* TextArea.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

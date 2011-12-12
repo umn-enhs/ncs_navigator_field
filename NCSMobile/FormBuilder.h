@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define DEFAULT_WIDTH 240
+#define DEFAULT_HEIGHT 30
+
 @class FormBuilderCursor;
 
 @interface FormBuilder : NSObject {
@@ -27,6 +30,6 @@
 - (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options;
 - (void) datePickerForProperty:(SEL)property;
 - (void) textFieldForProperty:(SEL)property;
-
+- (void) textAreaForProperty:(SEL)property;
 
 @end

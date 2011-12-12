@@ -1,8 +1,8 @@
 //
-//  TextField.h
+//  TextArea.h
 //  NCSMobile
 //
-//  Created by John Dzak on 12/7/11.
+//  Created by John Dzak on 12/12/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @class ChangeHandler;
 
-@interface TextField : UIView<UITextFieldDelegate> {
+@interface TextArea : UIView<UITextViewDelegate> {
     ChangeHandler* _handler;
     UITextField* _textField;
     UIView* _activeField;
@@ -18,15 +18,14 @@
 
 @property(nonatomic,retain) ChangeHandler* handler;
 
-@property(nonatomic,retain) UITextField* textField;
+@property(nonatomic,retain) UITextView* textView;
 
 @property(nonatomic,retain) UIView* activeField;
 
 
 - (id)initWithFrame:(CGRect)frame value:(NSString*)value;
 
-- (void) addChangeHandler:(ChangeHandler*)handler;
 
-//- (void)registerForKeyboardNotifications;
+- (void) addChangeHandler:(ChangeHandler*)handler;
 
 @end

@@ -12,6 +12,7 @@
 #import "SingleOptionPicker.h"
 #import "ChangeHandler.h"
 #import "TextField.h"
+#import "TextArea.h"
 
 @interface FormBuilder()
 - (id) objectValueForKey:(SEL)key;
@@ -33,7 +34,7 @@
 }
 
 - (void) labelWithText:(NSString*)text {
-    UILabel* l = [[[UILabel alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30)] autorelease];
+    UILabel* l = [[[UILabel alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT)] autorelease];
     l.text = text;
     l.backgroundColor = [UIColor colorWithRed: 1.0 green: 1.0 blue: 1.0 alpha:0.0];
     [self.view addSubview:l];
@@ -41,21 +42,28 @@
 }
 
 - (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options {
-    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:(NSNumber*)[self objectValueForKey:property] pickerOptions:options] autorelease];
+    SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT) value:(NSNumber*)[self objectValueForKey:property] pickerOptions:options] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }
 
 - (void) datePickerForProperty:(SEL)property {
-    DatePicker* b = [[[DatePicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:property]] autorelease];
+    DatePicker* b = [[[DatePicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT) value:[self objectValueForKey:property]] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
 }
 
 - (void) textFieldForProperty:(SEL)property {
-    TextField* t = [[[TextField alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, 200, 30) value:[self objectValueForKey:property]] autorelease];
+    TextField* t = [[[TextField alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT) value:[self objectValueForKey:property]] autorelease];
+    [t addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
+    [self.view addSubview:t];
+    [self.cursor addNewLine];
+}
+
+- (void) textAreaForProperty:(SEL)property {
+    TextArea* t = [[[TextArea alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, 100) value:[self objectValueForKey:property]] autorelease];
     [t addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
     [self.view addSubview:t];
     [self.cursor addNewLine];

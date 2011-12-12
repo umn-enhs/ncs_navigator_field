@@ -13,14 +13,13 @@
 
 @interface ContactUpdateVC : UIViewController {
     Contact* _contact;
-    FormBuilder* _builder;
 }
 
 @property(nonatomic,retain) Contact* contact;
-@property(nonatomic,retain) FormBuilder* builder;
 
 - (id)initWithContact:(Contact*)contact;
-- (UIView*) contactFormWithFrame:(CGRect)frame;
-
+- (UIView*) toolbarWithFrame:(CGRect)frame;
+- (UIView*) leftContentWithFrame:(CGRect)frame;
+- (UIView*) rightContentWithFrame:(CGRect)frame;
 
 @end
