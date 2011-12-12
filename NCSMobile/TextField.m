@@ -20,7 +20,6 @@
     t.borderStyle = UITextBorderStyleRoundedRect;
     t.textColor = [UIColor blackColor]; //text color
     t.font = [UIFont systemFontOfSize:17.0];  //font size
-    t.placeholder = @"<enter text>";  //place holder
     t.backgroundColor = [UIColor whiteColor]; //background color
     t.autocorrectionType = UITextAutocorrectionTypeNo;	// no auto correction support
     
