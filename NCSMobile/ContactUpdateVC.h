@@ -22,4 +22,12 @@
 - (UIView*) leftContentWithFrame:(CGRect)frame;
 - (UIView*) rightContentWithFrame:(CGRect)frame;
 
+- (void) cancel;
+- (void) done;
+
+- (void) startTransaction;
+- (void) endTransction;
+- (void) commitTransaction;
+- (void) rollbackTransaction;
+
 @end

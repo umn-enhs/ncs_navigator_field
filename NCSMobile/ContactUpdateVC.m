@@ -10,6 +10,7 @@
 #import "PickerOption.h"
 #import "FormBuilder.h"
 #import "NUScrollView.h"
+#import "Contact.h"
 
 @implementation ContactUpdateVC
 
@@ -51,6 +52,8 @@
     [self.view addSubview:toolbar];
     [self.view addSubview:left];
     [self.view addSubview:right];    
+    
+    [self startTransaction];
 }
 
 /*
@@ -184,12 +187,49 @@
 }
 
 - (void) cancel {
+    [self rollbackTransaction];
     [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void) done {
+    [self commitTransaction];
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (void) startTransaction {
+    NSManagedObjectContext* moc = [self.contact managedObjectContext];
+    NSUndoManager* undoManager = [moc undoManager];
+    [undoManager beginUndoGrouping];
+}
+
+- (void) endTransction {
+    NSManagedObjectContext* moc = [self.contact managedObjectContext];
+    NSUndoManager* undoManager = [moc undoManager];
+    [undoManager endUndoGrouping];
+    
+}
+
+- (void) commitTransaction {
+    [self endTransction];
+    NSManagedObjectContext* moc = [self.contact managedObjectContext];
+    NSUndoManager* undoManager = [moc undoManager];
+    [undoManager removeAllActions];
+    
+    NSError *error = nil;
+    
+    if (![moc save:&error]) {
+        NSLog(@"Error saving instrument initialized contact");
+    }
+    NSLog(@"Initialized contact: %@", self.contact);
+}
+
+- (void) rollbackTransaction {
+    [self endTransction];
+    NSManagedObjectContext* moc = [self.contact managedObjectContext];
+    NSUndoManager* undoManager = [moc undoManager];
+    [undoManager undo];
+    NSLog(@"Rolledback contact: %@", self.contact);
+
+}
 
 @end

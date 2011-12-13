@@ -117,7 +117,12 @@
     RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"NCSCoreData.sqlite" usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
 //    objectStore.delegate = self;
     objectManager.objectStore = objectStore;
+    NSManagedObjectContext* restkitMoc = objectStore.managedObjectContext;
 
+    // Set Undo Manager
+    NSUndoManager *undoManager = [[[NSUndoManager alloc] init] autorelease];
+    [restkitMoc setUndoManager:undoManager];
+    
     
     // Enable automatic network activity indicator management
     [RKClient sharedClient].requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
@@ -262,6 +267,7 @@ BOOL RSRunningOnOS4OrBetter(void) {
         __managedObjectContext = [[NSManagedObjectContext alloc] init];
         [__managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
+
     return __managedObjectContext;
 }
 

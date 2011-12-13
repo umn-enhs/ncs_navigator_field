@@ -23,7 +23,7 @@
 
 - (void) updatedValue:(id)value {
     if ([self.object respondsToSelector:self.field]) {
-        [self.object performSelector:self.field withObject:value];
+        [self.object setValue:value forKey:NSStringFromSelector(self.field)];
     }
 }
 @end
