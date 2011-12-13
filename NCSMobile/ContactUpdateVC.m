@@ -106,15 +106,7 @@
     // Contact Start Date
     [b labelWithText:@"End Date"];
     [b datePickerForProperty:@selector(endDate)];
-    
-    // Who contacted
-    [b labelWithText:@"Who was contacted"];
-    [b singleOptionPickerForProperty:@selector(whoContactedId) WithPickerOptions:[PickerOption whoContacted]];
-    
-    // Who contacted (Other)
-    [b labelWithText:@"Who was contacted (Other)"];
-    [b textFieldForProperty:@selector(whoContactedOther)];
-    
+        
     if (false) {
         // Language
         [b labelWithText:@"Language"];
@@ -165,7 +157,15 @@
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
     
-    // Contact Type
+    // Who contacted
+    [b labelWithText:@"Who was contacted"];
+    [b singleOptionPickerForProperty:@selector(whoContactedId) WithPickerOptions:[PickerOption whoContacted]];
+    
+    // Who contacted (Other)
+    [b labelWithText:@"Who was contacted (Other)"];
+    [b textFieldForProperty:@selector(whoContactedOther)];
+    
+    // Comments
     [b labelWithText:@"Comments"];
     [b textAreaForProperty:@selector(comments)];
 
