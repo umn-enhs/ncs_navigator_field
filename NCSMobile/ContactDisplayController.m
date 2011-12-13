@@ -112,8 +112,15 @@
 - (UITableViewCell*) cellForRowClass:(NSString *)rowClass {
     UITableViewCell *cell;
     if ([rowClass isEqualToString:@"instrument"]) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:rowClass] autorelease];
-        cell.textLabel.font =[[UIFont fontWithName:@"Arial" size:16] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:rowClass] autorelease];
+        cell.textLabel.font =[[UIFont fontWithName:@"Arial" size:20] autorelease];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else if ([rowClass isEqualToString:@"contact"]) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:rowClass] autorelease];
+        cell.textLabel.font =[[UIFont fontWithName:@"Arial" size:20] autorelease];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2  reuseIdentifier:rowClass] autorelease];
         cell.textLabel.numberOfLines = 0;
@@ -140,15 +147,7 @@
     } else if ([rc isEqualToString:@"contact"]) {
         ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithContact:self.detailItem];
         cc.modalPresentationStyle = UIModalPresentationFormSheet;
-        
-//        ContactUpdateController* cc = [[ContactUpdateController alloc] initWithNibName:@"ContactUpdateController" bundle:nil];
-//        ContactDetailController* cc = [[ContactDetailController alloc] initWithStyle:UITableViewStyleGrouped];
-//        cc.ta
-        NSLog(@"Row.entity: %@", row.entity);
-//        [UIAppDelegate.rootViewController.navigationController presentModalViewController:self.contactDetailController animated:YES];
         [self presentModalViewController:cc animated:YES];
-//        cc.view.superview.frame = CGRectMake(10, 20, 600, self.view.frame.size.height);
-//        cc.view.superview.center = self.view.center;
 
     }
 }

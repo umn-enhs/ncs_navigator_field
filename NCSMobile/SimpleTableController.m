@@ -70,6 +70,7 @@
     if ([self conformsToProtocol:@protocol(SimpleTableRowDelegate)]) {
         [self didSelectRow:r];
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {    
