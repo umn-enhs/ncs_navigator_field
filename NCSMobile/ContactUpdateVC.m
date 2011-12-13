@@ -95,56 +95,43 @@
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
     
-    // Contact Type
     [b labelWithText:@"Contact Type"];
     [b singleOptionPickerForProperty:@selector(typeId) WithPickerOptions:[PickerOption contactTypes]];
-    
-    // Contact Start Date
+
     [b labelWithText:@"Start Date"];
     [b datePickerForProperty:@selector(startDate)];
     
-    // Contact Start Date
     [b labelWithText:@"End Date"];
     [b datePickerForProperty:@selector(endDate)];
         
     if (false) {
-        // Language
         [b labelWithText:@"Language"];
         [b singleOptionPickerForProperty:@selector(languageId) WithPickerOptions:[PickerOption language]];
         
-        // Language (Other)
         [b labelWithText:@"Language (Other)"];
         [b textFieldForProperty:@selector(languageOther)];
         
-        // Interpreter
         [b labelWithText:@"Interpreter"];
         [b singleOptionPickerForProperty:@selector(interpreterId) WithPickerOptions:[PickerOption interpreter]];
         
-        // Interpreter
         [b labelWithText:@"Interpreter (Other)"];
         [b textFieldForProperty:@selector(interpreterOther)];
         
-        // Location
         [b labelWithText:@"Location"];
         [b singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
         
-        // Location (Other)
         [b labelWithText:@"Location (Other)"];
         [b textFieldForProperty:@selector(locationOther)];
         
-        // Private
         [b labelWithText:@"Was contact private"];
         [b singleOptionPickerForProperty:@selector(privateId) WithPickerOptions:[PickerOption private]];
         
-        // Private Detail
         [b labelWithText:@"Private Detail"];
         [b textFieldForProperty:@selector(privateDetail)];
         
-        // Distance
         [b labelWithText:@"Distance traveled"];
         [b textFieldForProperty:@selector(distanceId)];
         
-        // Disposition
         [b labelWithText:@"Disposition"];
         [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];        
     }
@@ -157,15 +144,12 @@
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
     
-    // Who contacted
     [b labelWithText:@"Who was contacted"];
     [b singleOptionPickerForProperty:@selector(whoContactedId) WithPickerOptions:[PickerOption whoContacted]];
     
-    // Who contacted (Other)
     [b labelWithText:@"Who was contacted (Other)"];
     [b textFieldForProperty:@selector(whoContactedOther)];
     
-    // Comments
     [b labelWithText:@"Comments"];
     [b textAreaForProperty:@selector(comments)];
 
