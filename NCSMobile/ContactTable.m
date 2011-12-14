@@ -80,7 +80,7 @@
     Section *s = [[Section new] autorelease];
     s.name = @"Contact";
     Row *r = [[Row new] autorelease];
-    r.text = _contact.initiated ? @"Close Contact" : @"Initiate Contact";
+    r.text = _contact.initiated ? @"Continue Contact" : @"Initiate Contact";
     r.rowClass = @"contact";
     r.entity = _contact;
     [s addRow:r];
