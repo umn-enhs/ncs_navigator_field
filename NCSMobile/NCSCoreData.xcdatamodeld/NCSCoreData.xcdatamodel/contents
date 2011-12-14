@@ -9,6 +9,7 @@
     </entity>
     <entity name="Contact" representedClassName="Contact" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="initiated" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="typeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="contact" inverseEntity="Event" syncable="YES"/>
@@ -45,7 +46,7 @@
     </entity>
     <elements>
         <element name="Address" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Contact" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Contact" positionX="160" positionY="192" width="128" height="150"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Instrument" positionX="160" positionY="192" width="128" height="90"/>
         <element name="InstrumentTemplate" positionX="160" positionY="192" width="128" height="75"/>

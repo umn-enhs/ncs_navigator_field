@@ -210,6 +210,8 @@
 }
 
 - (void) commitTransaction {
+    self.contact.initiated = YES;
+    
     [self endTransction];
     NSManagedObjectContext* moc = [self.contact managedObjectContext];
     NSUndoManager* undoManager = [moc undoManager];
@@ -229,7 +231,6 @@
     NSUndoManager* undoManager = [moc undoManager];
     [undoManager undo];
     NSLog(@"Rolledback contact: %@", self.contact);
-
 }
 
 @end

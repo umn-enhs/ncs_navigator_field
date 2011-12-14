@@ -58,7 +58,7 @@
 - (NUPickerVC*) initPickerVC {
     NUPickerVC* p= [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
     [p loadView];
-    [p setupDelegate:self withTitle:@"Pick One" date:YES];
+    [p setupDelegate:self withTitle:@"Pick a date" date:YES];
     p.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
     p.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
     if (self.date) {
