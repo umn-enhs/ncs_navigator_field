@@ -170,7 +170,7 @@
     [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextColor:[UIColor colorWithRed:113.0/255.0 green:120.0/255.0 blue:128.0/255.0 alpha:1.0]];
-    [titleLabel setText:@"Initialize Contact"];
+    [titleLabel setText:@"Initiate Contact"];
     [titleLabel setTextAlignment:UITextAlignmentCenter];
     UIBarButtonItem *toolBarTitle = [[UIBarButtonItem alloc] initWithCustomView:titleLabel];
     
@@ -193,6 +193,7 @@
 
 - (void) done {
     [self commitTransaction];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ContactInitiated" object:self];
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -220,9 +221,9 @@
     NSError *error = nil;
     
     if (![moc save:&error]) {
-        NSLog(@"Error saving instrument initialized contact");
+        NSLog(@"Error saving initiated contact");
     }
-    NSLog(@"Initialized contact: %@", self.contact);
+    NSLog(@"Initialiated contact: %@", self.contact);
 }
 
 - (void) rollbackTransaction {

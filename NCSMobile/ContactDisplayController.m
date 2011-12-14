@@ -39,6 +39,20 @@
 
 @synthesize contactDetailController=_contactDetailController;
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contactInitiated) name:@"ContactInitiated" object:NULL];
+    }
+    return self;
+}
+
+- (void) contactInitiated {
+    self.simpleTable = [[ContactTable alloc]initUsingContact:self.detailItem];
+    [self.tableView reloadData];
+
+}
+
 #pragma mark - Managing the detail item
 
 /*
@@ -147,7 +161,7 @@
     } else if ([rc isEqualToString:@"contact"]) {
         ContactUpdateVC* cc = [[ContactUpdateVC alloc] initWithContact:self.detailItem];
         cc.modalPresentationStyle = UIModalPresentationFormSheet;
-        [self presentModalViewController:cc animated:YES];
+        [self presentViewController:cc animated:YES completion:NULL];
 
     }
 }
