@@ -10,7 +10,7 @@
 
 #import "RootViewController.h"
 #import "ContactTable.h"
-#import "ContactInitiationVC.h"
+#import "ContactInitiateVC.h"
 
 #import "Event.h"
 #import "Section.h"
@@ -159,7 +159,7 @@
         //    oldCell.detailTextLabel.text = [NSString stringWithFormat:@"Completed %@", [f stringFromDate:d]];
         
     } else if ([rc isEqualToString:@"contact"]) {
-        ContactInitiationVC* cc = [[ContactInitiationVC alloc] initWithContact:self.detailItem];
+        ContactInitiateVC* cc = [[ContactInitiateVC alloc] initWithContact:self.detailItem];
         cc.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:cc animated:YES completion:NULL];
 

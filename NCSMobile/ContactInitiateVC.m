@@ -6,13 +6,13 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactInitiationVC.h"
+#import "ContactInitiateVC.h"
 #import "PickerOption.h"
 #import "FormBuilder.h"
 #import "NUScrollView.h"
 #import "Contact.h"
 
-@implementation ContactInitiationVC
+@implementation ContactInitiateVC
 
 @synthesize contact=_contact;
 

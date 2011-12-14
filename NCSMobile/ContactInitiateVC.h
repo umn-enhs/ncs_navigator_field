@@ -11,7 +11,7 @@
 @class FormBuilder;
 @class Contact;
 
-@interface ContactInitiationVC : UIViewController {
+@interface ContactInitiateVC : UIViewController {
     Contact* _contact;
 }
 

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactContinuationController : UIViewController
+@interface ContactContinueVC : UIViewController
 
 @end

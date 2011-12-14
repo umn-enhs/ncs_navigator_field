@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactContinuationController.h"
+#import "ContactContinueVC.h"
 
-@implementation ContactContinuationController
+@implementation ContactContinueVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
