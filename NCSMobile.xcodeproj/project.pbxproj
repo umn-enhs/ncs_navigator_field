@@ -72,7 +72,7 @@
 		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00810B5F14896B070098C0D0 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePicker.m */; };
 		008C5711149696DD005EC22E /* TextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 008C5710149696DD005EC22E /* TextArea.m */; };
-		008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */; };
+		008F7DA1148BB3DD009BCF1D /* InitiateContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* InitiateContactVC.m */; };
 		008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA3148C1B16009BCF1D /* FormBuilder.m */; };
 		008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */; };
 		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
@@ -825,8 +825,8 @@
 		00810B5E14896B070098C0D0 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
 		008C570F149696DD005EC22E /* TextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextArea.h; sourceTree = "<group>"; };
 		008C5710149696DD005EC22E /* TextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextArea.m; sourceTree = "<group>"; };
-		008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUpdateVC.h; sourceTree = "<group>"; };
-		008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUpdateVC.m; sourceTree = "<group>"; };
+		008F7D9F148BB3DD009BCF1D /* InitiateContactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; path = InitiateContactVC.h; sourceTree = "<group>"; };
+		008F7DA0148BB3DD009BCF1D /* InitiateContactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitiateContactVC.m; sourceTree = "<group>"; };
 		008F7DA2148C1B16009BCF1D /* FormBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormBuilder.h; sourceTree = "<group>"; };
 		008F7DA3148C1B16009BCF1D /* FormBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormBuilder.m; sourceTree = "<group>"; };
 		008F7DA5148C64AC009BCF1D /* FormBuilderCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormBuilderCursor.h; sourceTree = "<group>"; };
@@ -2570,8 +2570,8 @@
 			isa = PBXGroup;
 			children = (
 				0026E67D140347E700355BCB /* ContactDisplayController.h */,
-				008F7D9F148BB3DD009BCF1D /* ContactUpdateVC.h */,
-				008F7DA0148BB3DD009BCF1D /* ContactUpdateVC.m */,
+				008F7D9F148BB3DD009BCF1D /* InitiateContactVC.h */,
+				008F7DA0148BB3DD009BCF1D /* InitiateContactVC.m */,
 				0026E67E140347E700355BCB /* ContactDisplayController.m */,
 				0026E683140347E700355BCB /* RootViewController.h */,
 				0026E684140347E700355BCB /* RootViewController.m */,
@@ -3004,7 +3004,7 @@
 				005108EE148440C000732623 /* NUScrollView.m in Sources */,
 				004FC7161486BFBC00A378DC /* PickerOption.m in Sources */,
 				00810B5F14896B070098C0D0 /* DatePicker.m in Sources */,
-				008F7DA1148BB3DD009BCF1D /* ContactUpdateVC.m in Sources */,
+				008F7DA1148BB3DD009BCF1D /* InitiateContactVC.m in Sources */,
 				008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */,
 				008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */,
 				006D47FC148D94970035DC01 /* ChangeHandler.m in Sources */,
