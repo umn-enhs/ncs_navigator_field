@@ -36,7 +36,6 @@
                 [self phones], 
                 [self emails],
                 [self contactDetails],
-                [self instruments], 
                 nil];
 }
 
@@ -61,20 +60,6 @@
     return [[[Section alloc] initWithRows:home, nil] autorelease];
 }
 
-- (Section*) instruments {
-    Section *instruments = [[Section new] autorelease];
-    instruments.name = @"Instruments";
-    for (Event *e in _contact.events) {
-        for (Instrument* i in e.instruments) {
-            Row *r = [[Row new] autorelease];
-            r.text = e.name;
-            r.rowClass = @"instrument";
-            r.entity = i;
-            [instruments addRow:r];
-        }
-    }
-    return instruments;
-}
 
 - (Section*) contactDetails {
     Section *s = [[Section new] autorelease];

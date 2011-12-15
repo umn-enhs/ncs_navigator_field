@@ -26,7 +26,6 @@
 - (Section*) phones;
 - (Section*) emails;
 - (Section*) contactDetails;
-- (Section*) instruments;
 - (void) dealloc;
 
 @end
