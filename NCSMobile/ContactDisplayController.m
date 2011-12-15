@@ -12,6 +12,7 @@
 #import "ContactTable.h"
 #import "ContactInitiateVC.h"
 #import "InstrumentListVC.h"
+#import "ContactCloseVC.h"
 
 #import "Event.h"
 #import "Section.h"
@@ -44,6 +45,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contactInitiated) name:@"ContactInitiated" object:NULL];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeContactRequested) name:@"CloseContactSelected" object:NULL];
     }
     return self;
 }
@@ -56,6 +58,12 @@
     ci.contact = self.detailItem;
     ci.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:ci animated:YES completion:NULL];
+}
+
+- (void) closeContactRequested {
+    ContactCloseVC* cc = [[ContactCloseVC alloc] initWithContact:self.detailItem];
+    cc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:cc animated:YES completion:NULL];
 }
 
 #pragma mark - Managing the detail item

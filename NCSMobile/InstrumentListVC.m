@@ -43,6 +43,11 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)closeContact {
+    [self dismissModalViewControllerAnimated:NO];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CloseContactSelected" object:self];
+}
+
 #pragma mark - Table datasource and delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

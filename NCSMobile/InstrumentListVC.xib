@@ -45,8 +45,8 @@
 						<string key="NSFrame">{{20, 124}, {733, 179}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="710893930"/>
-						<object class="NSColor" key="IBUIBackgroundColor" id="848743959">
+						<reference key="NSNextKeyView" ref="245565321"/>
+						<object class="NSColor" key="IBUIBackgroundColor" id="320588179">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -66,7 +66,7 @@
 						<string key="NSFrameSize">{768, 44}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="297580928"/>
+						<reference key="NSNextKeyView" ref="482482778"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -79,20 +79,20 @@
 							</object>
 						</array>
 					</object>
-					<object class="IBUILabel" id="297580928">
+					<object class="IBUILabel" id="482482778">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{768, 44}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="224795120"/>
+						<reference key="NSNextKeyView" ref="94546153"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">Instruments</string>
-						<object class="NSColor" key="IBUITextColor" id="951392160">
+						<object class="NSColor" key="IBUITextColor" id="360446050">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
@@ -110,20 +110,20 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUILabel" id="224795120">
+					<object class="IBUILabel" id="94546153">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{20, 66}, {728, 27}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="595238527"/>
+						<reference key="NSNextKeyView" ref="534541981"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">Choose an instrument from the list below to administer for this contact.</string>
-						<reference key="IBUITextColor" ref="951392160"/>
+						<reference key="IBUITextColor" ref="360446050"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -138,7 +138,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUILabel" id="595238527">
+					<object class="IBUILabel" id="534541981">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{20, 95}, {728, 21}}</string>
@@ -151,7 +151,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">(If there is a Consent link in the list, you should obtain consent before proceeding.) </string>
-						<reference key="IBUITextColor" ref="951392160"/>
+						<reference key="IBUITextColor" ref="360446050"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -166,7 +166,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIButton" id="606525362">
+					<object class="IBUIButton" id="800539168">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">261</int>
 						<string key="NSFrame">{{319, 407}, {130, 38}}</string>
@@ -179,7 +179,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Close Contact</string>
-						<reference key="IBUIHighlightedTitleColor" ref="848743959"/>
+						<reference key="IBUIHighlightedTitleColor" ref="320588179"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
@@ -198,20 +198,20 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUILabel" id="710893930">
+					<object class="IBUILabel" id="245565321">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">258</int>
 						<string key="NSFrame">{{20, 311}, {728, 88}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="606525362"/>
+						<reference key="NSNextKeyView" ref="800539168"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">In cases where you attempt to make contact with a person and you are unable to administer an instrument, choose the 'Close Contact' link to set the proper disposition and complete the Contact record. </string>
-						<reference key="IBUITextColor" ref="951392160"/>
+						<reference key="IBUITextColor" ref="360446050"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -280,6 +280,15 @@
 					</object>
 					<int key="connectionID">13</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">closeContact</string>
+						<reference key="source" ref="800539168"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">17</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -306,11 +315,11 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="760355807"/>
 							<reference ref="126981266"/>
-							<reference ref="595238527"/>
-							<reference ref="297580928"/>
-							<reference ref="710893930"/>
-							<reference ref="224795120"/>
-							<reference ref="606525362"/>
+							<reference ref="534541981"/>
+							<reference ref="482482778"/>
+							<reference ref="245565321"/>
+							<reference ref="94546153"/>
+							<reference ref="800539168"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -334,27 +343,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="224795120"/>
+						<reference key="object" ref="94546153"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="595238527"/>
+						<reference key="object" ref="534541981"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="606525362"/>
+						<reference key="object" ref="800539168"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="297580928"/>
+						<reference key="object" ref="482482778"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
-						<reference key="object" ref="710893930"/>
+						<reference key="object" ref="245565321"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</array>
@@ -379,24 +388,27 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">16</int>
+			<int key="maxID">17</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">InstrumentListVC</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">cancel</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">cancel</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="cancel">id</string>
+						<string key="closeContact">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="cancel">
 							<string key="name">cancel</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="closeContact">
+							<string key="name">closeContact</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="_headerLabel">UILabel</string>
 						<string key="_tableView">UITableView</string>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00145BA8149A7BEF00D3C1B5 /* ContactCloseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */; };
 		0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465C1434CDF9008D612B /* ContactNavigationTable.m */; };
 		002646601434CE02008D612B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465F1434CE02008D612B /* Person.m */; };
 		0026E669140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
@@ -250,6 +251,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00145BA6149A7BEF00D3C1B5 /* ContactCloseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCloseVC.h; sourceTree = "<group>"; };
+		00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCloseVC.m; sourceTree = "<group>"; };
 		0026465B1434CDF9008D612B /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTable.h; sourceTree = "<group>"; };
 		0026465C1434CDF9008D612B /* ContactNavigationTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationTable.m; sourceTree = "<group>"; };
 		0026465E1434CE02008D612B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -837,7 +840,7 @@
 		009AD2E61430D9BF0038650B /* SimpleTableRowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableRowDelegate.h; sourceTree = "<group>"; };
 		009AD2E71430DA180038650B /* ISimpleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISimpleTable.h; sourceTree = "<group>"; };
 		009EE2781436220C00E6D658 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginController.xib; path = NCSMobile/LoginController.xib; sourceTree = "<group>"; };
-		00A03C751499536700223FD2 /* InstrumentListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; path = InstrumentListVC.h; sourceTree = "<group>"; };
+		00A03C751499536700223FD2 /* InstrumentListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentListVC.h; sourceTree = "<group>"; };
 		00A03C761499536700223FD2 /* InstrumentListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentListVC.m; sourceTree = "<group>"; };
 		00A03C771499536700223FD2 /* InstrumentListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstrumentListVC.xib; path = NCSMobile/InstrumentListVC.xib; sourceTree = "<group>"; };
 		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
@@ -2572,6 +2575,8 @@
 		006EBEE5141157B6003D69CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				00145BA6149A7BEF00D3C1B5 /* ContactCloseVC.h */,
+				00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */,
 				0026E67D140347E700355BCB /* ContactDisplayController.h */,
 				008F7D9F148BB3DD009BCF1D /* ContactInitiateVC.h */,
 				008F7DA0148BB3DD009BCF1D /* ContactInitiateVC.m */,
@@ -3017,6 +3022,7 @@
 				006FDD8A148FD2E80001BADE /* TextField.m in Sources */,
 				008C5711149696DD005EC22E /* TextArea.m in Sources */,
 				00A03C781499536700223FD2 /* InstrumentListVC.m in Sources */,
+				00145BA8149A7BEF00D3C1B5 /* ContactCloseVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,6 +26,7 @@
 @property(nonatomic,retain) UITableView* tableView;
 
 - (IBAction)cancel;
+- (IBAction)closeContact;
 - (void) configureView;
 - instrumentsForContact:(Contact*)contact;
 
