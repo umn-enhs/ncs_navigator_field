@@ -11,7 +11,6 @@
 #import "Event.h"
 #import "Instrument.h"
 
-
 @implementation InstrumentListVC
 
 @synthesize contact = _contact;
@@ -47,7 +46,7 @@
 #pragma mark - Table datasource and delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.contact.events count];
+    return [self.instruments count];
 }
 
 
@@ -77,8 +76,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self dismissModalViewControllerAnimated:NO];
+
+    Instrument* selected = [self.instruments objectAtIndex:indexPath.row];
+    NSDictionary* dict = [[[NSDictionary alloc] initWithObjectsAndKeys:selected, @"instrument", nil] autorelease];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"InstrumentSelected" object:self userInfo:dict];
 }
 
 #pragma mark - lifecycle methods

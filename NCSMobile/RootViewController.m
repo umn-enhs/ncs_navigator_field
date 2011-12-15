@@ -33,6 +33,19 @@
 @synthesize contacts=_contacts;
 @synthesize table=_table;
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    self = [super initWithCoder:decoder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(instrumentSelected:) name:@"InstrumentSelected" object:NULL];
+    }
+    return self;
+}
+
+- (void) instrumentSelected:(NSNotification*)notification {
+    Instrument* selected = [[notification userInfo] objectForKey:@"instrument"];
+    [self loadSurveyor:selected];
+}
+
 #pragma surveyor
 - (void) loadSurveyor:(Instrument*)instrument {
     if (instrument != NULL) {
