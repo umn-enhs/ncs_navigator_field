@@ -80,7 +80,12 @@
     Section *s = [[Section new] autorelease];
     s.name = @"Contact";
     Row *r = [[Row new] autorelease];
-    r.text = _contact.initiated ? @"Continue Contact" : @"Initiate Contact";
+    
+    NSString* format = _contact.initiated ? @"Continue Contact for %@" : @"Initiate Contact for %@";
+    NSArray* eventNames = [[_contact.events allObjects] valueForKey:@"name"];
+    NSString* eventsText = [eventNames componentsJoinedByString:@" and "];
+    NSString* text = [NSString stringWithFormat:format, eventsText];
+    r.text = text;
     r.rowClass = @"contact";
     r.entity = _contact;
     [s addRow:r];
