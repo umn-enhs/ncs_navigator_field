@@ -6,17 +6,20 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactContinueVC.h"
+#import "InstrumentListVC.h"
 #import "Contact.h"
 #import "Event.h"
 #import "Instrument.h"
+#import <QuartzCore/QuartzCore.h>
 
-@implementation ContactContinueVC
+
+@implementation InstrumentListVC
 
 @synthesize contact = _contact;
 @synthesize sections = _sections;
 @synthesize instruments = _instruments;
 @synthesize headerLabel = _headerLabel;
+@synthesize tableView = _tableView;
 
 - (void)setContact:(Contact *)contact {
     [_contact release];
@@ -38,6 +41,10 @@
     return instruments;
 }
 
+- (IBAction)cancel {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark - Table datasource and delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -51,11 +58,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+        cell.backgroundColor = [UIColor redColor];
     }
     
     // Configure the cell
     Instrument *instrument = [self.instruments objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", instrument.event.name, instrument.name, nil];
+    cell.textLabel.font = [UIFont systemFontOfSize:16];
+//    cell.layer.borderColor = [[UIColor grayColor] CGColor];
+//    cell.layer.borderWidth = 1;
 
 // TODO: mark as checked if completed
 //    if (recipeType == recipe.type) {
@@ -86,7 +97,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload

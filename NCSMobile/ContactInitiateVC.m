@@ -193,8 +193,8 @@
 
 - (void) done {
     [self commitTransaction];
+    [self dismissModalViewControllerAnimated:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ContactInitiated" object:self];
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void) startTransaction {

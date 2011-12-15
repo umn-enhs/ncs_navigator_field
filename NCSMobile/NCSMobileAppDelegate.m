@@ -51,7 +51,8 @@
     // Instrument Mapping
     RKManagedObjectMapping* instrument = [RKManagedObjectMapping mappingForClass:[Instrument class]];
     [instrument mapKeyPathsToAttributes: 
-        @"instrument_template_id", @"instrumentTemplateId", nil];
+        @"instrument_template_id", @"instrumentTemplateId", 
+        @"name", @"name", nil];
     [instrument mapRelationship:@"instrumentTemplate" withMapping:instrumentTemplate];
     [instrument connectRelationship:@"instrumentTemplate" withObjectForPrimaryKeyAttribute:@"instrumentTemplateId"];
     

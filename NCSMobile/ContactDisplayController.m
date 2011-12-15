@@ -11,6 +11,7 @@
 #import "RootViewController.h"
 #import "ContactTable.h"
 #import "ContactInitiateVC.h"
+#import "InstrumentListVC.h"
 
 #import "Event.h"
 #import "Section.h"
@@ -51,6 +52,10 @@
     self.simpleTable = [[ContactTable alloc]initUsingContact:self.detailItem];
     [self.tableView reloadData];
 
+    InstrumentListVC* ci = [[InstrumentListVC alloc] initWithNibName:@"InstrumentListVC" bundle:nil];
+    ci.contact = self.detailItem;
+    ci.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:ci animated:YES completion:NULL];
 }
 
 #pragma mark - Managing the detail item
@@ -162,7 +167,6 @@
         ContactInitiateVC* cc = [[ContactInitiateVC alloc] initWithContact:self.detailItem];
         cc.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:cc animated:YES completion:NULL];
-
     }
 }
 
