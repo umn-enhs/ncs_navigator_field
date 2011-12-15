@@ -130,13 +130,8 @@
 
 - (UITableViewCell*) cellForRowClass:(NSString *)rowClass {
     UITableViewCell *cell;
-    if ([rowClass isEqualToString:@"instrument"]) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:rowClass] autorelease];
-        cell.textLabel.font =[[UIFont fontWithName:@"Arial" size:20] autorelease];
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    } else if ([rowClass isEqualToString:@"contact"]) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:rowClass] autorelease];
+    if ([rowClass isEqualToString:@"contact"]) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:rowClass] autorelease];
         cell.textLabel.font =[[UIFont fontWithName:@"Arial" size:20] autorelease];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
