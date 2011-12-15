@@ -10,7 +10,6 @@
 #import "Contact.h"
 #import "Event.h"
 #import "Instrument.h"
-#import <QuartzCore/QuartzCore.h>
 
 
 @implementation InstrumentListVC
