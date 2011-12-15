@@ -11,6 +11,6 @@
 @interface InstrumentTemplate : NSManagedObject
 
 @property(nonatomic,retain) NSString* identifier;
-@property(nonatomic,retain) NSString* json;
+@property(nonatomic,retain) NSString* representation;
 
 @end

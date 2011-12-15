@@ -7,17 +7,71 @@
 //
 
 #import "ContactContinueVC.h"
+#import "Contact.h"
+#import "Event.h"
+#import "Instrument.h"
 
 @implementation ContactContinueVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+@synthesize contact = _contact;
+@synthesize sections = _sections;
+@synthesize instruments = _instruments;
+@synthesize headerLabel = _headerLabel;
+
+- (void)setContact:(Contact *)contact {
+    [_contact release];
+    _contact = [contact retain];
+    [self configureView];
 }
+
+- (void) configureView {
+    self.instruments = [self instrumentsForContact:self.contact];
+}
+
+- instrumentsForContact:(Contact*)contact {
+    NSMutableArray* instruments = [[NSMutableArray alloc] init];
+    for (Event* e in contact.events) {
+        for (Instrument* i in e.instruments) {
+            [instruments addObject:i];
+        }
+    }
+    return instruments;
+}
+
+#pragma mark - Table datasource and delegate methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.contact.events count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *MyIdentifier = @"Instrument";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+    }
+    
+    // Configure the cell
+    Instrument *instrument = [self.instruments objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", instrument.event.name, instrument.name, nil];
+
+// TODO: mark as checked if completed
+//    if (recipeType == recipe.type) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+    
+    return cell;}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - lifecycle methods
 
 - (void)didReceiveMemoryWarning
 {

@@ -36,7 +36,7 @@
 #pragma surveyor
 - (void) loadSurveyor:(Instrument*)instrument {
     if (instrument != NULL) {
-        NSString* survey = instrument.instrumentTemplate.json;
+        NSString* survey = instrument.instrumentTemplate.representation;
         
         
         //TODO: Pass response set id to load existing if exists
@@ -131,10 +131,10 @@
 
     NSMutableArray* modifiedTemplates = [NSMutableArray new];
     for (NSDictionary* templ in [*mappableData valueForKey:@"instrument_templates"]) {
-        NSDictionary* json = [templ valueForKey:@"json"];
+        NSDictionary* json = [templ valueForKey:@"representation"];
         NSString *jsonString = [jsonWriter stringWithObject:json];
         NSMutableDictionary* mod = [templ mutableCopy];
-        [mod setObject:jsonString forKey:@"json"];
+        [mod setObject:jsonString forKey:@"representation"];
         [modifiedTemplates addObject:mod];
     }
     [*mappableData setObject:modifiedTemplates forKey:@"instrument_templates"];    

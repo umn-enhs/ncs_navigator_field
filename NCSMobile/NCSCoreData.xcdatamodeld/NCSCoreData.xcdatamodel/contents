@@ -19,16 +19,18 @@
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contact" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="events" inverseEntity="Contact" syncable="YES"/>
-        <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instrument" syncable="YES"/>
+        <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instrument" inverseName="event" inverseEntity="Instrument" syncable="YES"/>
     </entity>
     <entity name="Instrument" representedClassName="Instrument" syncable="YES">
         <attribute name="externalResponseSetId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="instrumentTemplateId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="instruments" inverseEntity="Event" syncable="YES"/>
         <relationship name="instrumentTemplate" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="InstrumentTemplate" syncable="YES"/>
     </entity>
     <entity name="InstrumentTemplate" representedClassName="InstrumentTemplate" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="json" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="representation" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

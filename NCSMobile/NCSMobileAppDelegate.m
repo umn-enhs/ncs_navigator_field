@@ -44,7 +44,7 @@
     RKManagedObjectMapping* instrumentTemplate = [RKManagedObjectMapping mappingForClass:[InstrumentTemplate class]];
     [instrumentTemplate mapKeyPathsToAttributes:
      @"id", @"identifier",
-     @"json", @"json", nil];
+     @"representation", @"representation", nil];
     [instrumentTemplate setPrimaryKeyAttribute:@"identifier"];
     [objectManager.mappingProvider setMapping:instrumentTemplate forKeyPath:@"instrument_templates"];
     

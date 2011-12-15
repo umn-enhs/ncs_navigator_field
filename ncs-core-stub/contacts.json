@@ -25,11 +25,12 @@
                 {
                     "instruments": [
                         {
+                            "name": "INS_QUE_PregScreen_INT_HILI_P2_V2.0",
                             "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
                             "response_set": {}
                         }
                     ],
-                    "name": "PPG 1"
+                    "name": "Pregnancy Screener"
                 }
             ]
         },
@@ -58,11 +59,12 @@
                 {
                     "instruments": [
                         {
+                            "name": "INS_QUE_PregScreen_INT_HILI_P2_V2.0",
                             "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
                             "response_set": {}
                         }
                     ],
-                    "name": "PPG 1"
+                    "name": "Pregnancy Screener"
                 }
             ]
         },
@@ -91,6 +93,7 @@
                 {
                     "instruments": [
                         {
+                            "name": "Blood Draw Instrument v1",
                             "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
                             "response_set": {}
                         }
@@ -100,6 +103,7 @@
                 {
                     "instruments": [
                         {
+                            "name": "Collect Soil Instrument v2",
                             "instrument_template_id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
                             "response_set": {}
                         }
@@ -112,7 +116,7 @@
     "instrument_templates": [
         {
             "id": "ded83f10-e5f8-012e-9f18-00254bc472f4",
-            "json": {
+            "representation": {
                 "survey": {
                     "title": "KitchenSinksurvey",
                     "uuid": "ded83f10-e5f8-012e-9f18-00254bc472f4",

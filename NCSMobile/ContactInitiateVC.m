@@ -170,7 +170,7 @@
     [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextColor:[UIColor colorWithRed:113.0/255.0 green:120.0/255.0 blue:128.0/255.0 alpha:1.0]];
-    [titleLabel setText:@"Initiate Contact"];
+    [titleLabel setText:(self.contact.initiated ? @"Continue Contact" : @"Initiate Contact")];
     [titleLabel setTextAlignment:UITextAlignmentCenter];
     UIBarButtonItem *toolBarTitle = [[UIBarButtonItem alloc] initWithCustomView:titleLabel];
     

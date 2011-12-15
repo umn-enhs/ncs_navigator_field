@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactContinueVC : UIViewController
+@class Contact;
+@class SimpleTableController;
+
+@interface ContactContinueVC : UIViewController<UITableViewDelegate,UITableViewDataSource> {
+    Contact* _contact;
+    NSArray* _instruments;
+    NSArray* _sections;
+    IBOutlet UILabel* _headerLabel;
+}
+
+@property(nonatomic,retain) Contact* contact;
+@property(nonatomic,retain) NSArray* instruments;
+@property(nonatomic,retain) NSArray* sections;
+@property(nonatomic,retain) UILabel* headerLabel;
+
+- (void) configureView;
+- instrumentsForContact:(Contact*)contact;
 
 @end

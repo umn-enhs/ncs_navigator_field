@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @class InstrumentTemplate;
+@class Event;
 
 @interface Instrument : NSManagedObject 
 
+@property(nonatomic,retain) NSString* name;
 @property(nonatomic,retain) NSString* instrumentTemplateId;
 
 @property(nonatomic,retain) InstrumentTemplate* instrumentTemplate;
 
 @property(nonatomic,retain) NSString* externalResponseSetId;
+
+@property(nonatomic,retain) Event* event;
 
 @end
