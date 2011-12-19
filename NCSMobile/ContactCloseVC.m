@@ -35,23 +35,30 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidAppear:(BOOL)animated {
-    
-    UIView* toolbar = [self toolbarWithFrame:CGRectMake(0, -2, self.view.frame.size.width, 50)];
-    
-    /* Left and Right Pane */
+    NSLog(@"viewDidAppear Size: %@", NSStringFromCGSize(self.view.frame.size));
+
     CGPoint o = self.view.frame.origin;
     CGSize s = self.view.frame.size;
-    CGRect rect = CGRectMake(o.x, o.y + 50, s.width, s.height - 50 );
+    CGFloat width = UIDeviceOrientationIsPortrait(self.interfaceOrientation) ? self.view.frame.size.width : self.view.frame.size.height;
+    CGFloat height = UIDeviceOrientationIsPortrait(self.interfaceOrientation) ? self.view.frame.size.height : self.view.frame.size.width;
+    
+//    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    UIView* toolbar = [self toolbarWithFrame:CGRectMake(0, -2, width, 50)];
+    
+    /* Left and Right Pane */
+    CGRect rect = CGRectMake(o.x, o.y + 50, width, height - 50 );
+    UIScrollView* scroll = [[NUScrollView alloc] initWithFrame:rect];
     
     CGRect lRect, rRect;
-    CGRectDivide(rect, &rRect, &lRect, rect.size.width / 2, CGRectMaxXEdge);
+    CGRectDivide(CGRectMake(150, 0, width-150, height), &rRect, &lRect, (width) / 2, CGRectMaxXEdge);
     
     UIView* left = [self leftContentWithFrame:lRect];
     UIView* right = [self rightContentWithFrame:rRect];
+    [scroll addSubview:left];
+    [scroll addSubview:right];    
     
     [self.view addSubview:toolbar];
-    [self.view addSubview:left];
-    [self.view addSubview:right];    
+    [self.view addSubview:scroll];
     
     [self startTransaction];
 }
@@ -63,20 +70,20 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGPoint o = self.view.frame.origin;
+    CGSize s = self.view.frame.size;
 }
-*/
 
-- (void) viewDidLoad {
-    [super viewDidLoad];
-    
-    // WARNING: Do not use if you're using self.frame
-    // use viewDidAppear instead 
-}
+//- (void) viewDidLoad {
+//    [super viewDidLoad];
+//    
+//    // WARNING: Do not use if you're using self.frame
+//    // use viewDidAppear instead 
+//}
 
 - (void)viewDidUnload
 {
@@ -88,6 +95,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
+    NSLog(@"Orientation %d", interfaceOrientation);
+    NSLog(@"size %@", NSStringFromCGSize(self.view.frame.size));
 	return YES;
 }
 
@@ -160,6 +169,8 @@
 
 - (UIView*) toolbarWithFrame:(CGRect)frame {
     UIToolbar* t = [[UIToolbar alloc] initWithFrame:frame];
+    t.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    t.backgroundColor = [UIColor redColor];
     
     UIBarButtonItem* cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     

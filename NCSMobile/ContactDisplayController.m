@@ -62,7 +62,7 @@
 
 - (void) closeContactRequested {
     ContactCloseVC* cc = [[ContactCloseVC alloc] initWithContact:self.detailItem];
-    cc.modalPresentationStyle = UIModalPresentationFullScreen;
+    cc.modalPresentationStyle = UIModalPresentationFullScreen;  
     [self presentViewController:cc animated:YES completion:NULL];
 }
 
@@ -131,6 +131,7 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    NSLog(@"Orientation %d", interfaceOrientation);
     return YES;
 }
 
