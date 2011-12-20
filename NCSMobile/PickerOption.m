@@ -37,7 +37,7 @@
     return [[[PickerOption alloc] initWithText:text value:value] autorelease];
 }
   
-// TODO: Convert to use PickerOption class with plist file
+// TODO: Move into external library like mdes gem
 + (NSArray*) contactTypes {
     return [[NSArray alloc] initWithObjects:
              [self po:@"In-person" value:1],

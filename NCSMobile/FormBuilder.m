@@ -33,6 +33,16 @@
     return self;
 }
 
+- (void) sectionHeader:(NSString*)text {
+    UILabel* l = [[[UILabel alloc] initWithFrame:CGRectMake(2, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT)] autorelease];
+    l.text = text;
+    l.backgroundColor = [UIColor colorWithRed: 1.0 green: 1.0 blue: 1.0 alpha:0.0];
+    l.font = [UIFont boldSystemFontOfSize:18];
+    [self.view addSubview:l];
+    [self.cursor addNewLine];
+    
+}
+
 - (void) labelWithText:(NSString*)text {
     UILabel* l = [[[UILabel alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT)] autorelease];
     l.text = text;

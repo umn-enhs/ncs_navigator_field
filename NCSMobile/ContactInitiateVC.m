@@ -51,7 +51,8 @@
     
     [self.view addSubview:toolbar];
     [self.view addSubview:left];
-    [self.view addSubview:right];    
+    [self.view addSubview:right];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self startTransaction];
 }
@@ -107,38 +108,6 @@
     [b labelWithText:@"End Date"];
     [b datePickerForProperty:@selector(endDate)];
         
-    if (false) {
-        [b labelWithText:@"Language"];
-        [b singleOptionPickerForProperty:@selector(languageId) WithPickerOptions:[PickerOption language]];
-        
-        [b labelWithText:@"Language (Other)"];
-        [b textFieldForProperty:@selector(languageOther)];
-        
-        [b labelWithText:@"Interpreter"];
-        [b singleOptionPickerForProperty:@selector(interpreterId) WithPickerOptions:[PickerOption interpreter]];
-        
-        [b labelWithText:@"Interpreter (Other)"];
-        [b textFieldForProperty:@selector(interpreterOther)];
-        
-        [b labelWithText:@"Location"];
-        [b singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
-        
-        [b labelWithText:@"Location (Other)"];
-        [b textFieldForProperty:@selector(locationOther)];
-        
-        [b labelWithText:@"Was contact private"];
-        [b singleOptionPickerForProperty:@selector(privateId) WithPickerOptions:[PickerOption private]];
-        
-        [b labelWithText:@"Private Detail"];
-        [b textFieldForProperty:@selector(privateDetail)];
-        
-        [b labelWithText:@"Distance traveled"];
-        [b textFieldForProperty:@selector(distanceId)];
-        
-        [b labelWithText:@"Disposition"];
-        [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];        
-    }
-    
     return v;
 }
 

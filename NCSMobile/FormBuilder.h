@@ -26,6 +26,7 @@
 - (id) initwithView:(UIView*)view object:(id)obj;
 
 // Builder methods
+- (void) sectionHeader:(NSString*)text;
 - (void) labelWithText:(NSString*)text;
 - (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options;
 - (void) datePickerForProperty:(SEL)property;

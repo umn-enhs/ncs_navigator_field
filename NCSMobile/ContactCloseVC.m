@@ -11,6 +11,7 @@
 #import "FormBuilder.h"
 #import "NUScrollView.h"
 #import "Contact.h"
+#import "Event.h"
 
 @implementation ContactCloseVC
 
@@ -37,7 +38,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"viewDidAppear Size: %@", NSStringFromCGSize(self.view.frame.size));
 
-    CGFloat contactFrameHeight = 740;
+    CGFloat contactFrameHeight = 800;
     CGFloat eventFrameHeight = 700;
     CGPoint o = self.view.frame.origin;
 //    CGSize s = self.view.frame.size;
@@ -45,33 +46,33 @@
     CGFloat height = UIDeviceOrientationIsPortrait(self.interfaceOrientation) ? self.view.frame.size.height : self.view.frame.size.width;
     
 //    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    UIView* toolbar = [self toolbarWithFrame:CGRectMake(0, -2, width, 50)];
+    UIView* toolbar = [self toolbarWithFrame:CGRectMake(0, -2, width, 52)];
+    [self.view addSubview:toolbar];
     
     /* Left and Right Pane */
     CGRect rect = CGRectMake(o.x, o.y + 50, width, height - 50 );
     UIScrollView* scroll = [[NUScrollView alloc] initWithFrame:rect];
     
     CGRect lRect, rRect;
-    CGRectDivide(CGRectMake(150, 0, width-150, contactFrameHeight), &rRect, &lRect, (width) / 2, CGRectMaxXEdge);
+    CGRectDivide(CGRectMake(150, 0, width-300, contactFrameHeight), &rRect, &lRect, (width-300) / 2, CGRectMaxXEdge);
     
     UIView* left = [self leftContactContentWithFrame:lRect contact:self.contact];
+    left.backgroundColor = [UIColor whiteColor];
     UIView* right = [self rightContactContentWithFrame:rRect contact:self.contact];
+    right.backgroundColor = [UIColor whiteColor];
     [scroll addSubview:left];
     [scroll addSubview:right];    
 
-    left.backgroundColor = [UIColor greenColor];
-    scroll.backgroundColor = [UIColor redColor];
-    
     for (Event* e in self.contact.events) {
-        UIView* le = [self leftEventContentWithFrame:CGRectMake(150, contactFrameHeight + 20, lRect.size.width, eventFrameHeight) event:e];
-        UIView* re = [self rightEventContentWithFrame:CGRectMake(rRect.origin.x, contactFrameHeight + 20, rRect.size.width, eventFrameHeight) event:e];
+        UIView* le = [self leftEventContentWithFrame:CGRectMake(150, contactFrameHeight, lRect.size.width, eventFrameHeight) event:e];
+        UIView* re = [self rightEventContentWithFrame:CGRectMake(rRect.origin.x, contactFrameHeight, rRect.size.width, eventFrameHeight) event:e];
+        re.backgroundColor = [UIColor whiteColor];
+        le.backgroundColor = [UIColor whiteColor];
         [scroll addSubview:le];
         [scroll addSubview:re];
-
-        le.backgroundColor = [UIColor blueColor];
-        re.backgroundColor = [UIColor blueColor];
     }
-    [self.view addSubview:toolbar];
+    
+    scroll.backgroundColor = [UIColor colorWithRed:214.0/255.0 green:216.0/255.0 blue:222.0/255.0 alpha:1.0];
     [self.view addSubview:scroll];
     
     [self startTransaction];
@@ -110,6 +111,8 @@
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:contact] autorelease];
     
+    [b sectionHeader:@"Contact"];
+    
     [b labelWithText:@"Contact Type"];
     [b singleOptionPickerForProperty:@selector(typeId) WithPickerOptions:[PickerOption contactTypes]];
 
@@ -145,6 +148,8 @@
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:contact] autorelease];
     
+    [b sectionHeader:@""];
+    
     [b labelWithText:@"Location"];
     [b singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
     
@@ -173,6 +178,8 @@
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:event] autorelease];
+    
+    [b sectionHeader:[NSString stringWithFormat:@"Event - %@", event.name]];
     
     [b labelWithText:@"Event Type"];
     [b singleOptionPickerForProperty:@selector(eventTypeId) WithPickerOptions:[PickerOption eventTypes]];
@@ -207,6 +214,8 @@
     
     FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:event] autorelease];
 
+    [b sectionHeader:@""];
+    
     [b labelWithText:@"Disposition"];
     [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];
 
@@ -226,7 +235,6 @@
 - (UIView*) toolbarWithFrame:(CGRect)frame {
     UIToolbar* t = [[UIToolbar alloc] initWithFrame:frame];
     t.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    t.backgroundColor = [UIColor redColor];
     
     UIBarButtonItem* cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     
