@@ -27,4 +27,9 @@
 + (NSArray*) location;
 + (NSArray*) private;
 + (NSArray*) disposition;
++ (NSArray*) eventTypes;
++ (NSArray*) incentives;
++ (NSArray*) dispositionCategory;
++ (NSArray*) breakoff;
+
 @end

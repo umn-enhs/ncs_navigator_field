@@ -127,4 +127,70 @@
     return [[NSArray alloc] initWithObjects:
             [self po:@"I need codes" value:-1], nil];
 }
+
++ (NSArray*) eventTypes {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Household Enumeration" value:1],
+            [self po:@"Two Tier Enumeration" value:2],
+            [self po:@"Ongoing Tracking of Dwelling Units" value:3],
+            [self po:@"Pregnancy Screening - Provider Group" value:4],
+            [self po:@"Pregnancy Screening – High Intensity Group" value:5],
+            [self po:@"Pregnancy Screening – Low Intensity Group " value:6],
+            [self po:@"Pregnancy Probability" value:7],
+            [self po:@"PPG Follow-Up by Mailed SAQ" value:8],
+            [self po:@"Pregnancy Screening - Household Enumeration Group" value:9],
+            [self po:@"Informed Consent" value:10],
+            [self po:@"Pre-Pregnancy Visit" value:11],
+            [self po:@"Pre-Pregnancy Visit SAQ" value:12],
+            [self po:@"Pregnancy Visit 1" value:13],
+            [self po:@"Pregnancy Visit #1 SAQ" value:14],
+            [self po:@"Pregnancy Visit 2" value:15],
+            [self po:@"Pregnancy Visit #2 SAQ" value:16],
+            [self po:@"Pregnancy Visit - Low Intensity Group" value:17],
+            [self po:@"Birth" value:18],
+            [self po:@"Father" value:19],
+            [self po:@"Father Visit SAQ" value:20],
+            [self po:@"Validation" value:21],
+            [self po:@"Provider-Based Recruitment" value:22],
+            [self po:@"3 Month" value:23],
+            [self po:@"6 Month" value:24],
+            [self po:@"6-Month Infant Feeding SAQ" value:25],
+            [self po:@"9 Month" value:26],
+            [self po:@"12 Month" value:27],
+            [self po:@"12 Month Mother Interview SAQ" value:28],
+            [self po:@"Pregnancy Screener" value:29],
+            [self po:@"18 Month" value:30],
+            [self po:@"24 Month" value:31],
+            [self po:@"Low to High Conversion" value:32],
+            [self po:@"Low Intensity Data Collection" value:33],
+            [self po:@"Other" value:-5],
+            [self po:@"Missing in Error" value:-4], nil];
+}
+
++ (NSArray*) incentives {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Monetary" value:1],
+            [self po:@"Non-Monetary" value:2],
+            [self po:@"Both Monetary and Non-Monetary" value:3],
+            [self po:@"None" value:4],
+            [self po:@"Missing in Error" value:-4], nil];
+}
+
++ (NSArray*) dispositionCategory {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Household Enumeration Events" value:1],
+            [self po:@"Pregnancy Screening Events" value:2],
+            [self po:@"General Study Visits (including CASI SAQs)" value:3],
+            [self po:@"Mailed Back Self Administered Questionnaires" value:4],
+            [self po:@"Telephone Interview Events" value:5], 
+            [self po:@"Internet Survey Events" value:6], nil];
+}
+
++ (NSArray*) breakoff {
+    return [[NSArray alloc] initWithObjects:
+            [self po:@"Yes" value:1],
+            [self po:@"No" value:2],
+            [self po:@"Missing in Error" value:-4], nil];
+}
+
 @end

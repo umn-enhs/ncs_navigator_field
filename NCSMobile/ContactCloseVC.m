@@ -37,8 +37,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"viewDidAppear Size: %@", NSStringFromCGSize(self.view.frame.size));
 
+    CGFloat contactFrameHeight = 740;
+    CGFloat eventFrameHeight = 700;
     CGPoint o = self.view.frame.origin;
-    CGSize s = self.view.frame.size;
+//    CGSize s = self.view.frame.size;
     CGFloat width = UIDeviceOrientationIsPortrait(self.interfaceOrientation) ? self.view.frame.size.width : self.view.frame.size.height;
     CGFloat height = UIDeviceOrientationIsPortrait(self.interfaceOrientation) ? self.view.frame.size.height : self.view.frame.size.width;
     
@@ -50,13 +52,25 @@
     UIScrollView* scroll = [[NUScrollView alloc] initWithFrame:rect];
     
     CGRect lRect, rRect;
-    CGRectDivide(CGRectMake(150, 0, width-150, height), &rRect, &lRect, (width) / 2, CGRectMaxXEdge);
+    CGRectDivide(CGRectMake(150, 0, width-150, contactFrameHeight), &rRect, &lRect, (width) / 2, CGRectMaxXEdge);
     
-    UIView* left = [self leftContentWithFrame:lRect];
-    UIView* right = [self rightContentWithFrame:rRect];
+    UIView* left = [self leftContactContentWithFrame:lRect contact:self.contact];
+    UIView* right = [self rightContactContentWithFrame:rRect contact:self.contact];
     [scroll addSubview:left];
     [scroll addSubview:right];    
+
+    left.backgroundColor = [UIColor greenColor];
+    scroll.backgroundColor = [UIColor redColor];
     
+    for (Event* e in self.contact.events) {
+        UIView* le = [self leftEventContentWithFrame:CGRectMake(150, contactFrameHeight + 20, lRect.size.width, eventFrameHeight) event:e];
+        UIView* re = [self rightEventContentWithFrame:CGRectMake(rRect.origin.x, contactFrameHeight + 20, rRect.size.width, eventFrameHeight) event:e];
+        [scroll addSubview:le];
+        [scroll addSubview:re];
+
+        le.backgroundColor = [UIColor blueColor];
+        re.backgroundColor = [UIColor blueColor];
+    }
     [self.view addSubview:toolbar];
     [self.view addSubview:scroll];
     
@@ -69,14 +83,6 @@
 {
 }
 */
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    CGPoint o = self.view.frame.origin;
-    CGSize s = self.view.frame.size;
-}
 
 //- (void) viewDidLoad {
 //    [super viewDidLoad];
@@ -94,18 +100,15 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    NSLog(@"Orientation %d", interfaceOrientation);
-    NSLog(@"size %@", NSStringFromCGSize(self.view.frame.size));
 	return YES;
 }
 
 #pragma mark - Form
 
-- (UIView*) leftContentWithFrame:(CGRect)frame {
+- (UIView*) leftContactContentWithFrame:(CGRect)frame contact:(Contact*)contact {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:contact] autorelease];
     
     [b labelWithText:@"Contact Type"];
     [b singleOptionPickerForProperty:@selector(typeId) WithPickerOptions:[PickerOption contactTypes]];
@@ -137,10 +140,10 @@
     return v;
 }
 
-- (UIView*) rightContentWithFrame:(CGRect)frame {
+- (UIView*) rightContactContentWithFrame:(CGRect)frame contact:(Contact*)contact {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:contact] autorelease];
     
     [b labelWithText:@"Location"];
     [b singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
@@ -160,6 +163,59 @@
     [b labelWithText:@"Disposition"];
     [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];        
     
+    [b labelWithText:@"Comments"];
+    [b textAreaForProperty:@selector(comments)];
+
+    return v;
+}
+
+- (UIView*) leftEventContentWithFrame:(CGRect)frame event:(Event*)event {
+    UIView* v = [[UIView alloc] initWithFrame:frame];
+    
+    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:event] autorelease];
+    
+    [b labelWithText:@"Event Type"];
+    [b singleOptionPickerForProperty:@selector(eventTypeId) WithPickerOptions:[PickerOption eventTypes]];
+    
+    [b labelWithText:@"Event Type (Other)"];
+    [b textFieldForProperty:@selector(eventTypeOther)];
+    
+    [b labelWithText:@"Repeat Key"];
+    [b textFieldForProperty:@selector(repeatKey)];
+    
+    [b labelWithText:@"Start Date"];
+    [b datePickerForProperty:@selector(startDate)];
+    
+    [b labelWithText:@"End Date"];
+    [b datePickerForProperty:@selector(endDate)];
+    
+    [b labelWithText:@"Incentive Type"];
+    [b singleOptionPickerForProperty:@selector(incentiveTypeId) WithPickerOptions:[PickerOption incentives]];
+    
+    [b labelWithText:@"Incentive (Cash)"];
+    [b textFieldForProperty:@selector(distanceId)];
+    
+    [b labelWithText:@"Incentive (Non-Cash)"];
+    [b textFieldForProperty:@selector(distanceId)];
+    
+    return v;
+}
+
+
+- (UIView*) rightEventContentWithFrame:(CGRect)frame event:(Event*)event{
+    UIView* v = [[UIView alloc] initWithFrame:frame];
+    
+    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:event] autorelease];
+
+    [b labelWithText:@"Disposition"];
+    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];
+
+    [b labelWithText:@"Disposition Category"];
+    [b singleOptionPickerForProperty:@selector(dispositionCategoryId) WithPickerOptions:[PickerOption dispositionCategory]];     
+    
+    [b labelWithText:@"Breakoff"];
+    [b singleOptionPickerForProperty:@selector(breakoffId) WithPickerOptions:[PickerOption breakoff]];     
+
     
     [b labelWithText:@"Comments"];
     [b textAreaForProperty:@selector(comments)];
@@ -204,7 +260,7 @@
 - (void) done {
     [self commitTransaction];
     [self dismissModalViewControllerAnimated:NO];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ContactInitiated" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ContactClosed" object:self];
 }
 
 - (void) startTransaction {
