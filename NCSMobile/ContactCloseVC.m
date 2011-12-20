@@ -63,13 +63,16 @@
     [scroll addSubview:left];
     [scroll addSubview:right];    
 
+    CGFloat yLoc = contactFrameHeight;
     for (Event* e in self.contact.events) {
-        UIView* le = [self leftEventContentWithFrame:CGRectMake(150, contactFrameHeight, lRect.size.width, eventFrameHeight) event:e];
-        UIView* re = [self rightEventContentWithFrame:CGRectMake(rRect.origin.x, contactFrameHeight, rRect.size.width, eventFrameHeight) event:e];
+        UIView* le = [self leftEventContentWithFrame:CGRectMake(150, yLoc, lRect.size.width, eventFrameHeight) event:e];
+        UIView* re = [self rightEventContentWithFrame:CGRectMake(rRect.origin.x, yLoc, rRect.size.width, eventFrameHeight) event:e];
         re.backgroundColor = [UIColor whiteColor];
         le.backgroundColor = [UIColor whiteColor];
         [scroll addSubview:le];
         [scroll addSubview:re];
+        
+        yLoc += eventFrameHeight;
     }
     
     scroll.backgroundColor = [UIColor colorWithRed:214.0/255.0 green:216.0/255.0 blue:222.0/255.0 alpha:1.0];
