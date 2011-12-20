@@ -12,7 +12,7 @@
 
 @implementation Contact
 
-@dynamic typeId, startDate, endDate, person, initiated, location, events;
+@dynamic typeId, startDate, endDate, person, initiated, location, events, whoContactedId, whoContactedOther, comments;
 
 
 @end

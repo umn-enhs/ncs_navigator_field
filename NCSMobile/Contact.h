@@ -19,6 +19,9 @@
 @property(nonatomic,retain) NSDate* startDate;
 @property(nonatomic,retain) NSDate* endDate;
 @property(nonatomic) BOOL initiated;
+@property(nonatomic,retain) NSNumber* whoContactedId;
+@property(nonatomic,retain) NSString* whoContactedOther;
+@property(nonatomic,retain) NSString* comments;
 @property(nonatomic,retain) NSSet* events;
 @property(nonatomic,retain) Location* location;
 
