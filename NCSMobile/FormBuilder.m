@@ -15,6 +15,7 @@
 #import "TextArea.h"
 
 @interface FormBuilder()
+- (id) initWithView:(UIView *)view object:(id)obj cursor:(FormBuilderCursor*)cursor;
 - (id) objectValueForKey:(SEL)key;
 @end
     
@@ -24,13 +25,26 @@
 @synthesize object=_object;
 @synthesize cursor=_cursor;
 
-- (id) initwithView:(UIView*)view object:(id)obj {
+- (id) initWithView:(UIView*)view object:(id)obj {
     if (self = [super init]) {
         self.view = view;
         self.object = obj;
         self.cursor = [FormBuilderCursor new];
     }
     return self;
+}
+
+- (id) initWithView:(UIView*)view object:(id)obj cursor:(FormBuilderCursor*)cursor {
+    if (self = [super init]) {
+        self.view = view;
+        self.object = obj;
+        self.cursor = cursor;
+    }
+    return self;
+}
+
+- (FormBuilder*) fieldsForObject:(id)object {
+    return [[[FormBuilder alloc] initWithView:self.view object:object cursor:self.cursor] autorelease];
 }
 
 - (void) sectionHeader:(NSString*)text {
@@ -78,6 +92,7 @@
     [self.view addSubview:t];
     [self.cursor addNewLine];
 }
+
 
 - (id) objectValueForKey:(SEL)key {
     return [_object respondsToSelector:key] ? [_object performSelector:key] : NULL;

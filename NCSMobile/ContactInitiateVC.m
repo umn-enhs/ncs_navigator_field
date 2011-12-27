@@ -97,7 +97,7 @@
 - (UIView*) leftContentWithFrame:(CGRect)frame {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initWithView:v object:self.contact] autorelease];
     
     [b labelWithText:@"Contact Type"];
     [b singleOptionPickerForProperty:@selector(typeId) WithPickerOptions:[PickerOption contactTypes]];
@@ -114,7 +114,7 @@
 - (UIView*) rightContentWithFrame:(CGRect)frame {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:self.contact] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initWithView:v object:self.contact] autorelease];
     
     [b labelWithText:@"Who was contacted"];
     [b singleOptionPickerForProperty:@selector(whoContactedId) WithPickerOptions:[PickerOption whoContacted]];

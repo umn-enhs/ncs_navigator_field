@@ -66,7 +66,13 @@
     s.name = @"Contact";
     Row *r = [[Row new] autorelease];
       
-    r.text = _contact.initiated ? @"Continue Contact" : @"Initiate Contact";
+    if (_contact.closed) {
+        r.text = @"Modify Closed Contact";
+    } else if (_contact.initiated) {
+        r.text = @"Continue Contact";
+    } else {
+        r.text = @"Initiate Contact";
+    }
     
     NSArray* eventNames = [[_contact.events allObjects] valueForKey:@"name"];
     NSString* eventsText = [eventNames componentsJoinedByString:@" and "];

@@ -5,41 +5,62 @@
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zipCode" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="address" inverseEntity="Location" syncable="YES"/>
+        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Location" inverseName="address" inverseEntity="Location" syncable="YES"/>
     </entity>
     <entity name="Contact" representedClassName="Contact" syncable="YES">
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dispositionId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="distanceTraveled" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="initiated" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="interpreterId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="interpreterOther" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="languageId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="languageOther" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privateDetail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privateId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="typeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="whoContactedId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="whoContactedOther" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="contact" inverseEntity="Event" syncable="YES"/>
-        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="contact" inverseEntity="Location" syncable="YES"/>
-        <relationship name="person" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="contact" inverseEntity="Person" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="contact" inverseEntity="Event" syncable="YES"/>
+        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Location" inverseName="contact" inverseEntity="Location" syncable="YES"/>
+        <relationship name="person" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Person" inverseName="contact" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="breakOffId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dispositionCategoryId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dispositionId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eventTypeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventTypeOther" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="incentiveCash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="incentiveNonCash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="incentiveTypeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repeatKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="contact" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="events" inverseEntity="Contact" syncable="YES"/>
-        <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instrument" inverseName="event" inverseEntity="Instrument" syncable="YES"/>
+        <relationship name="instruments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Instrument" inverseName="event" inverseEntity="Instrument" syncable="YES"/>
     </entity>
     <entity name="Instrument" representedClassName="Instrument" syncable="YES">
         <attribute name="externalResponseSetId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="instrumentTemplateId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="instruments" inverseEntity="Event" syncable="YES"/>
-        <relationship name="instrumentTemplate" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="InstrumentTemplate" syncable="YES"/>
+        <relationship name="instrumentTemplate" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="InstrumentTemplate" inverseName="instrument" inverseEntity="InstrumentTemplate" syncable="YES"/>
     </entity>
     <entity name="InstrumentTemplate" representedClassName="InstrumentTemplate" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="representation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="instrument" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Instrument" inverseName="instrumentTemplate" inverseEntity="Instrument" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="other" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="address" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="location" inverseEntity="Address" syncable="YES"/>
+        <relationship name="address" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Address" inverseName="location" inverseEntity="Address" syncable="YES"/>
         <relationship name="contact" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="location" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
@@ -51,7 +72,7 @@
     </entity>
     <elements>
         <element name="Address" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Contact" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Contact" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Instrument" positionX="160" positionY="192" width="128" height="90"/>
         <element name="InstrumentTemplate" positionX="160" positionY="192" width="128" height="75"/>

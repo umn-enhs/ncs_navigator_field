@@ -46,6 +46,8 @@
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contactInitiated) name:@"ContactInitiated" object:NULL];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeContactRequested) name:@"CloseContactSelected" object:NULL];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stoppedAdministeringInstrument:) name:@"StoppedAdministeringInstrument" object:NULL];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:@"ContactClosed" object:nil];
     }
     return self;
 }
@@ -58,6 +60,25 @@
     ci.contact = self.detailItem;
     ci.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:ci animated:YES completion:NULL];
+}
+
+- (void) stoppedAdministeringInstrument:(NSNotification*)notification {
+    Contact* c = [[notification userInfo] objectForKey:@"contact"];
+    
+    if (c && c == self.detailItem) {
+        self.simpleTable = [[ContactTable alloc]initUsingContact:c];
+        [self.tableView reloadData];
+        
+        InstrumentListVC* ci = [[InstrumentListVC alloc] initWithNibName:@"InstrumentListVC" bundle:nil];
+        ci.contact = c;
+        ci.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:ci animated:YES completion:NULL];
+    }
+}
+
+- (void) refreshView {
+    self.simpleTable = [[ContactTable alloc]initUsingContact:self.detailItem];
+    [self.tableView reloadData];
 }
 
 - (void) closeContactRequested {
@@ -131,7 +152,6 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    NSLog(@"Orientation %d", interfaceOrientation);
     return YES;
 }
 

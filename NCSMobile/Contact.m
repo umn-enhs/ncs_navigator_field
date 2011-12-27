@@ -12,7 +12,11 @@
 
 @implementation Contact
 
-@dynamic typeId, startDate, endDate, person, initiated, location, events, whoContactedId, whoContactedOther, comments;
+@dynamic typeId, startDate, endDate, person, initiated, location, events, whoContactedId, whoContactedOther, comments, languageId, languageOther, interpreterId, interpreterOther, privateId, privateDetail, distanceId, dispositionId;
 
+
+- (BOOL) closed {
+    return [self.dispositionId integerValue] != 0;
+}
 
 @end

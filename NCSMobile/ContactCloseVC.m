@@ -112,7 +112,7 @@
 - (UIView*) leftContactContentWithFrame:(CGRect)frame contact:(Contact*)contact {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:contact] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initWithView:v object:contact] autorelease];
     
     [b sectionHeader:@"Contact"];
     
@@ -149,15 +149,16 @@
 - (UIView*) rightContactContentWithFrame:(CGRect)frame contact:(Contact*)contact {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:contact] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initWithView:v object:contact] autorelease];
     
     [b sectionHeader:@""];
     
-    [b labelWithText:@"Location"];
-    [b singleOptionPickerForProperty:@selector(locationId) WithPickerOptions:[PickerOption location]];
+    FormBuilder* bb = [b fieldsForObject:contact.location];
+    [bb labelWithText:@"Location"];
+    [bb singleOptionPickerForProperty:@selector(code) WithPickerOptions:[PickerOption location]];
     
-    [b labelWithText:@"Location (Other)"];
-    [b textFieldForProperty:@selector(locationOther)];
+    [bb labelWithText:@"Location (Other)"];
+    [bb textFieldForProperty:@selector(other)];
     
     [b labelWithText:@"Was contact private"];
     [b singleOptionPickerForProperty:@selector(privateId) WithPickerOptions:[PickerOption private]];
@@ -166,7 +167,7 @@
     [b textFieldForProperty:@selector(privateDetail)];
     
     [b labelWithText:@"Distance traveled"];
-    [b textFieldForProperty:@selector(distanceId)];
+    [b textFieldForProperty:@selector(distanceTraveled)];
     
     [b labelWithText:@"Disposition"];
     [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[PickerOption disposition]];        
@@ -180,7 +181,7 @@
 - (UIView*) leftEventContentWithFrame:(CGRect)frame event:(Event*)event {
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:event] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initWithView:v object:event] autorelease];
     
     [b sectionHeader:[NSString stringWithFormat:@"Event - %@", event.name]];
     
@@ -203,10 +204,10 @@
     [b singleOptionPickerForProperty:@selector(incentiveTypeId) WithPickerOptions:[PickerOption incentives]];
     
     [b labelWithText:@"Incentive (Cash)"];
-    [b textFieldForProperty:@selector(distanceId)];
+    [b textFieldForProperty:@selector(incentiveCash)];
     
     [b labelWithText:@"Incentive (Non-Cash)"];
-    [b textFieldForProperty:@selector(distanceId)];
+    [b textFieldForProperty:@selector(incentiveNonCash)];
     
     return v;
 }
@@ -215,7 +216,7 @@
 - (UIView*) rightEventContentWithFrame:(CGRect)frame event:(Event*)event{
     UIView* v = [[UIView alloc] initWithFrame:frame];
     
-    FormBuilder* b = [[[FormBuilder alloc] initwithView:v object:event] autorelease];
+    FormBuilder* b = [[[FormBuilder alloc] initWithView:v object:event] autorelease];
 
     [b sectionHeader:@""];
     

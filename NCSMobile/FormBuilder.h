@@ -23,9 +23,10 @@
 @property(nonatomic,retain)id object;
 @property(nonatomic,retain)FormBuilderCursor* cursor;
 
-- (id) initwithView:(UIView*)view object:(id)obj;
+- (id) initWithView:(UIView*)view object:(id)obj;
 
 // Builder methods
+- (FormBuilder*) fieldsForObject:(id)object;
 - (void) sectionHeader:(NSString*)text;
 - (void) labelWithText:(NSString*)text;
 - (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options;

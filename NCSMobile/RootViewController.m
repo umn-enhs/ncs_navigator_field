@@ -106,13 +106,14 @@
     Class dst = [viewController class];
     if ( src == [NUSectionVC class] &&  dst == [RootViewController class]) {
         NUSectionVC* sectionVC = (NUSectionVC*) [self.splitViewController.viewControllers objectAtIndex:1];
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, _detailViewController, nil];
         NUResponseSet* rs = sectionVC.responseSet;
         if (rs != NULL) {
             [self unloadSurveyor:_administeredInstrument responseSet:rs];
             _administeredInstrument = NULL;
         }
         
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, _detailViewController, nil];
+
     }    
 }
 
@@ -130,6 +131,10 @@
     }
     NSLog(@"Administered instrument with external response uuid: %@", instrument);
 
+    Contact* contact = instrument.event.contact;
+    NSDictionary* dict = [[[NSDictionary alloc] initWithObjectsAndKeys:contact, @"contact", instrument, @"instrument", nil] autorelease];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"StoppedAdministeringInstrument" object:self userInfo:dict];
+    
 //    [surveyorMoc 
     
 }
