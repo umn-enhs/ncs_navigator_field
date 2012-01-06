@@ -14,7 +14,7 @@
 @class ContactDisplayController;
 @class Instrument;
 
-@interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate> {
+@interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate, CasLoginDelegate> {
     Instrument* _administeredInstrument;
 }
 
@@ -28,5 +28,7 @@
 - (void)reloadButtonWasPressed;
 - (void) deleteButtonWasPressed;
 - (void) unloadSurveyor:(Instrument*)instrument responseSet:(NUResponseSet*)rs;
+
+- (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket;
 
 @end

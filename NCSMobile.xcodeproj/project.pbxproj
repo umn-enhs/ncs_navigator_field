@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0013ED9A14B65D84009F85CF /* NUCas.plist */; };
 		00145BA8149A7BEF00D3C1B5 /* ContactCloseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */; };
 		0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465C1434CDF9008D612B /* ContactNavigationTable.m */; };
 		002646601434CE02008D612B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465F1434CE02008D612B /* Person.m */; };
@@ -26,6 +27,8 @@
 		0026E696140347E700355BCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0026E694140347E700355BCB /* InfoPlist.strings */; };
 		002B2E4414362E4900410D09 /* nubic-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4214362E4900410D09 /* nubic-logo.png */; };
 		002B2E4514362E4900410D09 /* nu-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4314362E4900410D09 /* nu-logo.png */; };
+		0037D2BD14B60AA100B7D05A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0037D2BC14B60AA100B7D05A /* libz.dylib */; };
+		0037D2BF14B60AAA00B7D05A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0037D2BE14B60AAA00B7D05A /* libiconv.dylib */; };
 		00393C92148E54C000671899 /* SingleOptionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00393C91148E54C000671899 /* SingleOptionPicker.m */; };
 		00439FF814112E500097A878 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF714112E500097A878 /* CFNetwork.framework */; };
 		00439FFA14112E5E0097A878 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
@@ -95,6 +98,7 @@
 		00E323571422A23A00D3AEED /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E323561422A23A00D3AEED /* Section.m */; };
 		00E3235A1422B08200D3AEED /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E323591422B08200D3AEED /* Row.m */; };
 		00E3235D1422EB6A00D3AEED /* ContactTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3235C1422EB6A00D3AEED /* ContactTable.m */; };
+		00EDE59914B4048900B8A643 /* libNUCas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EDE59814B4048900B8A643 /* libNUCas.a */; };
 		00FF37DE1417C50D0009B1D4 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37DD1417C50D0009B1D4 /* Instrument.m */; };
 		00FF37E71417D2380009B1D4 /* ContactNavigationTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF37E41417CFA30009B1D4 /* ContactNavigationTableTest.m */; };
 		00FF37E81417D2B80009B1D4 /* ContactNavigationTableTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 00FF37E31417CFA30009B1D4 /* ContactNavigationTableTest.h */; };
@@ -251,6 +255,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0013ED9A14B65D84009F85CF /* NUCas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NUCas.plist; path = NCSMobile/NUCas.plist; sourceTree = "<group>"; };
 		00145BA6149A7BEF00D3C1B5 /* ContactCloseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCloseVC.h; sourceTree = "<group>"; };
 		00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCloseVC.m; sourceTree = "<group>"; };
 		0026465B1434CDF9008D612B /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTable.h; sourceTree = "<group>"; };
@@ -279,6 +284,8 @@
 		0026E697140347E700355BCB /* NCSMobileTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NCSMobileTests-Prefix.pch"; sourceTree = "<group>"; };
 		002B2E4214362E4900410D09 /* nubic-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nubic-logo.png"; path = "NCSMobile/nubic-logo.png"; sourceTree = "<group>"; };
 		002B2E4314362E4900410D09 /* nu-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nu-logo.png"; path = "NCSMobile/nu-logo.png"; sourceTree = "<group>"; };
+		0037D2BC14B60AA100B7D05A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0037D2BE14B60AAA00B7D05A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		00393C90148E54C000671899 /* SingleOptionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleOptionPicker.h; sourceTree = "<group>"; };
 		00393C91148E54C000671899 /* SingleOptionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleOptionPicker.m; sourceTree = "<group>"; };
 		00439FF714112E500097A878 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -862,6 +869,7 @@
 		00E323591422B08200D3AEED /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
 		00E3235B1422EB6A00D3AEED /* ContactTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTable.h; sourceTree = "<group>"; };
 		00E3235C1422EB6A00D3AEED /* ContactTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTable.m; sourceTree = "<group>"; };
+		00EDE59814B4048900B8A643 /* libNUCas.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNUCas.a; path = "../NUCas/build/Release-iphoneos/libNUCas.a"; sourceTree = "<group>"; };
 		00FF37DC1417C50D0009B1D4 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		00FF37DD1417C50D0009B1D4 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
 		00FF37E31417CFA30009B1D4 /* ContactNavigationTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTableTest.h; sourceTree = "<group>"; };
@@ -873,6 +881,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0037D2BF14B60AAA00B7D05A /* libiconv.dylib in Frameworks */,
+				0037D2BD14B60AA100B7D05A /* libz.dylib in Frameworks */,
+				00EDE59914B4048900B8A643 /* libNUCas.a in Frameworks */,
 				00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */,
 				0065B8C414631D3D00743D14 /* libsbjson-ios.a in Frameworks */,
 				009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */,
@@ -906,6 +917,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				0013ED9A14B65D84009F85CF /* NUCas.plist */,
 				00AEB0451474D31C00952EBD /* TASKS.md */,
 				006C600A1434DF0D00F52CD8 /* README.md */,
 				0043A016141133410097A878 /* Other Sources */,
@@ -929,6 +941,9 @@
 		0026E667140347E700355BCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0037D2BE14B60AAA00B7D05A /* libiconv.dylib */,
+				0037D2BC14B60AA100B7D05A /* libz.dylib */,
+				00EDE59814B4048900B8A643 /* libNUCas.a */,
 				0065B69D14631D2D00743D14 /* json-framework */,
 				0065B5E014631D1A00743D14 /* surveyor_ios */,
 				009827571434D088002A8777 /* RestKit.xcodeproj */,
@@ -2702,8 +2717,8 @@
 			buildConfigurationList = 0026E69E140347E700355BCB /* Build configuration list for PBXNativeTarget "NCSMobile" */;
 			buildPhases = (
 				0026E660140347E700355BCB /* Sources */,
-				0026E661140347E700355BCB /* Frameworks */,
 				0026E662140347E700355BCB /* Resources */,
+				0026E661140347E700355BCB /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2942,6 +2957,7 @@
 				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
 				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
 				00A03C791499536700223FD2 /* InstrumentListVC.xib in Resources */,
+				0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3229,7 +3245,7 @@
 		0026E69F140347E700355BCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3245,14 +3261,17 @@
 				);
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)\"",
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
+					"\"$(SRCROOT)/../NUCas/build/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUCas\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3260,7 +3279,7 @@
 		0026E6A0140347E700355BCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3275,14 +3294,17 @@
 				);
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)\"",
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
+					"\"$(SRCROOT)/../NUCas/build/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUCas\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

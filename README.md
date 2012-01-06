@@ -3,6 +3,12 @@ NCS Navigator Field
 
 This is an ios application which assists field workers in data collection for the National Children's Study. 
 
+Configuration
+-------------
+
+1. Copy NUCas.plist-sample to NUCas.plist
+2. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NUCas.plist
+
 Testing
 -------
 

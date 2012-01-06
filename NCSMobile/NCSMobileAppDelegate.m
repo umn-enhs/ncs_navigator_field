@@ -9,7 +9,6 @@
 #import "NCSMobileAppDelegate.h"
 
 #import "RootViewController.h"
-#import "LoginController.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
 #import "Event.h"
@@ -137,9 +136,6 @@
     [self.window makeKeyAndVisible];
     
     //    
-    LoginController *login = [[LoginController alloc] init];
-    [self.rootViewController.navigationController presentModalViewController:login animated:NO];
-    [login release];
 
     return YES;
 }

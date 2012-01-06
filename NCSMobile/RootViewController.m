@@ -21,6 +21,8 @@
 #import "InstrumentTemplate.h"
 #import "SBJsonWriter.h"
 #import "NUResponseSet.h"
+#import "NUCas.h"
+
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -184,7 +186,10 @@
 #pragma Actions
 - (void)reloadButtonWasPressed {
     NSLog(@"Reload Pressed!!!");
-    [self loadData];
+    CasLoginVC *login = [[CasLoginVC alloc] init];
+    login.delegate = self;
+    [self presentViewController:login animated:YES completion:NULL];
+    
 //
 //    RKObjectManager* objectManager = [RKObjectManager sharedManager];
 //    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
@@ -221,6 +226,16 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
 }
+
+
+#pragma mark - Cas Login Delegate
+- (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket {
+    
+    NSLog(@"My Successful login: %@", serviceTicket);
+//    [self loadData];
+
+}
+
 
 - (void)loadObjectsFromDataStore {
 	NSFetchRequest* request = [Contact fetchRequest];

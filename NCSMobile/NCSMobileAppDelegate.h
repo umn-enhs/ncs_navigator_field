@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "NUSectionVC.h"
 #import "NUSurveyVC.h"
+#import "NUCas.h"
+
 @class RootViewController;
+
 
 @class ContactDisplayController;
 
-@interface NCSMobileAppDelegate : NSObject <UIApplicationDelegate> {
+@interface NCSMobileAppDelegate : NSObject <UIApplicationDelegate,CasLoginDelegate> {
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
