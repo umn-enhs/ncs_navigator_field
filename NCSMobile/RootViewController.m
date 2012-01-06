@@ -230,9 +230,25 @@
 
 #pragma mark - Cas Login Delegate
 - (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket {
-    
     NSLog(@"My Successful login: %@", serviceTicket);
-//    [self loadData];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
+    [serviceTicket present];
+    if (serviceTicket.ok) {
+        CasConfiguration* conf = [CasConfiguration new];
+        CasClient* client = [[CasClient alloc] initWithConfiguration:conf];
+        CasProxyTicket* t = [client proxyTicket:NULL serviceURL:@"http://localhost:4567/staff/xyz123/contacts.json" proxyGrantingTicket:serviceTicket.pgt];
+        [t reify];
+        if (!t.error) {
+            NSLog(@"Proxy ticket successfully obtained: %@", t.proxyTicket);
+        } else {
+            NSLog(@"Failed to obtain proxy ticket: %@", t.message);
+        }
+    } else {
+        NSLog(@"Presenting service ticket failed: %@", [serviceTicket message]);
+    }
+    
+  //    [self loadData];
 
 }
 
