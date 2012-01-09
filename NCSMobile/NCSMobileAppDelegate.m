@@ -114,7 +114,7 @@
 	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
     
 //    // Initialize store
-    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"NCSCoreData.sqlite" usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
+    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"main.sqlite" usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
 //    objectStore.delegate = self;
     objectManager.objectStore = objectStore;
     NSManagedObjectContext* restkitMoc = objectStore.managedObjectContext;
@@ -191,6 +191,9 @@
     [super dealloc];
 }
 
++(NSURL*)surveyorStoreURL {
+    return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"surveyor.sqlite"];
+}
 - (void)saveContext
 {
     NSError *error = nil;
@@ -278,10 +281,11 @@ BOOL RSRunningOnOS4OrBetter(void) {
     {
         return __managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"NCSMobile" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"surveyor" withExtension:@"momd"];
     __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
     return __managedObjectModel;
 }
+
 
 /**
  Returns the persistent store coordinator for the application.
@@ -294,11 +298,9 @@ BOOL RSRunningOnOS4OrBetter(void) {
         return __persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"NCSMobile.sqlite"];
-    
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NCSMobileAppDelegate surveyorStoreURL] options:nil error:&error])
     {
         /*
          Replace this implementation with code to handle the error appropriately.
@@ -330,7 +332,7 @@ BOOL RSRunningOnOS4OrBetter(void) {
     // iOS 4 encryption
     if(RSRunningOnOS4OrBetter()){
         NSDictionary *fileAttributes = [NSDictionary dictionaryWithObject:NSFileProtectionComplete forKey:NSFileProtectionKey];
-        if(![[NSFileManager defaultManager] setAttributes:fileAttributes ofItemAtPath:storeURL.path error:&error]){
+        if(![[NSFileManager defaultManager] setAttributes:fileAttributes ofItemAtPath:[NCSMobileAppDelegate surveyorStoreURL].path error:&error]){
             // Handle error
         }
     }
@@ -343,7 +345,7 @@ BOOL RSRunningOnOS4OrBetter(void) {
 /**
  Returns the URL to the application's Documents directory.
  */
-- (NSURL *)applicationDocumentsDirectory
++ (NSURL*)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }

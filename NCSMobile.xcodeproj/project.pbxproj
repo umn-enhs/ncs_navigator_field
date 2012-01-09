@@ -89,10 +89,10 @@
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
 		00AEB0461474D31C00952EBD /* TASKS.md in Resources */ = {isa = PBXBuildFile; fileRef = 00AEB0451474D31C00952EBD /* TASKS.md */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
-		00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */; };
+		00B7519414632A2D00B2C2DA /* surveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* surveyor.xcdatamodeld */; };
 		00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */; };
 		00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098277C1434D088002A8777 /* libRestKitCoreData.a */; };
-		00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */; };
+		00C9C6E5146CE66300F6D339 /* main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C6E3146CE66300F6D339 /* main.xcdatamodeld */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
 		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
 		00E323571422A23A00D3AEED /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E323561422A23A00D3AEED /* Section.m */; };
@@ -855,10 +855,10 @@
 		00AEB0451474D31C00952EBD /* TASKS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TASKS.md; sourceTree = "<group>"; };
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSMobile.xcdatamodel; sourceTree = "<group>"; };
+		00B7519314632A2D00B2C2DA /* surveyor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = surveyor.xcdatamodel; sourceTree = "<group>"; };
 		00C4095B1471DD5E00F0F3FA /* InstrumentTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentTemplate.h; sourceTree = "<group>"; };
 		00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentTemplate.m; sourceTree = "<group>"; };
-		00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NCSCoreData.xcdatamodel; sourceTree = "<group>"; };
+		00C9C6E4146CE66300F6D339 /* main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = main.xcdatamodel; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		00E3234F142280AD00D3AEED /* ContactManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManagerTest.h; sourceTree = "<group>"; };
@@ -1009,8 +1009,8 @@
 				0088C7D714717D580051AAE6 /* Images */,
 				006EBEE8141673A1003D69CF /* Other */,
 				006EBEE714115870003D69CF /* NIBs */,
-				00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */,
-				00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */,
+				00B7519214632A2D00B2C2DA /* surveyor.xcdatamodeld */,
+				00C9C6E3146CE66300F6D339 /* main.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3023,9 +3023,9 @@
 				0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */,
 				002646601434CE02008D612B /* Person.m in Sources */,
 				00A392DF14361C53003B19F3 /* LoginController.m in Sources */,
-				00B7519414632A2D00B2C2DA /* NCSMobile.xcdatamodeld in Sources */,
+				00B7519414632A2D00B2C2DA /* surveyor.xcdatamodeld in Sources */,
 				00B6CD00146B1A77004767BE /* Location.m in Sources */,
-				00C9C6E5146CE66300F6D339 /* NCSCoreData.xcdatamodeld in Sources */,
+				00C9C6E5146CE66300F6D339 /* main.xcdatamodeld in Sources */,
 				00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */,
 				005108EE148440C000732623 /* NUScrollView.m in Sources */,
 				004FC7161486BFBC00A378DC /* PickerOption.m in Sources */,
@@ -3401,25 +3401,25 @@
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		00B7519214632A2D00B2C2DA /* NCSMobile.xcdatamodeld */ = {
+		00B7519214632A2D00B2C2DA /* surveyor.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */,
+				00B7519314632A2D00B2C2DA /* surveyor.xcdatamodel */,
 			);
-			currentVersion = 00B7519314632A2D00B2C2DA /* NCSMobile.xcdatamodel */;
-			name = NCSMobile.xcdatamodeld;
-			path = NCSMobile/NCSMobile.xcdatamodeld;
+			currentVersion = 00B7519314632A2D00B2C2DA /* surveyor.xcdatamodel */;
+			name = surveyor.xcdatamodeld;
+			path = NCSMobile/surveyor.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		00C9C6E3146CE66300F6D339 /* NCSCoreData.xcdatamodeld */ = {
+		00C9C6E3146CE66300F6D339 /* main.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */,
+				00C9C6E4146CE66300F6D339 /* main.xcdatamodel */,
 			);
-			currentVersion = 00C9C6E4146CE66300F6D339 /* NCSCoreData.xcdatamodel */;
-			name = NCSCoreData.xcdatamodeld;
-			path = NCSMobile/NCSCoreData.xcdatamodeld;
+			currentVersion = 00C9C6E4146CE66300F6D339 /* main.xcdatamodel */;
+			name = main.xcdatamodeld;
+			path = NCSMobile/main.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

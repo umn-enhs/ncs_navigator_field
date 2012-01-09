@@ -54,7 +54,7 @@
     <entity name="InstrumentTemplate" representedClassName="InstrumentTemplate" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="representation" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="instrument" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Instrument" inverseName="instrumentTemplate" inverseEntity="Instrument" syncable="YES"/>
+        <relationship name="instrument" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instrument" inverseName="instrumentTemplate" inverseEntity="Instrument" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -75,7 +75,7 @@
         <element name="Contact" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Instrument" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="InstrumentTemplate" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="InstrumentTemplate" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Location" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Person" positionX="160" positionY="192" width="128" height="120"/>
     </elements>

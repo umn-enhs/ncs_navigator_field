@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 
+#import "NCSMobileAppDelegate.h"
 #import "ContactDisplayController.h"
 #import "ContactNavigationTable.h"
 #import "Event.h"
@@ -214,11 +215,24 @@
             NSLog(@"Error while deting contact.");
         }
     }
+    
+    [self purgeSurveyor];
+    
     self.contacts = [NSArray array];
     
     self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
     
 	[self.tableView reloadData];
+}
+
+- (void)purgeSurveyor {
+    NSError *error;
+    NSPersistentStoreCoordinator *storeCoordinator = [UIAppDelegate persistentStoreCoordinator];
+    NSURL *storeURL = [NCSMobileAppDelegate surveyorStoreURL];
+    NSPersistentStore* store = [storeCoordinator persistentStoreForURL:storeURL];
+
+    [storeCoordinator removePersistentStore:store error:&error];
+    [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
 }
 
 - (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket {

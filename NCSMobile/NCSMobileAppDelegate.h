@@ -27,6 +27,11 @@
 
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 
++ (NSURL*)surveyorStoreURL;
++ (NSURL*)applicationDocumentsDirectory;
+
+
+
 /* imported for surveyor_ios */
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

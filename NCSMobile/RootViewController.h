@@ -22,6 +22,7 @@
 		
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 
+- (void)purgeSurveyor;
 - (void) loadSurveyor:(Instrument*)instrument;
 - (void) didSelectRow:(Row*)row;
 - (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket;
