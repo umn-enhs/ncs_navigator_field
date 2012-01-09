@@ -221,10 +221,13 @@
 	[self.tableView reloadData];
 }
 
-- (void)loadData {
+- (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket {
     // Load the object model via RestKit	
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
+    objectManager.client.OAuth2AccessToken = [NSString stringWithFormat:@"CasProxy %@", ticket.proxyTicket];
+    objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
+    NSString* path = @"/staff/xyz123/contacts.json";
+    [objectManager loadObjectsAtResourcePath:path delegate:self];
 }
 
 
@@ -237,10 +240,11 @@
     if (serviceTicket.ok) {
         CasConfiguration* conf = [CasConfiguration new];
         CasClient* client = [[CasClient alloc] initWithConfiguration:conf];
-        CasProxyTicket* t = [client proxyTicket:NULL serviceURL:@"http://localhost:4567/staff/xyz123/contacts.json" proxyGrantingTicket:serviceTicket.pgt];
+        CasProxyTicket* t = [client proxyTicket:NULL serviceURL:@"http://localhost:4567" proxyGrantingTicket:serviceTicket.pgt];
         [t reify];
         if (!t.error) {
             NSLog(@"Proxy ticket successfully obtained: %@", t.proxyTicket);
+            [self loadDataWithProxyTicket:t];
         } else {
             NSLog(@"Failed to obtain proxy ticket: %@", t.message);
         }
@@ -248,8 +252,6 @@
         NSLog(@"Presenting service ticket failed: %@", [serviceTicket message]);
     }
     
-  //    [self loadData];
-
 }
 
 

@@ -16,7 +16,7 @@
 
 @class ContactDisplayController;
 
-@interface NCSMobileAppDelegate : NSObject <UIApplicationDelegate,CasLoginDelegate> {
+@interface NCSMobileAppDelegate : NSObject <UIApplicationDelegate> {
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

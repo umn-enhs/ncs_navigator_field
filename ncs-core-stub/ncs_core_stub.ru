@@ -19,7 +19,7 @@ end
 require 'aker'
 Aker.configure do
   authorities :cas
-  ui_mode :cas
+  api_mode :cas_proxy
   central '/etc/nubic/bcsec-local.yml'
 end
 

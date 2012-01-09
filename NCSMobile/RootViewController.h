@@ -13,6 +13,7 @@
 
 @class ContactDisplayController;
 @class Instrument;
+@class CasProxyTicket;
 
 @interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate, CasLoginDelegate> {
     Instrument* _administeredInstrument;
@@ -23,7 +24,7 @@
 
 - (void) loadSurveyor:(Instrument*)instrument;
 - (void) didSelectRow:(Row*)row;
-- (void)loadData;
+- (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket;
 - (void)loadObjectsFromDataStore;
 - (void)reloadButtonWasPressed;
 - (void) deleteButtonWasPressed;
