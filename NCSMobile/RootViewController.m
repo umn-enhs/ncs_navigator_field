@@ -224,8 +224,7 @@
 - (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket {
     // Load the object model via RestKit	
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    objectManager.client.OAuth2AccessToken = [NSString stringWithFormat:@"CasProxy %@", ticket.proxyTicket];
-    objectManager.client.authenticationType = RKRequestAuthenticationTypeOAuth2;
+    [objectManager.client.HTTPHeaders setValue:[NSString stringWithFormat:@"CasProxy %@", ticket.proxyTicket] forKey:@"Authorization"];
     NSString* path = @"/staff/xyz123/contacts.json";
     [objectManager loadObjectsAtResourcePath:path delegate:self];
 }
