@@ -36,9 +36,7 @@ static TextField* _activeField = nil;
 - (id)initWithFrame:(CGRect)frame value:(NSString*)value {
     self = [super initWithFrame:frame];
     if (self) {
-        self.textField = [self initTextFieldWithValue:value];
-//        [self registerForKeyboardNotifications];
-        
+        self.textField = [self initTextFieldWithValue:value];        
         [self addSubview:self.textField];
     }
     return self;
@@ -63,88 +61,5 @@ static TextField* _activeField = nil;
     [self.handler updatedValue:self.textField.text];
     
 }
-
-// Call this method somewhere in your view controller setup code.
-
-//- (void)registerForKeyboardNotifications
-//
-//{
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//     
-//                                             selector:@selector(keyboardWasShown:)
-//     
-//                                                 name:UIKeyboardDidShowNotification object:nil];
-//    
-//    
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//     
-//                                             selector:@selector(keyboardWillBeHidden:)
-//     
-//                                                 name:UIKeyboardWillHideNotification object:nil];
-//    
-//    
-//    
-//}
-//
-//
-//
-//// Called when the UIKeyboardDidShowNotification is sent.
-//
-//- (void)keyboardWasShown:(NSNotification*)aNotification
-//
-//{
-//    UIScrollView* scrollView = (UIScrollView*) self.superview;
-//    
-//    NSDictionary* info = [aNotification userInfo];
-//    
-//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    
-//    
-//    
-//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-//    
-//    scrollView.contentInset = contentInsets;
-//    
-//    scrollView.scrollIndicatorInsets = contentInsets;
-//    
-//    
-//    
-//    // If active text field is hidden by keyboard, scroll it so it's visible
-//    
-//    // Your application might not need or want this behavior.
-//    
-//    CGRect aRect = self.frame;
-//    
-//    aRect.size.height -= kbSize.height;
-//    
-//    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-//        CGFloat sub = [[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortrait ? kbSize.height : kbSize.width;
-//        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-sub);
-//        
-//        [scrollView setContentOffset:scrollPoint animated:YES];
-//        
-//    }
-//    
-//}
-//
-//
-//
-//// Called when the UIKeyboardWillHideNotification is sent
-//
-//- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-//
-//{
-//    
-//    UIScrollView* scrollView = (UIScrollView*) self.superview;
-//    
-//    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-//    
-//    scrollView.contentInset = contentInsets;
-//    
-//    scrollView.scrollIndicatorInsets = contentInsets;
-//    
-//}
 
 @end
