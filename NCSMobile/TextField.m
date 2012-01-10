@@ -13,7 +13,8 @@
 
 @synthesize handler = _handler;
 @synthesize textField = _textField;
-@synthesize activeField = _activeField;
+
+static TextField* _activeField = nil;
 
 - (UITextField*)initTextFieldWithValue:(NSString*)value {
     UITextField* t = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
@@ -48,13 +49,17 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.activeField = self;
+    _activeField = self;
+}
+
++ (TextField*)activeField {
+    return _activeField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 
 {
-    self.activeField = nil;
+    _activeField = nil;
     [self.handler updatedValue:self.textField.text];
     
 }

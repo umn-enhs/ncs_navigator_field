@@ -13,19 +13,18 @@
 @interface TextField : UIView<UITextFieldDelegate> {
     ChangeHandler* _handler;
     UITextField* _textField;
-    UIView* _activeField;
 }
 
 @property(nonatomic,retain) ChangeHandler* handler;
 
 @property(nonatomic,retain) UITextField* textField;
 
-@property(nonatomic,retain) UIView* activeField;
-
 
 - (id)initWithFrame:(CGRect)frame value:(NSString*)value;
 
 - (void) addChangeHandler:(ChangeHandler*)handler;
+
++ (TextField*)activeField;
 
 //- (void)registerForKeyboardNotifications;
 

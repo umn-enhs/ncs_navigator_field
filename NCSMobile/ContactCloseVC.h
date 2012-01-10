@@ -14,9 +14,11 @@
 
 @interface ContactCloseVC : UIViewController {
     Contact* _contact;
+    UIScrollView* _scrollView;
 }
 
 @property(nonatomic,retain) Contact* contact;
+@property(nonatomic,retain) UIScrollView* scrollView;
 
 - (id)initWithContact:(Contact*)contact;
 - (UIView*) toolbarWithFrame:(CGRect)frame;

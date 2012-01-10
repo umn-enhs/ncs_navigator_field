@@ -12,10 +12,12 @@
 #import "NUScrollView.h"
 #import "Contact.h"
 #import "Event.h"
+#import "TextField.h"
 
 @implementation ContactCloseVC
 
 @synthesize contact=_contact;
+@synthesize scrollView = _scrollView;
 
 - (id)initWithContact:contact {
     if (self = [super init]) {
@@ -52,6 +54,7 @@
     /* Left and Right Pane */
     CGRect rect = CGRectMake(o.x, o.y + 50, width, height - 50 );
     UIScrollView* scroll = [[NUScrollView alloc] initWithFrame:rect];
+    self.scrollView = scroll;
     
     CGRect lRect, rRect;
     CGRectDivide(CGRectMake(150, 0, width-300, contactFrameHeight), &rRect, &lRect, (width-300) / 2, CGRectMaxXEdge);
@@ -77,6 +80,8 @@
     
     scroll.backgroundColor = [UIColor colorWithRed:214.0/255.0 green:216.0/255.0 blue:222.0/255.0 alpha:1.0];
     [self.view addSubview:scroll];
+    
+    [self registerForKeyboardNotifications];
     
     [self startTransaction];
 }
@@ -310,6 +315,61 @@
     NSUndoManager* undoManager = [moc undoManager];
     [undoManager undo];
     NSLog(@"Rolledback contact: %@", self.contact);
+}
+
+#pragma mark - Managing Keyboard
+
+// Taken from:
+//http://developer.apple.com/library/ios/#documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html
+- (void)registerForKeyboardNotifications
+
+{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(keyboardWasShown:)
+     
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(keyboardWillBeHidden:)
+     
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+    
+    
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification {
+    TextField* active = [TextField activeField];
+
+    if (active) {
+        NSDictionary* info = [aNotification userInfo];
+        
+        CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+        
+        [self.scrollView setContentOffset:CGPointMake(0.0, (active.frame.origin.y + active.superview.frame.origin.y + 80)-kbSize.width) animated:YES];
+
+    }    
+}
+
+
+
+// Called when the UIKeyboardWillHideNotification is sent
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+
+{
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    
+    self.scrollView.contentInset = contentInsets;
+    
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
 }
 
 @end
