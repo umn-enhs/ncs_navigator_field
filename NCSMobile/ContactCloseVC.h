@@ -35,4 +35,7 @@
 - (void) commitTransaction;
 - (void) rollbackTransaction;
 
+- (void)registerForKeyboardNotifications;
+
+
 @end
