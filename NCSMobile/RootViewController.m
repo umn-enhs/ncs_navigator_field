@@ -85,7 +85,7 @@
         //
         
         NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
-        surveyController.surveyJSONRepresentation = survey;
+        surveyController.surveyJson = survey;
         surveyController.responseSet = rs;
         NUSectionVC *sectionController = [[NUSectionVC alloc] init];
         surveyController.sectionController = sectionController;
