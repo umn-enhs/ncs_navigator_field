@@ -11,6 +11,12 @@
 @class NUPickerVC;
 @class ChangeHandler;
 
+typedef NSUInteger NUPickerVCPopoverSize;
+enum {
+    NUPickerVCPopoverSizeRegular,
+    NUPickerVCPopoverSizeLarge
+};
+
 @interface SingleOptionPicker : UIView<UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     NSNumber* _value;
     
@@ -23,6 +29,8 @@
     NSArray* _pickerOptions;
     
     UIPopoverController* _popover;
+    
+    NUPickerVCPopoverSize _popoverSize;
 }
 
 @property(nonatomic,retain) NSNumber* value;
@@ -37,8 +45,14 @@
 
 @property(nonatomic,retain) UIPopoverController* popover;
 
+@property(nonatomic) NUPickerVCPopoverSize popoverSize;
+
 - (id)initWithFrame:(CGRect)frame value:(NSNumber*)value pickerOptions:(NSArray*)options;
 
+- (id)initWithFrame:(CGRect)frame value:(NSNumber*)value pickerOptions:(NSArray*)options popoverSize:(NUPickerVCPopoverSize)popoverSize;
+
 - (void) addChangeHandler:(ChangeHandler*)handler;
+
+- (CGSize) CGSizeFromPopoverSize:(NUPickerVCPopoverSize)size;
 
 @end

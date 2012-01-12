@@ -3271,7 +3271,6 @@
 					"\"$(SRCROOT)\"",
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
-					"\"$(SRCROOT)/../NUCas/build/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -3304,7 +3303,6 @@
 					"\"$(SRCROOT)\"",
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
-					"\"$(SRCROOT)/../NUCas/build/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

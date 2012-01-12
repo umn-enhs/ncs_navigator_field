@@ -32,12 +32,39 @@
 + (NSArray*) pickerOptions {
     NSMutableArray* options = [[NSMutableArray alloc] init];
     for (DispositionCode* c in [DispositionCode all]) {
+        
+        NSString* abbrev = [DispositionCode abbreviationForDispositionEvent:c.event];
         PickerOption* o = [[PickerOption alloc] 
-            initWithText:[NSString stringWithFormat:@"%@ - %@", c.event, c.disposition]
+            initWithText:[NSString stringWithFormat:@"%@ - %@", abbrev, c.disposition]
             value:[c.interimCode integerValue]];
         [options addObject:o];
     }
     return options;
+}
+
++ (NSString*) abbreviationForDispositionEvent:(NSString*)event {
+    NSString* abbrev = [NSString string];
+
+    if ([self string:event containsString:@"Household"]) {
+        abbrev = @"House";
+    } else if ([self string:event containsString:@"Pregnancy"]) {
+        abbrev = @"Preg";
+    } else if ([self string:event containsString:@"General"]) {
+        abbrev = @"General";
+    } else if ([self string:event containsString:@"SAQ"]) {
+        abbrev = @"SAQ";
+    } else if ([self string:event containsString:@"Telephone"]) {
+        abbrev = @"Telephone";
+    } else if ([self string:event containsString:@"Internet"]) {
+        abbrev = @"Internet";
+    } else {
+        abbrev = event;
+    }
+    return abbrev;
+}
+                    
++ (BOOL) string:(NSString*)string containsString:(NSString*)substring {
+    return [string rangeOfString:substring options:NSCaseInsensitiveSearch].location != NSNotFound;
 }
 
 // Generated with:

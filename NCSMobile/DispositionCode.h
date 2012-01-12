@@ -19,5 +19,9 @@
 @property(nonatomic,retain) NSString* interimCode;
 
 + (NSArray*) all;
++ (NSArray*) pickerOptions;
++ (BOOL) string:(NSString*)string containsString:(NSString*)substring;
++ (NSString*) abbreviationForDispositionEvent:(NSString*)event;
+
 
 @end

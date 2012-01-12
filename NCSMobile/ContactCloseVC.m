@@ -14,6 +14,7 @@
 #import "Event.h"
 #import "TextField.h"
 #import "DispositionCode.h"
+#import "SingleOptionPicker.h"
 
 @implementation ContactCloseVC
 
@@ -176,7 +177,7 @@
     [b textFieldForProperty:@selector(distanceTraveled)];
     
     [b labelWithText:@"Disposition"];
-    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptions]];        
+    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptions] andPopoverSize:NUPickerVCPopoverSizeLarge];        
     
     [b labelWithText:@"Comments"];
     [b textAreaForProperty:@selector(comments)];
@@ -227,7 +228,7 @@
     [b sectionHeader:@""];
     
     [b labelWithText:@"Disposition"];
-    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptions]];
+    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptions] andPopoverSize:NUPickerVCPopoverSizeLarge];
 
     [b labelWithText:@"Disposition Category"];
     [b singleOptionPickerForProperty:@selector(dispositionCategoryId) WithPickerOptions:[PickerOption dispositionCategory]];     

@@ -25,12 +25,19 @@
 
 @synthesize pickerOptions = _pickerOptions;
 
+@synthesize popoverSize = _popoverSize;
+
 - (id)initWithFrame:(CGRect)frame value:(NSNumber*)value pickerOptions:(NSArray*)options {
+    return [self initWithFrame:frame value:value pickerOptions:options popoverSize:NUPickerVCPopoverSizeRegular];
+}
+
+- (id)initWithFrame:(CGRect)frame value:(NSNumber*)value pickerOptions:(NSArray*)options popoverSize:(NUPickerVCPopoverSize)popoverSize {
     self = [super initWithFrame:frame];
     if (self) {
         self.value = value;
         self.pickerOptions = options;
-
+        self.popoverSize = popoverSize;
+        
         
         // Create button
         self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -45,15 +52,15 @@
             }
         }
         [self.button setTitle:title forState:UIControlStateNormal];
-
+        
         // Setup button target
         [self.button addTarget:self action:@selector(showPicker) forControlEvents:UIControlEventTouchUpInside];
-        
         
         [self addSubview:self.button];
     }
     return self;
 }
+
 
 - (void) addChangeHandler:(ChangeHandler*)handler {
     self.handler = handler;
@@ -63,7 +70,8 @@
     NUPickerVC* p= [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
     [p loadView];
     [p setupDelegate:self withTitle:@"Pick One" date:NO];
-    p.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
+
+    p.contentSizeForViewInPopover = [self CGSizeFromPopoverSize:self.popoverSize];
 
     PickerOption* title = [PickerOption findWithValue:[self.value integerValue] fromOptions:self.pickerOptions];
     if (title) {
@@ -72,6 +80,14 @@
     NSInteger index = [self.pickerOptions indexOfObject:title];
     [p.picker selectRow:index inComponent:0 animated:NO];
     return p;
+}
+
+- (CGSize) CGSizeFromPopoverSize:(NUPickerVCPopoverSize)size {
+    if (size == NUPickerVCPopoverSizeLarge) {
+        return CGSizeMake(1000, 260);
+    } else {
+        return CGSizeMake(384, 260);
+    }
 }
 
 - (UIPopoverController*)initPopoverVCWithPicker:(NUPickerVC*)picker {
@@ -87,7 +103,7 @@
     if (!self.popover) {
         self.popover = [self initPopoverVCWithPicker:self.picker];
     }
-    [self.popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+    [self.popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 - (void) pickerDone{
