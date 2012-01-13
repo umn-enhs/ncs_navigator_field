@@ -38,7 +38,7 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
++ (NSURL *)applicationDocumentsDirectory;
 
 - (void) saveContext:(NSString *)triggeredBy;
 - (void) errorWithTitle:(NSString *)errorTitle message:(NSString *)errorMessage;
