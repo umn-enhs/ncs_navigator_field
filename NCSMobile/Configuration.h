@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Configuration : NSObject
+@interface Configuration : NSObject {
+    @private
+    NSString* _coreURL;
+}
+
+#pragma mark properties
+
+@property(nonatomic,retain) NSString* coreURL;
+
+
+#pragma Methods
+
++ (Configuration*) instance;
+
 
 @end

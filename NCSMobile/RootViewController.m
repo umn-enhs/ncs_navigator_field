@@ -23,7 +23,7 @@
 #import "SBJsonWriter.h"
 #import "NUResponseSet.h"
 #import "NUCas.h"
-
+#import "Configuration.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -253,7 +253,9 @@
     if (serviceTicket.ok) {
         CasConfiguration* conf = [CasConfiguration new];
         CasClient* client = [[CasClient alloc] initWithConfiguration:conf];
-        CasProxyTicket* t = [client proxyTicket:NULL serviceURL:@"http://localhost:4567" proxyGrantingTicket:serviceTicket.pgt];
+        NSString* coreURL = [Configuration instance].coreURL;
+
+        CasProxyTicket* t = [client proxyTicket:NULL serviceURL:coreURL proxyGrantingTicket:serviceTicket.pgt];
         [t reify];
         if (!t.error) {
             NSLog(@"Proxy ticket successfully obtained: %@", t.proxyTicket);

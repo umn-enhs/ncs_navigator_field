@@ -76,6 +76,7 @@
 		006FDD8A148FD2E80001BADE /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 006FDD89148FD2E80001BADE /* TextField.m */; };
 		00810AB81486D1AE0098C0D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00439FF914112E5E0097A878 /* CoreData.framework */; };
 		00810B5F14896B070098C0D0 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00810B5E14896B070098C0D0 /* DatePicker.m */; };
+		008911C814C7367B002CEACA /* NCSNavigatorField.plist-sample in Resources */ = {isa = PBXBuildFile; fileRef = 008911C714C7367B002CEACA /* NCSNavigatorField.plist-sample */; };
 		008C5711149696DD005EC22E /* TextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 008C5710149696DD005EC22E /* TextArea.m */; };
 		008F7DA1148BB3DD009BCF1D /* ContactInitiateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactInitiateVC.m */; };
 		008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA3148C1B16009BCF1D /* FormBuilder.m */; };
@@ -839,6 +840,7 @@
 		006FDD89148FD2E80001BADE /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
 		00810B5D14896B070098C0D0 /* DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePicker.h; sourceTree = "<group>"; };
 		00810B5E14896B070098C0D0 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
+		008911C714C7367B002CEACA /* NCSNavigatorField.plist-sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "NCSNavigatorField.plist-sample"; sourceTree = "<group>"; };
 		008C570F149696DD005EC22E /* TextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextArea.h; sourceTree = "<group>"; };
 		008C5710149696DD005EC22E /* TextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextArea.m; sourceTree = "<group>"; };
 		008F7D9F148BB3DD009BCF1D /* ContactInitiateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInitiateVC.h; sourceTree = "<group>"; };
@@ -925,6 +927,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				008911C714C7367B002CEACA /* NCSNavigatorField.plist-sample */,
 				0018F0A014C4BE880058D8F2 /* NCSNavigatorField.plist */,
 				0013ED9A14B65D84009F85CF /* NUCas.plist */,
 				00AEB0451474D31C00952EBD /* TASKS.md */,
@@ -2973,6 +2976,7 @@
 				00A03C791499536700223FD2 /* InstrumentListVC.xib in Resources */,
 				0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */,
 				0018F0A114C4BE880058D8F2 /* NCSNavigatorField.plist in Resources */,
+				008911C814C7367B002CEACA /* NCSNavigatorField.plist-sample in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

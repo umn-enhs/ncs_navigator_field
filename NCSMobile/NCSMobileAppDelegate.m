@@ -19,6 +19,7 @@
 #import "NUResponseSet.h"
 #import "Contact.h"
 #import "InstrumentTemplate.h"
+#import "Configuration.h"
 
 @implementation NCSMobileAppDelegate
 
@@ -111,7 +112,8 @@
     // TODO: These mappings should be in their own mapping class
     [self managedObjectContext];
     // Initialize RestKit
-	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:4567"];
+    NSString* coreURL = [Configuration instance].coreURL;
+	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:coreURL];
     
 //    // Initialize store
     RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"main.sqlite" usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
