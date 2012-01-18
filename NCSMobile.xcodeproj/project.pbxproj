@@ -10,6 +10,7 @@
 		0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0013ED9A14B65D84009F85CF /* NUCas.plist */; };
 		00145BA8149A7BEF00D3C1B5 /* ContactCloseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */; };
 		0018F03314C4BD160058D8F2 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0018F03214C4BD160058D8F2 /* Configuration.m */; };
+		0018F0A114C4BE880058D8F2 /* NCSNavigatorField.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0018F0A014C4BE880058D8F2 /* NCSNavigatorField.plist */; };
 		0026465D1434CDF9008D612B /* ContactNavigationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465C1434CDF9008D612B /* ContactNavigationTable.m */; };
 		002646601434CE02008D612B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026465F1434CE02008D612B /* Person.m */; };
 		0026E669140347E700355BCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E668140347E700355BCB /* UIKit.framework */; };
@@ -262,6 +263,7 @@
 		00145BA7149A7BEF00D3C1B5 /* ContactCloseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCloseVC.m; sourceTree = "<group>"; };
 		0018F03114C4BD160058D8F2 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		0018F03214C4BD160058D8F2 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		0018F0A014C4BE880058D8F2 /* NCSNavigatorField.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NCSNavigatorField.plist; sourceTree = "<group>"; };
 		0026465B1434CDF9008D612B /* ContactNavigationTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactNavigationTable.h; sourceTree = "<group>"; };
 		0026465C1434CDF9008D612B /* ContactNavigationTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactNavigationTable.m; sourceTree = "<group>"; };
 		0026465E1434CE02008D612B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -923,6 +925,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				0018F0A014C4BE880058D8F2 /* NCSNavigatorField.plist */,
 				0013ED9A14B65D84009F85CF /* NUCas.plist */,
 				00AEB0451474D31C00952EBD /* TASKS.md */,
 				006C600A1434DF0D00F52CD8 /* README.md */,
@@ -2969,6 +2972,7 @@
 				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
 				00A03C791499536700223FD2 /* InstrumentListVC.xib in Resources */,
 				0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */,
+				0018F0A114C4BE880058D8F2 /* NCSNavigatorField.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

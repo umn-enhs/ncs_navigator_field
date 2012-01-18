@@ -1,3 +1,4 @@
+# XCode and OS X
 .DS_Store
 *.swp
 *~.nib
@@ -13,3 +14,6 @@ build/
 *.mode2v3
 
 xcuserdata
+
+# ncs_navigator_field
+NCSNavigatorField.plist
