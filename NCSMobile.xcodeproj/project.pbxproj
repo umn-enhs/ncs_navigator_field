@@ -95,6 +95,7 @@
 		00B7519414632A2D00B2C2DA /* surveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B7519214632A2D00B2C2DA /* surveyor.xcdatamodeld */; };
 		00B7CCA814BDFB6E00D5901C /* DispositionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B7CCA714BDFB6E00D5901C /* DispositionCode.m */; };
 		00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */; };
+		00C67AF514C765CE005D2543 /* NUCas.plist-sample in Resources */ = {isa = PBXBuildFile; fileRef = 00C67AF414C765CE005D2543 /* NUCas.plist-sample */; };
 		00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098277C1434D088002A8777 /* libRestKitCoreData.a */; };
 		00C9C6E5146CE66300F6D339 /* main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C6E3146CE66300F6D339 /* main.xcdatamodeld */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
@@ -868,6 +869,7 @@
 		00B7CCA714BDFB6E00D5901C /* DispositionCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispositionCode.m; sourceTree = "<group>"; };
 		00C4095B1471DD5E00F0F3FA /* InstrumentTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentTemplate.h; sourceTree = "<group>"; };
 		00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentTemplate.m; sourceTree = "<group>"; };
+		00C67AF414C765CE005D2543 /* NUCas.plist-sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "NUCas.plist-sample"; path = "NCSMobile/NUCas.plist-sample"; sourceTree = "<group>"; };
 		00C9C6E4146CE66300F6D339 /* main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = main.xcdatamodel; sourceTree = "<group>"; };
 		00E32346142153CD00D3AEED /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		00E32347142153CD00D3AEED /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
+				00C67AF414C765CE005D2543 /* NUCas.plist-sample */,
 				008911C714C7367B002CEACA /* NCSNavigatorField.plist-sample */,
 				0018F0A014C4BE880058D8F2 /* NCSNavigatorField.plist */,
 				0013ED9A14B65D84009F85CF /* NUCas.plist */,
@@ -2977,6 +2980,7 @@
 				0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */,
 				0018F0A114C4BE880058D8F2 /* NCSNavigatorField.plist in Resources */,
 				008911C814C7367B002CEACA /* NCSNavigatorField.plist-sample in Resources */,
+				00C67AF514C765CE005D2543 /* NUCas.plist-sample in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
