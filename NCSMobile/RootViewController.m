@@ -24,6 +24,7 @@
 #import "NUResponseSet.h"
 #import "NUCas.h"
 #import "Configuration.h"
+#import "MBProgressHUD.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -185,37 +186,61 @@
 }
 
 #pragma Actions
-- (void)reloadButtonWasPressed {
-    NSLog(@"Reload Pressed!!!");
+- (void)syncButtonWasPressed {
+    NSLog(@"Sync Pressed!!!");
+    [self confirmSync];
+}
+
+- (void) confirmSync {
+    NSInteger closed = 0;
+    
+    for (Contact* c in self.contacts) {
+        if ([c closed]) {
+            closed++;
+        }
+    }
+    
+    NSString* msg = [NSString stringWithFormat:
+                     @"\nThis sync will:\n\n1. Save %d contacts on the server\n2. Retrieve new server contacts\n3. Remove %d completed contacts\n\nWould you like to continue?", [self.contacts count], closed];
+    
+    UIAlertView *alert = [[[UIAlertView alloc] 
+                          initWithTitle: @"Synchronize Contacts"
+                          message: msg
+                          delegate: self
+                          cancelButtonTitle: @"Cancel"
+                          otherButtonTitles: @"Sync", nil] autorelease];
+
+    
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+        case 0: 
+        {       
+            NSLog(@"Delete was cancelled by the user");
+        }
+        break;
+            
+        case 1: 
+        {
+            [self startCasLogin];
+        }
+        break;
+    }
+}
+- (void) startCasLogin {
     CasLoginVC *login = [[CasLoginVC alloc] init];
     login.delegate = self;
     [self presentViewController:login animated:YES completion:NULL];
-    
-//
-//    RKObjectManager* objectManager = [RKObjectManager sharedManager];
-//    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
-    
-//    self.table = [[ContactNavigationTable alloc] initWithContacts:[NSArray arrayWithObjects: nil]];
 
 }
 
 - (void) deleteButtonWasPressed {
     NSLog(@"Delete button pressed");
 
-//    NCSMobileAppDelegate* d = [[_contacts objectAtIndex:0] managedObjectContext];
-    for (Contact* c in _contacts) {
-        NSManagedObjectContext* ctx = [c managedObjectContext];
-        [ctx deleteObject:c];
-        
-        NSError* error = nil;
-        
-        [[c managedObjectContext] save:&error];
-        
-        if (nil != error) {
-            NSLog(@"Error while deting contact.");
-        }
-    }
-    
+    [self purgeContacts];
     [self purgeSurveyor];
     
     self.contacts = [NSArray array];
@@ -223,6 +248,21 @@
     self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
     
 	[self.tableView reloadData];
+}
+
+- (void)purgeContacts {
+    RKObjectManager* objectManager = [RKObjectManager sharedManager];
+    RKManagedObjectStore* objectStore = objectManager.objectStore;
+    [objectStore deletePersistantStore];
+    
+    
+//    NSError *error;
+//    NSPersistentStoreCoordinator *storeCoordinator = [UIAppDelegate persistentStoreCoordinator];
+//    NSURL *storeURL = [NCSMobileAppDelegate surveyorStoreURL];
+//    NSPersistentStore* store = [storeCoordinator persistentStoreForURL:storeURL];
+//    
+//    [storeCoordinator removePersistentStore:store error:&error];
+//    [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
 }
 
 - (void)purgeSurveyor {
@@ -243,18 +283,34 @@
     [objectManager loadObjectsAtResourcePath:path delegate:self];
 }
 
-
 #pragma mark - Cas Login Delegate
 - (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket {
     NSLog(@"My Successful login: %@", serviceTicket);
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:^{
+        MBProgressHUD* HUD = [[MBProgressHUD alloc] initWithView:self.splitViewController.view];
+        HUD.labelText = @"Syncing Contacts";
+        HUD.labelFont = [UIFont boldSystemFontOfSize:24];
+        HUD.minSize = CGSizeMake(200, 200);
+        HUD.dimBackground = YES;
+        HUD.delegate = self;
+        
+        [self.splitViewController.view addSubview:HUD];
+        [HUD showWhileExecuting:@selector(syncContacts:) onTarget:self withObject:serviceTicket animated:YES];
+    }];
+}
 
+- (void)syncContacts:(CasServiceTicket*)serviceTicket {
+//    [self deleteButtonWasPressed]; // TODO: This throws an exception
+    [self retrieveContacts:serviceTicket];
+}
+
+- (void)retrieveContacts:(CasServiceTicket*)serviceTicket {
     [serviceTicket present];
     if (serviceTicket.ok) {
         CasConfiguration* conf = [CasConfiguration new];
         CasClient* client = [[CasClient alloc] initWithConfiguration:conf];
         NSString* coreURL = [Configuration instance].coreURL;
-
+        
         CasProxyTicket* t = [client proxyTicket:NULL serviceURL:coreURL proxyGrantingTicket:serviceTicket.pgt];
         [t reify];
         if (!t.error) {
@@ -266,9 +322,8 @@
     } else {
         NSLog(@"Presenting service ticket failed: %@", [serviceTicket message]);
     }
-    
-}
 
+}
 
 - (void)loadObjectsFromDataStore {
 	NSFetchRequest* request = [Contact fetchRequest];
@@ -291,7 +346,7 @@
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     self.title = @"Contacts";
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Sync" style:UIBarButtonItemStylePlain target:self action:@selector(reloadButtonWasPressed)] autorelease];
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Sync" style:UIBarButtonItemStylePlain target:self action:@selector(syncButtonWasPressed)] autorelease];
     self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteButtonWasPressed)] autorelease];
     //    RKObjectManager* objectManager = [RKObjectManager sharedManager];
     //    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];

@@ -4,3 +4,6 @@
 [submodule "NUCas"]
 	path = NUCas
 	url = git+ssh://code/git/NUCas.git
+[submodule "MBProgressHUD"]
+	path = MBProgressHUD
+	url = git://github.com/matej/MBProgressHUD.git

@@ -10,27 +10,33 @@
 #import <RestKit/RestKit.h>
 #import "SimpleTableController.h"
 #import "SimpleTableRowDelegate.h"
+#import "MBProgressHUD.h"
 
 @class ContactDisplayController;
 @class Instrument;
 @class CasProxyTicket;
 
-@interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate, CasLoginDelegate> {
+@interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate, CasLoginDelegate, MBProgressHUDDelegate> {
     Instrument* _administeredInstrument;
 }
 
 		
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 
+- (void)purgeContacts;
 - (void)purgeSurveyor;
 - (void) loadSurveyor:(Instrument*)instrument;
 - (void) didSelectRow:(Row*)row;
 - (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket;
 - (void)loadObjectsFromDataStore;
-- (void)reloadButtonWasPressed;
+- (void)syncButtonWasPressed;
+- (void) confirmSync;
+- (void) startCasLogin;
 - (void) deleteButtonWasPressed;
 - (void) unloadSurveyor:(Instrument*)instrument responseSet:(NUResponseSet*)rs;
 
 - (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket;
+- (void)retrieveContacts;
+- (void)retrieveContacts:(CasServiceTicket*)serviceTicket;
 
 @end
