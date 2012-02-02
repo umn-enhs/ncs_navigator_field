@@ -18,10 +18,12 @@
 
 @interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate, CasLoginDelegate, MBProgressHUDDelegate> {
     Instrument* _administeredInstrument;
+    RKReachabilityObserver* _reachability;
 }
 
 		
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
+@property(nonatomic,retain) RKReachabilityObserver* reachability;
 
 - (void)purgeContacts;
 - (void)purgeSurveyor;
@@ -36,7 +38,6 @@
 - (void) unloadSurveyor:(Instrument*)instrument responseSet:(NUResponseSet*)rs;
 
 - (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket;
-- (void)retrieveContacts;
 - (void)retrieveContacts:(CasServiceTicket*)serviceTicket;
 
 @end

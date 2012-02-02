@@ -36,13 +36,41 @@
 @synthesize detailViewController=_detailViewController;
 @synthesize contacts=_contacts;
 @synthesize table=_table;
+@synthesize reachability=_reachability;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super initWithCoder:decoder];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(instrumentSelected:) name:@"InstrumentSelected" object:NULL];
+        
+        self.reachability = [[RKReachabilityObserver alloc] initWithHostname:@"www.google.com"];
+        // self.observer = [RKReachabilityObserver reachabilityObserverForLocalWifi];
+        // self.observer = [RKReachabilityObserver reachabilityObserverForInternet];
+        
+        // Register for notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reachabilityChanged:)
+                                                     name:RKReachabilityStateChangedNotification
+                                                   object:self.reachability];
     }
     return self;
+}
+
+
+- (void)reachabilityChanged:(NSNotification *)notification {
+    RKReachabilityObserver* observer = (RKReachabilityObserver *) [notification object];
+    
+    RKLogCritical(@"Received reachability update: %@", observer);
+  
+    if ([observer isNetworkReachable]) {
+        if ([observer isConnectionRequired]) {
+            return;
+        }
+        
+        self.navigationItem.rightBarButtonItem.enabled = TRUE;
+    } else {
+        self.navigationItem.rightBarButtonItem.enabled = FALSE;
+    }
 }
 
 - (void) instrumentSelected:(NSNotification*)notification {
