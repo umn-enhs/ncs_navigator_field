@@ -147,7 +147,7 @@
     
     UIBarButtonItem* flexItem2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:NULL action:NULL];
     
-    UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
+    UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Initiate" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
     done.width = 100;
     
     NSArray* a = [[NSArray alloc] initWithObjects:cancel, flexItem1, toolBarTitle, flexItem2, done, nil];
