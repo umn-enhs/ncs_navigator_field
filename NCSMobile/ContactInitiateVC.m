@@ -139,7 +139,7 @@
     [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextColor:[UIColor colorWithRed:113.0/255.0 green:120.0/255.0 blue:128.0/255.0 alpha:1.0]];
-    [titleLabel setText:(self.contact.initiated ? @"Continue Contact" : @"Initiate Contact")];
+    [titleLabel setText:(self.contact.initiated ? @"Continue Contact" : @"Start Contact")];
     [titleLabel setTextAlignment:UITextAlignmentCenter];
     UIBarButtonItem *toolBarTitle = [[UIBarButtonItem alloc] initWithCustomView:titleLabel];
     
@@ -147,7 +147,7 @@
     
     UIBarButtonItem* flexItem2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:NULL action:NULL];
     
-    UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Initiate" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
+    UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Start" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
     done.width = 100;
     
     NSArray* a = [[NSArray alloc] initWithObjects:cancel, flexItem1, toolBarTitle, flexItem2, done, nil];

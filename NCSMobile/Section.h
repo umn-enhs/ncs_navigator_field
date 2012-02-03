@@ -19,5 +19,6 @@
 
 - (Section*)initWithRows:(id)row,...;
 - (void)addRow:(Row*)row;
+- (Section*)initWithName:(NSString*)name andRows:(id)row,...;
 
 @end

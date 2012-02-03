@@ -45,19 +45,19 @@
     Address *a = _contact.location.address;
     home.detailText = [NSString stringWithFormat:@"%@\n%@, %@ %@", a.street, a.city, a.state, a.zipCode];
     
-    return [[[Section alloc] initWithRows:home, nil] autorelease];
+    return [[[Section alloc] initWithName:@"Address" andRows:home, nil] autorelease];
 }
 
 - (Section*) phones {
     Row* home = [[[Row alloc] initWithText:@"Home" detailText:_contact.person.homePhone] autorelease];
     Row* cell = [[[Row alloc] initWithText:@"Cell" detailText:_contact.person.cellPhone] autorelease];
     
-    return [[[Section alloc] initWithRows:home, cell, nil] autorelease];
+    return [[[Section alloc] initWithName:@"Phone" andRows:home, cell, nil] autorelease];
 }
 
 - (Section*) emails {
     Row* home =[[Row alloc] initWithText:@"Home" detailText:_contact.person.email];
-    return [[[Section alloc] initWithRows:home, nil] autorelease];
+    return [[[Section alloc] initWithName:@"Email" andRows:home, nil] autorelease];
 }
 
 
@@ -71,7 +71,7 @@
     } else if (_contact.initiated) {
         r.text = @"Continue Contact";
     } else {
-        r.text = @"Initiate Contact";
+        r.text = @"Start Contact";
     }
     
     NSArray* eventNames = [[_contact.events allObjects] valueForKey:@"name"];

@@ -13,8 +13,10 @@
 @synthesize rows=_rows;
 @synthesize name=_name;
 
-- (Section*)initWithRows:(id)row,... {
+- (Section*)initWithName:(NSString*)name andRows:(id)row,... {
     if (self = [super init]) {
+        self.name = name;
+        
         id eachObject;
         va_list argumentList;
         if (row) // The first argument isn't part of the varargs list,
@@ -30,6 +32,10 @@
         }
     }
     return self;
+}
+
+- (Section*)initWithRows:(id)row,... {
+    return [self initWithName:NULL andRows:row];
 }
 
 - (void)addRow:(Row*)row{
