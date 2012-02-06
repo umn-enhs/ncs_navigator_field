@@ -15,15 +15,18 @@
 @class ContactDisplayController;
 @class Instrument;
 @class CasProxyTicket;
+@class SyncActivityIndicator;
 
 @interface RootViewController : SimpleTableController<RKObjectLoaderDelegate,UINavigationControllerDelegate, SimpleTableRowDelegate, CasLoginDelegate, MBProgressHUDDelegate> {
     Instrument* _administeredInstrument;
     RKReachabilityObserver* _reachability;
+    SyncActivityIndicator* _syncIndicator;
 }
 
 		
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 @property(nonatomic,retain) RKReachabilityObserver* reachability;
+@property(nonatomic,retain) MBProgressHUD* syncIndicator;
 
 - (void)purgeContacts;
 - (void)purgeSurveyor;

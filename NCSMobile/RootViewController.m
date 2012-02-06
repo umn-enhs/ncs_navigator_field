@@ -24,7 +24,7 @@
 #import "NUResponseSet.h"
 #import "NUCas.h"
 #import "Configuration.h"
-#import "MBProgressHUD.h"
+#import "SyncActivityIndicator.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -37,6 +37,7 @@
 @synthesize contacts=_contacts;
 @synthesize table=_table;
 @synthesize reachability=_reachability;
+@synthesize syncIndicator=_syncIndicator;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super initWithCoder:decoder];
@@ -44,8 +45,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(instrumentSelected:) name:@"InstrumentSelected" object:NULL];
         
         self.reachability = [[RKReachabilityObserver alloc] initWithHostname:@"www.google.com"];
-        // self.observer = [RKReachabilityObserver reachabilityObserverForLocalWifi];
-        // self.observer = [RKReachabilityObserver reachabilityObserverForInternet];
         
         // Register for notifications
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -315,15 +314,8 @@
 - (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket {
     NSLog(@"My Successful login: %@", serviceTicket);
     [self dismissViewControllerAnimated:YES completion:^{
-        MBProgressHUD* HUD = [[MBProgressHUD alloc] initWithView:self.splitViewController.view];
-        HUD.labelText = @"Syncing Contacts";
-        HUD.labelFont = [UIFont boldSystemFontOfSize:24];
-        HUD.minSize = CGSizeMake(200, 200);
-        HUD.dimBackground = YES;
-        HUD.delegate = self;
-        
-        [self.splitViewController.view addSubview:HUD];
-        [HUD showWhileExecuting:@selector(syncContacts:) onTarget:self withObject:serviceTicket animated:YES];
+
+        [self.syncIndicator showWhileExecuting:@selector(syncContacts:) onTarget:self withObject:serviceTicket animated:YES];
     }];
 }
 
@@ -376,10 +368,14 @@
     self.title = @"Contacts";
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Sync" style:UIBarButtonItemStylePlain target:self action:@selector(syncButtonWasPressed)] autorelease];
     self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteButtonWasPressed)] autorelease];
-    //    RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    //    [objectManager loadObjectsAtResourcePath:@"/staff/xyz123/contacts.json" delegate:self];
-    //    
+    
+    // Init Sync Indicators
+    self.syncIndicator = [[SyncActivityIndicator alloc] initWithView:self.splitViewController.view];
+    self.syncIndicator.delegate = self;
 
+    [self.splitViewController.view addSubview:self.syncIndicator];
+
+    // Load Data from datastore
     [self loadObjectsFromDataStore];
     self.simpleTable = [[ContactNavigationTable alloc] initWithContacts:_contacts];
 }
