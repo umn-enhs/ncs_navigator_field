@@ -7,3 +7,9 @@
 [submodule "MBProgressHUD"]
 	path = MBProgressHUD
 	url = git://github.com/matej/MBProgressHUD.git
+[submodule "nu_surveyor"]
+	path = nu_surveyor
+	url = http://github.com/NUBIC/nu_surveyor
+[submodule "json-framework"]
+	path = json-framework
+	url = git://github.com/stig/json-framework
