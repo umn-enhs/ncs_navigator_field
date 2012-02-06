@@ -310,6 +310,13 @@
     [self retrieveContacts:serviceTicket];
 }
 
+- (void)showErrorMessage:(NSString *)message {
+    UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+    [alert show];
+
+    NSLog(@"%@", message);
+}
+
 - (void)retrieveContacts:(CasServiceTicket*)serviceTicket {
     [serviceTicket present];
     if (serviceTicket.ok) {
@@ -323,10 +330,12 @@
             NSLog(@"Proxy ticket successfully obtained: %@", t.proxyTicket);
             [self loadDataWithProxyTicket:t];
         } else {
-            NSLog(@"Failed to obtain proxy ticket: %@", t.message);
+            NSString* msg = [NSString stringWithFormat:@"Failed to obtain proxy ticket: %@", t.message];
+            [self showErrorMessage:msg];
         }
     } else {
-        NSLog(@"Presenting service ticket failed: %@", [serviceTicket message]);
+        NSString* msg = [NSString stringWithFormat:@"Presenting service ticket failed: %@", [serviceTicket message]];
+        [self showErrorMessage:msg];
     }
 
 }
