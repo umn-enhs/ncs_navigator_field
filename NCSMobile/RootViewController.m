@@ -125,10 +125,6 @@
     }
 }
 
-//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-//    NSLog(@"willShowViewController");
-//}
-
 #pragma mark -
 #pragma mark navigation controller delegate
 
@@ -281,15 +277,6 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     RKManagedObjectStore* objectStore = objectManager.objectStore;
     [objectStore deletePersistantStore];
-    
-    
-//    NSError *error;
-//    NSPersistentStoreCoordinator *storeCoordinator = [UIAppDelegate persistentStoreCoordinator];
-//    NSURL *storeURL = [NCSMobileAppDelegate surveyorStoreURL];
-//    NSPersistentStore* store = [storeCoordinator persistentStoreForURL:storeURL];
-//    
-//    [storeCoordinator removePersistentStore:store error:&error];
-//    [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
 }
 
 - (void)purgeSurveyor {
@@ -314,7 +301,6 @@
 - (void)successfullyObtainedServiceTicket:(CasServiceTicket*)serviceTicket {
     NSLog(@"My Successful login: %@", serviceTicket);
     [self dismissViewControllerAnimated:YES completion:^{
-
         [self.syncIndicator showWhileExecuting:@selector(syncContacts:) onTarget:self withObject:serviceTicket animated:YES];
     }];
 }
@@ -353,14 +339,6 @@
 }
 
 #pragma lifecycle
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//
-//
-//}
-
-		
 - (void) loadView {
     [super loadView];
     self.clearsSelectionOnViewWillAppear = NO;
