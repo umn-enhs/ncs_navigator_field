@@ -30,6 +30,7 @@
 		002B2E4414362E4900410D09 /* nubic-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4214362E4900410D09 /* nubic-logo.png */; };
 		002B2E4514362E4900410D09 /* nu-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 002B2E4314362E4900410D09 /* nu-logo.png */; };
 		002D3B1114E1BCFE00A30C8F /* surveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002D3B0F14E1BCFE00A30C8F /* surveyor.xcdatamodeld */; };
+		002D3B1214E1CAD800A30C8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0021785014E0E56600056745 /* QuartzCore.framework */; };
 		0031315614E04BF800C0D0B1 /* SyncActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031315514E04BF800C0D0B1 /* SyncActivityIndicator.m */; };
 		0031315E14E083C500C0D0B1 /* cacert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 0031315D14E083C500C0D0B1 /* cacert.pem */; };
 		003131EC14E089C400C0D0B1 /* libNUSurveyor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003131E914E089C400C0D0B1 /* libNUSurveyor.a */; };
@@ -309,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002D3B1214E1CAD800A30C8F /* QuartzCore.framework in Frameworks */,
 				003131EC14E089C400C0D0B1 /* libNUSurveyor.a in Frameworks */,
 				003131ED14E089C400C0D0B1 /* libsbjson-ios.a in Frameworks */,
 				0037D2BF14B60AAA00B7D05A /* libiconv.dylib in Frameworks */,
