@@ -27,6 +27,7 @@
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 @property(nonatomic,retain) RKReachabilityObserver* reachability;
 @property(nonatomic,retain) MBProgressHUD* syncIndicator;
+@property(nonatomic,retain) Instrument* administeredInstrument;
 
 - (void)purgeContacts;
 - (void)purgeSurveyor;

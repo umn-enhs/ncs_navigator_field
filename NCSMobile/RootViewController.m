@@ -40,6 +40,7 @@
 @synthesize table=_table;
 @synthesize reachability=_reachability;
 @synthesize syncIndicator=_syncIndicator;
+@synthesize administeredInstrument=_administeredInstrument;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super initWithCoder:decoder];
@@ -128,13 +129,15 @@
         
         NUSurveyTVC *masterViewController = [[NUSurveyTVC alloc] initWithSurvey:survey responseSet:rs];
         
-        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+//        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
         NUSectionTVC *detailViewController = masterViewController.sectionTVC;
-        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+//        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
         
 //        self.splitViewController = [[UISplitViewController alloc] init];
 //        self.splitViewController.delegate = detailViewController;
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, detailNavigationController, nil];
+        [self.navigationController pushViewController:masterViewController animated:NO];
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, detailViewController, nil];
+        self.administeredInstrument = instrument;
         
 //        self.window.rootViewController = self.splitViewController;
         
