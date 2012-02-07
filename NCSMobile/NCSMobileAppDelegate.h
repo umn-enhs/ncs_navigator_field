@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NUSectionVC.h"
-#import "NUSurveyVC.h"
 #import "NUCas.h"
+#import "NUSurveyTVC.h"
 
 @class RootViewController;
 
@@ -43,8 +42,8 @@
 - (void) saveContext:(NSString *)triggeredBy;
 - (void) errorWithTitle:(NSString *)errorTitle message:(NSString *)errorMessage;
 
-@property (nonatomic, retain) IBOutlet NUSurveyVC *surveyController;
-@property (nonatomic, retain) NUSectionVC *sectionController;
+@property (nonatomic, retain) IBOutlet NUSurveyTVC *surveyController;
+@property (nonatomic, retain) NUSectionTVC *sectionController;
 /* */
 
 @end

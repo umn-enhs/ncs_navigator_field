@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:nu_surveyor/NUSurveyor.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:NUCas/NUCas.xcodeproj">
    </FileRef>
    <FileRef

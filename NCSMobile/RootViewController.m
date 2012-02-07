@@ -15,8 +15,8 @@
 #import "Contact.h"
 #import "Section.h"
 #import "Row.h"
-#import "NUSurveyVC.h"
-#import "NUSectionVC.h"
+#import "NUSurveyTVC.h"
+#import "NUSurveyTVC.h"
 #import "NUResponseSet.h"
 #import "Instrument.h"
 #import "InstrumentTemplate.h"
@@ -25,6 +25,8 @@
 #import "NUCas.h"
 #import "Configuration.h"
 #import "SyncActivityIndicator.h"
+#import "NUSurvey.h"
+#import "UUID.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -80,7 +82,7 @@
 #pragma surveyor
 - (void) loadSurveyor:(Instrument*)instrument {
     if (instrument != NULL) {
-        NSString* survey = instrument.instrumentTemplate.representation;
+        NSString* surveyRep = instrument.instrumentTemplate.representation;
         
         
         //TODO: Pass response set id to load existing if exists
@@ -111,8 +113,35 @@
         }
         
         //
+        NUSurvey* survey = [NUSurvey new];
+        survey.jsonString = surveyRep;
+//        
+        if (!rs) {
+            NSManagedObjectContext* ctx = UIAppDelegate.managedObjectContext;
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"ResponseSet" inManagedObjectContext:ctx];
+            rs = [[NUResponseSet alloc] initWithEntity:entity insertIntoManagedObjectContext:ctx];
+            [rs setValue:[NSDate date] forKey:@"createdAt"];
+            [rs setValue:[UUID generateUuidString] forKey:@"uuid"];
+            [UIAppDelegate saveContext];
+
+        }
         
-        NUSurveyVC *surveyController = [[NUSurveyVC alloc] init];
+        NUSurveyTVC *masterViewController = [[NUSurveyTVC alloc] initWithSurvey:survey responseSet:rs];
+        
+        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+        NUSectionTVC *detailViewController = masterViewController.sectionTVC;
+        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+        
+//        self.splitViewController = [[UISplitViewController alloc] init];
+//        self.splitViewController.delegate = detailViewController;
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, detailNavigationController, nil];
+        
+//        self.window.rootViewController = self.splitViewController;
+        
+        
+        //
+        /*
+        NUSurveyTVC *surveyController = [[NUSurveyTVC alloc] init];
         surveyController.surveyJson = survey;
         surveyController.responseSet = rs;
         NUSectionVC *sectionController = [[NUSectionVC alloc] init];
@@ -122,6 +151,7 @@
         
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
         _administeredInstrument = instrument;
+         */
     }
 }
 
@@ -131,8 +161,8 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     Class src = [[self.splitViewController.viewControllers objectAtIndex:1] class];
     Class dst = [viewController class];
-    if ( src == [NUSectionVC class] &&  dst == [RootViewController class]) {
-        NUSectionVC* sectionVC = (NUSectionVC*) [self.splitViewController.viewControllers objectAtIndex:1];
+    if ( src == [NUSectionTVC class] &&  dst == [RootViewController class]) {
+        NUSectionTVC* sectionVC = (NUSectionTVC*) [self.splitViewController.viewControllers objectAtIndex:1];
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, _detailViewController, nil];
         NUResponseSet* rs = sectionVC.responseSet;
         if (rs != NULL) {
