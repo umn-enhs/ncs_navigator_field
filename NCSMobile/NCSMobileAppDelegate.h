@@ -41,7 +41,7 @@
 
 - (void) saveContext:(NSString *)triggeredBy;
 - (void) errorWithTitle:(NSString *)errorTitle message:(NSString *)errorMessage;
-
+BOOL RSRunningOnOS4OrBetter(void);
 @property (nonatomic, retain) IBOutlet NUSurveyTVC *surveyController;
 @property (nonatomic, retain) NUSectionTVC *sectionController;
 /* */

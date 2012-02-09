@@ -115,11 +115,20 @@
     NSString* coreURL = [Configuration instance].coreURL;
 	RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:coreURL];
     
-//    // Initialize store
+    // Initialize store
     RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"main.sqlite" usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
-//    objectStore.delegate = self;
     objectManager.objectStore = objectStore;
     NSManagedObjectContext* restkitMoc = objectStore.managedObjectContext;
+    
+    // Setup Data Protection
+    // iOS 4 encryption
+    NSError *error = nil;
+    if(RSRunningOnOS4OrBetter()){
+        NSDictionary *fileAttributes = [NSDictionary dictionaryWithObject:NSFileProtectionComplete forKey:NSFileProtectionKey];
+        if(![[NSFileManager defaultManager] setAttributes:fileAttributes ofItemAtPath:objectStore.pathToStoreFile error:&error]){
+            NSLog(@"Data protection is not enabled for %@", objectStore.pathToStoreFile);
+        }
+    }
 
     // Set Undo Manager
     NSUndoManager *undoManager = [[[NSUndoManager alloc] init] autorelease];
@@ -335,7 +344,7 @@ BOOL RSRunningOnOS4OrBetter(void) {
     if(RSRunningOnOS4OrBetter()){
         NSDictionary *fileAttributes = [NSDictionary dictionaryWithObject:NSFileProtectionComplete forKey:NSFileProtectionKey];
         if(![[NSFileManager defaultManager] setAttributes:fileAttributes ofItemAtPath:[NCSMobileAppDelegate surveyorStoreURL].path error:&error]){
-            // Handle error
+            NSLog(@"Data protection is not enabled for %@", [NCSMobileAppDelegate surveyorStoreURL]);
         }
     }
     

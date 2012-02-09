@@ -61,6 +61,7 @@
 		008F7DA1148BB3DD009BCF1D /* ContactInitiateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA0148BB3DD009BCF1D /* ContactInitiateVC.m */; };
 		008F7DA4148C1B16009BCF1D /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA3148C1B16009BCF1D /* FormBuilder.m */; };
 		008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */; };
+		0092BA5714E32C3500134165 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092BA5614E32C3500134165 /* icon.png */; };
 		009827831434D10C002A8777 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009827781434D088002A8777 /* libRestKitJSONParserJSONKit.a */; };
 		009827841434D10C002A8777 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276C1434D088002A8777 /* libRestKitNetwork.a */; };
 		009827851434D10C002A8777 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098276E1434D088002A8777 /* libRestKitObjectMapping.a */; };
@@ -245,6 +246,239 @@
 		004FC7181486CC1200A378DC /* ModelLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLoader.m; sourceTree = "<group>"; };
 		005108EC148440C000732623 /* NUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUScrollView.h; sourceTree = "<group>"; };
 		005108ED148440C000732623 /* NUScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUScrollView.m; sourceTree = "<group>"; };
+		0057793914E4355600964B87 /* NUCas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUCas.h; path = NUCas/Code/NUCas.h; sourceTree = "<group>"; };
+		0057793A14E4357100964B87 /* CasClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CasClient.h; path = NUCas/Code/NUCas/CasClient.h; sourceTree = "<group>"; };
+		0057793B14E4357100964B87 /* CasConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CasConfiguration.h; path = NUCas/Code/NUCas/CasConfiguration.h; sourceTree = "<group>"; };
+		0057793C14E4357100964B87 /* CasLoginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CasLoginDelegate.h; path = NUCas/Code/NUCas/CasLoginDelegate.h; sourceTree = "<group>"; };
+		0057793D14E4357100964B87 /* CasLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CasLoginVC.h; path = NUCas/Code/NUCas/CasLoginVC.h; sourceTree = "<group>"; };
+		0057793F14E4357100964B87 /* CasProxyTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CasProxyTicket.h; path = NUCas/Code/NUCas/CasProxyTicket.h; sourceTree = "<group>"; };
+		0057794014E4357100964B87 /* CasServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CasServiceTicket.h; path = NUCas/Code/NUCas/CasServiceTicket.h; sourceTree = "<group>"; };
+		0057794114E4357100964B87 /* URLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLHelper.h; path = NUCas/Code/NUCas/URLHelper.h; sourceTree = "<group>"; };
+		0057794414E435C200964B87 /* cas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cas.h; path = NUCas/Vendor/libcas/Headers/cas.h; sourceTree = "<group>"; };
+		0057794514E435D000964B87 /* curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curl.h; path = NUCas/Vendor/cURL/Headers/curl/curl.h; sourceTree = "<group>"; };
+		0057794614E435D000964B87 /* curlbuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlbuild.h; path = NUCas/Vendor/cURL/Headers/curl/curlbuild.h; sourceTree = "<group>"; };
+		0057794714E435D000964B87 /* curlrules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlrules.h; path = NUCas/Vendor/cURL/Headers/curl/curlrules.h; sourceTree = "<group>"; };
+		0057794814E435D000964B87 /* curlver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlver.h; path = NUCas/Vendor/cURL/Headers/curl/curlver.h; sourceTree = "<group>"; };
+		0057794914E435D000964B87 /* easy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = easy.h; path = NUCas/Vendor/cURL/Headers/curl/easy.h; sourceTree = "<group>"; };
+		0057794A14E435D000964B87 /* mprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mprintf.h; path = NUCas/Vendor/cURL/Headers/curl/mprintf.h; sourceTree = "<group>"; };
+		0057794B14E435D000964B87 /* multi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = multi.h; path = NUCas/Vendor/cURL/Headers/curl/multi.h; sourceTree = "<group>"; };
+		0057794C14E435D000964B87 /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdcheaders.h; path = NUCas/Vendor/cURL/Headers/curl/stdcheaders.h; sourceTree = "<group>"; };
+		0057794D14E435D000964B87 /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "typecheck-gcc.h"; path = "NUCas/Vendor/cURL/Headers/curl/typecheck-gcc.h"; sourceTree = "<group>"; };
+		0057794E14E435D000964B87 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = NUCas/Vendor/cURL/Headers/curl/types.h; sourceTree = "<group>"; };
+		0057794F14E435E400964B87 /* c14n.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c14n.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/c14n.h; sourceTree = "<group>"; };
+		0057795014E435E400964B87 /* catalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = catalog.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/catalog.h; sourceTree = "<group>"; };
+		0057795114E435E400964B87 /* chvalid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = chvalid.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/chvalid.h; sourceTree = "<group>"; };
+		0057795214E435E400964B87 /* debugXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debugXML.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/debugXML.h; sourceTree = "<group>"; };
+		0057795314E435E400964B87 /* dict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dict.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/dict.h; sourceTree = "<group>"; };
+		0057795414E435E400964B87 /* DOCBparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOCBparser.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/DOCBparser.h; sourceTree = "<group>"; };
+		0057795514E435E400964B87 /* encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encoding.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/encoding.h; sourceTree = "<group>"; };
+		0057795614E435E400964B87 /* entities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = entities.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/entities.h; sourceTree = "<group>"; };
+		0057795714E435E400964B87 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = globals.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/globals.h; sourceTree = "<group>"; };
+		0057795814E435E400964B87 /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hash.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/hash.h; sourceTree = "<group>"; };
+		0057795914E435E400964B87 /* HTMLparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMLparser.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/HTMLparser.h; sourceTree = "<group>"; };
+		0057795A14E435E400964B87 /* HTMLtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMLtree.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/HTMLtree.h; sourceTree = "<group>"; };
+		0057795B14E435E400964B87 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = list.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/list.h; sourceTree = "<group>"; };
+		0057795C14E435E400964B87 /* nanoftp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanoftp.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/nanoftp.h; sourceTree = "<group>"; };
+		0057795D14E435E400964B87 /* nanohttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanohttp.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/nanohttp.h; sourceTree = "<group>"; };
+		0057795E14E435E400964B87 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = parser.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/parser.h; sourceTree = "<group>"; };
+		0057795F14E435E400964B87 /* parserInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = parserInternals.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/parserInternals.h; sourceTree = "<group>"; };
+		0057796014E435E400964B87 /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pattern.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/pattern.h; sourceTree = "<group>"; };
+		0057796114E435E400964B87 /* relaxng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = relaxng.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/relaxng.h; sourceTree = "<group>"; };
+		0057796214E435E400964B87 /* SAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAX.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/SAX.h; sourceTree = "<group>"; };
+		0057796314E435E400964B87 /* SAX2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAX2.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/SAX2.h; sourceTree = "<group>"; };
+		0057796414E435E400964B87 /* schemasInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = schemasInternals.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/schemasInternals.h; sourceTree = "<group>"; };
+		0057796514E435E400964B87 /* schematron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = schematron.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/schematron.h; sourceTree = "<group>"; };
+		0057796614E435E400964B87 /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = threads.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/threads.h; sourceTree = "<group>"; };
+		0057796714E435E400964B87 /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tree.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/tree.h; sourceTree = "<group>"; };
+		0057796814E435E400964B87 /* uri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uri.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/uri.h; sourceTree = "<group>"; };
+		0057796914E435E400964B87 /* valid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = valid.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/valid.h; sourceTree = "<group>"; };
+		0057796A14E435E400964B87 /* xinclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xinclude.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xinclude.h; sourceTree = "<group>"; };
+		0057796B14E435E400964B87 /* xlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xlink.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xlink.h; sourceTree = "<group>"; };
+		0057796C14E435E400964B87 /* xmlautomata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlautomata.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlautomata.h; sourceTree = "<group>"; };
+		0057796D14E435E400964B87 /* xmlerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlerror.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlerror.h; sourceTree = "<group>"; };
+		0057796E14E435E400964B87 /* xmlexports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlexports.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlexports.h; sourceTree = "<group>"; };
+		0057796F14E435E400964B87 /* xmlIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlIO.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlIO.h; sourceTree = "<group>"; };
+		0057797014E435E400964B87 /* xmlmemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlmemory.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlmemory.h; sourceTree = "<group>"; };
+		0057797114E435E400964B87 /* xmlmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlmodule.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlmodule.h; sourceTree = "<group>"; };
+		0057797214E435E400964B87 /* xmlreader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlreader.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlreader.h; sourceTree = "<group>"; };
+		0057797314E435E400964B87 /* xmlregexp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlregexp.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlregexp.h; sourceTree = "<group>"; };
+		0057797414E435E400964B87 /* xmlsave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlsave.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlsave.h; sourceTree = "<group>"; };
+		0057797514E435E400964B87 /* xmlschemas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlschemas.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlschemas.h; sourceTree = "<group>"; };
+		0057797614E435E400964B87 /* xmlschemastypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlschemastypes.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlschemastypes.h; sourceTree = "<group>"; };
+		0057797714E435E400964B87 /* xmlstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlstring.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlstring.h; sourceTree = "<group>"; };
+		0057797814E435E400964B87 /* xmlunicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlunicode.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlunicode.h; sourceTree = "<group>"; };
+		0057797914E435E400964B87 /* xmlversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlversion.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlversion.h; sourceTree = "<group>"; };
+		0057797A14E435E400964B87 /* xmlwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlwriter.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xmlwriter.h; sourceTree = "<group>"; };
+		0057797B14E435E400964B87 /* xpath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xpath.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xpath.h; sourceTree = "<group>"; };
+		0057797C14E435E400964B87 /* xpathInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xpathInternals.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xpathInternals.h; sourceTree = "<group>"; };
+		0057797D14E435E400964B87 /* xpointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xpointer.h; path = NUCas/Vendor/libxml2/Headers/libxml2/libxml/xpointer.h; sourceTree = "<group>"; };
+		0057797E14E435EF00964B87 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aes.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/aes.h; sourceTree = "<group>"; };
+		0057797F14E435EF00964B87 /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asn1_mac.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/asn1_mac.h; sourceTree = "<group>"; };
+		0057798014E435EF00964B87 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asn1.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/asn1.h; sourceTree = "<group>"; };
+		0057798114E435EF00964B87 /* asn1t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asn1t.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/asn1t.h; sourceTree = "<group>"; };
+		0057798214E435EF00964B87 /* bio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bio.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/bio.h; sourceTree = "<group>"; };
+		0057798314E435EF00964B87 /* blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blowfish.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/blowfish.h; sourceTree = "<group>"; };
+		0057798414E435EF00964B87 /* bn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bn.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/bn.h; sourceTree = "<group>"; };
+		0057798514E435EF00964B87 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/buffer.h; sourceTree = "<group>"; };
+		0057798614E435EF00964B87 /* camellia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = camellia.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/camellia.h; sourceTree = "<group>"; };
+		0057798714E435EF00964B87 /* cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cast.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/cast.h; sourceTree = "<group>"; };
+		0057798814E435EF00964B87 /* cms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cms.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/cms.h; sourceTree = "<group>"; };
+		0057798914E435EF00964B87 /* comp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = comp.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/comp.h; sourceTree = "<group>"; };
+		0057798A14E435EF00964B87 /* conf_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = conf_api.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/conf_api.h; sourceTree = "<group>"; };
+		0057798B14E435EF00964B87 /* conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = conf.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/conf.h; sourceTree = "<group>"; };
+		0057798C14E435EF00964B87 /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypto.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/crypto.h; sourceTree = "<group>"; };
+		0057798D14E435EF00964B87 /* des_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = des_old.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/des_old.h; sourceTree = "<group>"; };
+		0057798E14E435EF00964B87 /* des.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = des.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/des.h; sourceTree = "<group>"; };
+		0057798F14E435EF00964B87 /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dh.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/dh.h; sourceTree = "<group>"; };
+		0057799014E435EF00964B87 /* dsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dsa.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/dsa.h; sourceTree = "<group>"; };
+		0057799114E435EF00964B87 /* dso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dso.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/dso.h; sourceTree = "<group>"; };
+		0057799214E435EF00964B87 /* dtls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dtls1.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/dtls1.h; sourceTree = "<group>"; };
+		0057799314E435EF00964B87 /* e_os2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = e_os2.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/e_os2.h; sourceTree = "<group>"; };
+		0057799414E435EF00964B87 /* ebcdic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ebcdic.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ebcdic.h; sourceTree = "<group>"; };
+		0057799514E435EF00964B87 /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ec.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ec.h; sourceTree = "<group>"; };
+		0057799614E435EF00964B87 /* ecdh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecdh.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ecdh.h; sourceTree = "<group>"; };
+		0057799714E435EF00964B87 /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecdsa.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ecdsa.h; sourceTree = "<group>"; };
+		0057799814E435EF00964B87 /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = engine.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/engine.h; sourceTree = "<group>"; };
+		0057799914E435EF00964B87 /* err.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = err.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/err.h; sourceTree = "<group>"; };
+		0057799A14E435EF00964B87 /* evp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = evp.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/evp.h; sourceTree = "<group>"; };
+		0057799B14E435EF00964B87 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/hmac.h; sourceTree = "<group>"; };
+		0057799C14E435EF00964B87 /* idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = idea.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/idea.h; sourceTree = "<group>"; };
+		0057799D14E435EF00964B87 /* krb5_asn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = krb5_asn.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/krb5_asn.h; sourceTree = "<group>"; };
+		0057799E14E435EF00964B87 /* kssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kssl.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/kssl.h; sourceTree = "<group>"; };
+		0057799F14E435EF00964B87 /* lhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lhash.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/lhash.h; sourceTree = "<group>"; };
+		005779A014E435EF00964B87 /* md4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md4.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/md4.h; sourceTree = "<group>"; };
+		005779A114E435EF00964B87 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md5.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/md5.h; sourceTree = "<group>"; };
+		005779A214E435EF00964B87 /* mdc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdc2.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/mdc2.h; sourceTree = "<group>"; };
+		005779A314E435EF00964B87 /* modes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = modes.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/modes.h; sourceTree = "<group>"; };
+		005779A414E435EF00964B87 /* obj_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = obj_mac.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/obj_mac.h; sourceTree = "<group>"; };
+		005779A514E435EF00964B87 /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objects.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/objects.h; sourceTree = "<group>"; };
+		005779A614E435EF00964B87 /* ocsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ocsp.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ocsp.h; sourceTree = "<group>"; };
+		005779A714E435EF00964B87 /* opensslconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opensslconf.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/opensslconf.h; sourceTree = "<group>"; };
+		005779A814E435EF00964B87 /* opensslv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opensslv.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/opensslv.h; sourceTree = "<group>"; };
+		005779A914E435EF00964B87 /* ossl_typ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ossl_typ.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ossl_typ.h; sourceTree = "<group>"; };
+		005779AA14E435EF00964B87 /* pem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pem.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/pem.h; sourceTree = "<group>"; };
+		005779AB14E435EF00964B87 /* pem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pem2.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/pem2.h; sourceTree = "<group>"; };
+		005779AC14E435EF00964B87 /* pkcs7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pkcs7.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/pkcs7.h; sourceTree = "<group>"; };
+		005779AD14E435EF00964B87 /* pkcs12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pkcs12.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/pkcs12.h; sourceTree = "<group>"; };
+		005779AE14E435EF00964B87 /* pqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pqueue.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/pqueue.h; sourceTree = "<group>"; };
+		005779AF14E435EF00964B87 /* rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rand.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/rand.h; sourceTree = "<group>"; };
+		005779B014E435EF00964B87 /* rc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rc2.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/rc2.h; sourceTree = "<group>"; };
+		005779B114E435EF00964B87 /* rc4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rc4.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/rc4.h; sourceTree = "<group>"; };
+		005779B214E435EF00964B87 /* ripemd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ripemd.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ripemd.h; sourceTree = "<group>"; };
+		005779B314E435EF00964B87 /* rsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rsa.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/rsa.h; sourceTree = "<group>"; };
+		005779B414E435EF00964B87 /* safestack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = safestack.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/safestack.h; sourceTree = "<group>"; };
+		005779B514E435EF00964B87 /* seed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = seed.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/seed.h; sourceTree = "<group>"; };
+		005779B614E435EF00964B87 /* sha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sha.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/sha.h; sourceTree = "<group>"; };
+		005779B714E435EF00964B87 /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ssl.h; sourceTree = "<group>"; };
+		005779B814E435EF00964B87 /* ssl2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl2.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ssl2.h; sourceTree = "<group>"; };
+		005779B914E435EF00964B87 /* ssl3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl3.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ssl3.h; sourceTree = "<group>"; };
+		005779BA14E435EF00964B87 /* ssl23.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl23.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ssl23.h; sourceTree = "<group>"; };
+		005779BB14E435EF00964B87 /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stack.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/stack.h; sourceTree = "<group>"; };
+		005779BC14E435EF00964B87 /* symhacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = symhacks.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/symhacks.h; sourceTree = "<group>"; };
+		005779BD14E435EF00964B87 /* tls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tls1.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/tls1.h; sourceTree = "<group>"; };
+		005779BE14E435EF00964B87 /* ts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ts.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ts.h; sourceTree = "<group>"; };
+		005779BF14E435EF00964B87 /* txt_db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = txt_db.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/txt_db.h; sourceTree = "<group>"; };
+		005779C014E435EF00964B87 /* ui_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_compat.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ui_compat.h; sourceTree = "<group>"; };
+		005779C114E435EF00964B87 /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/ui.h; sourceTree = "<group>"; };
+		005779C214E435EF00964B87 /* whrlpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = whrlpool.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/whrlpool.h; sourceTree = "<group>"; };
+		005779C314E435EF00964B87 /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = x509_vfy.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/x509_vfy.h; sourceTree = "<group>"; };
+		005779C414E435EF00964B87 /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = x509.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/x509.h; sourceTree = "<group>"; };
+		005779C514E435EF00964B87 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = x509v3.h; path = NUCas/Vendor/OpenSSL/Headers/openssl/x509v3.h; sourceTree = "<group>"; };
+		005779C814E4365300964B87 /* NUPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUPickerVC.h; path = nu_surveyor/NUSurveyor/Controllers/NUPickerVC.h; sourceTree = "<group>"; };
+		005779C914E4365300964B87 /* NUSectionTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUSectionTVC.h; path = nu_surveyor/NUSurveyor/Controllers/NUSectionTVC.h; sourceTree = "<group>"; };
+		005779CA14E4365300964B87 /* NUSurveyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUSurveyTVC.h; path = nu_surveyor/NUSurveyor/Controllers/NUSurveyTVC.h; sourceTree = "<group>"; };
+		005779CB14E4365E00964B87 /* NUResponseSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUResponseSet.h; path = nu_surveyor/NUSurveyor/Models/NUResponseSet.h; sourceTree = "<group>"; };
+		005779CC14E4365E00964B87 /* NUSurvey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUSurvey.h; path = nu_surveyor/NUSurveyor/Models/NUSurvey.h; sourceTree = "<group>"; };
+		005779CD14E4365E00964B87 /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UUID.h; path = nu_surveyor/NUSurveyor/Models/UUID.h; sourceTree = "<group>"; };
+		005779CE14E4367700964B87 /* NUAnyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUAnyCell.h; path = nu_surveyor/NUSurveyor/Views/NUAnyCell.h; sourceTree = "<group>"; };
+		005779CF14E4367700964B87 /* NUButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUButton.h; path = nu_surveyor/NUSurveyor/Views/NUButton.h; sourceTree = "<group>"; };
+		005779D014E4367700964B87 /* NUCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUCell.h; path = nu_surveyor/NUSurveyor/Views/NUCell.h; sourceTree = "<group>"; };
+		005779D114E4367700964B87 /* NUDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUDatePickerCell.h; path = nu_surveyor/NUSurveyor/Views/NUDatePickerCell.h; sourceTree = "<group>"; };
+		005779D214E4367700964B87 /* NUGridAnyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUGridAnyCell.h; path = nu_surveyor/NUSurveyor/Views/NUGridAnyCell.h; sourceTree = "<group>"; };
+		005779D314E4367700964B87 /* NUGridOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUGridOneCell.h; path = nu_surveyor/NUSurveyor/Views/NUGridOneCell.h; sourceTree = "<group>"; };
+		005779D414E4367700964B87 /* NUMultiButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUMultiButton.h; path = nu_surveyor/NUSurveyor/Views/NUMultiButton.h; sourceTree = "<group>"; };
+		005779D514E4367700964B87 /* NUNoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUNoneCell.h; path = nu_surveyor/NUSurveyor/Views/NUNoneCell.h; sourceTree = "<group>"; };
+		005779D614E4367700964B87 /* NUNoneTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUNoneTextCell.h; path = nu_surveyor/NUSurveyor/Views/NUNoneTextCell.h; sourceTree = "<group>"; };
+		005779D714E4367700964B87 /* NUOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUOneCell.h; path = nu_surveyor/NUSurveyor/Views/NUOneCell.h; sourceTree = "<group>"; };
+		005779D814E4367700964B87 /* NUPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUPickerCell.h; path = nu_surveyor/NUSurveyor/Views/NUPickerCell.h; sourceTree = "<group>"; };
+		005779D914E4367700964B87 /* UILabel+NUResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+NUResize.h"; path = "nu_surveyor/NUSurveyor/Views/UILabel+NUResize.h"; sourceTree = "<group>"; };
+		005779DA14E4367F00964B87 /* NUSurveyor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUSurveyor.h; path = nu_surveyor/NUSurveyor/NUSurveyor.h; sourceTree = "<group>"; };
+		005779DC14E436B400964B87 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreData.h; path = RestKit/Code/CoreData/CoreData.h; sourceTree = "<group>"; };
+		005779DD14E436B400964B87 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+ActiveRecord.h"; path = "RestKit/Code/CoreData/NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		005779DE14E436B400964B87 /* RKManagedObjectCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectCache.h; path = RestKit/Code/CoreData/RKManagedObjectCache.h; sourceTree = "<group>"; };
+		005779DF14E436B400964B87 /* RKManagedObjectLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectLoader.h; path = RestKit/Code/CoreData/RKManagedObjectLoader.h; sourceTree = "<group>"; };
+		005779E014E436B400964B87 /* RKManagedObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectMapping.h; path = RestKit/Code/CoreData/RKManagedObjectMapping.h; sourceTree = "<group>"; };
+		005779E114E436B400964B87 /* RKManagedObjectMappingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectMappingOperation.h; path = RestKit/Code/CoreData/RKManagedObjectMappingOperation.h; sourceTree = "<group>"; };
+		005779E214E436B400964B87 /* RKManagedObjectSeeder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectSeeder.h; path = RestKit/Code/CoreData/RKManagedObjectSeeder.h; sourceTree = "<group>"; };
+		005779E314E436B400964B87 /* RKManagedObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectStore.h; path = RestKit/Code/CoreData/RKManagedObjectStore.h; sourceTree = "<group>"; };
+		005779E414E436B400964B87 /* RKManagedObjectThreadSafeInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKManagedObjectThreadSafeInvocation.h; path = RestKit/Code/CoreData/RKManagedObjectThreadSafeInvocation.h; sourceTree = "<group>"; };
+		005779E514E436B400964B87 /* RKObjectPropertyInspector+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RKObjectPropertyInspector+CoreData.h"; path = "RestKit/Code/CoreData/RKObjectPropertyInspector+CoreData.h"; sourceTree = "<group>"; };
+		005779E614E436D400964B87 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Network.h; path = RestKit/Code/Network/Network.h; sourceTree = "<group>"; };
+		005779E714E436D400964B87 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MD5.h"; path = "RestKit/Code/Network/NSData+MD5.h"; sourceTree = "<group>"; };
+		005779E814E436D400964B87 /* NSDictionary+RKRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+RKRequestSerialization.h"; path = "RestKit/Code/Network/NSDictionary+RKRequestSerialization.h"; sourceTree = "<group>"; };
+		005779E914E436D400964B87 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "RestKit/Code/Network/NSString+MD5.h"; sourceTree = "<group>"; };
+		005779EA14E436D400964B87 /* RKClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKClient.h; path = RestKit/Code/Network/RKClient.h; sourceTree = "<group>"; };
+		005779EB14E436D400964B87 /* RKNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKNotifications.h; path = RestKit/Code/Network/RKNotifications.h; sourceTree = "<group>"; };
+		005779EC14E436D400964B87 /* RKOAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKOAuthClient.h; path = RestKit/Code/Network/RKOAuthClient.h; sourceTree = "<group>"; };
+		005779ED14E436D400964B87 /* RKParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKParams.h; path = RestKit/Code/Network/RKParams.h; sourceTree = "<group>"; };
+		005779EE14E436D400964B87 /* RKParamsAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKParamsAttachment.h; path = RestKit/Code/Network/RKParamsAttachment.h; sourceTree = "<group>"; };
+		005779EF14E436D400964B87 /* RKReachabilityObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKReachabilityObserver.h; path = RestKit/Code/Network/RKReachabilityObserver.h; sourceTree = "<group>"; };
+		005779F014E436D400964B87 /* RKRequest_Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRequest_Internals.h; path = RestKit/Code/Network/RKRequest_Internals.h; sourceTree = "<group>"; };
+		005779F114E436D400964B87 /* RKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRequest.h; path = RestKit/Code/Network/RKRequest.h; sourceTree = "<group>"; };
+		005779F214E436D400964B87 /* RKRequestCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRequestCache.h; path = RestKit/Code/Network/RKRequestCache.h; sourceTree = "<group>"; };
+		005779F314E436D400964B87 /* RKRequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRequestQueue.h; path = RestKit/Code/Network/RKRequestQueue.h; sourceTree = "<group>"; };
+		005779F414E436D400964B87 /* RKRequestSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRequestSerializable.h; path = RestKit/Code/Network/RKRequestSerializable.h; sourceTree = "<group>"; };
+		005779F514E436D400964B87 /* RKRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRequestSerialization.h; path = RestKit/Code/Network/RKRequestSerialization.h; sourceTree = "<group>"; };
+		005779F614E436D400964B87 /* RKResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKResponse.h; path = RestKit/Code/Network/RKResponse.h; sourceTree = "<group>"; };
+		005779F714E436D400964B87 /* RKURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKURL.h; path = RestKit/Code/Network/RKURL.h; sourceTree = "<group>"; };
+		005779F814E4370000964B87 /* ObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectMapping.h; path = RestKit/Code/ObjectMapping/ObjectMapping.h; sourceTree = "<group>"; };
+		005779F914E4370000964B87 /* RKDynamicObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKDynamicObjectMapping.h; path = RestKit/Code/ObjectMapping/RKDynamicObjectMapping.h; sourceTree = "<group>"; };
+		005779FA14E4370000964B87 /* RKErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKErrorMessage.h; path = RestKit/Code/ObjectMapping/RKErrorMessage.h; sourceTree = "<group>"; };
+		005779FB14E4370000964B87 /* RKMappingOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKMappingOperationQueue.h; path = RestKit/Code/ObjectMapping/RKMappingOperationQueue.h; sourceTree = "<group>"; };
+		005779FC14E4370000964B87 /* RKObjectAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectAttributeMapping.h; path = RestKit/Code/ObjectMapping/RKObjectAttributeMapping.h; sourceTree = "<group>"; };
+		005779FD14E4370000964B87 /* RKObjectLoader_Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectLoader_Internals.h; path = RestKit/Code/ObjectMapping/RKObjectLoader_Internals.h; sourceTree = "<group>"; };
+		005779FE14E4370000964B87 /* RKObjectLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectLoader.h; path = RestKit/Code/ObjectMapping/RKObjectLoader.h; sourceTree = "<group>"; };
+		005779FF14E4370000964B87 /* RKObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectManager.h; path = RestKit/Code/ObjectMapping/RKObjectManager.h; sourceTree = "<group>"; };
+		00577A0014E4370000964B87 /* RKObjectMapper_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMapper_Private.h; path = RestKit/Code/ObjectMapping/RKObjectMapper_Private.h; sourceTree = "<group>"; };
+		00577A0114E4370000964B87 /* RKObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMapper.h; path = RestKit/Code/ObjectMapping/RKObjectMapper.h; sourceTree = "<group>"; };
+		00577A0214E4370000964B87 /* RKObjectMapperError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMapperError.h; path = RestKit/Code/ObjectMapping/RKObjectMapperError.h; sourceTree = "<group>"; };
+		00577A0314E4370000964B87 /* RKObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMapping.h; path = RestKit/Code/ObjectMapping/RKObjectMapping.h; sourceTree = "<group>"; };
+		00577A0414E4370000964B87 /* RKObjectMappingDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMappingDefinition.h; path = RestKit/Code/ObjectMapping/RKObjectMappingDefinition.h; sourceTree = "<group>"; };
+		00577A0514E4370000964B87 /* RKObjectMappingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMappingOperation.h; path = RestKit/Code/ObjectMapping/RKObjectMappingOperation.h; sourceTree = "<group>"; };
+		00577A0614E4370000964B87 /* RKObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMappingProvider.h; path = RestKit/Code/ObjectMapping/RKObjectMappingProvider.h; sourceTree = "<group>"; };
+		00577A0714E4370000964B87 /* RKObjectMappingResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectMappingResult.h; path = RestKit/Code/ObjectMapping/RKObjectMappingResult.h; sourceTree = "<group>"; };
+		00577A0814E4370000964B87 /* RKObjectPropertyInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectPropertyInspector.h; path = RestKit/Code/ObjectMapping/RKObjectPropertyInspector.h; sourceTree = "<group>"; };
+		00577A0914E4370000964B87 /* RKObjectRelationshipMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectRelationshipMapping.h; path = RestKit/Code/ObjectMapping/RKObjectRelationshipMapping.h; sourceTree = "<group>"; };
+		00577A0A14E4370000964B87 /* RKObjectRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectRouter.h; path = RestKit/Code/ObjectMapping/RKObjectRouter.h; sourceTree = "<group>"; };
+		00577A0B14E4370000964B87 /* RKObjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectSerializer.h; path = RestKit/Code/ObjectMapping/RKObjectSerializer.h; sourceTree = "<group>"; };
+		00577A0C14E4370000964B87 /* RKParserRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKParserRegistry.h; path = RestKit/Code/ObjectMapping/RKParserRegistry.h; sourceTree = "<group>"; };
+		00577A0D14E4370000964B87 /* RKRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRouter.h; path = RestKit/Code/ObjectMapping/RKRouter.h; sourceTree = "<group>"; };
+		00577A0E14E4370700964B87 /* RestKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestKit.h; path = RestKit/Code/RestKit.h; sourceTree = "<group>"; };
+		00577A0F14E4372400964B87 /* Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Errors.h; path = RestKit/Code/Support/Errors.h; sourceTree = "<group>"; };
+		00577A1014E4372400964B87 /* lcl_config_components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_components.h; path = RestKit/Code/Support/lcl_config_components.h; sourceTree = "<group>"; };
+		00577A1114E4372400964B87 /* lcl_config_extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_extensions.h; path = RestKit/Code/Support/lcl_config_extensions.h; sourceTree = "<group>"; };
+		00577A1214E4372400964B87 /* lcl_config_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.h; path = RestKit/Code/Support/lcl_config_logger.h; sourceTree = "<group>"; };
+		00577A1314E4372400964B87 /* NSDictionary+RKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+RKAdditions.h"; path = "RestKit/Code/Support/NSDictionary+RKAdditions.h"; sourceTree = "<group>"; };
+		00577A1414E4372400964B87 /* NSString+RestKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RestKit.h"; path = "RestKit/Code/Support/NSString+RestKit.h"; sourceTree = "<group>"; };
+		00577A1514E4372400964B87 /* RKAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAlert.h; path = RestKit/Code/Support/RKAlert.h; sourceTree = "<group>"; };
+		00577A1614E4372400964B87 /* RKDotNetDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKDotNetDateFormatter.h; path = RestKit/Code/Support/RKDotNetDateFormatter.h; sourceTree = "<group>"; };
+		00577A1714E4372400964B87 /* RKFixCategoryBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKFixCategoryBug.h; path = RestKit/Code/Support/RKFixCategoryBug.h; sourceTree = "<group>"; };
+		00577A1814E4372400964B87 /* RKLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKLog.h; path = RestKit/Code/Support/RKLog.h; sourceTree = "<group>"; };
+		00577A1914E4372400964B87 /* RKMIMETypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKMIMETypes.h; path = RestKit/Code/Support/RKMIMETypes.h; sourceTree = "<group>"; };
+		00577A1A14E4372400964B87 /* RKParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKParser.h; path = RestKit/Code/Support/RKParser.h; sourceTree = "<group>"; };
+		00577A1B14E4372400964B87 /* RKPathMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKPathMatcher.h; path = RestKit/Code/Support/RKPathMatcher.h; sourceTree = "<group>"; };
+		00577A1C14E4372400964B87 /* RKSearchEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKSearchEngine.h; path = RestKit/Code/Support/RKSearchEngine.h; sourceTree = "<group>"; };
+		00577A1D14E4372400964B87 /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Support.h; path = RestKit/Code/Support/Support.h; sourceTree = "<group>"; };
+		00577A1E14E4373600964B87 /* RKJSONParserJSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKJSONParserJSONKit.h; path = RestKit/Code/Support/Parsers/JSON/RKJSONParserJSONKit.h; sourceTree = "<group>"; };
+		00577A1F14E4373600964B87 /* RKJSONParserNXJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKJSONParserNXJSON.h; path = RestKit/Code/Support/Parsers/JSON/RKJSONParserNXJSON.h; sourceTree = "<group>"; };
+		00577A2014E4373600964B87 /* RKJSONParserSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKJSONParserSBJSON.h; path = RestKit/Code/Support/Parsers/JSON/RKJSONParserSBJSON.h; sourceTree = "<group>"; };
+		00577A2114E4373600964B87 /* RKJSONParserYAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKJSONParserYAJL.h; path = RestKit/Code/Support/Parsers/JSON/RKJSONParserYAJL.h; sourceTree = "<group>"; };
+		00577A2214E4373D00964B87 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKXMLParserLibXML.h; path = RestKit/Code/Support/Parsers/XML/RKXMLParserLibXML.h; sourceTree = "<group>"; };
+		00577A2314E4375400964B87 /* RKFilterableObjectLoaderTTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKFilterableObjectLoaderTTModel.h; path = RestKit/Code/Three20/RKFilterableObjectLoaderTTModel.h; sourceTree = "<group>"; };
+		00577A2414E4375400964B87 /* RKMappableObjectTableItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKMappableObjectTableItem.h; path = RestKit/Code/Three20/RKMappableObjectTableItem.h; sourceTree = "<group>"; };
+		00577A2514E4375400964B87 /* RKObjectLoaderTTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectLoaderTTModel.h; path = RestKit/Code/Three20/RKObjectLoaderTTModel.h; sourceTree = "<group>"; };
+		00577A2614E4375400964B87 /* RKObjectTTTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKObjectTTTableViewDataSource.h; path = RestKit/Code/Three20/RKObjectTTTableViewDataSource.h; sourceTree = "<group>"; };
+		00577A2714E4375400964B87 /* Three20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Three20.h; path = RestKit/Code/Three20/Three20.h; sourceTree = "<group>"; };
 		00590AC61428F7D0008335EA /* ContactTableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableTest.h; sourceTree = "<group>"; };
 		00590AC71428F7D0008335EA /* ContactTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableTest.m; sourceTree = "<group>"; };
 		00590AC914291818008335EA /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
@@ -266,6 +500,7 @@
 		008F7DA3148C1B16009BCF1D /* FormBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormBuilder.m; sourceTree = "<group>"; };
 		008F7DA5148C64AC009BCF1D /* FormBuilderCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormBuilderCursor.h; sourceTree = "<group>"; };
 		008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormBuilderCursor.m; sourceTree = "<group>"; };
+		0092BA5614E32C3500134165 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		009827571434D088002A8777 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		009AD2E2142D391A0038650B /* SimpleTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableController.h; sourceTree = "<group>"; };
 		009AD2E3142D391A0038650B /* SimpleTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableController.m; sourceTree = "<group>"; };
@@ -348,7 +583,8 @@
 		0026E659140347E700355BCB = {
 			isa = PBXGroup;
 			children = (
-				0021785014E0E56600056745 /* QuartzCore.framework */,
+				0057793814E434A400964B87 /* Dependent Headers */,
+				0092BA5614E32C3500134165 /* icon.png */,
 				0031315D14E083C500C0D0B1 /* cacert.pem */,
 				00C67AF414C765CE005D2543 /* NUCas.plist-sample */,
 				008911C714C7367B002CEACA /* NCSNavigatorField.plist-sample */,
@@ -377,6 +613,7 @@
 		0026E667140347E700355BCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0021785014E0E56600056745 /* QuartzCore.framework */,
 				003131E914E089C400C0D0B1 /* libNUSurveyor.a */,
 				003131EA14E089C400C0D0B1 /* libsbjson-ios.a */,
 				003131EB14E089C400C0D0B1 /* SBJson.framework */,
@@ -460,6 +697,270 @@
 				0026E675140347E700355BCB /* main.m */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		0057793814E434A400964B87 /* Dependent Headers */ = {
+			isa = PBXGroup;
+			children = (
+				005779DB14E4369500964B87 /* Restkit */,
+				005779C614E4360D00964B87 /* NUSurveyor */,
+				0057794314E435A400964B87 /* NUCas */,
+			);
+			name = "Dependent Headers";
+			sourceTree = "<group>";
+		};
+		0057794314E435A400964B87 /* NUCas */ = {
+			isa = PBXGroup;
+			children = (
+				0057797E14E435EF00964B87 /* aes.h */,
+				0057797F14E435EF00964B87 /* asn1_mac.h */,
+				0057798014E435EF00964B87 /* asn1.h */,
+				0057798114E435EF00964B87 /* asn1t.h */,
+				0057798214E435EF00964B87 /* bio.h */,
+				0057798314E435EF00964B87 /* blowfish.h */,
+				0057798414E435EF00964B87 /* bn.h */,
+				0057798514E435EF00964B87 /* buffer.h */,
+				0057798614E435EF00964B87 /* camellia.h */,
+				0057798714E435EF00964B87 /* cast.h */,
+				0057798814E435EF00964B87 /* cms.h */,
+				0057798914E435EF00964B87 /* comp.h */,
+				0057798A14E435EF00964B87 /* conf_api.h */,
+				0057798B14E435EF00964B87 /* conf.h */,
+				0057798C14E435EF00964B87 /* crypto.h */,
+				0057798D14E435EF00964B87 /* des_old.h */,
+				0057798E14E435EF00964B87 /* des.h */,
+				0057798F14E435EF00964B87 /* dh.h */,
+				0057799014E435EF00964B87 /* dsa.h */,
+				0057799114E435EF00964B87 /* dso.h */,
+				0057799214E435EF00964B87 /* dtls1.h */,
+				0057799314E435EF00964B87 /* e_os2.h */,
+				0057799414E435EF00964B87 /* ebcdic.h */,
+				0057799514E435EF00964B87 /* ec.h */,
+				0057799614E435EF00964B87 /* ecdh.h */,
+				0057799714E435EF00964B87 /* ecdsa.h */,
+				0057799814E435EF00964B87 /* engine.h */,
+				0057799914E435EF00964B87 /* err.h */,
+				0057799A14E435EF00964B87 /* evp.h */,
+				0057799B14E435EF00964B87 /* hmac.h */,
+				0057799C14E435EF00964B87 /* idea.h */,
+				0057799D14E435EF00964B87 /* krb5_asn.h */,
+				0057799E14E435EF00964B87 /* kssl.h */,
+				0057799F14E435EF00964B87 /* lhash.h */,
+				005779A014E435EF00964B87 /* md4.h */,
+				005779A114E435EF00964B87 /* md5.h */,
+				005779A214E435EF00964B87 /* mdc2.h */,
+				005779A314E435EF00964B87 /* modes.h */,
+				005779A414E435EF00964B87 /* obj_mac.h */,
+				005779A514E435EF00964B87 /* objects.h */,
+				005779A614E435EF00964B87 /* ocsp.h */,
+				005779A714E435EF00964B87 /* opensslconf.h */,
+				005779A814E435EF00964B87 /* opensslv.h */,
+				005779A914E435EF00964B87 /* ossl_typ.h */,
+				005779AA14E435EF00964B87 /* pem.h */,
+				005779AB14E435EF00964B87 /* pem2.h */,
+				005779AC14E435EF00964B87 /* pkcs7.h */,
+				005779AD14E435EF00964B87 /* pkcs12.h */,
+				005779AE14E435EF00964B87 /* pqueue.h */,
+				005779AF14E435EF00964B87 /* rand.h */,
+				005779B014E435EF00964B87 /* rc2.h */,
+				005779B114E435EF00964B87 /* rc4.h */,
+				005779B214E435EF00964B87 /* ripemd.h */,
+				005779B314E435EF00964B87 /* rsa.h */,
+				005779B414E435EF00964B87 /* safestack.h */,
+				005779B514E435EF00964B87 /* seed.h */,
+				005779B614E435EF00964B87 /* sha.h */,
+				005779B714E435EF00964B87 /* ssl.h */,
+				005779B814E435EF00964B87 /* ssl2.h */,
+				005779B914E435EF00964B87 /* ssl3.h */,
+				005779BA14E435EF00964B87 /* ssl23.h */,
+				005779BB14E435EF00964B87 /* stack.h */,
+				005779BC14E435EF00964B87 /* symhacks.h */,
+				005779BD14E435EF00964B87 /* tls1.h */,
+				005779BE14E435EF00964B87 /* ts.h */,
+				005779BF14E435EF00964B87 /* txt_db.h */,
+				005779C014E435EF00964B87 /* ui_compat.h */,
+				005779C114E435EF00964B87 /* ui.h */,
+				005779C214E435EF00964B87 /* whrlpool.h */,
+				005779C314E435EF00964B87 /* x509_vfy.h */,
+				005779C414E435EF00964B87 /* x509.h */,
+				005779C514E435EF00964B87 /* x509v3.h */,
+				0057794F14E435E400964B87 /* c14n.h */,
+				0057795014E435E400964B87 /* catalog.h */,
+				0057795114E435E400964B87 /* chvalid.h */,
+				0057795214E435E400964B87 /* debugXML.h */,
+				0057795314E435E400964B87 /* dict.h */,
+				0057795414E435E400964B87 /* DOCBparser.h */,
+				0057795514E435E400964B87 /* encoding.h */,
+				0057795614E435E400964B87 /* entities.h */,
+				0057795714E435E400964B87 /* globals.h */,
+				0057795814E435E400964B87 /* hash.h */,
+				0057795914E435E400964B87 /* HTMLparser.h */,
+				0057795A14E435E400964B87 /* HTMLtree.h */,
+				0057795B14E435E400964B87 /* list.h */,
+				0057795C14E435E400964B87 /* nanoftp.h */,
+				0057795D14E435E400964B87 /* nanohttp.h */,
+				0057795E14E435E400964B87 /* parser.h */,
+				0057795F14E435E400964B87 /* parserInternals.h */,
+				0057796014E435E400964B87 /* pattern.h */,
+				0057796114E435E400964B87 /* relaxng.h */,
+				0057796214E435E400964B87 /* SAX.h */,
+				0057796314E435E400964B87 /* SAX2.h */,
+				0057796414E435E400964B87 /* schemasInternals.h */,
+				0057796514E435E400964B87 /* schematron.h */,
+				0057796614E435E400964B87 /* threads.h */,
+				0057796714E435E400964B87 /* tree.h */,
+				0057796814E435E400964B87 /* uri.h */,
+				0057796914E435E400964B87 /* valid.h */,
+				0057796A14E435E400964B87 /* xinclude.h */,
+				0057796B14E435E400964B87 /* xlink.h */,
+				0057796C14E435E400964B87 /* xmlautomata.h */,
+				0057796D14E435E400964B87 /* xmlerror.h */,
+				0057796E14E435E400964B87 /* xmlexports.h */,
+				0057796F14E435E400964B87 /* xmlIO.h */,
+				0057797014E435E400964B87 /* xmlmemory.h */,
+				0057797114E435E400964B87 /* xmlmodule.h */,
+				0057797214E435E400964B87 /* xmlreader.h */,
+				0057797314E435E400964B87 /* xmlregexp.h */,
+				0057797414E435E400964B87 /* xmlsave.h */,
+				0057797514E435E400964B87 /* xmlschemas.h */,
+				0057797614E435E400964B87 /* xmlschemastypes.h */,
+				0057797714E435E400964B87 /* xmlstring.h */,
+				0057797814E435E400964B87 /* xmlunicode.h */,
+				0057797914E435E400964B87 /* xmlversion.h */,
+				0057797A14E435E400964B87 /* xmlwriter.h */,
+				0057797B14E435E400964B87 /* xpath.h */,
+				0057797C14E435E400964B87 /* xpathInternals.h */,
+				0057797D14E435E400964B87 /* xpointer.h */,
+				0057794514E435D000964B87 /* curl.h */,
+				0057794614E435D000964B87 /* curlbuild.h */,
+				0057794714E435D000964B87 /* curlrules.h */,
+				0057794814E435D000964B87 /* curlver.h */,
+				0057794914E435D000964B87 /* easy.h */,
+				0057794A14E435D000964B87 /* mprintf.h */,
+				0057794B14E435D000964B87 /* multi.h */,
+				0057794C14E435D000964B87 /* stdcheaders.h */,
+				0057794D14E435D000964B87 /* typecheck-gcc.h */,
+				0057794E14E435D000964B87 /* types.h */,
+				0057794414E435C200964B87 /* cas.h */,
+				0057793A14E4357100964B87 /* CasClient.h */,
+				0057793B14E4357100964B87 /* CasConfiguration.h */,
+				0057793C14E4357100964B87 /* CasLoginDelegate.h */,
+				0057793D14E4357100964B87 /* CasLoginVC.h */,
+				0057793F14E4357100964B87 /* CasProxyTicket.h */,
+				0057794014E4357100964B87 /* CasServiceTicket.h */,
+				0057794114E4357100964B87 /* URLHelper.h */,
+				0057793914E4355600964B87 /* NUCas.h */,
+			);
+			name = NUCas;
+			sourceTree = "<group>";
+		};
+		005779C614E4360D00964B87 /* NUSurveyor */ = {
+			isa = PBXGroup;
+			children = (
+				005779DA14E4367F00964B87 /* NUSurveyor.h */,
+				005779CE14E4367700964B87 /* NUAnyCell.h */,
+				005779CF14E4367700964B87 /* NUButton.h */,
+				005779D014E4367700964B87 /* NUCell.h */,
+				005779D114E4367700964B87 /* NUDatePickerCell.h */,
+				005779D214E4367700964B87 /* NUGridAnyCell.h */,
+				005779D314E4367700964B87 /* NUGridOneCell.h */,
+				005779D414E4367700964B87 /* NUMultiButton.h */,
+				005779D514E4367700964B87 /* NUNoneCell.h */,
+				005779D614E4367700964B87 /* NUNoneTextCell.h */,
+				005779D714E4367700964B87 /* NUOneCell.h */,
+				005779D814E4367700964B87 /* NUPickerCell.h */,
+				005779D914E4367700964B87 /* UILabel+NUResize.h */,
+				005779CB14E4365E00964B87 /* NUResponseSet.h */,
+				005779CC14E4365E00964B87 /* NUSurvey.h */,
+				005779CD14E4365E00964B87 /* UUID.h */,
+				005779C814E4365300964B87 /* NUPickerVC.h */,
+				005779C914E4365300964B87 /* NUSectionTVC.h */,
+				005779CA14E4365300964B87 /* NUSurveyTVC.h */,
+			);
+			name = NUSurveyor;
+			sourceTree = "<group>";
+		};
+		005779DB14E4369500964B87 /* Restkit */ = {
+			isa = PBXGroup;
+			children = (
+				00577A2314E4375400964B87 /* RKFilterableObjectLoaderTTModel.h */,
+				00577A2414E4375400964B87 /* RKMappableObjectTableItem.h */,
+				00577A2514E4375400964B87 /* RKObjectLoaderTTModel.h */,
+				00577A2614E4375400964B87 /* RKObjectTTTableViewDataSource.h */,
+				00577A2714E4375400964B87 /* Three20.h */,
+				00577A2214E4373D00964B87 /* RKXMLParserLibXML.h */,
+				00577A1E14E4373600964B87 /* RKJSONParserJSONKit.h */,
+				00577A1F14E4373600964B87 /* RKJSONParserNXJSON.h */,
+				00577A2014E4373600964B87 /* RKJSONParserSBJSON.h */,
+				00577A2114E4373600964B87 /* RKJSONParserYAJL.h */,
+				00577A0F14E4372400964B87 /* Errors.h */,
+				00577A1014E4372400964B87 /* lcl_config_components.h */,
+				00577A1114E4372400964B87 /* lcl_config_extensions.h */,
+				00577A1214E4372400964B87 /* lcl_config_logger.h */,
+				00577A1314E4372400964B87 /* NSDictionary+RKAdditions.h */,
+				00577A1414E4372400964B87 /* NSString+RestKit.h */,
+				00577A1514E4372400964B87 /* RKAlert.h */,
+				00577A1614E4372400964B87 /* RKDotNetDateFormatter.h */,
+				00577A1714E4372400964B87 /* RKFixCategoryBug.h */,
+				00577A1814E4372400964B87 /* RKLog.h */,
+				00577A1914E4372400964B87 /* RKMIMETypes.h */,
+				00577A1A14E4372400964B87 /* RKParser.h */,
+				00577A1B14E4372400964B87 /* RKPathMatcher.h */,
+				00577A1C14E4372400964B87 /* RKSearchEngine.h */,
+				00577A1D14E4372400964B87 /* Support.h */,
+				00577A0E14E4370700964B87 /* RestKit.h */,
+				005779F814E4370000964B87 /* ObjectMapping.h */,
+				005779F914E4370000964B87 /* RKDynamicObjectMapping.h */,
+				005779FA14E4370000964B87 /* RKErrorMessage.h */,
+				005779FB14E4370000964B87 /* RKMappingOperationQueue.h */,
+				005779FC14E4370000964B87 /* RKObjectAttributeMapping.h */,
+				005779FD14E4370000964B87 /* RKObjectLoader_Internals.h */,
+				005779FE14E4370000964B87 /* RKObjectLoader.h */,
+				005779FF14E4370000964B87 /* RKObjectManager.h */,
+				00577A0014E4370000964B87 /* RKObjectMapper_Private.h */,
+				00577A0114E4370000964B87 /* RKObjectMapper.h */,
+				00577A0214E4370000964B87 /* RKObjectMapperError.h */,
+				00577A0314E4370000964B87 /* RKObjectMapping.h */,
+				00577A0414E4370000964B87 /* RKObjectMappingDefinition.h */,
+				00577A0514E4370000964B87 /* RKObjectMappingOperation.h */,
+				00577A0614E4370000964B87 /* RKObjectMappingProvider.h */,
+				00577A0714E4370000964B87 /* RKObjectMappingResult.h */,
+				00577A0814E4370000964B87 /* RKObjectPropertyInspector.h */,
+				00577A0914E4370000964B87 /* RKObjectRelationshipMapping.h */,
+				00577A0A14E4370000964B87 /* RKObjectRouter.h */,
+				00577A0B14E4370000964B87 /* RKObjectSerializer.h */,
+				00577A0C14E4370000964B87 /* RKParserRegistry.h */,
+				00577A0D14E4370000964B87 /* RKRouter.h */,
+				005779E614E436D400964B87 /* Network.h */,
+				005779E714E436D400964B87 /* NSData+MD5.h */,
+				005779E814E436D400964B87 /* NSDictionary+RKRequestSerialization.h */,
+				005779E914E436D400964B87 /* NSString+MD5.h */,
+				005779EA14E436D400964B87 /* RKClient.h */,
+				005779EB14E436D400964B87 /* RKNotifications.h */,
+				005779EC14E436D400964B87 /* RKOAuthClient.h */,
+				005779ED14E436D400964B87 /* RKParams.h */,
+				005779EE14E436D400964B87 /* RKParamsAttachment.h */,
+				005779EF14E436D400964B87 /* RKReachabilityObserver.h */,
+				005779F014E436D400964B87 /* RKRequest_Internals.h */,
+				005779F114E436D400964B87 /* RKRequest.h */,
+				005779F214E436D400964B87 /* RKRequestCache.h */,
+				005779F314E436D400964B87 /* RKRequestQueue.h */,
+				005779F414E436D400964B87 /* RKRequestSerializable.h */,
+				005779F514E436D400964B87 /* RKRequestSerialization.h */,
+				005779F614E436D400964B87 /* RKResponse.h */,
+				005779F714E436D400964B87 /* RKURL.h */,
+				005779DC14E436B400964B87 /* CoreData.h */,
+				005779DD14E436B400964B87 /* NSManagedObject+ActiveRecord.h */,
+				005779DE14E436B400964B87 /* RKManagedObjectCache.h */,
+				005779DF14E436B400964B87 /* RKManagedObjectLoader.h */,
+				005779E014E436B400964B87 /* RKManagedObjectMapping.h */,
+				005779E114E436B400964B87 /* RKManagedObjectMappingOperation.h */,
+				005779E214E436B400964B87 /* RKManagedObjectSeeder.h */,
+				005779E314E436B400964B87 /* RKManagedObjectStore.h */,
+				005779E414E436B400964B87 /* RKManagedObjectThreadSafeInvocation.h */,
+				005779E514E436B400964B87 /* RKObjectPropertyInspector+CoreData.h */,
+			);
+			name = Restkit;
 			sourceTree = "<group>";
 		};
 		006EBEE414115783003D69CF /* Delegates */ = {
@@ -782,6 +1283,7 @@
 				008911C814C7367B002CEACA /* NCSNavigatorField.plist-sample in Resources */,
 				00C67AF514C765CE005D2543 /* NUCas.plist-sample in Resources */,
 				0031315E14E083C500C0D0B1 /* cacert.pem in Resources */,
+				0092BA5714E32C3500134165 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,7 +1481,6 @@
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)\"",
-					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
 				);
 				OTHER_LDFLAGS = (
@@ -987,7 +1488,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1011,7 +1512,6 @@
 				INFOPLIST_FILE = "NCSMobile/NCSMobile-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)\"",
-					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"$(inherited)",
 				);
 				OTHER_LDFLAGS = (
@@ -1019,7 +1519,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
