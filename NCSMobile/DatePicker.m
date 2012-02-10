@@ -56,8 +56,9 @@
 }
 
 - (NUPickerVC*) initPickerVC {
-    NUPickerVC* p= [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
+    NUPickerVC* p= [[[NUPickerVC alloc] init] autorelease];
     [p loadView];
+    [p viewDidLoad];
     [p setupDelegate:self withTitle:@"Pick a date" date:YES];
     p.contentSizeForViewInPopover = CGSizeMake(384.0, 260.0);
     p.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
@@ -68,7 +69,8 @@
 }
 
 - (UIPopoverController*)initPopoverVCWithPicker:(NUPickerVC*)picker {
-    UIPopoverController* popoverVC = [[UIPopoverController alloc] initWithContentViewController: picker];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
+    UIPopoverController* popoverVC = [[UIPopoverController alloc] initWithContentViewController: nav];
     popoverVC.delegate = self;
     return popoverVC;
 }
@@ -81,6 +83,12 @@
         self.popover = [self initPopoverVCWithPicker:self.picker];
     }
     [self.popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+}
+
+- (void) nowPressed{
+    [self.picker.datePicker setDate:[NSDate date] animated:YES];
+    [self performSelector:@selector(pickerDone) withObject:nil afterDelay:0.4];
+	//  [self  pickerDone];  
 }
 
 - (void) pickerDone{
