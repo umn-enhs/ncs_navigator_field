@@ -67,8 +67,9 @@
 }
 
 - (NUPickerVC*) initPickerVC {
-    NUPickerVC* p= [[[NUPickerVC alloc] initWithNibName:@"NUPickerVC" bundle:nil] autorelease];
+    NUPickerVC* p= [[[NUPickerVC alloc] init] autorelease];
     [p loadView];
+    [p viewDidLoad];
     [p setupDelegate:self withTitle:@"Pick One" date:NO];
 
     p.contentSizeForViewInPopover = [self CGSizeFromPopoverSize:self.popoverSize];
@@ -91,7 +92,8 @@
 }
 
 - (UIPopoverController*)initPopoverVCWithPicker:(NUPickerVC*)picker {
-    UIPopoverController* popoverVC = [[UIPopoverController alloc] initWithContentViewController: picker];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
+    UIPopoverController* popoverVC = [[UIPopoverController alloc] initWithContentViewController: nav];
     popoverVC.delegate = self;
     return popoverVC;
 }
@@ -100,9 +102,11 @@
     if (!self.picker) {
         self.picker = [self initPickerVC];
     }
+
     if (!self.popover) {
         self.popover = [self initPopoverVCWithPicker:self.picker];
     }
+    
     [self.popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
