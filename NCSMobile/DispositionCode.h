@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class PickerOption;
+
 @interface DispositionCode : NSObject {
     NSString* _event;
     NSString* _disposition;
@@ -22,6 +24,7 @@
 + (NSArray*) pickerOptions;
 + (BOOL) string:(NSString*)string containsString:(NSString*)substring;
 + (NSString*) abbreviationForDispositionEvent:(NSString*)event;
-
++ (NSArray*) findForContactTypeId:(NSNumber*)contactType;
+- (PickerOption*) toPickerOption;
 
 @end

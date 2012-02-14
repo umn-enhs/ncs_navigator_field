@@ -42,14 +42,18 @@
     return options;
 }
 
+- (PickerOption*) toPickerOption {
+//    NSString* abbrev = [DispositionCode abbreviationForDispositionEvent:[self event]];
+    PickerOption* o = [[PickerOption alloc] 
+                       initWithText:[NSString stringWithFormat:@"%%@", [self disposition]]
+                       value:[[self interimCode] integerValue]];
+    return o;
+}
+
 + (NSString*) abbreviationForDispositionEvent:(NSString*)event {
     NSString* abbrev = [NSString string];
 
-    if ([self string:event containsString:@"Household"]) {
-        abbrev = @"House";
-    } else if ([self string:event containsString:@"Pregnancy"]) {
-        abbrev = @"Preg";
-    } else if ([self string:event containsString:@"General"]) {
+    if ([self string:event containsString:@"General"]) {
         abbrev = @"General";
     } else if ([self string:event containsString:@"SAQ"]) {
         abbrev = @"SAQ";
@@ -67,97 +71,16 @@
     return [string rangeOfString:substring options:NSCaseInsensitiveSearch].location != NSNotFound;
 }
 
++ (NSArray*) findForContactTypeId:(NSNumber*)contactType {
+    return [self all];
+}
+
 // Generated with:
 // 1. bundle exec mdes-console
 // 2. $mdes20.disposition_codes.map{|c| "[DispositionCode dc:@\"#{c.event}\" disposition:@\"#{c.disposition}\" interimCode:@\"#{c.interim_code}\"],\n"}.each{|v| puts v}
 //
 + (NSArray*) all {
     return [[NSArray alloc] initWithObjects:
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Not attempted" interimCode:@"010"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Missed Dwelling Unit - Address Entered Manually" interimCode:@"011"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Unable to locate address/Incomplete Address" interimCode:@"012"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Unable to reach/No Answer" interimCode:@"013"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Maximum attempts" interimCode:@"014"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Unknown if dwelling unit - Other" interimCode:@"015"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Duplicate DU in original address list" interimCode:@"020"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Invalid Address" interimCode:@"021"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Out of sample/segment/subsample" interimCode:@"022"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Vacant housing unit" interimCode:@"023"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Seasonal/temporary residence" interimCode:@"024"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Under Construction" interimCode:@"025"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Business or other organization" interimCode:@"026"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"On-Campus Student Housing" interimCode:@"027"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Senior Housing" interimCode:@"028"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Religious Quarters" interimCode:@"029"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Correctional Facilities" interimCode:@"030"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Military Barracks" interimCode:@"031"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Ineligible Group Quarters -other" interimCode:@"032"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Demolished/Condemned" interimCode:@"033"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Unable to Access/Enter" interimCode:@"034"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Not a dwelling unit-other" interimCode:@"035"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Completed interview in English" interimCode:@"040"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Partial with sufficient information in English" interimCode:@"041"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Completed interview in Spanish" interimCode:@"042"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Partial with sufficient information in Spanish" interimCode:@"043"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Completed interview in Other Language" interimCode:@"044"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Partial with sufficient information in Other Language" interimCode:@"045"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Household-level refusal- soft" interimCode:@"050"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Household-level refusal- hard" interimCode:@"051"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"In Progress/Partial with insufficient information" interimCode:@"052"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Unable to enter building/reach dwelling unit" interimCode:@"053"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"No one at home/No Answer" interimCode:@"054"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Occupied but Refused to Answer Door" interimCode:@"055"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Call Back/Household Informant away/unavailable (no appointment)" interimCode:@"056"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Appointment Made - Hard Appointment" interimCode:@"057"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Appointment Made - Soft Appointment" interimCode:@"058"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Broken Appointment/No Show" interimCode:@"059"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Maximum Attempts" interimCode:@"060"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Language Barrier- Household Level" interimCode:@"061"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Respondent temporarily incapacitated/under the influence of controlled substances" interimCode:@"062"],
-            [DispositionCode dc:@"Household Enumeration Event" disposition:@"Long Term Illness" interimCode:@"063"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant cognitively unable to Complete" interimCode:@"010"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant Deceased" interimCode:@"011"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Not a Household Member" interimCode:@"012"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant ineligible due to age" interimCode:@"013"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant incarcerated" interimCode:@"014"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant otherwise institutionalized" interimCode:@"015"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Other- participant ineligibility" interimCode:@"016"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Duplicate participant" interimCode:@"017"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant moved to known address: within PSU to non-sampled DU" interimCode:@"020"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant moved to known address: within PSU to a sampled DU" interimCode:@"021"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant moved to known address: outside of PSU to a non-NCS area" interimCode:@"022"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant moved to known address: outside PSU to different NCS PSU" interimCode:@"023"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant moved to unknown address" interimCode:@"024"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Other- unknown participant eligibility to complete pregnancy screener" interimCode:@"025"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Known participant refusal- soft" interimCode:@"030"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Known participant refusal- hard" interimCode:@"031"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"In Progress/Partial with insufficient information" interimCode:@"032"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Not Worked" interimCode:@"033"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Unable to reach participant/temporarily unavailable" interimCode:@"034"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Participant Unavailable during Field period/Out of Window" interimCode:@"035"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Gatekeeper Refusal- Soft" interimCode:@"036"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Gatekeeper Refusal - Hard" interimCode:@"037"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Unable to Enter DU" interimCode:@"038"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"No one at Home/Ring No Answer" interimCode:@"039"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Telephone Answering Device (eligibility confirmed by message)" interimCode:@"040"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Call Monitoring/Blocking Device (eligibility confirmed by message)" interimCode:@"041"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Message left" interimCode:@"042"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"No message left" interimCode:@"043"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Appointment made-Hard Appointment" interimCode:@"044"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Appointment made-Soft Appointment" interimCode:@"045"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Broken appointment" interimCode:@"046"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Asked to call back, no appointment" interimCode:@"047"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Respondent temporarily incapacitated/under the influence of controlled substances" interimCode:@"048"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Maximum attempts" interimCode:@"049"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Language Barrier" interimCode:@"050"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Long Term Illness" interimCode:@"051"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Eligible Nonresponse- Other" interimCode:@"052"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Completed interview in English" interimCode:@"060"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Partial with sufficient information in English" interimCode:@"061"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Completed interview in Spanish" interimCode:@"062"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Partial with sufficient information in Spanish" interimCode:@"063"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Completed interview in Other Language" interimCode:@"064"],
-            [DispositionCode dc:@"Pregnancy Screener Event" disposition:@"Partial with sufficient information in Other Language" interimCode:@"065"],
             [DispositionCode dc:@"General Study Visit Event" disposition:@"Participant cognitively unable to provide informed consent/complete interview" interimCode:@"010"],
             [DispositionCode dc:@"General Study Visit Event" disposition:@"Participant deceased" interimCode:@"011"],
             [DispositionCode dc:@"General Study Visit Event" disposition:@"Participant ineligible due to pregnancy loss" interimCode:@"012"],
