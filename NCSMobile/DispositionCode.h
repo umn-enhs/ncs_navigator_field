@@ -22,9 +22,7 @@
 
 + (NSArray*) all;
 + (NSArray*) pickerOptions;
-+ (BOOL) string:(NSString*)string containsString:(NSString*)substring;
-+ (NSString*) abbreviationForDispositionEvent:(NSString*)event;
-+ (NSArray*) findForContactTypeId:(NSNumber*)contactType;
 - (PickerOption*) toPickerOption;
++ (NSArray*) pickerOptionsForContactTypeId:(NSNumber*)typeId;
 
 @end

@@ -13,3 +13,6 @@
 [submodule "json-framework"]
 	path = json-framework
 	url = git://github.com/stig/json-framework
+[submodule "MRCEnumerable"]
+	path = MRCEnumerable
+	url = git://github.com/crafterm/MRCEnumerable.git

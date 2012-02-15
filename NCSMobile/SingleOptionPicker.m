@@ -98,6 +98,11 @@
     return popoverVC;
 }
 
+- (void) updatePickerOptions:(NSArray*)newOptions {
+    self.pickerOptions = newOptions;
+    [self.picker.picker reloadAllComponents];
+}
+
 - (void)showPicker {
     if (!self.picker) {
         self.picker = [self initPickerVC];
@@ -124,6 +129,11 @@
     PickerOption* o = [PickerOption findWithValue:old fromOptions:self.pickerOptions];
     [self.picker.picker selectRow:[self.pickerOptions indexOfObject:o] inComponent:0 animated:NO];
     [self.popover dismissPopoverAnimated:NO];
+}
+
+- (void) clearResponse {
+    [self.button setTitle:@"Pick One" forState:UIControlStateNormal];
+
 }
 
 #pragma mark -

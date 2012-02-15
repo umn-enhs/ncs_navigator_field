@@ -11,14 +11,17 @@
 @class FormBuilder;
 @class Contact;
 @class Event;
+@class SingleOptionPicker;
 
 @interface ContactCloseVC : UIViewController {
     Contact* _contact;
     UIScrollView* _scrollView;
+    SingleOptionPicker* _dispositionPicker;
 }
 
 @property(nonatomic,retain) Contact* contact;
 @property(nonatomic,retain) UIScrollView* scrollView;
+@property(nonatomic,retain) SingleOptionPicker* dispositionPicker;
 
 - (id)initWithContact:(Contact*)contact;
 - (UIView*) toolbarWithFrame:(CGRect)frame;
@@ -36,6 +39,7 @@
 - (void) rollbackTransaction;
 
 - (void)registerForKeyboardNotifications;
+- (void) registerContactTypeChangeNotification;
 
 
 @end

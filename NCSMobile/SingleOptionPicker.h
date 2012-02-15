@@ -55,4 +55,8 @@ enum {
 
 - (CGSize) CGSizeFromPopoverSize:(NUPickerVCPopoverSize)size;
 
+- (void) updatePickerOptions:(NSArray*)newOptions;
+
+- (void) clearResponse;
+
 @end

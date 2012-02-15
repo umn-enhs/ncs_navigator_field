@@ -41,11 +41,11 @@
 + (NSArray*) contactTypes {
     return [[NSArray alloc] initWithObjects:
              [self po:@"In-person" value:1],
-             [self po:@"Mail" value:2],
+//             [self po:@"Mail" value:2],
              [self po:@"Telephone" value:3],
-             [self po:@"Email" value:4],
-             [self po:@"Text Message" value:5],
-             [self po:@"Website" value:6],
+//             [self po:@"Email" value:4],
+//             [self po:@"Text Message" value:5],
+//             [self po:@"Website" value:6],
              [self po:@"Other" value:-5],
              [self po:@"Missing in Error" value:-4], nil];
 }

@@ -69,10 +69,12 @@
 		009EE2791436220C00E6D658 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EE2781436220C00E6D658 /* LoginController.xib */; };
 		00A03C781499536700223FD2 /* InstrumentListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A03C761499536700223FD2 /* InstrumentListVC.m */; };
 		00A03C791499536700223FD2 /* InstrumentListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00A03C771499536700223FD2 /* InstrumentListVC.xib */; };
+		00A2CDDB14EAFCBD00C164F7 /* libMRCEnumerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A2CDDA14EAFCBD00C164F7 /* libMRCEnumerable.a */; };
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
 		00AEB0461474D31C00952EBD /* TASKS.md in Resources */ = {isa = PBXBuildFile; fileRef = 00AEB0451474D31C00952EBD /* TASKS.md */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7CCA814BDFB6E00D5901C /* DispositionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B7CCA714BDFB6E00D5901C /* DispositionCode.m */; };
+		00C4003A14EC381D005736EA /* DispositionCodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4003914EC381D005736EA /* DispositionCodeTest.m */; };
 		00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */; };
 		00C67AF514C765CE005D2543 /* NUCas.plist-sample in Resources */ = {isa = PBXBuildFile; fileRef = 00C67AF414C765CE005D2543 /* NUCas.plist-sample */; };
 		00C9C6E2146C7D8400F6D339 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098277C1434D088002A8777 /* libRestKitCoreData.a */; };
@@ -509,6 +511,7 @@
 		00A03C751499536700223FD2 /* InstrumentListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentListVC.h; sourceTree = "<group>"; };
 		00A03C761499536700223FD2 /* InstrumentListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentListVC.m; sourceTree = "<group>"; };
 		00A03C771499536700223FD2 /* InstrumentListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstrumentListVC.xib; path = NCSMobile/InstrumentListVC.xib; sourceTree = "<group>"; };
+		00A2CDDA14EAFCBD00C164F7 /* libMRCEnumerable.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMRCEnumerable.a; path = "MRCEnumerable/build/Release-iphoneos/libMRCEnumerable.a"; sourceTree = "<group>"; };
 		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		00A392DD14361C53003B19F3 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		00AEB0451474D31C00952EBD /* TASKS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TASKS.md; sourceTree = "<group>"; };
@@ -516,6 +519,14 @@
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		00B7CCA614BDFB6E00D5901C /* DispositionCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispositionCode.h; sourceTree = "<group>"; };
 		00B7CCA714BDFB6E00D5901C /* DispositionCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispositionCode.m; sourceTree = "<group>"; };
+		00C4002F14EAFE0B005736EA /* MRCEnumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRCEnumerable.h; path = MRCEnumerable/MRCEnumerable.h; sourceTree = "<group>"; };
+		00C4003014EAFE0B005736EA /* NSArray+Enumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumerable.h"; path = "MRCEnumerable/NSArray+Enumerable.h"; sourceTree = "<group>"; };
+		00C4003114EAFE0B005736EA /* NSArray+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Utilities.h"; path = "MRCEnumerable/NSArray+Utilities.h"; sourceTree = "<group>"; };
+		00C4003214EAFE0B005736EA /* NSDictionary+Enumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Enumerable.h"; path = "MRCEnumerable/NSDictionary+Enumerable.h"; sourceTree = "<group>"; };
+		00C4003314EAFE0B005736EA /* NSSet+Enumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Enumerable.h"; path = "MRCEnumerable/NSSet+Enumerable.h"; sourceTree = "<group>"; };
+		00C4003414EAFE0B005736EA /* NSSet+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Utilities.h"; path = "MRCEnumerable/NSSet+Utilities.h"; sourceTree = "<group>"; };
+		00C4003814EC381D005736EA /* DispositionCodeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispositionCodeTest.h; sourceTree = "<group>"; };
+		00C4003914EC381D005736EA /* DispositionCodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispositionCodeTest.m; sourceTree = "<group>"; };
 		00C4095B1471DD5E00F0F3FA /* InstrumentTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentTemplate.h; sourceTree = "<group>"; };
 		00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentTemplate.m; sourceTree = "<group>"; };
 		00C67AF414C765CE005D2543 /* NUCas.plist-sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "NUCas.plist-sample"; path = "NCSMobile/NUCas.plist-sample"; sourceTree = "<group>"; };
@@ -544,6 +555,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A2CDDB14EAFCBD00C164F7 /* libMRCEnumerable.a in Frameworks */,
 				002D3B1214E1CAD800A30C8F /* QuartzCore.framework in Frameworks */,
 				003131EC14E089C400C0D0B1 /* libNUSurveyor.a in Frameworks */,
 				0037D2BF14B60AAA00B7D05A /* libiconv.dylib in Frameworks */,
@@ -611,6 +623,7 @@
 		0026E667140347E700355BCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00A2CDDA14EAFCBD00C164F7 /* libMRCEnumerable.a */,
 				0021785014E0E56600056745 /* QuartzCore.framework */,
 				003131E914E089C400C0D0B1 /* libNUSurveyor.a */,
 				003131EA14E089C400C0D0B1 /* libsbjson-ios.a */,
@@ -661,6 +674,8 @@
 				00590AC71428F7D0008335EA /* ContactTableTest.m */,
 				004FC7101486BE8200A378DC /* PickerOptionTest.h */,
 				004FC7111486BE8200A378DC /* PickerOptionTest.m */,
+				00C4003814EC381D005736EA /* DispositionCodeTest.h */,
+				00C4003914EC381D005736EA /* DispositionCodeTest.m */,
 			);
 			name = Tests;
 			path = NCSMobileTests;
@@ -700,6 +715,7 @@
 		0057793814E434A400964B87 /* Dependent Headers */ = {
 			isa = PBXGroup;
 			children = (
+				00C4002E14EAFDD8005736EA /* MRCEnumerable */,
 				005779DB14E4369500964B87 /* Restkit */,
 				005779C614E4360D00964B87 /* NUSurveyor */,
 				0057794314E435A400964B87 /* NUCas */,
@@ -1071,6 +1087,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		00C4002E14EAFDD8005736EA /* MRCEnumerable */ = {
+			isa = PBXGroup;
+			children = (
+				00C4002F14EAFE0B005736EA /* MRCEnumerable.h */,
+				00C4003014EAFE0B005736EA /* NSArray+Enumerable.h */,
+				00C4003114EAFE0B005736EA /* NSArray+Utilities.h */,
+				00C4003214EAFE0B005736EA /* NSDictionary+Enumerable.h */,
+				00C4003314EAFE0B005736EA /* NSSet+Enumerable.h */,
+				00C4003414EAFE0B005736EA /* NSSet+Utilities.h */,
+			);
+			name = MRCEnumerable;
+			sourceTree = "<group>";
+		};
 		00F10AAD14DB040800387762 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1366,6 +1395,7 @@
 				00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */,
 				00590AC81428F7D0008335EA /* ContactTableTest.m in Sources */,
 				004FC7191486CC1200A378DC /* ModelLoader.m in Sources */,
+				00C4003A14EC381D005736EA /* DispositionCodeTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1486,7 +1516,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"/** \"$(BUILT_PRODUCTS_DIR)/MRCEnumerable\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1517,7 +1547,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/NUSurveyor\"/** \"$(BUILT_PRODUCTS_DIR)/NUCas\"/** \"$(BUILT_PRODUCTS_DIR)/MRCEnumerable\"/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

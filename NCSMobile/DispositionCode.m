@@ -30,50 +30,35 @@
 }
 
 + (NSArray*) pickerOptions {
-    NSMutableArray* options = [[NSMutableArray alloc] init];
-    for (DispositionCode* c in [DispositionCode all]) {
-        
-        NSString* abbrev = [DispositionCode abbreviationForDispositionEvent:c.event];
-        PickerOption* o = [[PickerOption alloc] 
-            initWithText:[NSString stringWithFormat:@"%@ - %@", abbrev, c.disposition]
-            value:[c.interimCode integerValue]];
-        [options addObject:o];
-    }
-    return options;
+    NSArray* codes = [DispositionCode all];
+    return [codes collect:^(DispositionCode* c){return [c toPickerOption];}];
 }
+
++ (NSArray*) pickerOptionsForContactTypeId:(NSNumber*)typeId {
+    NSArray* codes = [DispositionCode all];
+    if ([typeId integerValue] == 3) {
+        codes = 
+            [codes select:^(DispositionCode* c){
+                NSRange r = [c.event rangeOfString:@"Telephone"];
+                return (BOOL) (r.location != NSNotFound);
+            }];
+    } else {
+        codes = 
+        [codes select:^(DispositionCode* c){
+            NSRange r = [c.event rangeOfString:@"General"];
+            return (BOOL) (r.location != NSNotFound);
+        }];        
+    }
+    return [codes collect:^(DispositionCode* c){return [c toPickerOption];}];
+}
+
 
 - (PickerOption*) toPickerOption {
-//    NSString* abbrev = [DispositionCode abbreviationForDispositionEvent:[self event]];
-    PickerOption* o = [[PickerOption alloc] 
-                       initWithText:[NSString stringWithFormat:@"%%@", [self disposition]]
+    return [[PickerOption alloc] 
+                       initWithText:[self disposition]
                        value:[[self interimCode] integerValue]];
-    return o;
 }
 
-+ (NSString*) abbreviationForDispositionEvent:(NSString*)event {
-    NSString* abbrev = [NSString string];
-
-    if ([self string:event containsString:@"General"]) {
-        abbrev = @"General";
-    } else if ([self string:event containsString:@"SAQ"]) {
-        abbrev = @"SAQ";
-    } else if ([self string:event containsString:@"Telephone"]) {
-        abbrev = @"Telephone";
-    } else if ([self string:event containsString:@"Internet"]) {
-        abbrev = @"Internet";
-    } else {
-        abbrev = event;
-    }
-    return abbrev;
-}
-                    
-+ (BOOL) string:(NSString*)string containsString:(NSString*)substring {
-    return [string rangeOfString:substring options:NSCaseInsensitiveSearch].location != NSNotFound;
-}
-
-+ (NSArray*) findForContactTypeId:(NSNumber*)contactType {
-    return [self all];
-}
 
 // Generated with:
 // 1. bundle exec mdes-console
@@ -126,34 +111,6 @@
             [DispositionCode dc:@"General Study Visit Event" disposition:@"Completed Consent/Interview in English" interimCode:@"060"],
             [DispositionCode dc:@"General Study Visit Event" disposition:@"Completed Consent/Interview in Spanish" interimCode:@"061"],
             [DispositionCode dc:@"General Study Visit Event" disposition:@"Completed Consent/Interview in Other Language" interimCode:@"062"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Participant Screened Out" interimCode:@"010"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"No Eligible Participant" interimCode:@"011"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Duplicate Listing" interimCode:@"012"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Participant deceased" interimCode:@"013"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Cognitively  unable to Complete" interimCode:@"014"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"No address or participant information available" interimCode:@"020"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Never mailed" interimCode:@"021"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Questionnaire never returned/No response" interimCode:@"022"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Undeliverable" interimCode:@"023"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Returned with Forwarding Information" interimCode:@"024"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Known participant refusal- soft" interimCode:@"030"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Known participant refusal- hard" interimCode:@"031"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Household-Level refusal- soft" interimCode:@"032"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Household-Level refusal- hard" interimCode:@"033"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Blank questionnaire returned" interimCode:@"034"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Partial with insufficient information" interimCode:@"035"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Participant Unavailable during Field Period/Out of Window" interimCode:@"036"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Completed questionnaire, but not returned during field period" interimCode:@"037"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Language Barrier" interimCode:@"038"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Literacy Issues" interimCode:@"039"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Other" interimCode:@"040"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Completed Questionnaire in English" interimCode:@"050"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Partial with sufficient information in English" interimCode:@"051"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Completed interview in Spanish" interimCode:@"052"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Partial with sufficient information in Spanish" interimCode:@"053"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Completed interview in Other Language" interimCode:@"054"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Partial with sufficient information in Other Language" interimCode:@"055"],
-            [DispositionCode dc:@"Mailed Back SAQ Event" disposition:@"Appointment successfully scheduled (when mail contact was used to schedule upcoming visit)" interimCode:@"056"],
             [DispositionCode dc:@"Telephone Interview Event" disposition:@"Out of sample" interimCode:@"010"],
             [DispositionCode dc:@"Telephone Interview Event" disposition:@"Fax/Data line" interimCode:@"011"],
             [DispositionCode dc:@"Telephone Interview Event" disposition:@"Disconnected number" interimCode:@"012"],
@@ -220,33 +177,7 @@
             [DispositionCode dc:@"Telephone Interview Event" disposition:@"Completed interview in Spanish" interimCode:@"092"],
             [DispositionCode dc:@"Telephone Interview Event" disposition:@"Partial with sufficient information in Spanish" interimCode:@"093"],
             [DispositionCode dc:@"Telephone Interview Event" disposition:@"Completed interview in Other Language" interimCode:@"094"],
-            [DispositionCode dc:@"Telephone Interview Event" disposition:@"Partial with sufficient information in Other Language" interimCode:@"095"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Completed but ineligible" interimCode:@"010"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Incomplete but ineligible" interimCode:@"011"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Duplicate listing" interimCode:@"012"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"No known email address" interimCode:@"020"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"No invitation sent" interimCode:@"021"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Nothing returned" interimCode:@"022"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Undeliverable" interimCode:@"023"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Undeliverable with forwarding information" interimCode:@"024"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Email address not in sample" interimCode:@"025"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Other" interimCode:@"026"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Partial with insufficient information" interimCode:@"030"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Hard Refusal" interimCode:@"031"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Soft Refusal" interimCode:@"032"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Logged in but did not complete any items" interimCode:@"033"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Non-Contact" interimCode:@"034"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Unavailable during field period/out of window" interimCode:@"035"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Completed questionnaire, but not returned during field period" interimCode:@"036"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Language Barrier" interimCode:@"037"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Other Non-response" interimCode:@"038"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Completed interview in English" interimCode:@"040"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Partial with sufficient information in English" interimCode:@"041"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Completed interview in Spanish" interimCode:@"042"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Partial with sufficient information in Spanish" interimCode:@"043"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Completed interview in Other Language" interimCode:@"044"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Partial with sufficient information in Other Language" interimCode:@"045"],
-            [DispositionCode dc:@"Internet Survey Event" disposition:@"Appointment successfully scheduled (when web contact was used to schedule upcoming visit)" interimCode:@"046"], nil];
+            [DispositionCode dc:@"Telephone Interview Event" disposition:@"Partial with sufficient information in Other Language" interimCode:@"095"], nil];
 }
 
 @end

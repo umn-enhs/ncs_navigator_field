@@ -31,3 +31,5 @@
 #else
 #    define DLog(...) /* */
 #endif
+
+#import "MRCEnumerable.h"

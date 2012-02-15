@@ -65,15 +65,16 @@
     [self.cursor addNewLine];
 }
 
-- (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options andPopoverSize:(NUPickerVCPopoverSize)popoverSize {
+- (SingleOptionPicker*) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options andPopoverSize:(NUPickerVCPopoverSize)popoverSize {
     SingleOptionPicker* b = [[[SingleOptionPicker alloc] initWithFrame:CGRectMake(self.cursor.x, self.cursor.y, DEFAULT_WIDTH, DEFAULT_HEIGHT) value:(NSNumber*)[self objectValueForKey:property] pickerOptions:options popoverSize:popoverSize] autorelease];
     [b addChangeHandler:[[[ChangeHandler alloc] initWithObject:self.object field:property] autorelease]];
     [self.view addSubview:b];
     [self.cursor addNewLine];
+    return b;
 }
 
-- (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options {
-    [self singleOptionPickerForProperty:property WithPickerOptions:options andPopoverSize:NUPickerVCPopoverSizeRegular];
+- (SingleOptionPicker*) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options {
+    return [self singleOptionPickerForProperty:property WithPickerOptions:options andPopoverSize:NUPickerVCPopoverSizeRegular];
 }
 
 - (void) datePickerForProperty:(SEL)property {

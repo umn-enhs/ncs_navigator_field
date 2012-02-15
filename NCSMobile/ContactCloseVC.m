@@ -20,6 +20,7 @@
 
 @synthesize contact=_contact;
 @synthesize scrollView = _scrollView;
+@synthesize dispositionPicker = _dispositionPicker;
 
 - (id)initWithContact:contact {
     if (self = [super init]) {
@@ -85,7 +86,21 @@
     
     [self registerForKeyboardNotifications];
     
+    [self registerContactTypeChangeNotification];
+    
     [self startTransaction];
+}
+
+- (void) registerContactTypeChangeNotification {
+    [self.contact addObserver:self forKeyPath:@"typeId" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == self.contact && [keyPath isEqualToString:@"typeId"]) {
+        [self.dispositionPicker updatePickerOptions:[DispositionCode pickerOptionsForContactTypeId:self.contact.typeId]];
+        self.contact.dispositionId = NULL;
+        [self.dispositionPicker clearResponse];
+    }
 }
 
 /*
@@ -177,7 +192,8 @@
     [b textFieldForProperty:@selector(distanceTraveled)];
     
     [b labelWithText:@"Disposition"];
-    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptions] andPopoverSize:NUPickerVCPopoverSizeLarge];        
+    self.dispositionPicker = 
+        [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptionsForContactTypeId:self.contact.typeId] andPopoverSize:NUPickerVCPopoverSizeLarge];        
     
     [b labelWithText:@"Comments"];
     [b textAreaForProperty:@selector(comments)];
@@ -228,7 +244,7 @@
     [b sectionHeader:@""];
     
     [b labelWithText:@"Disposition"];
-    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptions] andPopoverSize:NUPickerVCPopoverSizeLarge];
+    [b singleOptionPickerForProperty:@selector(dispositionId) WithPickerOptions:[DispositionCode pickerOptionsForContactTypeId:self.contact.typeId] andPopoverSize:NUPickerVCPopoverSizeLarge];
 
     [b labelWithText:@"Disposition Category"];
     [b singleOptionPickerForProperty:@selector(dispositionCategoryId) WithPickerOptions:[PickerOption dispositionCategory]];     

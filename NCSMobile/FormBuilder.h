@@ -31,8 +31,8 @@
 - (FormBuilder*) fieldsForObject:(id)object;
 - (void) sectionHeader:(NSString*)text;
 - (void) labelWithText:(NSString*)text;
-- (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options andPopoverSize:(NUPickerVCPopoverSize)popoverSize;
-- (void) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options;
+- (SingleOptionPicker*) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options andPopoverSize:(NUPickerVCPopoverSize)popoverSize;
+- (SingleOptionPicker*) singleOptionPickerForProperty:(SEL)property WithPickerOptions:(NSArray*)options;
 - (void) datePickerForProperty:(SEL)property;
 - (void) textFieldForProperty:(SEL)property;
 - (void) textAreaForProperty:(SEL)property;
