@@ -27,6 +27,7 @@
 #import "SyncActivityIndicator.h"
 #import "NUSurvey.h"
 #import "UUID.h"
+#import "NUResponseSet.h"
 
 @interface RootViewController () 
     @property(nonatomic,retain) NSArray* contacts;
@@ -89,14 +90,21 @@
         //TODO: Pass response set id to load existing if exists
         NUResponseSet* rs = NULL;
         if (instrument.externalResponseSetId != NULL) {
-            NSManagedObjectContext* moc = UIAppDelegate.managedObjectContext;
+            // TODO: This is a workaround for RestKit failing when entities are named differently than their table name
+            //       https://github.com/RestKit/RestKit/issues/506
+            //
+            //       rs = [NUResponseSet objectWithPredicate: 
+            //                  [NSPredicate predicateWithFormat:@"uuid = %@", instrument.externalResponseSetId]];
+            //
+                        
+            NSManagedObjectContext* moc = [NUResponseSet managedObjectContext];
             NSEntityDescription *desc = [NSEntityDescription entityForName:@"ResponseSet" inManagedObjectContext:moc];
             NSFetchRequest *req = [[[NSFetchRequest alloc] init] autorelease];
             
             [req setEntity:desc];
             
             NSPredicate *p = [NSPredicate predicateWithFormat:
-                                      @"uuid = %@", instrument.externalResponseSetId];
+                              @"uuid = %@", instrument.externalResponseSetId];
             
             [req setPredicate:p];
             
@@ -113,48 +121,32 @@
             }
         }
         
-        //
         NUSurvey* survey = [NUSurvey new];
         survey.jsonString = surveyRep;
-//        
+
         if (!rs) {
-            NSManagedObjectContext* ctx = UIAppDelegate.managedObjectContext;
+            
+            // TODO: This is a workaround for RestKit failing when entities are named differently than their table name
+            //       https://github.com/RestKit/RestKit/issues/506
+            //
+            //            rs = [NUResponseSet object];
+            //
+            NSManagedObjectContext* ctx = [NUResponseSet managedObjectContext];
             NSEntityDescription *entity = [NSEntityDescription entityForName:@"ResponseSet" inManagedObjectContext:ctx];
             rs = [[NUResponseSet alloc] initWithEntity:entity insertIntoManagedObjectContext:ctx];
+
+
             [rs setValue:[NSDate date] forKey:@"createdAt"];
             [rs setValue:[UUID generateUuidString] forKey:@"uuid"];
-            [UIAppDelegate saveContext];
-
         }
         
         NUSurveyTVC *masterViewController = [[NUSurveyTVC alloc] initWithSurvey:survey responseSet:rs];
-        
-//        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
         NUSectionTVC *detailViewController = masterViewController.sectionTVC;
-//        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-        
-//        self.splitViewController = [[UISplitViewController alloc] init];
-//        self.splitViewController.delegate = detailViewController;
         [self.navigationController pushViewController:masterViewController animated:NO];
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, detailViewController, nil];
         self.administeredInstrument = instrument;
         
-//        self.window.rootViewController = self.splitViewController;
-        
-        
-        //
-        /*
-        NUSurveyTVC *surveyController = [[NUSurveyTVC alloc] init];
-        surveyController.surveyJson = survey;
-        surveyController.responseSet = rs;
-        NUSectionVC *sectionController = [[NUSectionVC alloc] init];
-        surveyController.sectionController = sectionController;
-        UIAppDelegate.sectionController = sectionController;
-        [self.navigationController pushViewController:surveyController animated:NO];
-        
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.navigationController, sectionController, nil];
-        _administeredInstrument = instrument;
-         */
+
     }
 }
 
@@ -296,8 +288,7 @@
 - (void) deleteButtonWasPressed {
     NSLog(@"Delete button pressed");
 
-    [self purgeContacts];
-    [self purgeSurveyor];
+    [self purgeDataStore];
     
     self.contacts = [NSArray array];
     
@@ -306,20 +297,10 @@
 	[self.tableView reloadData];
 }
 
-- (void)purgeContacts {
+- (void)purgeDataStore {
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     RKManagedObjectStore* objectStore = objectManager.objectStore;
     [objectStore deletePersistantStore];
-}
-
-- (void)purgeSurveyor {
-    NSError *error;
-    NSPersistentStoreCoordinator *storeCoordinator = [UIAppDelegate persistentStoreCoordinator];
-    NSURL *storeURL = [NCSMobileAppDelegate surveyorStoreURL];
-    NSPersistentStore* store = [storeCoordinator persistentStoreForURL:storeURL];
-
-    [storeCoordinator removePersistentStore:store error:&error];
-    [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
 }
 
 - (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket {

@@ -26,21 +26,10 @@
 
 @property (nonatomic, retain) IBOutlet ContactDisplayController *detailViewController;
 
-+ (NSURL*)surveyorStoreURL;
-+ (NSURL*)applicationDocumentsDirectory;
 
 
 
 /* imported for surveyor_ios */
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-- (void)saveContext;
-+ (NSURL *)applicationDocumentsDirectory;
-
-- (void) saveContext:(NSString *)triggeredBy;
-- (void) errorWithTitle:(NSString *)errorTitle message:(NSString *)errorMessage;
 BOOL RSRunningOnOS4OrBetter(void);
 @property (nonatomic, retain) IBOutlet NUSurveyTVC *surveyController;
 @property (nonatomic, retain) NUSectionTVC *sectionController;

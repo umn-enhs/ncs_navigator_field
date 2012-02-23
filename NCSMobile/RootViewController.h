@@ -29,8 +29,7 @@
 @property(nonatomic,retain) MBProgressHUD* syncIndicator;
 @property(nonatomic,retain) Instrument* administeredInstrument;
 
-- (void)purgeContacts;
-- (void)purgeSurveyor;
+- (void)purgeDataStore;
 - (void) loadSurveyor:(Instrument*)instrument;
 - (void) didSelectRow:(Row*)row;
 - (void)loadDataWithProxyTicket:(CasProxyTicket*)ticket;
