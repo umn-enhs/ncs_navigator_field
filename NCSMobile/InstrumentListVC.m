@@ -40,12 +40,13 @@
 }
 
 - (IBAction)cancel {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)closeContact {
-    [self dismissModalViewControllerAnimated:NO];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"CloseContactSelected" object:self];
+    [self dismissViewControllerAnimated:NO completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CloseContactSelected" object:self];
+    }];
 }
 
 #pragma mark - Table datasource and delegate methods
@@ -81,11 +82,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self dismissModalViewControllerAnimated:NO];
-
-    Instrument* selected = [self.instruments objectAtIndex:indexPath.row];
-    NSDictionary* dict = [[[NSDictionary alloc] initWithObjectsAndKeys:selected, @"instrument", nil] autorelease];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"InstrumentSelected" object:self userInfo:dict];
+    [self dismissViewControllerAnimated:NO completion:^{
+        Instrument* selected = [self.instruments objectAtIndex:indexPath.row];
+        NSDictionary* dict = [[[NSDictionary alloc] initWithObjectsAndKeys:selected, @"instrument", nil] autorelease];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"InstrumentSelected" object:self userInfo:dict];        
+    }];
 }
 
 #pragma mark - lifecycle methods
