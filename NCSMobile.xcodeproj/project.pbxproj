@@ -71,7 +71,6 @@
 		00A03C791499536700223FD2 /* InstrumentListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00A03C771499536700223FD2 /* InstrumentListVC.xib */; };
 		00A2CDDB14EAFCBD00C164F7 /* libMRCEnumerable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A2CDDA14EAFCBD00C164F7 /* libMRCEnumerable.a */; };
 		00A392DF14361C53003B19F3 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A392DD14361C53003B19F3 /* LoginController.m */; };
-		00AEB0461474D31C00952EBD /* TASKS.md in Resources */ = {isa = PBXBuildFile; fileRef = 00AEB0451474D31C00952EBD /* TASKS.md */; };
 		00B6CD00146B1A77004767BE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CCFF146B1A77004767BE /* Location.m */; };
 		00B7CCA814BDFB6E00D5901C /* DispositionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B7CCA714BDFB6E00D5901C /* DispositionCode.m */; };
 		00C4003A14EC381D005736EA /* DispositionCodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4003914EC381D005736EA /* DispositionCodeTest.m */; };
@@ -514,7 +513,6 @@
 		00A2CDDA14EAFCBD00C164F7 /* libMRCEnumerable.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMRCEnumerable.a; path = "MRCEnumerable/build/Release-iphoneos/libMRCEnumerable.a"; sourceTree = "<group>"; };
 		00A392DC14361C53003B19F3 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		00A392DD14361C53003B19F3 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
-		00AEB0451474D31C00952EBD /* TASKS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TASKS.md; sourceTree = "<group>"; };
 		00B6CCFE146B1A77004767BE /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		00B6CCFF146B1A77004767BE /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		00B7CCA614BDFB6E00D5901C /* DispositionCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispositionCode.h; sourceTree = "<group>"; };
@@ -600,7 +598,6 @@
 				008911C714C7367B002CEACA /* NCSNavigatorField.plist-sample */,
 				0018F0A014C4BE880058D8F2 /* NCSNavigatorField.plist */,
 				0013ED9A14B65D84009F85CF /* NUCas.plist */,
-				00AEB0451474D31C00952EBD /* TASKS.md */,
 				006C600A1434DF0D00F52CD8 /* README.md */,
 				0043A016141133410097A878 /* Other Sources */,
 				00439FFF141132B70097A878 /* Resources */,
@@ -1303,7 +1300,6 @@
 				0026E682140347E700355BCB /* DetailView.xib in Resources */,
 				006C600B1434DF0D00F52CD8 /* README.md in Resources */,
 				009EE2791436220C00E6D658 /* LoginController.xib in Resources */,
-				00AEB0461474D31C00952EBD /* TASKS.md in Resources */,
 				00A03C791499536700223FD2 /* InstrumentListVC.xib in Resources */,
 				0013ED9B14B65D84009F85CF /* NUCas.plist in Resources */,
 				0018F0A114C4BE880058D8F2 /* NCSNavigatorField.plist in Resources */,
