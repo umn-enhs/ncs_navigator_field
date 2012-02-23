@@ -23,8 +23,8 @@
 - (id)initUsingContact:(Contact*)contact {
     self = [super init];
     if (self) {
-        _contact = contact;
-        self.sections = [self buildSectionsFromContact:contact];
+        _contact = [contact retain];
+        _sections = [[self buildSectionsFromContact:contact] retain];
     }
     
     return self;
