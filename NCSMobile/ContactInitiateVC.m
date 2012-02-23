@@ -157,13 +157,14 @@
 
 - (void) cancel {
     [self rollbackTransaction];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void) done {
     [self commitTransaction];
-    [self dismissModalViewControllerAnimated:NO];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ContactInitiated" object:self];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ContactInitiated" object:self];
+    }];
 }
 
 - (void) startTransaction {
