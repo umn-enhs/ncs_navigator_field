@@ -8,6 +8,7 @@
 
 #import "DispositionCode.h"
 #import "PickerOption.h"
+#import <MRCEnumerable/MRCEnumerable.h>
 
 @implementation DispositionCode
 

@@ -20,7 +20,7 @@
 #import "NUResponseSet.h"
 #import "Instrument.h"
 #import "InstrumentTemplate.h"
-#import "SBJsonWriter.h"
+#import "SBJson/SBJsonWriter.h"
 #import "NUResponseSet.h"
 #import "NUCas.h"
 #import "Configuration.h"
