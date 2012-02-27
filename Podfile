@@ -29,7 +29,6 @@ dependency do |s|
   s.platform = :ios
   s.source = { :git => 'https://github.com/crafterm/MRCEnumerable.git', :commit => '15db6f3e48c5483d9635257511366864072ea016' }
   s.source_files = '*.{h,m}'
-  #s.frameworks = 'QuartzCore', 'CoreGraphics'
 end
 
 # TODO: Add to cocoapods specs repo or NUSurveyor project
