@@ -10,7 +10,7 @@
 
 #import "RootViewController.h"
 #import <RestKit/RestKit.h>
-#import <RestKit/CoreData/CoreData.h>
+#import <RestKit/RKCoreData/CoreData.h>
 #import "Event.h"
 #import "Person.h"
 #import "Instrument.h"
