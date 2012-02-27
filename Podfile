@@ -38,9 +38,7 @@ dependency do |s|
   s.version = '0.0.0'
   s.platform = :ios
   s.requires_arc = true
-  # s.source = { :git => 'https://github.com/NUBIC/nu_surveyor.git', :commit => '3a2e1f5cf0f7e8e650ce860e6ad1bafefcd36cbe' }  
-  s.source = { :git => 'https://github.com/NUBIC/nu_surveyor.git', :commit => 'd854e354e1f9a4c58621f75eb8bd04ece4d4ee10' }
-  # s.resources = 'Resources/SSToolkit.bundle'
+  s.source = { :git => 'https://github.com/NUBIC/nu_surveyor.git', :commit => 'c1df48aa61cd0d1ef550ef5657aa95572bfeca5a' }
   s.source_files = 'NUSurveyor/NUConstants.h', 'NUSurveyor/**/*.{h,m}'
   s.frameworks = 'QuartzCore', 'CoreGraphics'
   def s.post_install(target)

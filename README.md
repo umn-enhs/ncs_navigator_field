@@ -8,6 +8,11 @@ Configuration
 
 1. Copy NUCas.plist-sample to NUCas.plist
 2. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NUCas.plist
+3. Copy NCSNavigatorField.plist-sample to NCSNavigatorField.plist
+4. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NCSNavigatorField.plist
+5. `gem install bundler cocoapods`
+6. `bundle exec pods install` 
+7. Change deploy target in the NCSMobile project->Build Settings to 5.0
 
 Testing
 -------
