@@ -42,7 +42,7 @@ dependency do |s|
   s.source = { :git => 'https://github.com/NUBIC/nu_surveyor.git', :commit => 'd854e354e1f9a4c58621f75eb8bd04ece4d4ee10' }
   # s.resources = 'Resources/SSToolkit.bundle'
   s.source_files = 'NUSurveyor/NUConstants.h', 'NUSurveyor/**/*.{h,m}'
-  s.frameworks = 'QuartzCore'
+  s.frameworks = 'QuartzCore', 'CoreGraphics'
   def s.post_install(target)
     prefix_header = config.project_pods_root + target.prefix_header_filename
     prefix_header.open('a') do |file|

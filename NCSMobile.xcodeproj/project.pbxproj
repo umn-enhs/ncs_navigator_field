@@ -59,10 +59,6 @@
 		008F7DA7148C64AC009BCF1D /* FormBuilderCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F7DA6148C64AC009BCF1D /* FormBuilderCursor.m */; };
 		0092BA5714E32C3500134165 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092BA5614E32C3500134165 /* icon.png */; };
 		009AD2E4142D391A0038650B /* SimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AD2E3142D391A0038650B /* SimpleTableController.m */; };
-		009BE3AA14FC2145008195F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009BE3A914FC2145008195F9 /* Security.framework */; };
-		009BE3AC14FC2181008195F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0021785014E0E56600056745 /* QuartzCore.framework */; };
-		009BE3AD14FC21CE008195F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66C140347E700355BCB /* CoreGraphics.framework */; };
-		009BE3AE14FC2217008195F9 /* SyncActivityIndicator.h in Sources */ = {isa = PBXBuildFile; fileRef = 0031315414E04BF800C0D0B1 /* SyncActivityIndicator.h */; };
 		009BE3AF14FC2217008195F9 /* SyncActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031315514E04BF800C0D0B1 /* SyncActivityIndicator.m */; };
 		009EE2791436220C00E6D658 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EE2781436220C00E6D658 /* LoginController.xib */; };
 		00A03C781499536700223FD2 /* InstrumentListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A03C761499536700223FD2 /* InstrumentListVC.m */; };
@@ -74,6 +70,9 @@
 		00C4095D1471DD5E00F0F3FA /* InstrumentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4095C1471DD5E00F0F3FA /* InstrumentTemplate.m */; };
 		00C67AF514C765CE005D2543 /* NUCas.plist-sample in Resources */ = {isa = PBXBuildFile; fileRef = 00C67AF414C765CE005D2543 /* NUCas.plist-sample */; };
 		00C9C6E5146CE66300F6D339 /* main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C6E3146CE66300F6D339 /* main.xcdatamodeld */; };
+		00CA369214FC2971000D37D2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009BE3A914FC2145008195F9 /* Security.framework */; };
+		00CA369314FC2980000D37D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026E66C140347E700355BCB /* CoreGraphics.framework */; };
+		00CA369414FC29AB000D37D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0021785014E0E56600056745 /* QuartzCore.framework */; };
 		00E32348142153CD00D3AEED /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32347142153CD00D3AEED /* Fixtures.m */; };
 		00E32351142280AD00D3AEED /* ContactManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E32350142280AD00D3AEED /* ContactManagerTest.m */; };
 		00E323571422A23A00D3AEED /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E323561422A23A00D3AEED /* Section.m */; };
@@ -368,9 +367,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009BE3AD14FC21CE008195F9 /* CoreGraphics.framework in Frameworks */,
-				009BE3AC14FC2181008195F9 /* QuartzCore.framework in Frameworks */,
-				009BE3AA14FC2145008195F9 /* Security.framework in Frameworks */,
+				00CA369414FC29AB000D37D2 /* QuartzCore.framework in Frameworks */,
+				00CA369314FC2980000D37D2 /* CoreGraphics.framework in Frameworks */,
+				00CA369214FC2971000D37D2 /* Security.framework in Frameworks */,
 				0037D2BF14B60AAA00B7D05A /* libiconv.dylib in Frameworks */,
 				0037D2BD14B60AA100B7D05A /* libz.dylib in Frameworks */,
 				00EDE59914B4048900B8A643 /* libNUCas.a in Frameworks */,
@@ -943,7 +942,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009BE3AE14FC2217008195F9 /* SyncActivityIndicator.h in Sources */,
 				009BE3AF14FC2217008195F9 /* SyncActivityIndicator.m in Sources */,
 				0026E676140347E700355BCB /* main.m in Sources */,
 				0026E679140347E700355BCB /* NCSMobileAppDelegate.m in Sources */,
