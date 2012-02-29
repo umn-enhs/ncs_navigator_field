@@ -6,8 +6,11 @@ This is an ios application which assists field workers in data collection for th
 Configuration
 -------------
 
-1. Copy NUCas.plist-sample to NUCas.plist
+1. `cd ncs_navigator_field`
+1. git submodule update
+1. Copy NUCas/NUCas.plist-sample to NUCas.plist
 1. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NUCas.plist
+1. `wget http://curl.haxx.se/ca/cacert.pem`
 1. Copy NCSNavigatorField.plist-sample to NCSNavigatorField.plist
 1. Update ncs.core.url in NCSNavigatorField.plist
 1. `gem install cocoapods`
