@@ -7,12 +7,14 @@ Configuration
 -------------
 
 1. Copy NUCas.plist-sample to NUCas.plist
-2. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NUCas.plist
-3. Copy NCSNavigatorField.plist-sample to NCSNavigatorField.plist
-4. Update ncs.core.url in NCSNavigatorField.plist
-5. `gem install bundler cocoapods`
-6. `bundle exec pods install` 
-7. Change deploy target in the NCSMobile project->Build Settings to 5.0
+1. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NUCas.plist
+1. Copy NCSNavigatorField.plist-sample to NCSNavigatorField.plist
+1. Update ncs.core.url in NCSNavigatorField.plist
+1. `gem install cocoapods`
+1. `pod repo update`
+1. `mkdir -p ~/.cocoapods/master/RestKit/0.9.4`
+1. `cp RestKit-Custom-0.9.4.podspec ~/.cocoapods/master/RestKit/0.9.4`
+1. Open NCSMobile.xcworkspace and change the Pods deploy target to 5.0 (Pods Project -> Build Settings -> Deploy Target)
 
 Testing
 -------
