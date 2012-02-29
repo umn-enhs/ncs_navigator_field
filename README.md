@@ -7,6 +7,7 @@ Configuration
 -------------
 
 1. `cd ncs_navigator_field`
+1. git submodule init
 1. git submodule update
 1. Copy NUCas/NUCas.plist-sample to NUCas.plist
 1. Update cas.base.url, cas.retrieve.url, and cas.receive.url in NUCas.plist
