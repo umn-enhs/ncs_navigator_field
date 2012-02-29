@@ -15,9 +15,10 @@ Configuration
 1. Copy NCSNavigatorField.plist-sample to NCSNavigatorField.plist
 1. Update ncs.core.url in NCSNavigatorField.plist
 1. `gem install cocoapods`
-1. `pod repo update`
+1. `pod setup`
 1. `mkdir -p ~/.cocoapods/master/RestKit/0.9.4`
-1. `cp RestKit-Custom-0.9.4.podspec ~/.cocoapods/master/RestKit/0.9.4`
+1. `cp RestKit-Custom-0.9.4.podspec ~/.cocoapods/master/RestKit/0.9.4/RestKit.podspec`
+1. `pod install`
 1. Open NCSMobile.xcworkspace and change the Pods deploy target to 5.0 (Pods Project -> Build Settings -> Deploy Target)
 
 Testing
